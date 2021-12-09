@@ -1,0 +1,61 @@
+.transition-fade {
+    opacity: 1;
+    transition: 500ms;
+    transform: translateX(0);
+    transform-origin: left;
+    
+}
+
+html.is-animating .transition-fade {
+    opacity: 1;
+    transform: translateX(100%);
+}
+
+html.is-leaving .transition-fade {
+    opacity: 0;
+    transform: translateX(0);
+}
+
+.transition-swipe {
+
+    transition: 500ms;
+    transform: translateY(0);
+    
+}
+
+html.is-animating .transition-swipe {
+ 
+    transform: translateY(100px);
+}
+
+.slider {
+    border-radius: 5px;
+    background: #e0e0e0a2;
+    background: linear-gradient(left top, #E0E0E0, #EEEEEE);
+    width: 15px;
+    height: 100px;
+    margin: 25px;
+    margin-top: 40px;
+    animation: fadeInAnimation ease 3s;
+
+}
+  
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
+  
+  .thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 3px;
+    position: relative;
+    left: -4.4px;
+    top: 1px;
+    background: blue;
+    cursor: pointer;
+  }
