@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="uft-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Sincerely, Earth</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <script src="js/scripts.js"></script>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+
+    <body>
+        <div class="sceneNav">
+            <input id="prev" type='button' value='&lt;' />
+            <input id="next" type='button' value='&gt;' />
+        </div>
+
+        <div id="s2-1" class="scene" style="display: none;">
+            <div id="bg1" class="image">
+                <img src="img/scene2-1.png" alt="A spaceship in the space">
+            </div>
+            <div class="text">
+                <div id="box1" class="textbox" >
+                    <p>This story takes place in 2100 and starts off in a spaceship home to over 200 citizens.</p>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div id="s2-2" class="scene" style="display: none;">
+            <div id="bg2" class="image">
+                <img src="img/scene2-2.png" alt="Girl holding a monocular while talking with robot">
+            </div>
+            <div class="text" >
+                <div id="box2" class="speechbox" >
+                    <p><b>Aeryn:</b> It's so scary looking back at what remains of earth, I wish I could see Earth back when things weren't so bad.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="s2-3" class="scene" style="display: none;">
+            <div id="bg3" class="image">
+                <img src="img/scene2-2.png" alt="Girl holding a monocular while talking with robot">
+            </div>
+            <div class="text" >
+                <div id="box3" class="speechbox" >
+                    <p><b>Aeryn:</b> You know I’ve trained all my life to return to Earth, I know my purpose isn’t to live in this spaceship but to save our actual home on Earth.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="s2-4" class="scene" style="display: none;">
+            <div id="bg3" class="image">
+                <img src="img/scene2-4.png" alt="Girl holding a monocular while talking with robot">
+            </div>
+            <div class="text" >
+                <div id="box4" class="textbox" >
+                    <p>This story takes place in 2100 and starts off in a spaceship home to over 200 citizens.</p>
+                </div>
+            </div>
+        </div>
+        
+        
+        <!-- <div id="box2" class="speechBubble" style="display: none">
+            <p>It's so scary looking back at what remains of earth, I wish I could see Earth back when things weren't so bad.</p>
+        </div> -->
+
+        <script>
+            /*------Changing div with next and prev button------*/
+
+            //store the divs of the specified className into an array
+            var IdStore = new Array();
+            function storeSceneId(){
+                var className = document.getElementsByClassName('scene');
+                var classNameCount = className.length;
+                
+                for(var j = 0; j < classNameCount; j++){
+                    IdStore.push(className[j].id);
+                }
+                console.log(IdStore);
+            }
+            storeSceneId();
+            
+            //show or hide the div when next button is clicked
+            var currentIndex = -1
+            
+            $( "#next" ).click(function() {
+                console.log('next');                
+
+                if (currentIndex < IdStore.length-1) {
+                    currentIndex += 1;
+                    console.log(currentIndex);
+                    var divId = IdStore[currentIndex];
+                
+                    console.log(divId, currentIndex);
+                    document.getElementById(divId).style.display = "block";
+                    var prevIndex = currentIndex - 1;
+                    console.log(prevIndex);
+                    if (prevIndex >= 0) {
+                        var preId = IdStore[prevIndex];
+                        document.getElementById(preId).style.display = "none";
+                    }
+                }
+            }); 
+
+            //show or hide the div when prev button is clicked
+            $( "#prev" ).click(function() {
+                console.log('prev');
+                
+                if (currentIndex >= 1) {
+                    var divId = IdStore[currentIndex];
+                    console.log(divId, currentIndex);
+                    document.getElementById(divId).style.display = "none";
+                    currentIndex -= 1;
+                    console.log(currentIndex);
+                    var divId2 = IdStore[currentIndex];
+                    document.getElementById(divId2).style.display = "block";
+                }
+                
+            }); 
+        </script>
+    </body>
+</html>
