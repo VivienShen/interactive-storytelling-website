@@ -1,0 +1,171 @@
+body{
+    background-image: url('images/scene1BG.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+    margin: 0;
+}
+
+.envelope{
+    position: relative;
+}
+
+.envelope-closed{
+    width: 30%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 100%;
+    position: relative;
+}
+
+.envelope-open{
+    width: 30%;
+    position: fixed;
+    top: 10%;
+    left: 35%;
+    opacity: 0;
+}
+
+.letter{
+    width: 0%;
+    position: fixed;
+    top: 5%;
+    left: 26%;
+}
+
+.main-page{
+    position: relative;  
+}
+
+.telescope{
+    width:100%;
+    object-fit:cover;
+    position: relative;
+
+}
+
+.zoomBtn{
+    position: absolute;
+    top: 83%;
+    left: 2px;
+    width: 10%;
+    height: 17%;
+    padding: 0;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    cursor: pointer;
+}
+
+.zoomBtn-img{
+    width: 80%;
+}
+
+
+#target1 {
+    object-fit: cover;
+    position: absolute;
+    
+}
+
+#target2, #target3{
+    position: absolute;
+    object-fit: cover;
+    opacity: 0;
+
+}
+
+input{
+    top: 100px;
+    position: relative;
+}
+
+
+.classname{
+    animation-fill-mode: forwards;
+    animation: animationZoom 1.5s;
+}
+
+.classname2{
+    animation-fill-mode: forwards;
+    animation: animationFade 1.5s;
+}
+
+@keyframes animationZoom {
+    0%{
+        transform: scale(0.50);
+        opacity: 0;
+    }
+
+
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes animationFade {
+    0%{
+        opacity: 1;
+        transform: scale(1);
+    }
+
+
+    100%{
+        opacity: 0;
+        transform: scale(2);
+    }
+}
+
+/* button 2 */
+.btn2 {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: #074928;
+    outline-color: #18aa7e;
+    position: fixed;
+    top: 360px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    display: none;
+  }
+
+
+.btn2:before,
+.btn2:after {
+    content: ''; 
+    position: absolute;
+    top: 0; 
+    right: 0; 
+    bottom: 0; 
+    left: 0;
+    border: 0.5px solid #13775e;
+    border-radius: 50%;
+}
+
+.btn2:before {
+    animation: ripple2 3s linear infinite;
+}
+
+.btn2:after {
+    animation: ripple2 3s linear 1s infinite;
+}
+  
+@keyframes ripple2{
+    0% { transform: scale(1); }
+    50% { transform: scale(4); opacity:1; }
+    100% { transform: scale(8); opacity:0; }
+}
+
+.title{
+    color: azure;
+    text-align: center;
+    font-style: normal;
+    font-family: fantasy;
+    font-weight:100;
+    margin-top: 350px;
+    font-size: 50px;
+}
+

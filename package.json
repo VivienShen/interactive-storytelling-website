@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/VivienShen/interactive-storytelling-website#readme",
   "dependencies": {
+    "gsap": "^3.9.1",
     "swup": "^2.0.14",
     "three": "^0.134.0"
   }

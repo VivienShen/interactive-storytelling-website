@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scene 1</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main-page">
+
+        <img id="target1" src="images/earth.png" width="100%" scale="1.05" >
+        <img id="target2" src="images/zoom1.png" width="100%" scale="1.05" >
+        <img id="target3" src="images/zoom2.png" width="100%" scale="1.05" >
+        
+        <img class="telescope" src="images/telescope.png">
+    
+        <button class="zoomBtn" onclick="zoomIn()">
+            <img class="zoomBtn-img" src="images/zoomBtn.png">
+        </button>
+
+        
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+
+    <script>
+        var pic1 = document.getElementById("target1");
+        var pic2 = document.getElementById("target2");
+        var pic3 = document.getElementById("target3");
+
+        var counter = 0;
+        console.log(counter);
+    
+        function zoomIn() {
+            counter += 1;
+
+            console.log(counter);
+
+            if(counter > 2){
+                counter = 0;
+            }
+
+            if(counter == 0){
+                pic1.style.opacity = 1;
+                pic2.style.opacity = 0;
+                pic3.style.opacity = 0;
+
+                document.getElementById('target1').className = 'classname';
+                document.getElementById('target3').className = 'classname2';
+            }
+
+            else if(counter == 1){
+                pic1.style.opacity = 0;
+                pic2.style.opacity = 1;
+                pic3.style.opacity = 0;
+
+                document.getElementById('target2').className = 'classname';
+                document.getElementById('target1').className = 'classname2';
+            }
+
+            else if(counter == 2) {
+                pic1.style.opacity = 0;
+                pic2.style.opacity = 0;
+                pic3.style.opacity = 1;
+
+                document.getElementById('target3').className = 'classname';
+                document.getElementById('target2').className = 'classname2';
+            }
+        }
+
+    </script>
+</body>
+</html>

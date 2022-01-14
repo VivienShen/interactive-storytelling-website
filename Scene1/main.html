@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scene 1</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2 class="title" >Scroll Down</h2>
+    <div class="envelope">
+        <img class="envelope-closed" src="images/envelopeClosedStart.png">
+        <img class="envelope-open" src="images/envelopeStart.png">
+        <img class="letter" src="images/letterStart.png">
+    </div>
+
+    <div class="btn2" onclick="window.location.href='main2.html'"></div> 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+
+    <script>
+
+        const tl = gsap.timeline({
+            scrollTrigger:{
+                trigger: '.envelope-closed',
+                start: "top 120%", //starts when element reaches center of scroll bar
+                end: "top -50%",
+               // pin: true,        // pins/fixes element on screen for given amount fo time (start to end) 
+                scrub: 1.5,
+                //markers: true,
+            }
+        });
+
+
+        tl.to(".envelope-closed", {y: -200, duration: 800})
+        .to(".envelope-closed", {opacity: 0, duration: 5})
+        .to(".envelope-open", {opacity: 1, duration: 8})
+        .to(".letter", {width: "50%", duration: 5})
+        .to(".btn2", {display: "block", delay: 10})
+
+    </script>
+</body>
+</html>
