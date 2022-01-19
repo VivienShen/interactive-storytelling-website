@@ -55,24 +55,58 @@ body{
     background-color: rgba(255, 255, 255, 0);
     border: none;
     cursor: pointer;
+    
 }
 
 .zoomBtn-img{
     width: 80%;
+    border-radius: 50%;
+    color: #ffa502;
+    box-shadow: 0 0 30px #f5d311;
+
+}
+
+/* .zoomBtn-img:before {
+    background: #d35400;
+    transition: .5s;
+    transform: scale(.9);
+    z-index: -1;
+}
+
+.zoomBtn-img:hover:before {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px #d35400;
+    filter: blur(3px);
+} */
+
+.zoomBtn-img:hover {
+    color: #ffa60200;
+    box-shadow: 0 0 30px #d3540000;
+    
 }
 
 
 #target1 {
     object-fit: cover;
     position: absolute;
-    
+    width: 100%;
 }
 
 #target2, #target3{
     position: absolute;
     object-fit: cover;
     opacity: 0;
+    width: 100%;
 
+}
+
+#bg-cover{
+    width: 95%;
+    height: 113.5vh;
+    border-radius: 5vw;
+    background: rgb(7, 7, 7);
+    position: absolute;
+    opacity: 0%;
 }
 
 input{
@@ -82,21 +116,19 @@ input{
 
 
 .classname{
-    animation-fill-mode: forwards;
-    animation: animationZoom 1.5s;
+    animation: animationZoom 1.2s;
 }
 
 .classname2{
     animation-fill-mode: forwards;
-    animation: animationFade 1.5s;
+    animation: animationFade 1.2s;
 }
 
 @keyframes animationZoom {
     0%{
-        transform: scale(0.50);
+        transform: scale(0.85);
         opacity: 0;
     }
-
 
     100%{
         transform: scale(1);

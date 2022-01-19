@@ -10,9 +10,10 @@
 <body>
     <div class="main-page">
 
-        <img id="target1" src="images/earth.png" width="100%" scale="1.05" >
-        <img id="target2" src="images/zoom1.png" width="100%" scale="1.05" >
-        <img id="target3" src="images/zoom2.png" width="100%" scale="1.05" >
+        <div id="bg-cover"></div>
+        <img id="target1" src="images/earth.png"  scale="1" >
+        <img id="target2" src="images/zoom1.png"  scale="1" >
+        <img id="target3" src="images/zoom2.png"  scale="1" >
         
         <img class="telescope" src="images/telescope.png">
     
@@ -30,6 +31,7 @@
         var pic1 = document.getElementById("target1");
         var pic2 = document.getElementById("target2");
         var pic3 = document.getElementById("target3");
+        var pic4 = document.getElementById("bg-cover");
 
         var counter = 0;
         console.log(counter);
@@ -47,6 +49,7 @@
                 pic1.style.opacity = 1;
                 pic2.style.opacity = 0;
                 pic3.style.opacity = 0;
+                pic4.style.opacity = 0;
 
                 document.getElementById('target1').className = 'classname';
                 document.getElementById('target3').className = 'classname2';
@@ -56,6 +59,7 @@
                 pic1.style.opacity = 0;
                 pic2.style.opacity = 1;
                 pic3.style.opacity = 0;
+                pic4.style.opacity = 1;
 
                 document.getElementById('target2').className = 'classname';
                 document.getElementById('target1').className = 'classname2';
@@ -65,6 +69,7 @@
                 pic1.style.opacity = 0;
                 pic2.style.opacity = 0;
                 pic3.style.opacity = 1;
+                pic4.style.opacity = 1;
 
                 document.getElementById('target3').className = 'classname';
                 document.getElementById('target2').className = 'classname2';
