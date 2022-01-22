@@ -1,3 +1,7 @@
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     background-image: url('images/scene1BG.png');
     background-repeat: no-repeat;
@@ -109,11 +113,111 @@ body{
     opacity: 0%;
 }
 
-input{
-    top: 100px;
-    position: relative;
+#box1, #box2, #box3, #box4, #box5 {
+    color: black;
+    background-color: white;
+    border: 2px solid black;
 }
 
+.textbox {
+    
+    font-size: 1.1rem;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    border-radius: 5px;
+    padding: 0 15px 15px 15px;
+    width: 320px;
+    height: 40px;
+    display: block; 
+    /* position: fixed; */
+    left: 50%;
+    bottom: 20px;
+    transform: translate(-200%, -1200%);
+    margin: 0 auto;
+    position: absolute;
+    animation: fadeIn linear 2s;
+}
+
+.textbox2 {
+    font-size: 1.1rem;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    border-radius: 5px;
+    padding: 0 15px 15px 15px;
+    width: 320px;
+    height: 100px;
+    display: block; 
+    /* position: fixed; */
+    left: 50%;
+    bottom: 20px;
+    transform: translate(-200%, -600%);
+    margin: 0 auto;
+    position: absolute;
+    opacity: 0;
+}
+
+.textbox2-animated {
+    font-size: 1.1rem;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    border-radius: 5px;
+    padding: 0 15px 15px 15px;
+    width: 320px;
+    height: 100px;
+    display: block; 
+    /* position: fixed; */
+    left: 50%;
+    bottom: 20px;
+    transform: translate(-200%, -600%);
+    margin: 0 auto;
+    position: absolute;
+    animation: fadeIn linear 3s;
+    opacity: 1;
+}
+
+.textbox3 {
+    font-size: 1.1rem;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    border-radius: 5px;
+    padding: 0 15px 15px 15px;
+    width: 320px;
+    height: 100px;
+    display: block; 
+    /* position: fixed; */
+    left: 50%;
+    bottom: 20px;
+    transform: translate(80%, -200%);
+    margin: 0 auto;
+    position: absolute;
+    opacity: 0;
+}
+
+.textbox3-animated {
+    font-size: 1.1rem;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    border-radius: 5px;
+    padding: 0 15px 15px 15px;
+    width: 320px;
+    height: 100px;
+    display: block; 
+    /* position: fixed; */
+    left: 50%;
+    bottom: 20px;
+    transform: translate(80%, -200%);
+    margin: 0 auto;
+    position: absolute;
+    animation: fadeIn linear 3s;
+    opacity: 1;
+}
+
+
+
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+.text {
+    height: 100%;
+    width: 100%;
+}
 
 .classname{
     animation: animationZoom 1.2s;
@@ -193,12 +297,13 @@ input{
 
 
 .logo{
-    width: 28%;
+    width: 30%;
     margin-top: 100px;
     position: relative;
     display: block;
     margin-left: auto;
     margin-right: auto;
+    left: -15px;
 
 }
 
@@ -298,6 +403,89 @@ input{
 
     0%   { opacity: 0; }
     50%  { opacity: .5; }
-  100% { opacity: 1; }
+    100% { opacity: 1; }
+}
+
+.start-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn {
+    min-width: 160px;
+    min-height: 50px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    font-weight: 700;
+    color: #313133;
+    background: #ffffff;
+    border: none;
+    border-radius: 1000px;
+    box-shadow: 12px 12px 24px rgba(211, 211, 211, 0.64);
+    transition: all 0.3s ease-in-out 0s;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    padding: 10px;
+    margin-top: 50px;
+    z-index: 1;
+}
+
+.btn::before {
+    content: '';
+    border-radius: 100px;
+    min-width: calc(160px + 12px);
+    min-height: calc(50px + 12px);
+    border: 4px solid #ffffff;
+    box-shadow: 0 0 60px rgba(192, 192, 192, 0.64);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all .3s ease-in-out 0s;
+}
+
+.btn:hover, .btn:focus {
+    color: #313133;
+    transform: translateY(-6px);
+}
+
+.btn:hover::before, .btn:focus::before {
+    opacity: 1;
+}
+
+.btn::after {
+    content: '';
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    border: 6px solid #ffffff;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ring 1.5s infinite;
+}
+
+.btn:hover::after, .btn:focus::after {
+    animation: none;
+    display: none;
+}
+
+@keyframes ring {
+    0% {
+        width: 30px;
+        height: 30px;
+        opacity: 1;
+    }
+    100% {
+        width: 150px;
+        height: 150px;
+        opacity: 0;
+    }
 }
 

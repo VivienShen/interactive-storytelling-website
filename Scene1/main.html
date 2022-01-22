@@ -8,10 +8,15 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+
+    <audio autoplay loop id="bg-music">
+        <source src="images/earthAppears.mp3" type="audio/mpeg" />
+    </audio>
+
+
     <img class="logo" src="images/earthLetter.png">
         
-    <div class="mouse_scroll">
+    <!-- <div class="mouse_scroll">
 		<div>
 			<span class="m_scroll_arrows unu"></span>
 			<span class="m_scroll_arrows doi"></span>
@@ -19,18 +24,26 @@
 		</div>
     </div>  
     
-    <h2 class="title" >Scroll to start</h2>
+    <h2 class="title" >Scroll to start</h2> -->
+
+    <div class="start-btn">
+        <button class="btn" onclick="scrollWin(); playAudio()">Click to Start</button>
+    </div>
     
     <div class="envelope">
         <img class="envelope-closed" src="images/envelopeClosedStart.png">
         <img class="envelope-open" src="images/envelopeStart.png">
         <img class="letter" src="images/letterStart.png">
+        <canvas id ="canvas" width="700" height="700"></canvas>
     </div>
 
     <div class="btn2" onclick="window.location.href='main2.html'"></div> 
 
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+
+    <script src="https://unpkg.com/rive-js"></script> 
 
     <script>
 
@@ -51,6 +64,28 @@
         .to(".envelope-open", {opacity: 1, duration: 8})
         .to(".letter", {width: "50%", duration: 5})
         .to(".btn2", {display: "block", delay: 10})
+
+
+        // //rive stuff
+        // new rive.Rive({
+        // src: 'envelope.riv',
+        // canvas: document.getElementById('canvas'),
+        // autoplay: true
+        // });
+        function scrollWin() {
+
+            window.scrollTo(0, 1700);
+
+        } 
+
+        var bgMusic = document.getElementById("bg-music");
+
+        function playAudio() {
+
+            bgMusic.play();
+
+        }
+        
 
     </script>
 </body>

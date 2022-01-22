@@ -16,22 +16,54 @@
         <img id="target3" src="images/zoom2.png"  scale="1" >
         
         <img class="telescope" src="images/telescope.png">
+
+        <div class="text">
+            <div id="box1" class="textbox" >
+                <p>Earth is now a dangerous place to live in</p>
+            </div>
+        </div>
+
+        <div class="text">
+            <div id="box2" class="textbox2" >
+                <p>In 2050 Earth felt the devastating effects of climate change, with natural disasters, famines, and nuclear war fighting for land and resources</p>
+            </div>
+        </div>
+
+        <div class="text">
+            <div id="box3" class="textbox3" >
+                <p>Now, 50 years later the Earth still warms since it has a 40 year delay in temperature increase from carbon released years ago</p>
+            </div>
+        </div> 
+
+        <div class="text">
+            <div id="box4" class="textbox2" >
+                <p>In 2050 some selected members of society like scientists and their families were selected to travel to space to look for a way back to fix the issue</p>
+            </div>
+        </div>
+
+        <div class="text">
+            <div id="box5" class="textbox3" >
+                <p>Although the people who were left on earth had a population decrease from Earth being difficult in many places to live in</p>
+            </div>
+        </div> 
+
     
         <button class="zoomBtn" onclick="zoomIn()">
             <img class="zoomBtn-img" src="images/zoomBtn.png">
         </button>
 
-        
     </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
 
     <script>
         var pic1 = document.getElementById("target1");
         var pic2 = document.getElementById("target2");
         var pic3 = document.getElementById("target3");
         var pic4 = document.getElementById("bg-cover");
+        var tb1 = document.getElementById("box1");
+        var tb2 = document.getElementById("box2");
+        var tb3 = document.getElementById("box3");
+        var tb4 = document.getElementById("box4");
+        var tb5 = document.getElementById("box5");
 
         var counter = 0;
         console.log(counter);
@@ -50,9 +82,20 @@
                 pic2.style.opacity = 0;
                 pic3.style.opacity = 0;
                 pic4.style.opacity = 0;
+                tb1.style.opacity = 1;
+                tb2.style.opacity = 0;
+                tb3.style.opacity = 0;
+                tb4.style.opacity = 0;
+                tb5.style.opacity = 0;
 
                 document.getElementById('target1').className = 'classname';
                 document.getElementById('target3').className = 'classname2';
+                document.getElementById('box1').className = 'textbox';
+                document.getElementById('box2').className = "textbox2";
+                document.getElementById('box3').className = "textbox3";
+                document.getElementById('box4').className = "textbox2";
+                document.getElementById('box5').className = "textbox3";
+                
             }
 
             else if(counter == 1){
@@ -60,9 +103,20 @@
                 pic2.style.opacity = 1;
                 pic3.style.opacity = 0;
                 pic4.style.opacity = 1;
+                tb1.style.opacity = 0;
+                tb2.style.opacity = 1;
+                tb3.style.opacity = 1;
+                tb4.style.opacity = 0;
+                tb5.style.opacity = 0;
 
                 document.getElementById('target2').className = 'classname';
                 document.getElementById('target1').className = 'classname2';
+                document.getElementById('box1').className = 'textbox';
+                document.getElementById('box2').className = "textbox2-animated";
+                document.getElementById('box3').className = "textbox3-animated";
+                document.getElementById('box4').className = "textbox2";
+                document.getElementById('box5').className = "textbox3";
+                
             }
 
             else if(counter == 2) {
@@ -70,9 +124,20 @@
                 pic2.style.opacity = 0;
                 pic3.style.opacity = 1;
                 pic4.style.opacity = 1;
+                tb1.style.opacity = 0;
+                tb2.style.opacity = 0;
+                tb3.style.opacity = 0;
+                tb4.style.opacity = 1;
+                tb5.style.opacity = 1;
 
                 document.getElementById('target3').className = 'classname';
                 document.getElementById('target2').className = 'classname2';
+                document.getElementById('box1').className = 'textbox';
+                document.getElementById('box2').className = "textbox2";
+                document.getElementById('box3').className = "textbox3";
+                document.getElementById('box4').className = "textbox2-animated";
+                document.getElementById('box5').className = "textbox3-animated";
+                
             }
         }
 
