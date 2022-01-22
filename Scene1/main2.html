@@ -47,7 +47,11 @@
             </div>
         </div> 
 
-    
+        
+        <div class="btn2" id="nextBtn" onclick=""></div> 
+
+        <div class="btn2" id="nextBtn2" onclick=""></div> 
+
         <button class="zoomBtn" onclick="zoomIn()">
             <img class="zoomBtn-img" src="images/zoomBtn.png">
         </button>
@@ -64,6 +68,8 @@
         var tb3 = document.getElementById("box3");
         var tb4 = document.getElementById("box4");
         var tb5 = document.getElementById("box5");
+        var btn1 = document.getElementById("nextBtn");
+        var btn2 = document.getElementById("nextBtn2");
 
         var counter = 0;
         console.log(counter);
@@ -87,6 +93,8 @@
                 tb3.style.opacity = 0;
                 tb4.style.opacity = 0;
                 tb5.style.opacity = 0;
+                btn1.style.opacity = 0;
+                btn2.style.opacity = 0;
 
                 document.getElementById('target1').className = 'classname';
                 document.getElementById('target3').className = 'classname2';
@@ -95,7 +103,19 @@
                 document.getElementById('box3').className = "textbox3";
                 document.getElementById('box4').className = "textbox2";
                 document.getElementById('box5').className = "textbox3";
-                
+
+                btn1.style.animation = "";
+                btn1.style.animationDelay = "";
+                btn1.style.cursor = "auto";
+
+                document.getElementById("nextBtn").setAttribute( "onClick", "" );
+                document.getElementById("nextBtn2").setAttribute( "onClick", "" );
+
+                btn2.style.animation = "";
+                btn2.style.animationDelay = "";
+                btn2.style.cursor = "auto";
+
+
             }
 
             else if(counter == 1){
@@ -105,17 +125,34 @@
                 pic4.style.opacity = 1;
                 tb1.style.opacity = 0;
                 tb2.style.opacity = 1;
-                tb3.style.opacity = 1;
                 tb4.style.opacity = 0;
                 tb5.style.opacity = 0;
+                btn1.style.opacity = 0;
+                btn2.style.opacity = 0;
 
                 document.getElementById('target2').className = 'classname';
                 document.getElementById('target1').className = 'classname2';
                 document.getElementById('box1').className = 'textbox';
                 document.getElementById('box2').className = "textbox2-animated";
-                document.getElementById('box3').className = "textbox3-animated";
                 document.getElementById('box4').className = "textbox2";
                 document.getElementById('box5').className = "textbox3";
+                
+                waitForBtn(btn1);
+
+                btn1.style.animation =  "fadeIn linear 2s";
+                btn1.style.animationDelay = "4s";
+                btn1.style.cursor = "pointer";
+
+                document.getElementById("nextBtn").setAttribute( "onClick", "switchTb();" );
+                document.getElementById("nextBtn2").setAttribute( "onClick", "" );
+
+                btn2.style.animation = "";
+                btn2.style.animationDelay = "";
+                btn2.style.cursor = "auto";
+
+                btn1.style.zIndex = 1;
+                btn2.style.zIndex = 0;
+
                 
             }
 
@@ -128,7 +165,8 @@
                 tb2.style.opacity = 0;
                 tb3.style.opacity = 0;
                 tb4.style.opacity = 1;
-                tb5.style.opacity = 1;
+                btn1.style.opacity = 0;
+                btn2.style.opacity = 0;
 
                 document.getElementById('target3').className = 'classname';
                 document.getElementById('target2').className = 'classname2';
@@ -136,9 +174,50 @@
                 document.getElementById('box2').className = "textbox2";
                 document.getElementById('box3').className = "textbox3";
                 document.getElementById('box4').className = "textbox2-animated";
-                document.getElementById('box5').className = "textbox3-animated";
+
+                btn1.style.animation = "";
+                btn1.style.animationDelay = "";
+                btn1.style.cursor = "auto";
+
+                document.getElementById("nextBtn").setAttribute( "onClick", "" );
+                document.getElementById("nextBtn2").setAttribute( "onClick", "switchTb2();" );
+
+                waitForBtn(btn2);
+
+                btn2.style.animation =  "fadeIn linear 2s";
+                btn2.style.animationDelay = "4s";
+                btn2.style.cursor = "pointer";
+
+                btn1.style.zIndex = 0;
+                btn2.style.zIndex = 1;
+
                 
             }
+
+        }
+
+        function waitForBtn(btn) {
+            setTimeout (function () {
+                btn.style.opacity = 1;
+            }, 5000);
+        }
+
+        function switchTb() {
+            tb2.style.opacity = 0;
+            tb3.style.opacity = 1;
+            btn1.style.opacity = 0;
+            
+            document.getElementById('box2').className = "textbox2";
+            document.getElementById('box3').className = "textbox3-animated";
+        }
+
+        function switchTb2() {
+            tb4.style.opacity = 0;
+            tb5.style.opacity = 1;
+            btn2.style.opacity = 0;
+            
+            document.getElementById('box4').className = "textbox2";
+            document.getElementById('box5').className = "textbox3-animated";
         }
 
     </script>

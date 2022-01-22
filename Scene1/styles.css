@@ -125,16 +125,17 @@ body{
     font-family:Georgia, 'Times New Roman', Times, serif;
     border-radius: 5px;
     padding: 0 15px 15px 15px;
-    width: 320px;
-    height: 40px;
+    width: 400px;
+    height: 50px;
     display: block; 
     /* position: fixed; */
     left: 50%;
     bottom: 20px;
-    transform: translate(-200%, -1200%);
+    transform: translate(-50%, -20%);
     margin: 0 auto;
     position: absolute;
     animation: fadeIn linear 2s;
+    text-align: center;
 }
 
 .textbox2 {
@@ -148,10 +149,11 @@ body{
     /* position: fixed; */
     left: 50%;
     bottom: 20px;
-    transform: translate(-200%, -600%);
+    transform: translate(-50%, -20%);
     margin: 0 auto;
     position: absolute;
     opacity: 0;
+    text-align: center;
 }
 
 .textbox2-animated {
@@ -159,17 +161,18 @@ body{
     font-family:Georgia, 'Times New Roman', Times, serif;
     border-radius: 5px;
     padding: 0 15px 15px 15px;
-    width: 320px;
-    height: 100px;
+    width: 600px;
+    height: 60px;
     display: block; 
     /* position: fixed; */
     left: 50%;
     bottom: 20px;
-    transform: translate(-200%, -600%);
+    transform: translate(-50%, -20%);
     margin: 0 auto;
     position: absolute;
     animation: fadeIn linear 3s;
     opacity: 1;
+    text-align: center;
 }
 
 .textbox3 {
@@ -183,7 +186,7 @@ body{
     /* position: fixed; */
     left: 50%;
     bottom: 20px;
-    transform: translate(80%, -200%);
+    transform: translate(-50%, 20%);
     margin: 0 auto;
     position: absolute;
     opacity: 0;
@@ -194,17 +197,18 @@ body{
     font-family:Georgia, 'Times New Roman', Times, serif;
     border-radius: 5px;
     padding: 0 15px 15px 15px;
-    width: 320px;
-    height: 100px;
+    width: 600px;
+    height: 60px;
     display: block; 
     /* position: fixed; */
     left: 50%;
     bottom: 20px;
-    transform: translate(80%, -200%);
+    transform: translate(-50%, -20%);
     margin: 0 auto;
     position: absolute;
     animation: fadeIn linear 3s;
     opacity: 1;
+    text-align: center;
 }
 
 
@@ -266,7 +270,7 @@ body{
     transform: translate(-50%, -50%);
     cursor: pointer;
     display: none;
-  }
+}
 
 
 .btn2:before,
@@ -288,7 +292,7 @@ body{
 .btn2:after {
     animation: ripple2 3s linear 1s infinite;
 }
-  
+
 @keyframes ripple2{
     0% { transform: scale(1); }
     50% { transform: scale(4); opacity:1; }
@@ -488,4 +492,27 @@ body{
         opacity: 0;
     }
 }
+
+#nextBtn{
+    top: 85%;
+    position: absolute;
+    left: 70%;
+    display: block;
+    z-index: 1;
+    opacity: 0;
+    
+}
+
+#nextBtn2{
+    top: 85%;
+    position: absolute;
+    left: 70%;
+    display: block;
+    z-index: 0;
+    opacity: 0;
+
+}
+
+
+
 
