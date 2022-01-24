@@ -40,28 +40,26 @@ img {
   position: absolute;
   width: 12%;
   height: 8%;
-  left: 1100px;
-  top: 850px;
+  transform: translate(455%, 1120%);
+  color: #ffa502;
+  filter: drop-shadow(0 0 30px #f5d311);
+  cursor: pointer;
 }
 
 .flyer2 {
   position: absolute;
   width: 12%;
   height: 9%;
-  left: 1300px;
-  top: 850px;
+  transform: translate(570%, 980%);
+  color: #ffa502;
+  filter: drop-shadow(0 0 20px #f5d311);
+  cursor: pointer;
 }
 
 .flyer2:hover,
 .flyer1:hover {
   color: #ffa502;
-  filter: drop-shadow(0 0 30px #f5d311);
-  cursor: pointer;
-}
-
-.tv:hover {
-  color: #ffa502;
-  box-shadow: 0 0 30px #f5d311;
+  filter: drop-shadow(0 0 30px #f5d31100);
   cursor: pointer;
 }
 
@@ -71,14 +69,24 @@ img {
   height: 25%;
   left: 1100px;
   top: 50px;
+  color: #ffa502;
+  box-shadow: 0 0 30px #f5d311;
+  cursor: pointer;
 }
+
+.tv:hover {
+  color: #ffa502;
+  box-shadow: 0 0 30px #f5d31100;
+  cursor: pointer;
+}
+
 
 .popup-travel {
   visibility: hidden;
   position: absolute;
   width: 50%;
   height: 50%;
-  left: 40%;
+  left: 25%;
   top: 20%;
 }
 
@@ -87,7 +95,7 @@ img {
   position: absolute;
   width: 20%;
   height: 12%;
-  left: 55%;
+  left: 40%;
   top: 51%;
 }
 
@@ -99,11 +107,12 @@ img {
   position: absolute;
   width: 100px;
   height: 100px;
-  left: 1700px;
+  left: 1500px;
   top: 60px;
   filter: invert(27%) sepia(91%) saturate(7460%) hue-rotate(357deg)
     brightness(95%) contrast(120%);
 }
+
 .back-button:hover {
   color: #ffa502;
   filter: drop-shadow(0 0 30px #f5d311);
@@ -114,8 +123,8 @@ img {
   position: absolute;
   width: 100px;
   height: 100px;
-  left: 1600px;
-  top: 760px;
+  left: 1550px;
+  top: 700px;
   filter: drop-shadow(0 0 30px #f5d311);
 }
 .teleport-button:hover {
