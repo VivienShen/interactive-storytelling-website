@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="uft-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Scene3-2</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <script src="js/script.js"></script>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="js/creativa-popup.js" type="text/javascript"></script>
+    </head>
+
+    <body>
+        <div class="sceneNav">
+            <input id="prev" type='button' value='&lt;' />
+            <input id="next" type='button' value='&gt;' />
+        </div>
+
+        <div id="s2-1" class="scene" >
+            <div id="bg1" class="image">
+                <img src="img/scene3-3.png" alt="Prime Minister Henry">
+            </div>
+            <div class="text">
+                <div id="box2" class="speechbox-henry" >
+                    <p><b>Henry:</b> It’s an obvious choice to vote for me, the people are very happy, I have created more jobs in the oil, gas and coal industry and I have ties with those industries to create even more.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="s2-2" class="scene" style="display: none;">
+            <div id="bg1" class="image">
+                <img src="img/scene3-3.png" alt="Prime Minister Henry">
+            </div>
+            <div class="text">
+                <div id="box1" class="textbox-reporter" >
+                    <p><b>Reporter:</b> Mr. Prime minister, what about scientist Robin? Is she in prison? Are you scared of her?
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="s2-3" class="scene" style="display: none;">
+            <div id="bg1" class="image">
+                <img src="img/scene3-3.png" alt="Prime Minister Henry">
+            </div>
+            <div class="text">
+                <div id="box2" class="speechbox-henry2" >
+                    <p><b>Henry:</b> As you know, Robin has been spewing misinformation about the earth warming, and global warming bla bla bla, when we know the earth has always been warming it’s not an actual problem.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="s2-4" class="scene" style="display: none;">
+            <div id="bg1" class="image">
+                <img src="img/scene3-3.png" alt="Prime Minister Henry">
+            </div>
+            <div class="text">
+                <div id="box2" class="speechbox-henry2" >
+                    <p><b>Henry:</b> Her misinformation is misleading to the public which is why she was placed in jail for a while, but she is out now and I am not afraid of her.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="s2-5" class="scene" style="display: none;">
+            <div id="bg1" class="image">
+                <img src="img/scene3-3.png" alt="Prime Minister Henry">
+            </div>
+            <div class="text">
+                <div id="box1" class="textbox-reporter" >
+                    <p><b>Reporter:</b> Mr.Prime minster, do you think you will be elected for a second term in the next election coming up in a few weeks?
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="s2-6" class="scene" style="display: none;">
+            <div id="bg1" class="image">
+                <img src="img/scene3-3.png" alt="Prime Minister Henry">
+                <img class="back-button" src="img/back.png" onclick="window.location.href='s3-3.html'" alt="back-button">
+            </div>
+            <div class="text">
+                <div id="box2" class="speechbox-henry2" >
+                    <p><b>Henry:</b> I have no doubt about it, the people are with me and it's apparent if you look at the polls and my popularity.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="s2-" class="scene" style="display: none;">
+            <div>
+                <img class="image" src="img/scene3-2.png" alt="Inside a room">
+                <img class="flyer1" onclick="loadHenry()" src="img/flyer 1.png" alt="flyer 1">
+                <img class="flyer2" onclick="loadEvelyn()" src="img/flyer 2.png" alt="flyer 2">
+                <img class="tv" src="img/tv1.png" alt="tv">
+                <img class="poster1" id="Evelyn" onclick="myFunction2()" src="img/poster1.png" alt="poster1">
+                <img class="poster2" id="Henry" onclick="myFunction2()" src="img/poster2.png" alt="poster2">
+            </div>
+            
+            <div class="text" >
+                <div id="box2" class="speechbox1" >
+                    <p><b>Aeryn:</b> I love my new place, I wonder what I could look at that might help me figure out where to start to save Earth.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="s2-4" class="scene" style="display: none;">
+            <div id="bg3" class="image">
+                <img src="img/scene3-4.png" alt="Girl sitting on a sofa">
+            </div>
+            <div class="text" >
+                <div id="box3" class="speechbox" >
+                    <p><b>Aeryn:</b> If this prime minister is so against climate change, then what he considers a threat, which seems to be this scientist, must be someone who can help me. I should give her a visit.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="s2-5" class="scene" style="display: none;">
+            <div id="bg3" class="image">
+                <img src="img/scene3-4.png" alt="Girl holding a monocular while talking with robot">
+            </div>
+            <div class="text" >
+                <div id="box4" class="speechbox" >
+                    <p> <b>Aeryn:</b> If this prime minister is so against climate change, then what he considers a threat, which seems to be this scientist, must be someone who can help me. I should give her a visit.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            /*------Changing div with next and prev button------*/
+
+            //store the divs of the specified className into an array
+            var IdStore = new Array();
+            function storeSceneId(){
+                var className = document.getElementsByClassName('scene');
+                var classNameCount = className.length;
+                
+                for(var j = 0; j < classNameCount; j++){
+                    IdStore.push(className[j].id);
+                }
+                console.log(IdStore);
+            }
+            storeSceneId();
+            
+            //show or hide the div when next button is clicked
+            var currentIndex = -1
+            
+            $( "#next" ).click(function() {
+                console.log('next');                
+
+                if (currentIndex < IdStore.length-1) {
+                    currentIndex += 1;
+                    console.log(currentIndex);
+                    var divId = IdStore[currentIndex];
+                
+                    console.log(divId, currentIndex);
+                    document.getElementById(divId).style.display = "block";
+                    var prevIndex = currentIndex - 1;
+                    console.log(prevIndex);
+                    if (prevIndex >= 0) {
+                        var preId = IdStore[prevIndex];
+                        document.getElementById(preId).style.display = "none";
+                    }
+                }
+            }); 
+
+            //show or hide the div when prev button is clicked
+            $( "#prev" ).click(function() {
+                console.log('prev');
+                
+                if (currentIndex >= 1) {
+                    var divId = IdStore[currentIndex];
+                    console.log(divId, currentIndex);
+                    document.getElementById(divId).style.display = "none";
+                    currentIndex -= 1;
+                    console.log(currentIndex);
+                    var divId2 = IdStore[currentIndex];
+                    document.getElementById(divId2).style.display = "block";
+                }
+                
+            }); 
+        </script>
+    </body>
+</html>
+
+<script>
+
+function loadHenry() {
+    var x = document.getElementById("Henry");
+  if (x.style.visibility === "visible") {
+    x.style.visibility = "hidden";
+  } else {
+    x.style.visibility = "visible";
+  }
+    document.getElementById('Evelyn').style.visibility='hidden';
+}
+
+function loadEvelyn() {
+    var x = document.getElementById("Evelyn");
+    if (x.style.visibility === "visible") {
+    x.style.visibility = "hidden";
+  } else {
+    x.style.visibility = "visible";
+  }
+    document.getElementById('Henry').style.visibility='hidden';
+}
+
+function popup4() {
+        CreativaPopup.create('This is the text of the popup.', 'Title', 'success', { image: 'poster1.jpg'});
+    }
+
+
+</script>
