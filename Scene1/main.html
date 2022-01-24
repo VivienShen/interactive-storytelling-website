@@ -31,9 +31,11 @@
     </div>
     
     <div class="envelope">
-        <img class="envelope-closed" src="images/envelopeClosedStart.png">
-        <img class="envelope-open" src="images/envelopeStart.png">
-        <img class="letter" src="images/letterStart.png">
+        <img class="envelope-closed" src="images/envelopeClosedStart-04.png">
+        <img class="envelope-open" src="images/envelope_front2-03-03.png">
+        <img class="envelope-plants" src="images/plantsLetter-03.png">
+        <img class="letter" src="images/letterStart-03.png">
+        <img class="envelope-open" src="images/envelope_front-03.png">
         <canvas id ="canvas" width="700" height="700"></canvas>
     </div>
 
@@ -59,19 +61,19 @@
         });
 
 
-        tl.to(".envelope-closed", {y: -200, duration: 800})
+        tl.to(".envelope-closed", {y: -620, duration: 800})
         .to(".envelope-closed", {opacity: 0, duration: 5})
         .to(".envelope-open", {opacity: 1, duration: 8})
-        .to(".letter", {width: "50%", duration: 5})
-        .to(".btn2", {display: "block", delay: 10})
+        .to(".letter, .envelope-plants", {transform: "scale(1)", duration: 20})
+        .to(".btn2", {display: "block", delay: 20})
 
-
-        // //rive stuff
+        //rive stuff
         // new rive.Rive({
         // src: 'envelope.riv',
         // canvas: document.getElementById('canvas'),
         // autoplay: true
         // });
+
         function scrollWin() {
 
             window.scrollTo(0, 1700);

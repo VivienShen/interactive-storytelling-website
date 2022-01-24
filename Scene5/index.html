@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scene 5</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class = "map">
+        <img class="map-img" src="images/map.png">
+        <img class="amazon-icon" id="amazon" src="images/amazon_circle.png">
+        <button class="btn" id = "btn1" onclick="scrollWin(); playAudio()">Explore the Amazon</button>
+        
+        <img class="coralReef-icon" id="coral" src="images/coralReef_circle.png">
+        <button class="btn" id = "btn2" onclick="scrollWin(); playAudio()">Explore the Coral Reef</button>
+        
+        <img class="arctic-icon"  id="arctic" src="images/arctic_circle.png">
+        <button class="btn" id = "btn3" onclick="scrollWin(); playAudio()">Explore the Arctic</button>
+        
+        <div class="blinker" id="blink1"></div>
+        <img class="map-pin" id="pin1" src="images/pin.png" onclick="toggleMapElements('arctic', 'btn3')">
+        
+        <div class="blinker" id="blink2"></div> 
+        <img class="map-pin" id="pin2" src="images/pin.png" onclick="toggleMapElements('amazon', 'btn1')">
+        
+        <div class="blinker" id="blink3"></div>
+        <img class="map-pin" id="pin3" src="images/pin.png" onclick="toggleMapElements('coral', 'btn2')">
+
+    </div>
+
+    <script>
+        function toggleMapElements(icon, btn) {
+            let txt = icon;
+            let txt2 = btn;
+            //console.log(txt);
+            var x = document.getElementById(txt);
+            var y = document.getElementById(txt2);
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+            if (y.style.display === "none") {
+                y.style.display = "block";
+            } else {
+                y.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
