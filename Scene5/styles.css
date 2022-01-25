@@ -12,7 +12,7 @@ body{
 }
 
 .amazon-icon{
-    position: absolute;
+    position: relative;
     transform: translate(160%, -260%);
     width: 10%;
     cursor: pointer;
@@ -20,7 +20,7 @@ body{
 }
 
 .coralReef-icon{
-    position: absolute;
+    position: relative;
     transform: translate(730%, -250%);
     width: 11%;
     cursor: pointer;
@@ -28,7 +28,7 @@ body{
 }
 
 .arctic-icon{
-    position: absolute;
+    position: relative;
     transform: translate(220%, -400%);
     width: 14%;
     display: none;
@@ -40,55 +40,59 @@ body{
     /* transform: scale(1.5); */
 }
 
-.map-pin{
+.pin{
     width: 3%;
     position: absolute;
     cursor: pointer;
+    display: block;
 }
 
-.map-pin:hover{
-    top: -10px;
+.map-pin1{ 
+    transform: translate(1520%, -1460%);
+
 }
 
-.map-pin:active {
-    transform: scale(0.50);
-    transform: translateY(4px);
+.map-pin2{
+    transform: translate(1000%, -930%);
 }
 
-#pin1{
-    transform: translate(-920px, 60px);
+.map-pin3{
+    transform: translate(2500%, -800%);
 }
 
-#pin2{
-    transform: translate(-1200px, 400px);
+.pin:hover{
+    margin-top: -10px;
 }
 
-#pin3{
-    transform: translate(-400px, 500px);
+.pin:active {
+    /* transform: scale(0.50);
+    transform: translateY(4px); */
 }
+
 
 .blinker{
     margin:100px;
-    display: block;
-    width: 20px;
-    height: 20px;
+    width: 2%;
+    height: 2.7%;
     border-radius: 50%;
     background: #db130cbd;
     box-shadow: 0 0 0 rgba(204, 121, 44, 0.4);
     animation: pulse 2s infinite;
     position: absolute; 
+    display: block;
+    margin: 0;
 }
 
-#blink1{
-    transform: translate(3425%, -4045%);
+.blink1{
+    transform: translate(2300%, -3420%);
 }
 
-#blink2{
-    transform: translate(2030%, -2345%);
+.blink2{
+    transform: translate(700%, -2300%);
 }
 
-#blink3{
-    transform: translate(6030%, -1840%);
+.blink3{
+    transform: translate(3850%, -2100%);
 }
 
 .blinker:hover {
@@ -111,10 +115,10 @@ body{
 }
 
 .btn {
-    min-width: 200px;
-    min-height: 50px;
+    min-width: 12%;
+    min-height: 4%;
     font-family: 'Nunito', sans-serif;
-    font-size: 14px;
+    font-size: 80%;
     text-transform: uppercase;
     letter-spacing: 1.3px;
     font-weight: 700;
@@ -127,29 +131,30 @@ body{
     cursor: pointer;
     outline: none;
     position: absolute;
-    padding: 10px;
-    margin-top: 50px;
+    display: block;
+    padding: 0;
+    margin: 0;
     z-index: 1;
 }
 
-#btn1{
-    transform: translate(112%, -630%);
+.btn1{
+    transform: translate(118%, -880%);
 }
 
-#btn2{
-    transform: translate(730%, -250%);
+.btn2{
+    transform: translate(650%, -800%);
 }
 
-#btn3{
-    transform: translate(220%, -400%);
+.btn3{
+    transform: translate(280%, -2100%);
 }
 
 .btn::before {
     content: '';
     border-radius: 50px;
-    min-width: calc(100px + 12px);
-    min-height: calc(50px + 12px);
-    border: 4px solid #ffffff;
+    min-width: calc(100% + 12px);
+    min-height: calc(100% + 12px);
+    border: 2.5px solid #ffffff;
     box-shadow: 0 0 60px rgba(192, 192, 192, 0.64);
     position: absolute;
     top: 50%;
@@ -161,7 +166,7 @@ body{
 
 .btn:hover, .btn:focus {
     color: #313133;
-    transform: translateY(-6px);
+    margin-top: -2px;
 }
 
 .btn:hover::before, .btn:focus::before {
