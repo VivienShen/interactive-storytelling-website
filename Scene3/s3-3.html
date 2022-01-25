@@ -35,7 +35,7 @@
             </div>
         </div>
 
-        <div id="s2-2" class="scene" style="display: none;">
+        <div id="s2-2" class="scene" style="display: block;">
             <div id="bg3" class="image">
                 <img src="img/scene3-4.png" alt="Girl sitting on a sofa">
                 <img class="teleport-button" onclick="loadPopup()" src="img/teleport.svg" alt="teleport-button">
@@ -66,7 +66,7 @@
             storeSceneId();
             
             //show or hide the div when next button is clicked
-            var currentIndex = -1
+            var currentIndex = 0;
             
             $( "#next" ).click(function() {
                 console.log('next');                
