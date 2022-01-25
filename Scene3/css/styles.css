@@ -1,6 +1,7 @@
 body {
   margin: 0;
 }
+
 img {
   width: 100%;
   height: 100%;
@@ -172,9 +173,7 @@ img {
 }
 
 #box1 {
-  color: black;
-  background-color: white;
-  border: 2px solid black;
+
 }
 
 #box2,
@@ -189,99 +188,131 @@ img {
   background-color: black;
   border: 2px solid white;
 }
+
 .textbox {
-  font-size: 1.1rem;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1.3rem;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
   border-radius: 5px;
-  padding: 0 15px 15px 15px;
+  padding: 0 15px 0 15px;
   width: fit-content;
-  height: 40px;
   display: block;
-  position: fixed;
+  position: absolute;
   left: 50%;
   bottom: 20px;
   transform: translate(-50%, -50%);
   margin: 0 auto;
+  animation: fadeIn linear 1s;
+  color: black;
+  background-color: rgba(133, 172, 204, 0.9);
+  border: 2px solid black;
 }
 
 .textbox-reporter {
-  font-size: 1.1rem;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1.3rem;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
   border-radius: 5px;
-  padding: 0 15px 15px 15px;
+  padding: 0 15px 0 15px;
   width: fit-content;
-  height: 40px;
   display: block;
-  position: fixed;
+  position: absolute;
   left: 50%;
   bottom: 9px;
   transform: translate(-50%, -50%);
   margin: 0 auto;
+  animation: fadeIn linear 1s;
+  color: black;
+  background-color: rgba(133, 172, 204, 0.9);
+  border: 2px solid black;
 }
 
 .speechbox {
-  font-size: 1.1rem;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.3rem;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
   border-radius: 400px;
-  padding: 30px 50px 20px 50px;
-  width: 500px;
-  height: 120px;
+  width:fit-content;
+  max-width: 600px;
+  height:fit-content;
+  padding: 30px 30px 30px 40px; 
   display: block;
   position: absolute;
   margin-left: 15%;
   margin-top: 30%;
+  animation: fadeIn linear 1s;
+  color: black;
+  background-color: rgba(133, 172, 204, 0.9);
+  border: 2px solid black;
 }
 
 .speechbox1 {
-  font-size: 1.1rem;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.3rem;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
   border-radius: 400px;
-  padding: 30px 50px 20px 50px;
-  width: 500px;
-  height: 120px;
+  width:fit-content;
+  max-width: 600px;
+  height:fit-content;
+  padding: 30px 30px 30px 40px; 
   display: block;
   position: absolute;
   margin-left: 15%;
   margin-top: 38%;
+  animation: fadeIn linear 1s;
+  color: black;
+  background-color: rgba(133, 172, 204, 0.9);
+  border: 2px solid black;
 }
 
 .speechbox-henry {
-  font-size: 1.1rem;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.3rem;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
   border-radius: 400px;
-  padding: 30px 50px 20px 50px;
-  width: 500px;
-  height: 120px;
+  width:fit-content;
+  max-width: 600px;
+  height:fit-content;
+  padding: 30px 30px 30px 40px; 
   display: block;
   position: absolute;
   margin-left: 8%;
   margin-top: 10%;
+  animation: fadeIn linear 1s;
+  color: black;
+  background-color: rgba(133, 172, 204, 0.9);
+  border: 2px solid black;
 }
 
 .speechbox-henry2 {
-  font-size: 1.1rem;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.3rem;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
   border-radius: 400px;
-  padding: 30px 50px 20px 50px;
-  width: 500px;
-  height: 120px;
+  width:fit-content;
+  max-width: 600px;
+  height:fit-content;
+  padding: 30px 30px 30px 40px; 
   display: block;
   position: absolute;
   margin-left: 8%;
   margin-top: 10%;
+  animation: fadeIn linear 1s;
+  color: black;
+  background-color: rgba(133, 172, 204, 0.9);
+  border: 2px solid black;
 }
 
 .speechbox-Aeryn {
-  font-size: 1.1rem;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.3rem;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
   border-radius: 400px;
-  padding: 30px 50px 20px 50px;
-  width: 500px;
-  height: 120px;
+  width:fit-content;
+  max-width: 600px;
+  height:fit-content;
+  padding: 30px 30px 30px 40px; 
   display: block;
   position: absolute;
   margin-left: 10%;
   margin-top: 35%;
+  animation: fadeIn linear 1s;
+  color: black;
+  background-color: rgba(133, 172, 204, 0.9);
+  border: 2px solid black;
 }
 
 .text {
@@ -294,4 +325,13 @@ img {
   margin-right: 0;
   margin-bottom: 0;
   position: absolute;
+}
+
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+@keyframes fadeOut {
+  0% {opacity:1;}
+  100% {opacity:0;}
 }
