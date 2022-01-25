@@ -17,7 +17,7 @@
             <input id="next" type='button' value='&gt;' />
         </div>
 
-        <div id="s2-1" class="scene" style="display: none;">
+        <div id="s2-1" class="scene" style="display: block;">
             <div id="bg1" class="image">
                 <img src="img/scene3-1.png" alt="Aeryn standing by the window">
             </div>
@@ -73,7 +73,7 @@
             storeSceneId();
             
             //show or hide the div when next button is clicked
-            var currentIndex = -1
+            var currentIndex = 0;
             
             $( "#next" ).click(function() {
                 console.log('next');                
