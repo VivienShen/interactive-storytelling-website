@@ -194,7 +194,7 @@ img {
   font-family: Georgia, "Times New Roman", Times, serif;
   border-radius: 5px;
   padding: 0 15px 15px 15px;
-  width: 1000px;
+  width: fit-content;
   height: 40px;
   display: block;
   position: fixed;
@@ -209,7 +209,7 @@ img {
   font-family: Georgia, "Times New Roman", Times, serif;
   border-radius: 5px;
   padding: 0 15px 15px 15px;
-  width: 1000px;
+  width: fit-content;
   height: 40px;
   display: block;
   position: fixed;
