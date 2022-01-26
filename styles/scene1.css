@@ -3,7 +3,7 @@ html{
 }
 
 body{
-    background-image: url('images/scene1BG.png');
+    background-image: url('/assets/images/scene1/scene1BG.png');
     background-repeat: no-repeat;
     background-attachment: fixed;  
     background-size: cover;
