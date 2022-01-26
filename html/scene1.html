@@ -13,13 +13,16 @@
     </audio>
     
     <div class="main-page">
+        <div id="bg1" class="image">
+            <img class="img-bg" src="../assets/images/scene1/scene1BG.png" alt="in the laboratory">
+        </div>  
 
-        <div id="bg-cover"></div>
-        <img id="target1" src="../assets/images/scene1/earth.png"  scale="1" >
-        <img id="target2" src="../assets/images/scene1/zoom1.png"  scale="1" >
-        <img id="target3" src="../assets/images/scene1/zoom2.png"  scale="1" >
+        <div class="image" id="bg-cover"></div>
+        <img class="image" id="target1" src="../assets/images/scene1/earth.png"  scale="1" >
+        <img class="image" id="target2" src="../assets/images/scene1/zoom1.png"  scale="1" >
+        <img class="image" id="target3" src="../assets/images/scene1/zoom2.png"  scale="1" >
         
-        <img class="telescope" src="../assets/images/scene1/telescope.png">
+        <img class="image telescope" src="../assets/images/scene1/telescope.png">
 
         <div class="text">
             <div id="box1" class="textbox" >
@@ -161,6 +164,8 @@
                 btn1.style.animationDelay = "4s";
                 btn1.style.cursor = "pointer";
 
+                btn1.style.display = "block";
+
                 document.getElementById("nextBtn").setAttribute( "onClick", "switchTb();" );
                 document.getElementById("nextBtn2").setAttribute( "onClick", "" );
 
@@ -196,6 +201,8 @@
                 btn1.style.animation = "";
                 btn1.style.animationDelay = "";
                 btn1.style.cursor = "auto";
+
+                btn1.style.display = "none";
 
                 document.getElementById("nextBtn").setAttribute( "onClick", "" );
                 document.getElementById("nextBtn2").setAttribute( "onClick", "switchTb2();" );
