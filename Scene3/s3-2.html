@@ -12,10 +12,10 @@
     </head>
 
     <body>
-        <div class="sceneNav">
+        <!-- <div class="sceneNav">
             <input id="prev" type='button' value='&lt;' />
             <input id="next" type='button' value='&gt;' />
-        </div>
+        </div> -->
 
         <div id="s2-1" class="scene" >
             <div id="bg1" class="image">
@@ -33,7 +33,7 @@
                 <img src="img/news.png" alt="Prime Minister Henry">
             </div>
             <div class="text">
-                <div id="box1" class="textbox-reporter" >
+                <div id="box1" class="speechbox-reporter" >
                     <p><b>Reporter:</b> Mr. Prime minister, what about scientist Robin? Is she in prison? Are you scared of her?
                     </p>
                 </div>
@@ -67,7 +67,7 @@
                 <img src="img/news.png" alt="Prime Minister Henry">
             </div>
             <div class="text">
-                <div id="box1" class="textbox-reporter" >
+                <div id="box1" class="speechbox-reporter" >
                     <p><b>Reporter:</b> Mr.Prime minster, do you think you will be elected for a second term in the next election coming up in a few weeks?
                     </p>
                 </div>
@@ -126,6 +126,8 @@
             </div>
         </div>
 
+        <div id="nextBtn" class="btn2" ></div> 
+
         <script>
             /*------Changing div with next and prev button------*/
 
@@ -145,14 +147,15 @@
             //show or hide the div when next button is clicked
             var currentIndex = 0;
             
-            $( "#next" ).click(function() {
-                console.log('next');                
+            var next = document.getElementById("nextBtn");
+            next.addEventListener("click", function(i) {
 
                 if (currentIndex < IdStore.length-1) {
+                    console.log('next'); 
                     currentIndex += 1;
                     console.log(currentIndex);
                     var divId = IdStore[currentIndex];
-                
+
                     console.log(divId, currentIndex);
                     document.getElementById(divId).style.display = "block";
                     var prevIndex = currentIndex - 1;
@@ -161,14 +164,8 @@
                         var preId = IdStore[prevIndex];
                         document.getElementById(preId).style.display = "none";
                     }
-                }
-            }); 
 
-            //show or hide the div when prev button is clicked
-            $( "#prev" ).click(function() {
-                console.log('prev');
-                
-                if (currentIndex >= 1) {
+                } else if ((i.keyCode == 37) && (currentIndex >= 1)) { //show or hide the div when prev button is clicked
                     var divId = IdStore[currentIndex];
                     console.log(divId, currentIndex);
                     document.getElementById(divId).style.display = "none";
@@ -176,9 +173,8 @@
                     console.log(currentIndex);
                     var divId2 = IdStore[currentIndex];
                     document.getElementById(divId2).style.display = "block";
-                }
-                
-            }); 
+                } 
+            });
         </script>
     </body>
 </html>
