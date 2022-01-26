@@ -439,5 +439,97 @@ body{
 
 }
 
+#transition-btn{
+    position: absolute;
+    animation: fadeInAnimation ease 3s;
+    left: 85%;
+    bottom: 600px;
+    display: none;
+}
+
+.slider {
+    border-radius: 5px;
+    background: #ffffff94;
+    background: linear-gradient(left top, #ffffff79, #ffffff79);
+    width: 6px;
+    height: 100px;
+    margin: 0px;
+    position: absolute;
+
+} 
+
+.thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 3px;
+    position: relative;
+    left: -9px;
+    top: 1px;
+    background: rgba(0, 0, 255, 0);
+    cursor: pointer;
+    
+}
+
+.path {
+    border-radius: 5px;
+    background: #e2af22;
+    width: 10px;
+    height: 0px;
+    margin: 25px;
+    right: -26px;
+    margin-top: 0px;
+    position: absolute;
+
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Circle */
+.circle {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    outline-color: #ffffff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.circle:before,
+.circle:after {
+    content: ''; 
+    position: absolute;
+    top: 0; 
+    right: 0; 
+    bottom: 0; 
+    left: 0;
+    border: 1.7px solid #ffffff;
+    border-radius: 50%;
+}
+
+
+.circle:before {
+    animation: ripple 2s linear infinite;
+}
+
+.circle:after {
+    animation: ripple 2s linear 1s infinite;
+}
+
+@keyframes ripple{
+    0% { transform: scale(1); }
+    50% { transform: scale(1.4); opacity:1; }
+    100% { transform: scale(1.8); opacity:0; }
+}
+
 
 

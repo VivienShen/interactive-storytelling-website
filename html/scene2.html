@@ -185,11 +185,11 @@
             <div id="bg4" class="image">
                 <img class="img-bg" src="../assets/images/scene2/go.png" alt="robot presenting a pop-up box with the words: Are you ready to go? And a button yes as a response">
             </div>
+
+            <img src="../assets/images/scene2/modal.png" id = "modal" alt="modal popup">
     
-            <div>
-                <input type="image" src="../assets/images/scene2/yes.png" id="yes_button" alt="yes button" />
-            </div>
-            
+            <img src="../assets/images/scene2/yes.png" id="yes_button" onclick="window.location.href='scene3-1.html'" alt="yes button" />
+    
             <div class="inventory">
                 <img id="inventory-bg" src="../assets/images/scene2/inventory.png" alt="inventory box">
                 <div class="icons">
@@ -256,7 +256,7 @@
                     }
 
                     //next button appearing after 3 second
-                    setTimeout(appeardiv, 3000);
+                    setTimeout(appeardiv, 1000);
                     function appeardiv() {
                         //not appear for the last cut
                         if (currentIndex < IdStore.length-2) {
@@ -286,8 +286,8 @@
             }
 
             function loadPopup() {
-                document.getElementById('yes_button').style.visibility='visible';
-                document.getElementById('popup2').style.visibility='visible';
+                document.getElementById('yes_button').style.display='block';
+                document.getElementById('modal').style.display='block';
             }       
 
         </script>

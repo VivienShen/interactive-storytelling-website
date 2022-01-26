@@ -86,25 +86,25 @@ body {
   
   
   .popup-travel {
-    visibility: hidden;
-    position: absolute;
+    display: none;
+    position: relative;
     width: 50%;
-    height: 50%;
     left: 25%;
-    top: 20%;
+    top: 200px;
   }
   
   .yes-button {
-    visibility: hidden;
-    position: absolute;
+    display:none;
+    position: relative;
     width: 20%;
     height: 12%;
     left: 40%;
-    top: 51%;
+    top: 30px;
+    cursor: pointer;
   }
   
   .yes-button:hover {
-    cursor: pointer;
+    margin-top: 10px;
   }
   
   .back-button {
@@ -384,7 +384,7 @@ body {
     width: 100%;
     height: 100%;
     display: block;
-    position: absolute;
+    position: relative;
     animation: fadeIn linear 1s;
   }
   
