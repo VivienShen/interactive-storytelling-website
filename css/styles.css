@@ -175,14 +175,14 @@ body {
     padding-top: 3%;
 }
 
-#app-icon {
+#teleport-icon {
     max-height: 75%;
     padding-top: 1%;
 }
 
 .lock {
-    max-height: 78%;
-}
+  max-height: 78%;
+}  
 
 h1 {
     color: white;
@@ -218,7 +218,7 @@ h1 {
     background-color: #000000;
     outline-color: #ffffff;
     position: fixed;
-    top: 560px;
+    top: 500px;
     left: 51%;
     transform: translate(-50%, -50%);
     cursor: pointer;

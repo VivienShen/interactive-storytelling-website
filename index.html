@@ -13,8 +13,6 @@
     </head>
 
     <body>
-        
-
         <!--Frame 1-->
         <div id="s4-1" class="scene" style="display: block;">
             <div id="bg1" class="image">
@@ -231,17 +229,17 @@
                 <div class="icons">
                     <img id="camera-icon" class="icon" src="img/icon-cam.png" alt="camera item" style="display: none;">
                     <img id="map-icon" class="icon" src="img/icon-map.png" alt="map item" style="display: none;">
-                    <img id="app-icon" class="icon" src="img/icon.png" alt="app item" style="display: none;">
                     <img id="camera-lock" class="lock" src="img/lock.png" alt="camera item" style="display: block;">
                     <img id="map-lock" class="lock" src="img/lock.png" alt="map item" style="display: block;">
-                    <img id="app-lock" class="lock" src="img/lock.png" alt="app item" style="display: block;">
+                    <img id="teleport-icon" class="icon" src="img/icon.png" alt="teleport button" style="display: block;">
                 </div>
 
                 
             </div>
             
         </div>
-        <div id="nextBtn" class="btn2"></div>
+
+        <div id="nextBtn" class="btn2" style="display: none;"></div>
         
 
         <script>
@@ -265,6 +263,9 @@
             
             var next = document.getElementById("nextBtn");
             next.addEventListener("click", function(i) {               
+                
+                //hide next button when clicked each time
+                document.getElementById('nextBtn').style.display= "none";
 
                 if (currentIndex < IdStore.length-1) {
                     console.log('next'); 
@@ -281,15 +282,27 @@
                         document.getElementById(preId).style.display = "none";
                     }
                     
-                } else if ((i.keyCode == 37) && (currentIndex >= 1)) { //show or hide the div when prev button is clicked
-                    var divId = IdStore[currentIndex];
-                    console.log(divId, currentIndex);
-                    document.getElementById(divId).style.display = "none";
-                    currentIndex -= 1;
-                    console.log(currentIndex);
-                    var divId2 = IdStore[currentIndex];
-                    document.getElementById(divId2).style.display = "block";
-                } 
+                    //next button appearing after 3 second
+                    setTimeout(appeardiv, 3000);
+                    function appeardiv() {
+                        //not appear for the last cut
+                        if (currentIndex < IdStore.length-1) {
+                            document.getElementById('nextBtn').style.display= "block";
+                        }
+                        
+                    }
+                }
+                //show or hide the div when prev button is clicked
+
+                /*  else if ((i.keyCode == 37) && (currentIndex >= 1)) { 
+                     var divId = IdStore[currentIndex];
+                     console.log(divId, currentIndex);
+                     document.getElementById(divId).style.display = "none";
+                     currentIndex -= 1;
+                     console.log(currentIndex);
+                     var divId2 = IdStore[currentIndex];
+                     document.getElementById(divId2).style.display = "block";
+                } */
             }); 
 
             var collectCam = document.getElementById("camera");
@@ -309,6 +322,14 @@
                 document.getElementById("map-lock").style.display = "none";
             });
             
+            //make button appear after specefc time
+            window.onload = function () {
+                setTimeout(appeardiv, 3000);
+            }
+
+            function appeardiv() {
+                document.getElementById('nextBtn').style.display= "block";
+            }
             
         </script>
         
