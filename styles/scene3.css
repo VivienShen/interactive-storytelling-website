@@ -347,8 +347,8 @@ body {
     background-color: #000000;
     outline-color: #ffffff;
     position: fixed;
-    top: 560px;
-    left: 51%;
+    top: 50%;
+    left: 60%;
     transform: translate(-50%, -50%);
     cursor: pointer;
   
