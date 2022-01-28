@@ -12,7 +12,7 @@ body{
 }
 
 .amazon-icon{
-    position: relative;
+    position: absolute;
     transform: translate(160%, -260%);
     width: 10%;
     cursor: pointer;
@@ -20,7 +20,7 @@ body{
 }
 
 .coralReef-icon{
-    position: relative;
+    position: absolute;
     transform: translate(730%, -250%);
     width: 11%;
     cursor: pointer;
@@ -28,7 +28,7 @@ body{
 }
 
 .arctic-icon{
-    position: relative;
+    position: absolute;
     transform: translate(220%, -400%);
     width: 14%;
     display: none;
@@ -48,16 +48,16 @@ body{
 }
 
 .map-pin1{ 
-    transform: translate(1520%, -1460%);
+    transform: translate(1520%, -1140%);
 
 }
 
 .map-pin2{
-    transform: translate(1000%, -930%);
+    transform: translate(1000%, -630%);
 }
 
 .map-pin3{
-    transform: translate(2500%, -800%);
+    transform: translate(2500%, -500%);
 }
 
 .pin:hover{
@@ -73,10 +73,10 @@ body{
 .blinker{
     margin:100px;
     width: 2%;
-    height: 2.7%;
+    height: 4%;
     border-radius: 50%;
     background: #db130cbd;
-    box-shadow: 0 0 0 rgba(204, 121, 44, 0.4);
+    box-shadow: 0 0 0 rgba(44, 204, 65, 0.4);
     animation: pulse 2s infinite;
     position: absolute; 
     display: block;
@@ -84,15 +84,15 @@ body{
 }
 
 .blink1{
-    transform: translate(2300%, -3420%);
+    transform: translate(2305%, -2226%);
 }
 
 .blink2{
-    transform: translate(700%, -2300%);
+    transform: translate(1525%, -1170%);
 }
 
 .blink3{
-    transform: translate(3850%, -2100%);
+    transform: translate(3775%, -902%);
 }
 
 .blinker:hover {
@@ -101,8 +101,8 @@ body{
 
 @keyframes pulse {
     0% {
-        -moz-box-shadow: 0 0 0 0 rgba(219, 73, 28, 0.4);
-        box-shadow: 0 0 0 0 rgba(219, 73, 28, 0.4);
+        -moz-box-shadow: 0 0 0 0 rgba(177, 158, 152, 0.4);
+        box-shadow: 0 0 0 0 rgba(151, 141, 138, 0.4);
     }
     70% {
         -moz-box-shadow: 0 0 0 30px rgba(204,169,44, 0);
@@ -115,38 +115,39 @@ body{
 }
 
 .btn {
-    min-width: 12%;
-    min-height: 4%;
+    min-width: 13%;
+    min-height: 5.5%;
     font-family: 'Nunito', sans-serif;
-    font-size: 80%;
+    font-size: 90%;
     text-transform: uppercase;
     letter-spacing: 1.3px;
     font-weight: 700;
     color: #313133;
     background: #ffffff;
     border: none;
-    border-radius: 1000px;
+    border-radius: 100px;
     box-shadow: 12px 12px 24px rgba(211, 211, 211, 0.64);
     transition: all 0.3s ease-in-out 0s;
     cursor: pointer;
     outline: none;
     position: absolute;
-    display: block;
-    padding: 0;
+    display: none;
+    padding: 5px 5px;
     margin: 0;
     z-index: 1;
 }
 
 .btn1{
-    transform: translate(118%, -880%);
+    transform: translate(105%, -570%);
 }
 
 .btn2{
-    transform: translate(650%, -800%);
+    transform: translate(533%, -567%);
+    padding: 5px 10px;
 }
 
 .btn3{
-    transform: translate(280%, -2100%);
+    transform: translate(245%, -1370%);
 }
 
 .btn::before {
@@ -176,8 +177,6 @@ body{
 .btn::after {
     content: '';
     width: 100px; height: 30px;
-    border-radius: 50%;
-    border: 6px solid #ffffff;
     position: absolute;
     z-index: -1;
     top: 50%;

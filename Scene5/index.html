@@ -4,20 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scene 5</title>
+    <title>Scene5</title>
+    <script defer src="index.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class = "map">
         <img class="map-img" src="images/map.png">
         <img class="amazon-icon" id="amazon" src="images/amazon_circle.png">
-        <button class="btn1 btn" id = "btn1" onclick="scrollWin(); playAudio()">Explore the Amazon</button>
+        <button class="btn1 btn" id = "btn1" onclick="window.location.href='amazon.html'; placeVisited('visited2', 'amazonVisited');">Explore the Amazon</button>
         
         <img class="coralReef-icon" id="coral" src="images/coralReef_circle.png">
-        <button class="btn2 btn" id = "btn2" onclick="scrollWin(); playAudio()">Explore the Coral Reef</button>
+        <button class="btn2 btn" id = "btn2" onclick="window.location.href='coral.html'; placeVisited('visited3', 'coralVisited');">Explore the Coral Reef</button>
         
         <img class="arctic-icon"  id="arctic" src="images/arctic_circle.png">
-        <button class="btn3 btn" id = "btn3" onclick="scrollWin(); playAudio()">Explore the Arctic</button>
+        <button class="btn3 btn" id = "btn3" onclick="window.location.href='arctic.html'; placeVisited();">Explore the Arctic</button>
         
         <div class="blink1 blinker" id="blink1"></div>
         <img class="map-pin1 pin" id="pin1" src="images/pin.png" onclick="toggleMapElements('arctic', 'btn3')">
@@ -28,26 +29,14 @@
         <div class="blink3 blinker" id="blink3"></div>
         <img class="map-pin3 pin" id="pin3" src="images/pin.png" onclick="toggleMapElements('coral', 'btn2')"> 
 
+        <button style="position: absolute; right: 97%;" onclick="reset()">reset</button>
+
     </div>
 
     <script>
-        function toggleMapElements(icon, btn) {
-            let txt = icon;
-            let txt2 = btn;
-            console.log(txt);
-            var x = document.getElementById(txt);
-            var y = document.getElementById(txt2);
-            if (x.style.display === "none") {
-                x.style.display = "block";
-            } else {
-                x.style.display = "none";
-            }
-            if (y.style.display === "none") {
-                y.style.display = "block";
-            } else {
-                y.style.display = "none";
-            }
-        }
+        
+
     </script>
+
 </body>
 </html>
