@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scene5 - Amazon</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body{
+            height: 6600px;
+        }
+        #bg1{
+            position: fixed;
+        }
+    </style>
+</head>
+<body>
+    <div id="bg1" class="image">
+        <img class="img-bg" src="images/amazon/amazon_bg.png" alt="in the laboratory">
+    </div> 
+
+    <div class="container" >
+        <div class="container_img">
+            <div class="img" >
+                <img class="image1" src="images/amazon/wind.png">
+                <img class="image2" src="images/amazon/forest.png">
+                <img class="image3" src="images/amazon/trees.png">
+                <img class="image4" src="images/amazon/trees2.png">
+                <img class="image5" src="images/amazon/trees3.png">
+            </div>
+        </div>  
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+
+    <script>
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.container_img',
+                scrub: 1,
+                start: 'top top',
+                end: '+=10000',
+                pin: true,
+                // markers: true
+            }
+        });
+
+        tl.to(".image1", 2,{
+            y: -850,
+            pin: true,
+            duration: 2
+        },'start')
+        .to(".image2", 4, {
+            y: -840,
+            pin: true
+        },'start')
+        .to(".image3",  {
+            opacity: 1,
+            pin: true,
+            duration: 3
+        })
+        .to(".image4",{
+            opacity: 1,
+            pin: true,
+            duration: 3
+        })
+        .to(".image5", {
+            opacity: 1,
+            pin: true,
+            duration: 3
+        })
+
+    </script>
+</body>
+</html>

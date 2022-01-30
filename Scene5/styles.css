@@ -1,5 +1,23 @@
 body{
     background-color: #333F4C;
+    margin: 0;
+}
+
+.img-bg {
+    width:100%;
+    height:100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    object-fit: cover;
+    object-position: 0 30%;
+}
+
+.image {
+    justify-content: center;
+    position: absolute; 
+    width:100%; 
+    height:100%;
 }
 
 .map{
@@ -187,4 +205,35 @@ body{
 .btn:hover::after, .btn:focus::after {
     animation: none;
     display: none;
+}
+
+/*AMAZON STYLING*/
+
+.container_img{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.img{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+
+}
+
+.img img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+}
+
+.image1, .image2{
+    top: 100%;
+}
+
+.image3, .image4, .image5, .image6{
+    opacity: 0;
 }
