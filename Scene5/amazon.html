@@ -21,7 +21,7 @@
     <audio autoplay loop id="bg-music">
         <source src="Mountain_-_JVNA.mp3" type="audio/mpeg" />
     </audio>
-    
+
     <div id="bg1" class="image">
         <img class="img-bg" src="images/amazon/amazon_bg.png" alt="in the laboratory">
     </div> 
@@ -36,6 +36,17 @@
                 <img class="image5" src="images/amazon/trees3.png">
             </div>
         </div>  
+
+        <div class="inventory">
+            <img id="inventory-bg" src="inventory.png" alt="inventory box">
+            <div class="icons">
+                <img id="camera-icon" class="icon" src="icon-cam.png" alt="camera item" style="display: block;">
+                <img id="map-icon" class="icon" src="icon-map.png" alt="map item" style="display: block;" onclick="window.location.href='index.html'">
+                <img id="camera-lock" class="lock" src="lock.png" alt="camera item" style="display: none;">
+                <img id="map-lock" class="lock" src="lock.png" alt="map item" style="display: none;">
+                <img id="teleport-icon" class="icon" src="icon.png" alt="teleport button" style="display: block;">
+            </div>
+        </div>
     </div>
 
 
@@ -55,6 +66,7 @@
             </p>
         </div>
     </div>
+
 
     <script>
         const tl = gsap.timeline({
@@ -92,6 +104,8 @@
             pin: true,
             duration: 3
         })
+
+        document.getElementById("bg-music").volume = 0.2;
 
     </script>
 </body>
