@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <audio autoplay loop id="bg-music">
+        <source src="Mountain_-_JVNA.mp3" type="audio/mpeg" />
+    </audio>
+
     <div class = "map">
         <img class="map-img" src="images/map.png">
         <img class="amazon-icon" id="amazon" src="images/amazon_circle.png">
@@ -31,6 +35,17 @@
 
         <button style="position: absolute; right: 97%;" onclick="reset()">reset</button>
 
+    </div>
+
+    <div class="inventory">
+        <img id="inventory-bg" src="inventory.png" alt="inventory box">
+        <div class="icons">
+            <img id="camera-icon" class="icon" src="icon-cam.png" alt="camera item" style="display: block;">
+            <img id="map-icon" class="icon" src="icon-map.png" alt="map item" style="display: block;">
+            <img id="camera-lock" class="lock" src="lock.png" alt="camera item" style="display: none;">
+            <img id="map-lock" class="lock" src="lock.png" alt="map item" style="display: none;">
+            <img id="teleport-icon" class="icon" src="icon.png" alt="teleport button" style="display: block;">
+        </div>
     </div>
 
     <script>

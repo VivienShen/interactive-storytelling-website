@@ -284,9 +284,9 @@ body{
 
 
 /* button 2 */
-.btn2 {
+.trans-btn {
     height: 10px;
-    width: 0px;
+    width: 10px;
     border-radius: 50%;
     background-color: #000000;
     outline-color: #ffffff;
@@ -299,8 +299,8 @@ body{
 }
 
 
-.btn2:before,
-.btn2:after {
+.trans-btn:before,
+.trans-btn:after {
     content: ''; 
     position: absolute;
     top: 0; 
@@ -311,11 +311,11 @@ body{
     border-radius: 50%;
 }
 
-.btn2:before {
+.trans-btn:before {
     animation: ripple2 3s linear infinite;
 }
 
-.btn2:after {
+.trans-btn:after {
     animation: ripple2 3s linear 1s infinite;
 }
 
