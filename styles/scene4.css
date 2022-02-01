@@ -168,8 +168,14 @@ body {
     justify-content: space-around;
 }
 
+.icon:hover{
+    transform: translateY(5px);
+    cursor: pointer;
+}
+
 #map-icon {
     max-height: 78%;
+    cursor: pointer;
 }
 
 #camera-icon {
@@ -183,7 +189,7 @@ body {
 }
 
 .lock {
-  max-height: 78%;
+   max-height: 78%;
 }  
 
 h1 {

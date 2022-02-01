@@ -19,10 +19,6 @@ body {
     height:100%;
 }
 
-#box1 {
-
-}
-
 #box2 {
     color: white;
     background-color: rgb(142, 52, 216);
@@ -169,11 +165,11 @@ audio{
     left: 50%;
     transform: translate(-50%, -50%);
     cursor: pointer;
-  
-  }
-  
-  .btn2:before,
-  .btn2:after {
+
+}
+
+.btn2:before,
+.btn2:after {
     content: ''; 
     position: absolute;
     top: 0; 
@@ -182,8 +178,8 @@ audio{
     left: 0;
     border: 0.5px solid #ffffff;
     border-radius: 50%;
-  }
-  
+}
+
 .btn2:before {
     animation: ripple2 3s linear infinite;
 }
@@ -204,17 +200,17 @@ audio{
     display: block;
     position: relative;
     animation: fadeIn linear 1s;
-  }
-  
-  #inventory-bg {
+}
+
+#inventory-bg {
     max-width: 18%;
     max-height: 18%;
     position: fixed;
     right: 2%;
     bottom: 2%;
-  }
-  
-  .icons {
+}
+
+.icons {
     width: 16%;
     height: 8%;
     position: fixed;
@@ -223,30 +219,35 @@ audio{
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
-  }
-  
-  #map-icon {
+}
+
+.icon:hover{
+    transform: translateY(5px);
+    cursor: pointer;
+}
+
+#map-icon {
     max-height: 78%;
-  }
-  
-  #camera-icon {
+}
+
+#camera-icon {
     max-height: 58%;
     padding-top: 3%;
-  }
-  
-  #app-icon {
+}
+
+#app-icon {
     max-height: 75%;
     padding-top: 1%;
     color: #b45b07;
     filter: drop-shadow(0 0 8px #e4860b);
     cursor: pointer;
-  }
-  
-  #app-icon:hover{
+}
+
+#app-icon:hover{
     color: #b45b0700;
     filter: drop-shadow(0 0 8px #e4860b00);
-  }
-  
-  .lock {
+}
+
+.lock {
     max-height: 78%;
-  }
+}

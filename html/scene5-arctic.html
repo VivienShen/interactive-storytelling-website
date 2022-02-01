@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="../js/scene5.js"></script>
+    <title>Scene5 - Arctic</title>
+    <link rel="stylesheet" href="../styles/scene5.css">
+
+    <style>
+        body{
+            height: 6600px;
+        }
+        #bg1{
+            position: fixed;
+        }
+        .image3{
+            top: 100%;
+            opacity: 1;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <audio autoplay loop id="bg-music">
+        <source src="Mountain_-_JVNA.mp3" type="audio/mpeg" />
+    </audio>
+
+    <div id="bg1" class="image">
+        <img class="img-bg" src="images/arctic/arcticBG.png" alt="in the laboratory">
+    </div> 
+
+    <div class="container" >
+        <div class="container_img">
+            <div class="img" >
+                <img class="image2" src="images/arctic/mountains.png">
+                <img class="image1" src="images/arctic/clouds.png">
+                <img class="image3" src="images/arctic/water.png">
+                <img class="image4" src="images/arctic/scroll1.png">
+                <img class="image5" src="images/arctic/scroll2.png">
+                <img class="image6" src="images/arctic/scroll3.png">
+            </div>
+        </div>  
+        <div class="inventory">
+            <img id="inventory-bg" src="inventory.png" alt="inventory box">
+            <div class="icons">
+                <img id="camera-icon" class="icon" src="icon-cam.png" alt="camera item" style="display: block;">
+                <img id="map-icon" class="icon" src="icon-map.png" alt="map item" style="display: block;" onclick="window.location.href='index.html'">
+                <img id="camera-lock" class="lock" src="lock.png" alt="camera item" style="display: none;">
+                <img id="map-lock" class="lock" src="lock.png" alt="map item" style="display: none;">
+                <img id="teleport-icon" class="icon" src="icon.png" alt="teleport button" style="display: block;">
+            </div>
+        </div>
+    </div>
+
+    <div class="text">
+        <div id="box3" class="speechbox" >
+            <p><b>Robin:</b> We are now in the Arctic, home to about 4 million people.
+            </p>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+
+    <script>
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.container_img',
+                scrub: 1,
+                start: 'top top',
+                end: '+=10000',
+                pin: true,
+                // markers: true
+            }
+        });
+
+        tl.to(".image1", 2,{
+            y: -890,
+            pin: true,
+            duration: 2
+        },'start')
+        .to(".image2", 4, {
+            y: -890,
+            pin: true
+        },'start')
+        .to(".image3", 8, {
+            y: -840,
+            pin: true
+        } ,'start')
+        .to(".image4",{
+            opacity: 1,
+            pin: true,
+            duration: 2
+        })
+        .to(".image5", 3, {
+            opacity: 1,
+            pin: true,
+            duration: 2
+        }, 'img1-change')
+        .to(".image4",{
+            opacity: 0,
+            pin: true,
+            duration: 2
+        }, 'img1-change')
+        .to(".image6", {
+            opacity: 1,
+            pin: true,
+            duration: 2
+        }, 'img2-change')
+        .to(".image5", {
+            opacity: 0,
+            pin: true,
+            duration: 2
+        }, 'img2-change')
+
+        document.getElementById("bg-music").volume = 0.2;
+
+    </script>
+</body>
+</html>
