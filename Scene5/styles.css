@@ -227,7 +227,7 @@ body{
     width: 100%;
     height: 100%;
     position: absolute;
-    object-fit: cover;
+    /* object-fit: cover; */
 }
 
 .image1, .image2{
@@ -236,4 +236,91 @@ body{
 
 .image3, .image4, .image5, .image6{
     opacity: 0;
+}
+
+
+#box1, #box3, #box4 {
+    left: 3%;
+    bottom: 30%;
+}
+
+#box2 {
+    right: 10%;
+    top: 40%;
+}
+
+#box3{
+    color: rgb(255, 255, 255);
+    background-color: rgba(13, 122, 155, 0.9);
+    border: 2px solid rgb(255, 255, 255);
+}
+
+#box4{
+    color: rgb(255, 255, 255);
+    background-color: rgba(143, 81, 11, 0.9);
+    border: 2px solid rgb(255, 255, 255);
+}
+
+.speechbox {
+    font-size: 1.3rem;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 400px;
+    width:fit-content;
+    max-width: 600px;
+    height:fit-content;
+    padding: 30px 30px 30px 40px; 
+    display: block;
+    position: fixed;
+    animation: fadeIn linear 1s;
+    color: rgb(0, 0, 0);
+    background-color: rgba(176, 228, 236, 0.9);
+    border: 2px solid black;
+}
+
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+
+/* button 2 */
+.btn2 {
+    height: 10px;
+    width: 0px;
+    border-radius: 50%;
+    background-color: #000000;
+    outline-color: #ffffff;
+    position: fixed;
+    top: 500px;
+    left: 51%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    display: block;
+}
+
+
+.btn2:before,
+.btn2:after {
+    content: ''; 
+    position: absolute;
+    top: 0; 
+    right: 0; 
+    bottom: 0; 
+    left: 0;
+    border: 0.5px solid #ffffff;
+    border-radius: 50%;
+}
+
+.btn2:before {
+    animation: ripple2 3s linear infinite;
+}
+
+.btn2:after {
+    animation: ripple2 3s linear 1s infinite;
+}
+
+@keyframes ripple2{
+    0% { transform: scale(1); }
+    50% { transform: scale(4); opacity:1; }
+    100% { transform: scale(8); opacity:0; }
 }

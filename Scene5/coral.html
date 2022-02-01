@@ -15,43 +15,79 @@
         #bg1{
             position: fixed;
         }
-        .image3, .image4, .image5, .image6{
+        .image1, .image2, .image3, .image4, .image5, 
+        .image6, .image7, .image8, .image9{
             top: 100%;
             opacity: 1;
         }
-        .image7, .image8{
-            top: 50%;
+
+        .image10{
+            overflow: auto;
+            height:100%;
+            width: 100%;
+            margin-bottom: -1%;
+            position: relative;
         }
+
+        .underwater{
+            margin-top: -1%;
+            position: relative;
+    
+        }
+
         .image11{
-            top:55%;
+            position: absolute;
+            width: 100%;
+            left: 0%;
         }
+    
         
     </style>
 </head>
 <body>
     <div id="bg1" class="image">
-        <img class="img-bg" src="images/coral_bg.png" alt="in the laboratory">
+        <img class="img-bg" src="images/coral/coral_bg.png" alt="in the laboratory">
     </div> 
 
     <div class="container" >
         <div class="container_img">
             <div class="img" >
-                <img class="image1" src="images/coral_bg.png">
-                <img class="image2" src="images/clouds_back.png">
-                <img class="image3" src="images/clouds_front.png">
-                <img class="image4" src="images/small cloud.png">
-                <img class="image5" src="images/hill_left.png">
-                <img class="image6" src="images/hill_right.png">
-                <img class="image7" src="images/water_bg.png">
-                <img class="image8" src="images/water_details.png">
-                <img class="image9" src="images/leftHill_shadow.png">
-                <img class="image10" src="images/rightHill_shadow.png">
-                <img class="image11" src="images/water_2.png">
+                <img class="image1" src="images/coral/clouds_back.png">
+                <img class="image2" src="images/coral/clouds_front-02.png">
+                <img class="image3" src="images/coral/clouds_3-02.png">
+                <img class="image4" src="images/coral/clouds_4-02.png">
+                <img class="image5" src="images/coral/hills-02-02-02.png">
+                <img class="image6" src="images/coral/water_bg-02.png">
+                <img class="image7" src="images/coral/boat-02.png">
+                <img class="image8" src="images/coral/water_2-02.png">
+                <img class="image9" src="images/coral/water_3-02.png">
+    
+                <!--<img class="image10" src="images/rightHill_shadow.png">
+                <img class="image11" src="images/water_2.png"> -->
                 <!-- <img class="image12" src="images/water_front-02.png"> -->
-
             </div>
         </div>  
     </div>
+
+    <div class="underwater">
+        <img class="image10" src="images/coral/water_front-02-02.png">
+        <img class="image11" src="images/coral/humans.png">
+    </div>
+
+    <div class="text">
+        <div id="box1" class="speechbox" >
+            <p><b>Robin:</b> The great barrier reef, home to an estimated 25% of all known marine life. Are you ready to dive in? 
+            </p>
+        </div>
+    </div>
+
+    <div class="text" >
+        <div id="box2" class="speechbox" >
+            <p><b>Aeryn:</b> Yes I am!</p>
+        </div>
+    </div>
+
+    <div id="nextBtn" class="btn2" ></div>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
@@ -69,6 +105,57 @@
             }
         });
 
+        tl.to(".image1", 2,{
+            y: -840,
+            pin: true,
+            duration: 2
+        },'start')
+        .to(".image2", 4, {
+            y: -840,
+            pin: true
+        },'start')
+        .to(".image3", 6, {
+            y: -840,
+            pin: true
+        },'start')
+        .to(".image4", 8, {
+            y: -840,
+            pin: true
+        },'start')
+        .to(".image5", 10, {
+            y: -840,
+            pin: true
+        }, 'start')
+        .to(".image6", 11, {
+            y: -840,
+            pin: true
+        }, 'start')
+        .to(".image7", 2,  {
+            y: -840,
+            pin: true
+        }, 'boat')
+        .to(".image8", 3, {
+            y: -840,
+            pin: true
+        }, 'boat')
+        .to(".image9", 4, {
+            y: -840,
+            pin: true
+        }, 'boat')
+
+
+        gsap.to(".image11", {
+    
+            scrollTrigger: {
+                trigger: '.image11',
+                start: "top -9%", 
+                end: "2000",
+                // markers: true,
+                pin: true,
+                scrub: 2
+                
+            },
+        })
 
     </script>
 </body>

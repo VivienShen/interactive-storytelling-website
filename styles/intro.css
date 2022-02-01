@@ -1,0 +1,7 @@
+html{
+    scroll-behavior: smooth;
+    background-image: url('../assets/images/scene1/scene1BG.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+}
