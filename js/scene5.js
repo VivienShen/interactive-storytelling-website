@@ -69,12 +69,12 @@ if(visited4 == "true"){
     blink.style.background = "#0cdb39bd";
 }
 
-else if(visited5 == "true"){
+if(visited5 == "true"){
     console.log("visited amazon");
     blink2.style.background = "#0cdb39bd";
 }
 
-else if(visited6 == "true"){
+if(visited6 == "true"){
     console.log("visited coral");
     blink3.style.background = "#0cdb39bd";
 }

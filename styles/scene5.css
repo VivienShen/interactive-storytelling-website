@@ -1,6 +1,13 @@
 body{
     background-color: #333F4C;
     margin: 0;
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+    overflow-y: scroll; 
+}
+
+body::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
 }
 
 .img-bg {
@@ -26,7 +33,7 @@ body{
     transform: translate(160%, 260%);
     width: 10%;
     cursor: pointer;
-    display: block;
+    display: none;
 }
 
 .coralReef-icon{
@@ -34,14 +41,14 @@ body{
     transform: translate(730%, 250%);
     width: 11%;
     cursor: pointer;
-    display: block;
+    display: none;
 }
 
 .arctic-icon{
     position: absolute;
     transform: translate(220%, 10%);
     width: 14%;
-    display: block;
+    display: none;
     cursor: pointer;
     transition: transform .2s;
 }

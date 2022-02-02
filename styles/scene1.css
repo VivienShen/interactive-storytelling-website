@@ -296,7 +296,7 @@ body::-webkit-scrollbar {
     background-color: #000000;
     outline-color: #ffffff;
     position: fixed;
-    top: 70%;
+    top: 60%;
     left: 51%;
     cursor: pointer;
     display: none;
