@@ -50,7 +50,7 @@
                 <img class="img-bg" src="../assets/images/scene3/scene3-4.png" alt="Girl sitting on a sofa">
             </div>
             <img class="popup-travel" id="popup1" src="../assets/images/scene3/scene3-5-1.png" alt="would you like to travel">
-            <img class="yes-button" id="popup2" onclick="window.location.href='scene4.html'" src="../assets/images/scene3/yes.png" alt="yes button">
+            <img class="yes-button" id="popup2" onclick="window.location.href='portal2.html'" src="../assets/images/scene3/yes.png" alt="yes button">
             <div class="inventory">
                 <img id="inventory-bg" src="../assets/images/scene3/inventory.png" alt="inventory box">
                 <div class="icons">
@@ -104,7 +104,7 @@
                     }
 
                     //next button appearing after 3 second
-                    setTimeout(appeardiv, 3000);
+                    setTimeout(appeardiv, 500);
                     function appeardiv() {
                         //not appear for the last cut
                         if (currentIndex < IdStore.length-1) {
@@ -126,7 +126,7 @@
 
             //make button appear after specific time
             window.onload = function () {
-                setTimeout(appeardiv, 3000);
+                setTimeout(appeardiv, 500);
             }
 
             function appeardiv() {

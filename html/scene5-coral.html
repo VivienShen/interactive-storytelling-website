@@ -37,7 +37,7 @@
 
         .image11{
             position: absolute;
-            width: 100%;
+            width: 90%;
             left: 0%;
         }
     
@@ -47,25 +47,25 @@
 <body>
 
     <audio autoplay loop id="bg-music">
-        <source src="Mountain_-_JVNA.mp3" type="audio/mpeg" />
+        <source src="../assets/audio/bgm/Mountain_-_JVNA.mp3" type="audio/mpeg" />
     </audio>
 
     <div id="bg1" class="image">
-        <img class="img-bg" src="images/coral/coral_bg.png" alt="in the laboratory">
+        <img class="img-bg" src="../assets/images/scene5/coral/coral_bg.png" alt="in the laboratory">
     </div> 
 
     <div class="container" >
         <div class="container_img">
             <div class="img" >
-                <img class="image1" src="images/coral/clouds_back.png">
-                <img class="image2" src="images/coral/clouds_front-02.png">
-                <img class="image3" src="images/coral/clouds_3-02.png">
-                <img class="image4" src="images/coral/clouds_4-02.png">
-                <img class="image5" src="images/coral/hills-02-02-02.png">
-                <img class="image6" src="images/coral/water_bg-02.png">
-                <img class="image7" src="images/coral/boat-02.png">
-                <img class="image8" src="images/coral/water_2-02.png">
-                <img class="image9" src="images/coral/water_3-02.png">
+                <img class="image1" src="../assets/images/scene5/coral/clouds_back.png">
+                <img class="image2" src="../assets/images/scene5/coral/clouds_front-02.png">
+                <img class="image3" src="../assets/images/scene5/coral/clouds_3-02.png">
+                <img class="image4" src="../assets/images/scene5/coral/clouds_4-02.png">
+                <img class="image5" src="../assets/images/scene5/coral/hills-02-02-02.png">
+                <img class="image6" src="../assets/images/scene5/coral/water_bg-02.png">
+                <img class="image7" src="../assets/images/scene5/coral/boat-02.png">
+                <img class="image8" src="../assets/images/scene5/coral/water_2-02.png">
+                <img class="image9" src="../assets/images/scene5/coral/water_3.png">
     
                 <!--<img class="image10" src="images/rightHill_shadow.png">
                 <img class="image11" src="images/water_2.png"> -->
@@ -76,17 +76,17 @@
     </div>
 
     <div class="underwater">
-        <img class="image10" src="images/coral/water_front-02-02.png">
-        <img class="image11" src="images/coral/humans.png">
+        <img class="image10" src="../assets/images/scene5/coral/water_front-02-02.png">
+        <img class="image11" src="../assets/images/scene5/coral/humans.png">
 
         <div class="inventory">
-            <img id="inventory-bg" src="inventory.png" alt="inventory box">
+            <img id="inventory-bg" src="../assets/images/scene5/inventory.png" alt="inventory box">
             <div class="icons">
-                <img id="camera-icon" class="icon" src="icon-cam.png" alt="camera item" style="display: block;">
-                <img id="map-icon" class="icon" src="icon-map.png" alt="map item" style="display: block;" onclick="window.location.href='index.html'">
-                <img id="camera-lock" class="lock" src="lock.png" alt="camera item" style="display: none;">
-                <img id="map-lock" class="lock" src="lock.png" alt="map item" style="display: none;">
-                <img id="teleport-icon" class="icon" src="icon.png" alt="teleport button" style="display: block;">
+                <img id="camera-icon" class="icon" src="../assets/images/scene5/icon-cam.png" alt="camera item" style="display: block;">
+                <img id="map-icon" class="icon" src="../assets/images/scene5/icon-map.png" alt="map item" style="display: block;" onclick="window.location.href='scene5.html'">
+                <img id="camera-lock" class="lock" src="../assets/images/scene5/lock.png" alt="camera item" style="display: none;">
+                <img id="map-lock" class="lock" src="../assets/images/scene5/lock.png" alt="map item" style="display: none;">
+                <img id="teleport-icon" class="icon" src="../assets/images/scene5/icon.png" alt="teleport button" style="display: block;">
             </div>
         </div>
     </div>
@@ -123,49 +123,49 @@
         });
 
         tl.to(".image1", 2,{
-            y: -840,
+            y: "-100%",
             pin: true,
             duration: 2
         },'start')
         .to(".image2", 4, {
-            y: -840,
+            y: "-100%",
             pin: true
         },'start')
         .to(".image3", 6, {
-            y: -840,
+            y: "-100%",
             pin: true
         },'start')
         .to(".image4", 8, {
-            y: -840,
+            y: "-100%",
             pin: true
         },'start')
         .to(".image5", 10, {
-            y: -840,
+            y: "-100%",
             pin: true
         }, 'start')
         .to(".image6", 11, {
-            y: -840,
+            y: "-100%",
             pin: true
         }, 'start')
-        .to(".image7", 2,  {
-            y: -840,
+        .to(".image7", 20,  {
+            y: "-100%",
             pin: true
-        }, 'boat')
-        .to(".image8", 3, {
-            y: -840,
+        }, 'start')
+        .to(".image8", 22, {
+            y: "-100%",
             pin: true
-        }, 'boat')
-        .to(".image9", 4, {
-            y: -840,
+        }, 'start')
+        .to(".image9", 26, {
+            y: "-100%",
             pin: true
-        }, 'boat')
+        }, 'start')
 
 
         gsap.to(".image11", {
     
             scrollTrigger: {
                 trigger: '.image11',
-                start: "top -9%", 
+                start: "top -5%", 
                 end: "2000",
                 // markers: true,
                 pin: true,

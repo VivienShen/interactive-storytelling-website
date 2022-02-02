@@ -25,32 +25,32 @@
 <body>
 
     <audio autoplay loop id="bg-music">
-        <source src="Mountain_-_JVNA.mp3" type="audio/mpeg" />
+        <source src="../assets/audio/bgm/Mountain_-_JVNA.mp3" type="audio/mpeg" />
     </audio>
 
     <div id="bg1" class="image">
-        <img class="img-bg" src="images/arctic/arcticBG.png" alt="in the laboratory">
+        <img class="img-bg" src="../assets/images/scene5/arctic/arcticBG.png" alt="arctic background gradient">
     </div> 
 
     <div class="container" >
         <div class="container_img">
             <div class="img" >
-                <img class="image2" src="images/arctic/mountains.png">
-                <img class="image1" src="images/arctic/clouds.png">
-                <img class="image3" src="images/arctic/water.png">
-                <img class="image4" src="images/arctic/scroll1.png">
-                <img class="image5" src="images/arctic/scroll2.png">
-                <img class="image6" src="images/arctic/scroll3.png">
+                <img class="image2" src="../assets/images/scene5/arctic/mountains.png">
+                <img class="image1" src="../assets/images/scene5/arctic/clouds.png">
+                <img class="image3" src="../assets/images/scene5/arctic/water.png">
+                <img class="image4" src="../assets/images/scene5/arctic/scroll1.png">
+                <img class="image5" src="../assets/images/scene5/arctic/scroll2.png">
+                <img class="image6" src="../assets/images/scene5/arctic/scroll3.png">
             </div>
         </div>  
         <div class="inventory">
-            <img id="inventory-bg" src="inventory.png" alt="inventory box">
+            <img id="inventory-bg" src="../assets/images/scene5/inventory.png" alt="inventory box">
             <div class="icons">
-                <img id="camera-icon" class="icon" src="icon-cam.png" alt="camera item" style="display: block;">
-                <img id="map-icon" class="icon" src="icon-map.png" alt="map item" style="display: block;" onclick="window.location.href='index.html'">
-                <img id="camera-lock" class="lock" src="lock.png" alt="camera item" style="display: none;">
-                <img id="map-lock" class="lock" src="lock.png" alt="map item" style="display: none;">
-                <img id="teleport-icon" class="icon" src="icon.png" alt="teleport button" style="display: block;">
+                <img id="camera-icon" class="icon" src="../assets/images/scene5/icon-cam.png" alt="camera item" style="display: block;">
+                <img id="map-icon" class="icon" src="../assets/images/scene5/icon-map.png" alt="map item" style="display: block;" onclick="window.location.href='scene5.html'">
+                <img id="camera-lock" class="lock" src="../assets/images/scene5/lock.png" alt="camera item" style="display: none;">
+                <img id="map-lock" class="lock" src="../assets/images/scene5/lock.png" alt="map item" style="display: none;">
+                <img id="teleport-icon" class="icon" src="../assets/images/scene5/icon.png" alt="teleport button" style="display: block;">
             </div>
         </div>
     </div>
@@ -78,16 +78,16 @@
         });
 
         tl.to(".image1", 2,{
-            y: -890,
+            y: "-100%",
             pin: true,
             duration: 2
         },'start')
         .to(".image2", 4, {
-            y: -890,
+            y: "-100%",
             pin: true
         },'start')
         .to(".image3", 8, {
-            y: -840,
+            y: "-101%",
             pin: true
         } ,'start')
         .to(".image4",{

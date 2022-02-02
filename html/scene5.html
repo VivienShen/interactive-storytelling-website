@@ -9,42 +9,45 @@
     <link rel="stylesheet" href="../styles/scene5.css">
 </head>
 <body>
-    <audio autoplay loop id="bg-music">
-        <source src="Mountain_-_JVNA.mp3" type="audio/mpeg" />
-    </audio>
+    <!-- <audio autoplay loop id="bg-music">
+        <source src="../assets/audio/bgm/Mountain_-_JVNA.mp3" type="audio/mpeg" />
+    </audio> -->
 
     <div class = "map">
-        <img class="map-img" src="images/map.png">
-        <img class="amazon-icon" id="amazon" src="images/amazon_circle.png">
-        <button class="btn1 btn" id = "btn1" onclick="window.location.href='amazon.html'; placeVisited('visited2', 'amazonVisited');">Explore the Amazon</button>
+        <div id="bg1" class="image">
+            <img class="img-bg" src="../assets/images/scene5/map.png">
+        </div> 
         
-        <img class="coralReef-icon" id="coral" src="images/coralReef_circle.png">
-        <button class="btn2 btn" id = "btn2" onclick="window.location.href='coral.html'; placeVisited('visited3', 'coralVisited');">Explore the Coral Reef</button>
+        <img class="amazon-icon" id="amazon" src="../assets/images/scene5/amazon_circle.png">
+        <button class="btn1 btn" id = "btn1" onclick="window.location.href='scene5-amazon.html'; placeVisited('visited2', 'amazonVisited');">Explore the Amazon</button>
         
-        <img class="arctic-icon"  id="arctic" src="images/arctic_circle.png">
-        <button class="btn3 btn" id = "btn3" onclick="window.location.href='arctic.html'; placeVisited('visited', 'arcticVisited');">Explore the Arctic</button>
+        <img class="coralReef-icon" id="coral" src="../assets/images/scene5/coralReef_circle.png">
+        <button class="btn2 btn" id = "btn2" onclick="window.location.href='scene5-coral.html'; placeVisited('visited3', 'coralVisited');">Explore the Coral Reef</button>
+        
+        <img class="arctic-icon"  id="arctic" src="../assets/images/scene5/arctic_circle.png">
+        <button class="btn3 btn" id = "btn3" onclick="window.location.href='scene5-arctic.html'; placeVisited('visited', 'arcticVisited');">Explore the Arctic</button>
         
         <div class="blink1 blinker" id="blink1"></div>
-        <img class="map-pin1 pin" id="pin1" src="images/pin.png" onclick="toggleMapElements('arctic', 'btn3')">
+        <img class="map-pin1 pin" id="pin1" src="../assets/images/scene5/pin.png" onclick="toggleMapElements('arctic', 'btn3')">
         
         <div class="blink2 blinker" id="blink2"></div>
-        <img class="map-pin2 pin" id="pin2" src="images/pin.png" onclick="toggleMapElements('amazon', 'btn1')"> 
+        <img class="map-pin2 pin" id="pin2" src="../assets/images/scene5/pin.png" onclick="toggleMapElements('amazon', 'btn1')"> 
         
         <div class="blink3 blinker" id="blink3"></div>
-        <img class="map-pin3 pin" id="pin3" src="images/pin.png" onclick="toggleMapElements('coral', 'btn2')"> 
+        <img class="map-pin3 pin" id="pin3" src="../assets/images/scene5/pin.png" onclick="toggleMapElements('coral', 'btn2')"> 
 
         <button style="position: absolute; right: 97%;" onclick="reset()">reset</button>
 
     </div>
 
     <div class="inventory">
-        <img id="inventory-bg" src="inventory.png" alt="inventory box">
+        <img id="inventory-bg" src="../assets/images/scene5/inventory.png" alt="inventory box">
         <div class="icons">
-            <img id="camera-icon" class="icon" src="icon-cam.png" alt="camera item" style="display: block;">
-            <img id="map-icon" class="icon" src="icon-map.png" alt="map item" style="display: block;">
-            <img id="camera-lock" class="lock" src="lock.png" alt="camera item" style="display: none;">
-            <img id="map-lock" class="lock" src="lock.png" alt="map item" style="display: none;">
-            <img id="teleport-icon" class="icon" src="icon.png" alt="teleport button" style="display: block;">
+            <img id="camera-icon" class="icon" src="../assets/images/scene5/icon-cam.png" alt="camera item" style="display: block;">
+            <img id="map-icon" class="icon" src="../assets/images/scene5/icon-map.png" alt="map item" style="display: block;">
+            <img id="camera-lock" class="lock" src="../assets/images/scene5/lock.png" alt="camera item" style="display: none;">
+            <img id="map-lock" class="lock" src="../assets/images/scene5/lock.png" alt="map item" style="display: none;">
+            <img id="teleport-icon" class="icon" src="../assets/images/scene5/icon.png" alt="teleport button" style="display: block;">
         </div>
     </div>
 

@@ -11,7 +11,7 @@
     </head>
 
     <body>
-        <audio autoplay loop>
+        <audio autoplay loop id="bg-music">
             <source src="../assets/audio/bgm/Future_Glider_-_Brian_Bolger.mp3" type="audio/mpeg">
         </audio>
 
@@ -188,7 +188,7 @@
 
             <img src="../assets/images/scene2/modal.png" id = "modal" alt="modal popup">
     
-            <img src="../assets/images/scene2/yes.png" id="yes_button" onclick="window.location.href='scene3-1.html'" alt="yes button" />
+            <img src="../assets/images/scene2/yes.png" id="yes_button" onclick="window.location.href='portal.html'" alt="yes button" />
     
             <div class="inventory">
                 <img id="inventory-bg" src="../assets/images/scene2/inventory.png" alt="inventory box">
@@ -256,7 +256,7 @@
                     }
 
                     //next button appearing after 3 second
-                    setTimeout(appeardiv, 3000);
+                    setTimeout(appeardiv, 500);
                     function appeardiv() {
                         //not appear for the last cut
                         if (currentIndex < IdStore.length-2) {
@@ -278,7 +278,7 @@
 
             //make button appear after specific time
             window.onload = function () {
-                setTimeout(appeardiv, 3000);
+                setTimeout(appeardiv, 500);
             }
 
             function appeardiv() {

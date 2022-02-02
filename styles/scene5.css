@@ -20,36 +20,28 @@ body{
     height:100%;
 }
 
-.map{
-    position: relative;
-}
-
-.map-img{
-    width: 100%;
-    position: relative;
-}
 
 .amazon-icon{
     position: absolute;
-    transform: translate(160%, -260%);
+    transform: translate(160%, 260%);
     width: 10%;
     cursor: pointer;
-    display: none;
+    display: block;
 }
 
 .coralReef-icon{
     position: absolute;
-    transform: translate(730%, -250%);
+    transform: translate(730%, 250%);
     width: 11%;
     cursor: pointer;
-    display: none;
+    display: block;
 }
 
 .arctic-icon{
     position: absolute;
-    transform: translate(220%, -400%);
+    transform: translate(220%, 10%);
     width: 14%;
-    display: none;
+    display: block;
     cursor: pointer;
     transition: transform .2s;
 }
@@ -66,16 +58,16 @@ body{
 }
 
 .map-pin1{ 
-    transform: translate(1520%, -1140%);
+    transform: translate(1550%, 170%);
 
 }
 
 .map-pin2{
-    transform: translate(1000%, -630%);
+    transform: translate(1100%, 630%);
 }
 
 .map-pin3{
-    transform: translate(2500%, -500%);
+    transform: translate(2450%, 730%);
 }
 
 .pin:hover{
@@ -102,15 +94,15 @@ body{
 }
 
 .blink1{
-    transform: translate(2305%, -2226%);
+    transform: translate(2350%, 480%);
 }
 
 .blink2{
-    transform: translate(1525%, -1170%);
+    transform: translate(1675%, 1425%);
 }
 
 .blink3{
-    transform: translate(3775%, -902%);
+    transform: translate(3702%, 1627%);
 }
 
 .blinker:hover {
@@ -156,16 +148,16 @@ body{
 }
 
 .btn1{
-    transform: translate(105%, -570%);
+    transform: translate(105%, 1270%);
 }
 
 .btn2{
-    transform: translate(533%, -567%);
+    transform: translate(540%, 1285%);
     padding: 5px 10px;
 }
 
 .btn3{
-    transform: translate(245%, -1370%);
+    transform: translate(245%, 520%);
 }
 
 .btn::before {
@@ -212,7 +204,6 @@ body{
 .container_img{
     width: 100%;
     height: 100%;
-    position: relative;
     overflow: hidden;
 }
 
@@ -220,13 +211,17 @@ body{
     width: 100%;
     height: 100vh;
     overflow: hidden;
-
+    position: relative;
 }
 
 .img img {
     width: 100%;
     height: 100%;
     position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    object-fit: cover;
     /* object-fit: cover; */
 }
 

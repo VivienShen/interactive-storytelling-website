@@ -20,32 +20,32 @@
 <body>
 
     <audio autoplay loop id="bg-music">
-        <source src="Mountain_-_JVNA.mp3" type="audio/mpeg" />
+        <source src="../assets/audio/bgm/Mountain_-_JVNA.mp3" type="audio/mpeg" />
     </audio>
 
     <div id="bg1" class="image">
-        <img class="img-bg" src="images/amazon/amazon_bg.png" alt="in the laboratory">
+        <img class="img-bg" src="../assets/images/scene5/amazon/amazon_bg.png" alt="in the laboratory">
     </div> 
 
     <div class="container" >
         <div class="container_img">
             <div class="img" >
-                <img class="image1" src="images/amazon/wind.png">
-                <img class="image2" src="images/amazon/forest.png">
-                <img class="image3" src="images/amazon/trees.png">
-                <img class="image4" src="images/amazon/trees2.png">
-                <img class="image5" src="images/amazon/trees3.png">
+                <img class="image1" src="../assets/images/scene5/amazon/wind.png">
+                <img class="image2" src="../assets/images/scene5/amazon/forest.png">
+                <img class="image3" src="../assets/images/scene5/amazon/trees.png">
+                <img class="image4" src="../assets/images/scene5/amazon/trees2.png">
+                <img class="image5" src="../assets/images/scene5/amazon/trees3.png">
             </div>
         </div>  
 
         <div class="inventory">
-            <img id="inventory-bg" src="inventory.png" alt="inventory box">
+            <img id="inventory-bg" src="../assets/images/scene5/inventory.png" alt="inventory box">
             <div class="icons">
-                <img id="camera-icon" class="icon" src="icon-cam.png" alt="camera item" style="display: block;">
-                <img id="map-icon" class="icon" src="icon-map.png" alt="map item" style="display: block;" onclick="window.location.href='index.html'">
-                <img id="camera-lock" class="lock" src="lock.png" alt="camera item" style="display: none;">
-                <img id="map-lock" class="lock" src="lock.png" alt="map item" style="display: none;">
-                <img id="teleport-icon" class="icon" src="icon.png" alt="teleport button" style="display: block;">
+                <img id="camera-icon" class="icon" src="../assets/images/scene5/icon-cam.png" alt="camera item" style="display: block;">
+                <img id="map-icon" class="icon" src="../assets/images/scene5/icon-map.png" alt="map item" style="display: block;" onclick="window.location.href='scene5.html'">
+                <img id="camera-lock" class="lock" src="../assets/images/scene5/lock.png" alt="camera item" style="display: none;">
+                <img id="map-lock" class="lock" src="../assets/images/scene5/lock.png" alt="map item" style="display: none;">
+                <img id="teleport-icon" class="icon" src="../assets/images/scene5/icon.png" alt="teleport button" style="display: block;">
             </div>
         </div>
     </div>
@@ -82,12 +82,12 @@
         });
 
         tl.to(".image1", 2,{
-            y: -850,
+            y: "-100%",
             pin: true,
             duration: 2
         },'start')
         .to(".image2", 4, {
-            y: -840,
+            y: "-100%",
             pin: true
         },'start')
         .to(".image3",  {
