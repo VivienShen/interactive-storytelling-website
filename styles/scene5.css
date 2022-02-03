@@ -62,6 +62,7 @@ body::-webkit-scrollbar {
     position: absolute;
     cursor: pointer;
     display: block;
+    
 }
 
 .map-pin1{ 
@@ -85,7 +86,6 @@ body::-webkit-scrollbar {
     /* transform: scale(0.50);
     transform: translateY(4px); */
 }
-
 
 .blinker{
     margin:100px;
@@ -131,6 +131,43 @@ body::-webkit-scrollbar {
     }
 }
 
+@media screen and (min-height: 900px) {
+    .map-pin1{ 
+        transform: translate(1550%, 220%);
+        z-index: 1;
+    }
+    .map-pin2{ 
+        transform: translate(1100%, 680%);
+        z-index: 1;
+    }
+    .map-pin3{ 
+        transform: translate(2450%, 800%);
+        z-index: 1;
+    }
+    .blinker{
+        width: 2%;
+        height: 3.5%;
+    }
+    .blink1{
+        transform: translate(2350%, 580%);
+    }
+    .blink2{
+        transform: translate(1675%, 1525%);
+    }
+    .blink3{
+        transform: translate(3702%, 1770%);
+    }
+    .arctic-icon{
+        transform: translate(220%, 25%);
+    }
+    .amazon-icon{
+        transform: translate(160%, 310%);
+    }
+    
+    .coralReef-icon{
+        transform: translate(730%, 300%);
+    }
+}
 .btn {
     min-width: 13%;
     min-height: 5.5%;
@@ -241,7 +278,7 @@ body::-webkit-scrollbar {
 }
 
 
-#box1, #box3, #box4 {
+#box1, #box3, #box4, #box5 {
     left: 3%;
     bottom: 30%;
 }
@@ -257,7 +294,7 @@ body::-webkit-scrollbar {
     border: 2px solid rgb(255, 255, 255);
 }
 
-#box4{
+#box4, #box5{
     color: rgb(255, 255, 255);
     background-color: rgba(143, 81, 11, 0.9);
     border: 2px solid rgb(255, 255, 255);

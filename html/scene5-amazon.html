@@ -55,14 +55,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
 
     <div class="text">
-        <div id="box4" class="speechbox" >
+        <div id="box4" class="speechbox" style="display:none;">
             <p><b>Robin:</b> The Amazon rainforest, it’s supposed to be the earth's carbon sink but recently it is emitting more carbon than absorbing. Walk with me. 
             </p>
         </div>
     </div>
 
     <div class="text">
-        <div id="box4" class="speechbox" >
+        <div id="box5" class="speechbox" style="display:none;">
             <p><b>Robin:</b> We are as close to this forest fire as we can get, once you get your photo we need to get out of here as fast as possible. 
             </p>
         </div>
@@ -90,6 +90,18 @@
             y: "-100%",
             pin: true
         },'start')
+        .to("#box4", 4, {
+            display: "block",
+            pin: true
+        },'start')
+        .to("#box4", 2, {
+            display: "none",
+            pin: true
+        },'start2')
+        .to("#box5", 2, {
+            display: "block",
+            pin: true
+        },'start2')
         .to(".image3",  {
             opacity: 1,
             pin: true,

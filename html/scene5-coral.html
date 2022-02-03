@@ -40,6 +40,16 @@
             width: 90%;
             left: 0%;
         }
+
+        .image12{
+            width: 100%;
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            object-fit: cover;
+            transform: translate(0%, -100%);
+        }
     
         
     </style>
@@ -61,50 +71,48 @@
                 <img class="image2" src="../assets/images/scene5/coral/clouds_front-02.png">
                 <img class="image3" src="../assets/images/scene5/coral/clouds_3-02.png">
                 <img class="image4" src="../assets/images/scene5/coral/clouds_4-02.png">
-                <img class="image5" src="../assets/images/scene5/coral/hills-02-02-02.png">
+                <img class="image5" src="../assets/images/scene5/coral/hills.png">
                 <img class="image6" src="../assets/images/scene5/coral/water_bg-02.png">
                 <img class="image7" src="../assets/images/scene5/coral/boat-02.png">
                 <img class="image8" src="../assets/images/scene5/coral/water_2-02.png">
                 <img class="image9" src="../assets/images/scene5/coral/water_3.png">
-    
-                <!--<img class="image10" src="images/rightHill_shadow.png">
-                <img class="image11" src="images/water_2.png"> -->
-                <!-- <img class="image12" src="images/water_front-02.png"> -->
             </div>
         </div>  
-        
-    </div>
+        <div class="underwater">
+            <img class="image10" src="../assets/images/scene5/coral/water_front.png">
+            <img class="image12"  src="../assets/images/scene5/coral/coral-02.png">
+            <img class="image11" src="../assets/images/scene5/coral/humans.png">
+            <!-- <img class="image13" src="../assets/images/scene5/coral/IMG_0110.PNG">
+            <img class="image14" src="../assets/images/scene5/coral/IMG_0111.PNG">
+            <img class="image15" src="../assets/images/scene5/coral/IMG_0112.PNG"> -->
 
-    <div class="underwater">
-        <img class="image10" src="../assets/images/scene5/coral/water_front-02-02.png">
-        <img class="image11" src="../assets/images/scene5/coral/humans.png">
-
-        <div class="inventory">
-            <img id="inventory-bg" src="../assets/images/scene5/inventory.png" alt="inventory box">
-            <div class="icons">
-                <img id="camera-icon" class="icon" src="../assets/images/scene5/icon-cam.png" alt="camera item" style="display: block;">
-                <img id="map-icon" class="icon" src="../assets/images/scene5/icon-map.png" alt="map item" style="display: block;" onclick="window.location.href='scene5.html'">
-                <img id="camera-lock" class="lock" src="../assets/images/scene5/lock.png" alt="camera item" style="display: none;">
-                <img id="map-lock" class="lock" src="../assets/images/scene5/lock.png" alt="map item" style="display: none;">
-                <img id="teleport-icon" class="icon" src="../assets/images/scene5/icon.png" alt="teleport button" style="display: block;">
+            <div class="inventory">
+                <img id="inventory-bg" src="../assets/images/scene5/inventory.png" alt="inventory box">
+                <div class="icons">
+                    <img id="camera-icon" class="icon" src="../assets/images/scene5/icon-cam.png" alt="camera item" style="display: block;">
+                    <img id="map-icon" class="icon" src="../assets/images/scene5/icon-map.png" alt="map item" style="display: block;" onclick="window.location.href='scene5.html'">
+                    <img id="camera-lock" class="lock" src="../assets/images/scene5/lock.png" alt="camera item" style="display: none;">
+                    <img id="map-lock" class="lock" src="../assets/images/scene5/lock.png" alt="map item" style="display: none;">
+                    <img id="teleport-icon" class="icon" src="../assets/images/scene5/icon.png" alt="teleport button" style="display: block;">
+                </div>
             </div>
         </div>
     </div>
 
     <div class="text">
-        <div id="box1" class="speechbox" >
+        <div id="box1" class="speechbox" style="display:none;">
             <p><b>Robin:</b> The great barrier reef, home to an estimated 25% of all known marine life. Are you ready to dive in? 
             </p>
         </div>
     </div>
 
     <div class="text" >
-        <div id="box2" class="speechbox" >
+        <div id="box2" class="speechbox" style="display:none;">
             <p><b>Aeryn:</b> Yes I am!</p>
         </div>
     </div>
 
-    <div id="nextBtn" class="trans-btn" ></div>
+    <div id="nextBtn" class="trans-btn" onclick="switchTb()" style="display:none;"></div>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
@@ -151,6 +159,14 @@
             y: "-100%",
             pin: true
         }, 'start')
+        .to("#box1", 2, {
+            display: "block",
+            pin: true
+        }, 'showtext')
+        .to(".trans-btn", 6,{
+            display: "block",
+            pin: true
+        })
         .to(".image8", 22, {
             y: "-100%",
             pin: true
@@ -159,10 +175,16 @@
             y: "-100%",
             pin: true
         }, 'start')
-
+        .to(".trans-btn",{
+            display: "none",
+            pin: true
+        })
+        .to("#box2",{
+            display: "none",
+            pin: true
+        })
 
         gsap.to(".image11", {
-    
             scrollTrigger: {
                 trigger: '.image11',
                 start: "top -5%", 
@@ -173,8 +195,20 @@
                 
             },
         })
+        
 
         document.getElementById("bg-music").volume = 0.2;
+
+        function switchTb() {  
+            let box1 = document.getElementById('box1');
+            let box2 = document.getElementById('box2');
+            let btn1 = document.getElementById('nextBtn');
+
+            box1.style.display = "none";
+            btn1.style.display = "none";
+            box2.style.display = "block";
+        }
+
 
     </script>
 </body>

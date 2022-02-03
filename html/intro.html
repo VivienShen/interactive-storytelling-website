@@ -7,6 +7,17 @@
     <title>Scene 1</title>
     <link rel="stylesheet" href="../styles/scene1.css">
     <link rel="stylesheet" href="../styles/intro.css">
+
+    <style>
+        
+        /* Style the button */
+        button {
+          padding: 20px;
+          font-size: 20px;
+          position: absolute;
+          top: 10%;
+        }
+        </style>
 </head>
 <body>
 
@@ -41,6 +52,8 @@
     </div>
 
     <div class="btn2" onclick="window.location.href='scene1.html'"></div> 
+
+    <!-- <button onclick="openFullscreen();">Open Fullscreen</button> -->
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
@@ -91,7 +104,15 @@
         
         document.getElementById("bg-music").volume = 0.2;
 
-        
+        var elem = document.documentElement;
+        function openFullscreen() {
+        if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+
+        } else if (elem.msRequestFullscreen) { /* IE11 */
+            elem.msRequestFullscreen();
+        }
+        }
 
     </script>
 </body>
