@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form>
+        <input id="myInput" type="text" name="fname" placeholder="Enter Name here..">
+        <input type="button" value="Submit" onclick="getInputValue()">
+    </form>
+
+    <p class="text"><b>Aeryn:</b> Oh wow I’ve read so much about how it is on Earth, but it’s even better in person! Aeryn</p>
+
+
+    <script>
+
+        var inputVal2 = sessionStorage.getItem("newName");
+        console.log(inputVal2);
+
+        
+        function getInputValue(){
+            // Selecting the input element and get its value 
+            var inputVal = document.getElementById("myInput").value;
+            
+            var all = document.querySelectorAll('.text')
+            //using .test as a wrapper section, try using body in production as selector (in the snippets it breaks)
+
+            all.forEach(x => x.textContent = x.textContent.replace(/Aeryn/gi, inputVal))
+            // keep in mind forEach for nodes has limited support, tested  in chrome 
+
+            localStorage.setItem("newName", inputVal);
+            console.log(inputVal);
+
+        }
+        
+    </script>
+</body>
+</html>

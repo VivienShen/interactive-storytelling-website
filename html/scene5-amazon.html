@@ -15,13 +15,30 @@
         #bg1{
             position: fixed;
         }
+
+        .image3, .image4{
+            top: 0%;
+            opacity: 1;
+        }
+
+        .image3, .image5, .image7 {
+            left: -50%;
+            opacity: 1;
+        }
+
+        .image4, .image6, .image8{
+            top: 0%;
+            opacity: 1;
+            right: -65%;
+        }
+
     </style>
 </head>
 <body>
 
-    <audio autoplay loop id="bg-music">
+    <!-- <audio autoplay loop id="bg-music">
         <source src="../assets/audio/bgm/Mountain_-_JVNA.mp3" type="audio/mpeg" />
-    </audio>
+    </audio> -->
 
     <div id="bg1" class="image">
         <img class="img-bg" src="../assets/images/scene5/amazon/amazon_bg.png" alt="in the laboratory">
@@ -31,10 +48,18 @@
         <div class="container_img">
             <div class="img" >
                 <img class="image1" src="../assets/images/scene5/amazon/wind.png">
-                <img class="image2" src="../assets/images/scene5/amazon/forest.png">
-                <img class="image3" src="../assets/images/scene5/amazon/trees.png">
+                <img class="image2" src="../assets/images/scene5/amazon/mountains-01.png">
+                <img class="image2-2" src="../assets/images/scene5/amazon/fire-01.png">
+                <img class="image2-3" src="../assets/images/scene5/amazon/bushes-01.png">
+                <img class="image7" src="../assets/images/scene5/amazon/backLeft-01.png">
+                <img class="image8" src="../assets/images/scene5/amazon/backRight-01.png">
+                <img class="image5" src="../assets/images/scene5/amazon/middelLeft-01.png">
+                <img class="image6" src="../assets/images/scene5/amazon/middleRight-01.png">
+                <img class="image3" src="../assets/images/scene5/amazon/frontLeft-01.png">
+                <img class="image4" src="../assets/images/scene5/amazon/frontRight-01.png">
+                <!-- <img class="image3" src="../assets/images/scene5/amazon/trees.png">
                 <img class="image4" src="../assets/images/scene5/amazon/trees2.png">
-                <img class="image5" src="../assets/images/scene5/amazon/trees3.png">
+                <img class="image5" src="../assets/images/scene5/amazon/trees3.png"> -->
             </div>
         </div>  
 
@@ -87,10 +112,14 @@
             duration: 2
         },'start')
         .to(".image2", 4, {
-            y: "-100%",
+            y: "-80%",
             pin: true
         },'start')
-        .to("#box4", 4, {
+        .to(".image2-3", 5, {
+            y: "-80%",
+            pin: true
+        },'start')
+        .to("#box4", 5, {
             display: "block",
             pin: true
         },'start')
@@ -103,22 +132,83 @@
             pin: true
         },'start2')
         .to(".image3",  {
-            opacity: 1,
+            x: "50%",
             pin: true,
-            duration: 3
-        })
+            duration: 5
+        },'front')
         .to(".image4",{
-            opacity: 1,
+            x: "-50%",
             pin: true,
-            duration: 3
-        })
-        .to(".image5", {
-            opacity: 1,
+            duration: 5
+        },'front')
+        .to(".image5",  {
+            x: "50%",
             pin: true,
-            duration: 3
-        })
+            duration: 5
+        }, "+=2")
+        .to(".image6",{
+            x: "-50%",
+            pin: true,
+            duration: 5
+        }, "-=4")
+        .to(".image3",{
+            x: "37%",
+            pin: true,
+            duration: 5
+        }, "-=6")
+        .to(".image4",{
+            x: "-40%",
+            pin: true,
+            duration: 5
+        }, "-=6")
+        .to(".image7",{
+            x: "50%",
+            pin: true,
+            duration: 5
+        }, "+=8")
+        .to(".image8",{
+            x: "-50%",
+            pin: true,
+            duration: 5
+        }, "-=2")
+        .to(".image3",{
+            x: "27%",
+            pin: true,
+            duration: 5
+        }, "-=6")
+        .to(".image4", {
+            x: "-30%",
+            pin: true,
+            duration: 5
+        }, "-=6")
+        .to(".image5",{
+            x: "40%",
+            pin: true,
+            duration: 5
+        }, "-=6")
+        .to(".image6", {
+            x: "-40%",
+            pin: true,
+            duration: 5
+        }, "-=6")
+        .to(".image2-2", {
+            y: "-100%",
+            pin: true,
+            duration: 30
+            
+        },"-=30")
+        .to(".image2", {
+            y: "-100%",
+            pin: true,
+            duration: 30
+        },"-=30")
+        .to(".image2-3", {
+            y: "-100%",
+            pin: true,
+            duration: 30
+        },"-=30")
 
-        document.getElementById("bg-music").volume = 0.2;
+        document.getElementById("bg-music").volume = 0.05;
 
     </script>
 </body>

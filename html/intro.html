@@ -63,6 +63,13 @@
 
     <script>
 
+        window.onload = (event) => {
+            window.pageYOffset = 0;
+            // document.documentElement.scrollTop = 3004;
+        };
+
+        console.log(document.documentElement.scrollTop);
+
         const tl = gsap.timeline({
             scrollTrigger:{
                 trigger: '.envelope-closed',
@@ -75,7 +82,7 @@
         });
 
 
-        tl.to(".envelope-closed", {y: -620, duration: 800})
+        tl.to(".envelope-closed", {y: -600, duration: 800})
         .to(".envelope-closed", {opacity: 0, duration: 5})
         .to(".envelope-open", {opacity: 1, duration: 8})
         .to(".letter, .envelope-plants", {transform: "scale(1)", duration: 20})
@@ -102,7 +109,7 @@
 
         }
         
-        document.getElementById("bg-music").volume = 0.2;
+        document.getElementById("bg-music").volume = 0.05;
 
         var elem = document.documentElement;
         function openFullscreen() {

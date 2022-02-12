@@ -6,6 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scene 1</title>
     <link rel="stylesheet" href="../styles/scene1.css">
+
+    <style>
+        body{
+            -ms-overflow-style: none;   
+            scrollbar-width: none;  
+            overflow-y: scroll;  
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <audio autoplay loop id="bg-music">
@@ -306,7 +318,7 @@
       return false;
     };
 
-    document.getElementById("bg-music").volume = 0.2;
+    document.getElementById("bg-music").volume = 0.05;
 
     </script>
 </body>

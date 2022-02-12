@@ -18,15 +18,57 @@
         .image3{
             top: 100%;
             opacity: 1;
+            z-index: 1;
+        }
+        .image4, .image5, .image6{
+            top: 100%;
+            opacity: 1;
+        }
+
+        .image5{
+            left: 30%;
+        }
+
+        .image7{
+            opacity: 0;
+            width: 4.9%;
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            object-fit: cover;
+            top: 35%;
+            left: 71%;
+            z-index: 3;
+        }
+        .image8{
+            width: 4.9%;
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            object-fit: cover;
+            top: 100%;
+            left: 77.6%;
+            z-index: 2;
+            
+        }
+        .image3-3{
+            z-index: 3;
+            top: 100%;
+        }
+
+        .image5, image6{
+            z-index: 4;
         }
         
     </style>
 </head>
 <body>
 
-    <audio autoplay loop id="bg-music">
+    <!-- <audio autoplay loop id="bg-music">
         <source src="../assets/audio/bgm/Mountain_-_JVNA.mp3" type="audio/mpeg" />
-    </audio>
+    </audio> -->
 
     <div id="bg1" class="image">
         <img class="img-bg" src="../assets/images/scene5/arctic/arcticBG.png" alt="arctic background gradient">
@@ -35,14 +77,22 @@
     <div class="container" >
         <div class="container_img">
             <div class="img" >
-                <img class="image2" src="../assets/images/scene5/arctic/mountains.png">
+                <img class="image2" src="../assets/images/scene5/arctic/mountainBG-01.png">
                 <img class="image1" src="../assets/images/scene5/arctic/clouds.png">
-                <img class="image3" src="../assets/images/scene5/arctic/water.png">
-                <img class="image4" src="../assets/images/scene5/arctic/scroll1.png">
-                <img class="image5" src="../assets/images/scene5/arctic/scroll2.png">
-                <img class="image6" src="../assets/images/scene5/arctic/scroll3.png">
+                <img class="image4" src="../assets/images/scene5/arctic/water-01.png">
+                <img class="image3" src="../assets/images/scene5/arctic/mountains-01.png">
+                <img class="image3-3" src="../assets/images/scene5/arctic/iceberg-01.png">      
+                <img class="image5" src="../assets/images/scene5/arctic/smallPB-01.png">
+                <img class="image6" src="../assets/images/scene5/arctic/BigPB-01.png">
+        
+                <!-- <img class="image5" src="../assets/images/scene5/arctic/scroll1.png">
+                <img class="image6" src="../assets/images/scene5/arctic/scroll2.png">
+                <img class="image7" src="../assets/images/scene5/arctic/scroll3.png"> -->
             </div>
+            <img class="image8" src="../assets/images/scene5/arctic/iceberg2.png">
+            <img class="image7" src="../assets/images/scene5/arctic/fallingIce.png">
         </div>  
+
         <div class="inventory">
             <img id="inventory-bg" src="../assets/images/scene5/inventory.png" alt="inventory box">
             <div class="icons">
@@ -90,36 +140,84 @@
             y: "-100%",
             pin: true
         } ,'start')
+        .to(".image3-3", 8.3, {
+            y: "-100%",
+            pin: true
+        } ,'start')
+        .to(".image8", 8, {
+            y: "-239%",
+            pin: true
+        } ,'start')
+        .to(".image4", 10, {
+            y: "-100%",
+            pin: true
+        },'start')
+        .to(".image5", 11, {
+            y: "-95%",
+            pin: true
+        },'start')
+        .to(".image6", 11, {
+            y: "-102%",
+            pin: true
+        },'start')
         .to("#box3",{
             display: "block"
         })
-        .to(".image4",{
-            opacity: 1,
-            pin: true,
-            duration: 2
-        })
-        .to(".image5", 3, {
-            opacity: 1,
-            pin: true,
-            duration: 2
-        }, 'img1-change')
-        .to(".image4",{
-            opacity: 0,
-            pin: true,
-            duration: 2
-        }, 'img1-change')
-        .to(".image6", {
-            opacity: 1,
-            pin: true,
-            duration: 2
-        }, 'img2-change')
         .to(".image5", {
-            opacity: 0,
+            x: "-45%",
+            pin: true,
+            duration: 50
+        }, 'polarBear')
+        .to(".image6", {
+            x: "-20%",
+            pin: true,
+            duration: 50
+        }, 'polarBear')
+        .to(".image7",  {
+            opacity: 1,
             pin: true,
             duration: 2
-        }, 'img2-change')
+        }, "-=35")
+        .to(".image7", {
+            x: "-10%",
+            y: "90%",
+            rotation: 70,
+            pin: true,
+            duration: 10
+        },"-=34" )
+        .to(".image8",{
+            rotation: -90,
+            transformOrigin: "50% 90%",
+            pin: true,
+            duration: 10
+        }, "-=32")
+        // .to(".image5",{
+        //     opacity: 1,
+        //     pin: true,
+        //     duration: 2
+        // })
+        // .to(".image6", 3, {
+        //     opacity: 1,
+        //     pin: true,
+        //     duration: 2
+        // }, 'img1-change')
+        // .to(".image5",{
+        //     opacity: 0,
+        //     pin: true,
+        //     duration: 2
+        // }, 'img1-change')
+        // .to(".image7", {
+        //     opacity: 1,
+        //     pin: true,
+        //     duration: 2
+        // }, 'img2-change')
+        // .to(".image6", {
+        //     opacity: 0,
+        //     pin: true,
+        //     duration: 2
+        // }, 'img2-change')
 
-        document.getElementById("bg-music").volume = 0.2;
+        document.getElementById("bg-music").volume = 0.05;
 
     </script>
 </body>

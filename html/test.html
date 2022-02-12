@@ -1,58 +1,208 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/scene5.css">
+    <style>
+        .sec1{
+            background-color: rebeccapurple;
+            height: 100vh;
+        }
+        .sec2{
+            /* background-color: burlywood; */
+            height: 350vh;
+            top: -10%
+        }
+        body{
+            margin: 0;
+        }
 
-/* IE11 syntax */
-:-ms-fullscreen {
-  background-color: yellow;
-}
+        .imageBG, .imageBG2{
+            overflow: auto;
+            height:100%;
+            width: 100%;
+            margin-bottom: -0.1%;
+            position: relative;
+        }
 
-/* Standard syntax */
-:fullscreen {
-  background-color: yellow;
-}
 
-.btn:fullscreen{
-    color: red;
-    background-color: red;
-}
+        .image1, .image2, .image3, .image4, .image5, .image6, .image7, .image8, .image9{
+            top: 100%;
+            opacity: 1;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0%;
+        }
 
-.btn:-ms-fullscreen {
-  background-color: rgb(255, 0, 0);
-}
+        .image9{
+            top: 102%;
+        }
 
-/* Style the button */
-button {
-  padding: 20px;
-  font-size: 20px;
-}
-</style>
+        .image11{
+            position: absolute;
+            width: 90%;
+            left: 0%;
+        }
+
+        .image12{
+            width: 100%;
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            object-fit: cover;
+            transform: translate(0%, -100%);
+        }
+
+        .image13{
+            position: absolute;
+            width: 20%;
+            left: 0%;
+            margin-top: 100%;
+        }
+
+        #path{
+            position: absolute;
+            left: 0%;
+            margin-top: 80%;
+        }
+    </style>
 </head>
 <body>
+    <Section class="sec1">
+        <img class= "imageBG" src="../assets/images/scene5/coral/coral_bg.png">
+        
+        <img class="image1" src="../assets/images/scene5/coral/clouds_back.png">
+        <img class="image2" src="../assets/images/scene5/coral/clouds_front-02.png">
+        <img class="image3" src="../assets/images/scene5/coral/clouds_3-02.png">
+        <img class="image4" src="../assets/images/scene5/coral/clouds_4-02.png">
+        <img class="image5" src="../assets/images/scene5/coral/hills.png">
+        <img class="image6" src="../assets/images/scene5/coral/water_bg-02.png">
+        <img class="image7" src="../assets/images/scene5/coral/boat-02.png">
+        <img class="image8" src="../assets/images/scene5/coral/water_2-02.png">
+        <img class="image9" src="../assets/images/scene5/coral/water_3.png">
+    
+    </Section>
+    <Section class="sec2">
+        <img class= "imageBG2" src="../assets/images/scene5/coral/water_front.png">
 
-<h2>Fullscreen Mode</h2>
-<p>Click on the "Open Fullscreen" button to open this page in fullscreen mode. Close it by either clicking the "Esc" key on your keyboard, or with the "Close Fullscreen" button.</p>
+        <img class="image12"  src="../assets/images/scene5/coral/coral.png">
+        <img class="image11" src="../assets/images/scene5/coral/humans.png">
+        <svg id="path"  viewBox="0 100 786 400">
+            <path id="motionPath" d="M 4 160 C 60 282 112 333 288 389 C 431 419 513 395 644 353 " fill="none" stroke="#5dba4700" stroke-width="2"/>
+        </svg>
+        <img class="image13" src="../assets/images/scene5/coral/turtle.png">
+    </Section>
 
-<button class="btn" onclick="openFullscreen();">Open Fullscreen</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/MotionPathPlugin.min.js"></script>
+
+    <script>
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.sec1',
+                scrub: 1,
+                start: 'top top',
+                end: '+=10000',
+                pin: true,
+                // markers: true
+            }
+        });
+
+        tl.to(".image1", 2,{
+            y: "-100%",
+            pin: true,
+            duration: 2
+        },'start')
+        .to(".image2", 4, {
+            y: "-100%",
+            pin: true
+        },'start')
+        .to(".image3", 6, {
+            y: "-100%",
+            pin: true
+        },'start')
+        .to(".image4", 8, {
+            y: "-100%",
+            pin: true
+        },'start')
+        .to(".image5", 10, {
+            y: "-100%",
+            pin: true
+        }, 'start')
+        .to(".image6", 11, {
+            y: "-100%",
+            pin: true
+        }, 'start')
+        .to(".image7", 20,  {
+            y: "-100%",
+            pin: true
+        }, 'start')
+        .to("#box1", 2, {
+            display: "block",
+            pin: true
+        }, 'showtext')
+        .to(".trans-btn", 6,{
+            display: "block",
+            pin: true
+        })
+        .to(".image8", 22, {
+            y: "-100%",
+            pin: true
+        }, 'start')
+        .to(".image9", 26, {
+            y: "-100%",
+            pin: true
+        }, 'start')
+        .to(".trans-btn",{
+            display: "none",
+            pin: true
+        })
+        .to("#box2",{
+            display: "none",
+            pin: true
+        })
 
 
-<script>
-// Using JavaScript to open the page in fullscreen mode
-var elem = document.documentElement;
-function openFullscreen() {
-  if (elem.requestFullscreen) {
-    elem.requestFullscreen();
+        gsap.to(".image11", {
+            scrollTrigger: {
+                trigger: '.image11',
+                start: "top -5%", 
+                end: "2000",
+                // markers: true,
+                pin: true,
+                scrub: 2
+                
+            },
+        });
 
-  } else if (elem.msRequestFullscreen) { /* IE11 */
-    elem.msRequestFullscreen();
-  }
-}
+        const tl2 = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.image13',
+                scrub: 1,
+                start: 'top 90%',
+                end: '+1000',
+                // markers: true
+            }
+        });
 
-</script>
+        tl2.to(".image13", {
+            motionPath: {
+                path: "#motionPath",
+                align: "#motionPath",
+                alignOrigin: [0.5, 0.2],
+                autoRotate: -40,
+            },
+            duration: 20
+            
+        });
 
-
-
+        
+    </script>
 </body>
 </html>

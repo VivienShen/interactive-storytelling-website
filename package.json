@@ -1,0 +1,24 @@
+{
+  "name": "interactive-storytelling-website",
+  "version": "1.0.0",
+  "description": "\"# interactive-storytelling-website\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VivienShen/interactive-storytelling-website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VivienShen/interactive-storytelling-website/issues"
+  },
+  "homepage": "https://github.com/VivienShen/interactive-storytelling-website#readme",
+  "dependencies": {
+    "gsap": "^3.9.1",
+    "swup": "^2.0.14",
+    "three": "^0.134.0"
+  }
+}

@@ -6,7 +6,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Sincerely, Earth</title>
         <link rel="stylesheet" href="../styles/scene2.css">
-        <script src="js/scripts.js"></script>
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     </head>
 
@@ -216,6 +215,15 @@
         </div> -->
 
         <script>
+
+            /*Retrieving changed name from local storage*/
+            var inputVal = localStorage.getItem("newName");
+            console.log(inputVal);
+
+            var all = document.querySelectorAll('.speechbox')
+
+            all.forEach(x => x.textContent = x.textContent.replace(/Aeryn/gi, inputVal))
+
             /*------Changing div with next and prev button------*/
 
             //store the divs of the specified className into an array
@@ -290,7 +298,7 @@
                 document.getElementById('modal').style.display='block';
             }       
 
-            document.getElementById("bg-music").volume = 0.2;
+            document.getElementById("bg-music").volume = 0.05;
 
         </script>
     </body>

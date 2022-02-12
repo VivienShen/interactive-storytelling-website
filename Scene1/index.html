@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class='parent'>
+        <img id="target1" src="https://png.pngtree.com/png-clipart/20201118/ourlarge/pngtree-hand-drawn-earth-clipart-png-image_2458788.jpg" width="700px" height= "500px" scale="1.05" >
+        <img id="target2" src="https://previews.123rf.com/images/macrovector/macrovector1907/macrovector190700052/128160994-isometric-urban-horizontal-composition-with-birds-eye-view-of-modern-city-district-with-streets-and-.jpg" width="700px" height= "500px" scale="1.05" >
+        <img id="target3" src="https://media.istockphoto.com/vectors/tsunami-consequences-rescue-male-female-character-evacuation-save-vector-id1263052067?k=20&m=1263052067&s=612x612&w=0&h=GZhYJ6dZpP8pl9tr8OM3LVNovaCgtXVqfA_X3yWym5s=" width="700px" height= "500px" scale="1.05" >
+    </div>
+    
+    <input type="button" onclick="zoomIn()" value="Next"/>
+
+    <script>
+        var pic1 = document.getElementById("target1");
+        var pic2 = document.getElementById("target2");
+        var pic3 = document.getElementById("target3");
+
+        var counter = 0;
+        console.log(counter);
+    
+        function zoomIn() {
+            counter += 1;
+
+            console.log(counter);
+
+            if(counter > 2){
+                counter = 0;
+            }
+
+            if(counter == 0){
+                pic1.style.opacity = 1;
+                pic2.style.opacity = 0;
+                pic3.style.opacity = 0;
+
+                document.getElementById('target1').className = 'classname';
+                document.getElementById('target3').className = 'classname2';
+            }
+
+            else if(counter == 1){
+                pic1.style.opacity = 0;
+                pic2.style.opacity = 1;
+                pic3.style.opacity = 0;
+
+                document.getElementById('target2').className = 'classname';
+                document.getElementById('target1').className = 'classname2';
+            }
+
+            else if(counter == 2) {
+                pic1.style.opacity = 0;
+                pic2.style.opacity = 0;
+                pic3.style.opacity = 1;
+
+                document.getElementById('target3').className = 'classname';
+                document.getElementById('target2').className = 'classname2';
+            }
+        }
+
+    
+
+    </script>
+</body>
+</html>
