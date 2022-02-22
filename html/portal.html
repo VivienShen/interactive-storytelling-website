@@ -74,14 +74,21 @@
         //create tube based on path
         var geometry = new THREE.TubeGeometry( path, 300, 10, 32, true);
 
+        //create texture loader
+        var texture = new THREE.TextureLoader().load('../assets/images/travel.png');
+        texture.wrapS = THREE.RepeatWrapping;
+        texture.repeat.set( 1, 1);
+        
+
         for( var i =0, j=geometry.faces.length;i<j; i++){
             geometry.faces[i].color = new THREE.Color("hsl("+ Math.floor(Math.random()*360)+",50%, 50%)");
         }
         var material = new THREE.MeshLambertMaterial( { 
             // color: 0xff0000,
             side : THREE.BackSide,
-            vertexColors : THREE.FaceColors,
-            wireframe:true
+            // vertexColors : THREE.FaceColors,
+            // wireframe:true
+            map: texture
         });
         var tube = new THREE.Mesh(geometry, material);
         scene.add(tube);
@@ -118,9 +125,9 @@
 
         requestAnimationFrame(render);
 
-        var timer = setTimeout(function() {
-            window.location='scene3-1.html'
-        }, 3000);
+        // var timer = setTimeout(function() {
+        //     window.location='scene3-1.html'
+        // }, 3000);
 
 
     </script>

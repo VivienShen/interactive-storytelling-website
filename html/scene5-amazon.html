@@ -16,20 +16,18 @@
             position: fixed;
         }
 
-        .image3, .image4{
-            top: 0%;
-            opacity: 1;
-        }
 
         .image3, .image5, .image7 {
-            left: -50%;
+            /* left: -50%; */
             opacity: 1;
+            top: 100%;
         }
 
         .image4, .image6, .image8{
             top: 0%;
             opacity: 1;
-            right: -65%;
+            top: 100%;
+            /* right: -65%; */
         }
 
     </style>
@@ -131,82 +129,83 @@
             display: "block",
             pin: true
         },'start2')
+        
+        .to("#box4", 5, {
+            display: "block",
+            pin: true
+        },'start')
+        .to(".image3", 4, {
+            y: "-100%",
+            pin: true
+        },'start')
+        .to(".image4", 6, {
+            y: "-100%",
+            pin: true
+        },'start')
+        .to(".image5", 7, {
+            y: "-100%",
+            pin: true
+        },'start')
+        .to(".image6", 8, {
+            y: "-100%",
+            pin: true
+        },'start')
+        .to(".image7", 9, {
+            y: "-100%",
+            pin: true
+        },'start')
+        .to(".image8", 10, {
+            y: "-100%",
+            pin: true
+        },'start')
+        
         .to(".image3",  {
-            x: "50%",
+            x: "-50%",
             pin: true,
-            duration: 5
+            duration: 30
         },'front')
         .to(".image4",{
-            x: "-50%",
+            x: "56%",
             pin: true,
-            duration: 5
+            duration: 30
         },'front')
-        .to(".image5",  {
-            x: "50%",
-            pin: true,
-            duration: 5
-        }, "+=2")
-        .to(".image6",{
+        .to(".image5", 35, {
             x: "-50%",
             pin: true,
-            duration: 5
-        }, "-=4")
-        .to(".image3",{
-            x: "37%",
-            pin: true,
-            duration: 5
-        }, "-=6")
-        .to(".image4",{
-            x: "-40%",
-            pin: true,
-            duration: 5
-        }, "-=6")
-        .to(".image7",{
+            duration: 30
+        },'front')
+        .to(".image6", 35, {
             x: "50%",
             pin: true,
-            duration: 5
-        }, "+=8")
-        .to(".image8",{
+            duration: 30
+        },'front')
+        .to(".image7", 35,  {
             x: "-50%",
             pin: true,
-            duration: 5
-        }, "-=2")
-        .to(".image3",{
-            x: "27%",
+            duration: 30
+        },'front')
+        .to(".image8", 35,{
+            x: "66%",
             pin: true,
-            duration: 5
-        }, "-=6")
-        .to(".image4", {
-            x: "-30%",
-            pin: true,
-            duration: 5
-        }, "-=6")
-        .to(".image5",{
-            x: "40%",
-            pin: true,
-            duration: 5
-        }, "-=6")
-        .to(".image6", {
-            x: "-40%",
-            pin: true,
-            duration: 5
-        }, "-=6")
-        .to(".image2-2", {
+            duration: 30
+        },'front')
+
+        .to(".image2-2", 32, {
             y: "-100%",
             pin: true,
             duration: 30
             
-        },"-=30")
-        .to(".image2", {
+        },'front')
+        .to(".image2", 32,{
             y: "-100%",
             pin: true,
             duration: 30
-        },"-=30")
-        .to(".image2-3", {
+        },'front')
+        .to(".image2-3", 35, {
             y: "-100%",
             pin: true,
             duration: 30
-        },"-=30")
+        },'front')
 
         document.getElementById("bg-music").volume = 0.05;
 
