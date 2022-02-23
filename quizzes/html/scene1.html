@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scene 1</title>
+    <link rel="stylesheet" href="../styles/scene1.css">
+</head>
+<body>
+    <audio autoplay loop id="bg-music">
+        <source src="../assets/audio/bgm/Earth_Appears_-_Brian_Bolger.mp3" type="audio/mpeg" />
+    </audio>
+    
+    <div class="main-page">
+        <div id="bg1" class="image">
+            <img class="img-bg" src="../assets/images/scene1/scene1BG.png" alt="in the laboratory">
+        </div>  
+
+        <div class="image" id="bg-cover"></div>
+        <img class="image" id="target1" src="../assets/images/scene1/earth.png"  scale="1" >
+        <img class="image" id="target2" src="../assets/images/scene1/zoom1.png"  scale="1" >
+        <img class="image" id="target3" src="../assets/images/scene1/zoom2.png"  scale="1" >
+        
+        <img class="image telescope" src="../assets/images/scene1/telescope.png">
+
+        <div class="text">
+            <div id="box1" class="textbox" >
+                <p>Earth is now a dangerous place to live in</p>
+            </div>
+        </div>
+
+        <div class="text">
+            <div id="box2" class="textbox2" >
+                <p>In 2050 Earth felt the devastating effects of climate change, with natural disasters, famines, and nuclear war fighting for land and resources</p>
+            </div>
+        </div>
+
+        <div class="text">
+            <div id="box3" class="textbox3" >
+                <p>Now, 50 years later the Earth still warms since it has a 40 year delay in temperature increase from carbon released years ago</p>
+            </div>
+        </div> 
+
+        <div class="text">
+            <div id="box4" class="textbox2" >
+                <p>In 2050 some selected members of society like scientists and their families were selected to travel to space to look for a way back to fix the issue</p>
+            </div>
+        </div>
+
+        <div class="text">
+            <div id="box5" class="textbox3" >
+                <p>Although the people who were left on earth had a population decrease from Earth being difficult in many places to live in</p>
+            </div>
+        </div> 
+
+        
+        <div class="btn2" id="nextBtn" onclick=""></div> 
+
+        <div class="btn2" id="nextBtn2" onclick=""></div> 
+
+        <button class="zoomBtn" onclick="zoomIn()">
+            <img class="zoomBtn-img" src="../assets/images/scene1/zoomBtn.png">
+        </button>
+
+        <a id="drag"  href="" onclick="return false;">
+            <div id="transition-btn" >
+                    
+                <div id="slider" class="slider">
+                    <div id= "path" class="path"></div> 
+                    <div class="thumb">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+                
+            </div>
+        </a>
+
+    </div>
+
+    <script>
+        var pic1 = document.getElementById("target1");
+        var pic2 = document.getElementById("target2");
+        var pic3 = document.getElementById("target3");
+        var pic4 = document.getElementById("bg-cover");
+        var tb1 = document.getElementById("box1");
+        var tb2 = document.getElementById("box2");
+        var tb3 = document.getElementById("box3");
+        var tb4 = document.getElementById("box4");
+        var tb5 = document.getElementById("box5");
+        var btn1 = document.getElementById("nextBtn");
+        var btn2 = document.getElementById("nextBtn2");
+        var btn3 = document.getElementById("transition-btn");
+
+        var counter = 0;
+        console.log(counter);
+    
+        function zoomIn() {
+            counter += 1;
+
+            console.log(counter);
+
+            if(counter > 2){
+                counter = 0;
+            }
+
+            if(counter == 0){
+                pic1.style.opacity = 1;
+                pic2.style.opacity = 0;
+                pic3.style.opacity = 0;
+                pic4.style.opacity = 0;
+                tb1.style.opacity = 1;
+                tb2.style.opacity = 0;
+                tb3.style.opacity = 0;
+                tb4.style.opacity = 0;
+                tb5.style.opacity = 0;
+                btn1.style.opacity = 0;
+                btn2.style.opacity = 0;
+
+                document.getElementById('target1').className = 'classname';
+                document.getElementById('target3').className = 'classname2';
+                document.getElementById('box1').className = 'textbox';
+                document.getElementById('box2').className = "textbox2";
+                document.getElementById('box3').className = "textbox3";
+                document.getElementById('box4').className = "textbox2";
+                document.getElementById('box5').className = "textbox3";
+
+                btn1.style.animation = "";
+                btn1.style.animationDelay = "";
+                btn1.style.cursor = "auto";
+
+                document.getElementById("nextBtn").setAttribute( "onClick", "" );
+                document.getElementById("nextBtn2").setAttribute( "onClick", "" );
+
+                btn2.style.animation = "";
+                btn2.style.animationDelay = "";
+                btn2.style.cursor = "auto";
+
+
+            }
+
+            else if(counter == 1){
+                pic1.style.opacity = 0;
+                pic2.style.opacity = 1;
+                pic3.style.opacity = 0;
+                pic4.style.opacity = 1;
+                tb1.style.opacity = 0;
+                tb2.style.opacity = 1;
+                tb4.style.opacity = 0;
+                tb5.style.opacity = 0;
+                btn1.style.opacity = 0;
+                btn2.style.opacity = 0;
+
+                document.getElementById('target2').className = 'classname';
+                document.getElementById('target1').className = 'classname2';
+                document.getElementById('box1').className = 'textbox';
+                document.getElementById('box2').className = "textbox2-animated";
+                document.getElementById('box4').className = "textbox2";
+                document.getElementById('box5').className = "textbox3";
+                
+                waitForBtn(btn1);
+
+                btn1.style.animation =  "fadeIn linear 2s";
+                btn1.style.animationDelay = "4s";
+                btn1.style.cursor = "pointer";
+
+                btn1.style.display = "block";
+
+                document.getElementById("nextBtn").setAttribute( "onClick", "switchTb();" );
+                document.getElementById("nextBtn2").setAttribute( "onClick", "" );
+
+                btn2.style.animation = "";
+                btn2.style.animationDelay = "";
+                btn2.style.cursor = "auto";
+
+                btn1.style.zIndex = 1;
+                btn2.style.zIndex = 0;
+
+            }
+
+            else if(counter == 2) {
+                pic1.style.opacity = 0;
+                pic2.style.opacity = 0;
+                pic3.style.opacity = 1;
+                pic4.style.opacity = 1;
+                tb1.style.opacity = 0;
+                tb2.style.opacity = 0;
+                tb3.style.opacity = 0;
+                tb4.style.opacity = 1;
+                btn1.style.opacity = 0;
+                btn2.style.opacity = 0;
+
+                document.getElementById('target3').className = 'classname';
+                document.getElementById('target2').className = 'classname2';
+                document.getElementById('box1').className = 'textbox';
+                document.getElementById('box2').className = "textbox2";
+                document.getElementById('box3').className = "textbox3";
+                document.getElementById('box4').className = "textbox2-animated";
+
+                btn1.style.animation = "";
+                btn1.style.animationDelay = "";
+                btn1.style.cursor = "auto";
+
+                btn1.style.display = "none";
+
+                document.getElementById("nextBtn").setAttribute( "onClick", "" );
+                document.getElementById("nextBtn2").setAttribute( "onClick", "switchTb2();" );
+
+                waitForBtn(btn2);
+
+                btn2.style.animation =  "fadeIn linear 2s";
+                btn2.style.animationDelay = "4s";
+                btn2.style.cursor = "pointer";
+
+                btn1.style.zIndex = 0;
+                btn2.style.zIndex = 1;
+
+                
+            }
+
+        }
+
+        function waitForBtn(btn) {
+            setTimeout (function () {
+                btn.style.opacity = 1;
+            }, 5000);
+        }
+
+        function switchTb() {
+            tb2.style.opacity = 0;
+            tb3.style.opacity = 1;
+            btn1.style.opacity = 0;
+            
+            document.getElementById('box2').className = "textbox2";
+            document.getElementById('box3').className = "textbox3-animated";
+        }
+
+        function switchTb2() {
+            tb4.style.opacity = 0;
+            tb5.style.opacity = 1;
+            btn2.style.opacity = 0;
+            btn3.style.display = "block";
+            
+            document.getElementById('box4').className = "textbox2";
+            document.getElementById('box5').className = "textbox3-animated";
+        }
+
+        let thumb = slider.querySelector('.thumb');
+
+    //let path = document.getElementById('path');
+
+    thumb.onmousedown = function(event) {
+      event.preventDefault(); // prevent selection start (browser action)
+
+      let shiftY = event.clientY - thumb.getBoundingClientRect().top;  
+
+      document.addEventListener('mousemove', onMouseMove);
+      document.addEventListener('mouseup', onMouseUp);
+
+      function onMouseMove(event) {
+        let newTop = event.clientY - shiftY - slider.getBoundingClientRect().top;
+
+        // the pointer is out of slider => lock the thumb within the boundaries
+        if (newTop < 0) {
+            newTop = 0;
+        }
+        let bottomEdge = slider.offsetHeight - thumb.offsetHeight;
+        if (newTop > bottomEdge) {
+            newTop = bottomEdge;
+        }
+
+        thumb.style.top = newTop + 'px';
+
+        path.style.height = newTop + 'px';
+
+        console.log(newTop);
+        
+
+      }
+
+      function onMouseUp() {
+
+        let shiftY = event.clientY - thumb.getBoundingClientRect().top;  
+        let newTop = event.clientY - shiftY - slider.getBoundingClientRect().top;
+        const a = document.getElementById('drag'); 
+
+        if((newTop) < 70){
+          
+          thumb.style.top = 0 + 'px';
+          path.style.height = 0 + 'px';
+        }
+        else{
+          a.href = "scene2.html";
+          a.onclick = "return false;";
+        }
+    
+      
+        document.removeEventListener('mouseup', onMouseUp);
+        document.removeEventListener('mousemove', onMouseMove);
+
+      }
+
+    };
+
+    thumb.ondragstart = function() {
+      return false;
+    };
+
+    </script>
+</body>
+</html>

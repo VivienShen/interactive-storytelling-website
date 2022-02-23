@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scene 7</title>
+    <link rel="stylesheet" href="../styles/scene7.css">
+    <script src="../scripts/jquery-3.6.0.min.js" type="text/javascript"></script>
+</head>
+<body>
+    
+    <div id="bg6" class="image">
+        <img class="img-bg" src="../assets/images/scene7/hands up.png" alt="Q&A segment">
+    </div>
+    <div id="s6-1" class="quiz scene" style="display: block;">
+        <p class="quizBox question">Q1: Green energy technology like solar, wind and hydro is more expensive and unreliable than fossil fuels</p>
+        <button id="nextBtn" class="quizBox btn minus-btn disabled " type="button">True</button><br>
+        <button id="nextBtn2" class="quizBox btn plus-btn" type="button">False</button><br>
+        <div class="text">
+            <div id="box2" class="speechbox" >
+                <p><b>Robin:</b> False because clean energy technology saves you more money over time than using fossil fuels, and they are more reliable due to the advancements in technology.</p>
+            </div>
+        </div>
+    </div>
+    <div id="s6-2" class="quiz scene" style="display: none;">
+        <p class="quizBox question">Q2: Climate change is a natural process and not because of humans.</p>
+        <button id="nextBtn2" class="quizBox btn minus-btn disabled" type="button">True</button><br>        
+        <button id="nextBtn" class="quizBox btn plus-btn" type="button">False</button><br>
+        <div class="text">
+            <div id="box2" class="speechbox" >
+                <p><b>Robin:</b>False because while the earth’s temperature changes over time from natural causes, it is only a small amount compared to what we’ve seen in the last hundred years, with humans releasing 100 times more carbon dioxide than any natural causes like volcanoes.</p>
+            </div>
+        </div>
+    </div>
+    <div id="s6-3" class="quiz scene" style="display: none;">
+        <p class="quizBox question">Q3: The world will end because of climate change in the next couple of decades</p>
+        <button id="nextBtn" class="quizBox btn plus-btn" type="button">True</button><br>
+        <button id="nextBtn2" class="quizBox btn minus-btn disabled" type="button">False</button><br>
+        <div class="text">
+            <div id="box2" class="speechbox" >
+                <p><b>Robin:</b> False because the world will not end due to climate change in the next couple of decades, but the longer we don’t take action, the more consequences there will be and it will be harder to fix. With some cities going underwater, natural disasters, extinction of more wildlife and more.</p>
+            </div>
+        </div>
+    </div>
+    <div id="s6-4" class="quiz scene" style="display: none;">
+        <p class="quizBox question">Q4:  Farms are causing some greenhouse gasses</p>
+        <button id="nextBtn2" class="quizBox btn plus-btn" type="button">True</button><br>        
+        <button id="nextBtn" class="quizBox btn minus-btn disabled" type="button">False</button><br>
+        <div class="text">
+            <div id="box2" class="speechbox" >
+                <p><b>Robin:</b> True because methane is a greenhouse gas released from some animals, mostly cows, and is 80 times more stronger than carbon dioxide. Farmers need to provide animals with more nutritious food, and scientists need to create better food for cows to release less methane.</p>
+            </div>
+        </div>
+    </div>
+    <div id="s6-5" class="quiz scene" style="display: none;">
+        <p class="quizBox question">Q5: Climate change is a natural process and not because of humans.</p>
+        <button id="nextBtn2" class="quizBox btn plus-btn" type="button">True</button><br>        
+        <button id="nextBtn" class="quizBox btn minus-btn disabled" type="button">False</button><br>
+        <div class="text">
+            <div id="box2" class="speechbox" >
+                <p><b>Robin:</b> True because the ocean is absorbing massive amounts of carbon dioxide from the air, but that means it becomes more acidic which is destroying parts of the ocean.</p>
+            </div>
+        </div>
+    </div>
+    <div id="s6-6" class="quiz scene" style="display: none;">
+        <p class="quizBox question">Q6: The world will end because of climate change in the next couple of decades</p>
+        <button id="nextBtn" class="quizBox btn minus-btn disabled " type="button">True</button><br>
+        <button id="nextBtn2" class="quizBox btn plus-btn" type="button">False</button><br>
+        <div class="text">
+            <div id="box2" class="speechbox" >
+                <p><b>Robin:</b> False because while you might still feel cold and not much of a difference, scientists see the weather over a longer period of time like several decades, and even 1 degree increase in the Earth’s temperature can be severely damaging.</p>
+            </div>
+        </div>
+    </div>
+    <div class="inventory">
+        <img id="inventory-bg" src="../assets/images/scene6/inventory-panel.png" alt="inventory box">
+        <progress id="popularity-meter" min="0" max="100" value="0"><span></span></progress>
+        <div class="icons">
+            <img id="camera-icon" class="icon" src="../assets/images/scene6/icon-cam.png" alt="camera item" style="display: block;">
+            <img id="map-icon" class="icon" src="../assets/images/scene6/icon-map.png" alt="map item" style="display: block;">
+            <img id="teleport-icon" class="icon" src="../assets/images/scene6/icon.png" alt="teleport button" style="display: block;">
+        </div>
+    </div>
+    <script src="../scripts/scene6.js"></script>
+    <script src="../scripts/meter.js"></script>
+    
+</body>
+</html>
