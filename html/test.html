@@ -5,72 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../styles/scene5.css">
-    <style>
-        .sec1{
-            background-color: rebeccapurple;
-            height: 100vh;
-        }
-        .sec2{
-            /* background-color: burlywood; */
-            height: 350vh;
-            top: -10%
-        }
-        body{
-            margin: 0;
-        }
-
-        .imageBG, .imageBG2{
-            overflow: auto;
-            height:100%;
-            width: 100%;
-            margin-bottom: -0.1%;
-            position: relative;
-        }
-
-
-        .image1, .image2, .image3, .image4, .image5, .image6, .image7, .image8, .image9{
-            top: 100%;
-            opacity: 1;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            left: 0%;
-        }
-
-        .image9{
-            top: 102%;
-        }
-
-        .image11{
-            position: absolute;
-            width: 90%;
-            left: 0%;
-        }
-
-        .image12{
-            width: 100%;
-            position: absolute;
-            margin-left: auto;
-            margin-right: auto;
-            display: block;
-            object-fit: cover;
-            transform: translate(0%, -100%);
-        }
-
-        .image13{
-            position: absolute;
-            width: 20%;
-            left: 0%;
-            margin-top: 100%;
-        }
-
-        #path{
-            position: absolute;
-            left: 0%;
-            margin-top: 80%;
-        }
-    </style>
+    <link rel="stylesheet" href="../styles/scene5-coral.css">
 </head>
 <body>
     <Section class="sec1">
@@ -88,14 +23,27 @@
     
     </Section>
     <Section class="sec2">
-        <img class= "imageBG2" src="../assets/images/scene5/coral/water_front.png">
+        <img class= "imageBG2" src="../assets/images/scene5/coral/water_front2.png">
 
+        <img class="image14" src="../assets/images/scene5/coral/fish_back-02.png">
+        <img class="image15" src="../assets/images/scene5/coral/fish_midlle-02.png">
+        <img class="image16" src="../assets/images/scene5/coral/fish_front-02.png">
+        <img class="image17" src="../assets/images/scene5/coral/bubbles-02.png">
+        
         <img class="image12"  src="../assets/images/scene5/coral/coral.png">
-        <img class="image11" src="../assets/images/scene5/coral/humans.png">
         <svg id="path"  viewBox="0 100 786 400">
-            <path id="motionPath" d="M 4 160 C 60 282 112 333 288 389 C 431 419 513 395 644 353 " fill="none" stroke="#5dba4700" stroke-width="2"/>
+            <path id="motionPath" d="M 50 150 C 100 250 200 350 200 350 C 200 350 400 550 650 500 " fill="none" stroke="#5dba47" stroke-width="2"/>
         </svg>
         <img class="image13" src="../assets/images/scene5/coral/turtle.png">
+
+        <img class="image18" src="../assets/images/scene5/coral/fish.png">
+
+        <svg id="path2"  viewBox="0 100 786 400">
+            <path id="motionPath2" d="M 800 100 C 700 250 600 350 550 400 C 450 500 200 600 150 550 " fill="none" stroke="#5dba47" stroke-width="2"/>
+        </svg>
+        <img class="image19" src="../assets/images/scene5/coral/fish2.png">
+
+        <img class="image11" src="../assets/images/scene5/coral/humans.png">
     </Section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
@@ -121,7 +69,7 @@
         },'start')
         .to(".image2", 4, {
             y: "-100%",
-            pin: true
+            pin: true,
         },'start')
         .to(".image3", 6, {
             y: "-100%",
@@ -168,6 +116,36 @@
             pin: true
         })
 
+        const tl2 = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.image11',
+                scrub: 1,
+                start: "top -2%",
+                end: '+=10',
+                pin: true,
+                markers: true
+            }
+        });
+
+        tl2.to(".image11", {
+            y: 100, 
+        }, 'start')
+        .to(".image14", 2, {
+            y: "-20%",
+            duration: 40
+        },'start')
+        .to(".image15", 3,{
+            y: "-20%",
+            duration: 40
+        },'start')
+        .to(".image16", 4,{
+            y: "-20%",
+            duration: 40
+        }, 'start')
+        .to(".image17", 5,{
+            y: "-20%",
+            duration: 40
+        }, 'start')
 
         gsap.to(".image11", {
             scrollTrigger: {
@@ -181,27 +159,43 @@
             },
         });
 
-        const tl2 = gsap.timeline({
+        const tl3 = gsap.timeline({
             scrollTrigger: {
-                trigger: '.image13',
+                trigger: '.image19',
                 scrub: 1,
-                start: 'top 90%',
+                start: 'top 100%',
                 end: '+1000',
-                // markers: true
+                markers: true
             }
-        });
+        }, 'start');
 
-        tl2.to(".image13", {
+        tl3.to(".image19", {
+            motionPath: {
+                path: "#motionPath2",
+                align: "#motionPath2",
+                alignOrigin: [0.5, 0.2],
+                autoRotate: -150,
+            },
+            duration: 40
+            
+        }, 'start')
+        .to(".image13", {
             motionPath: {
                 path: "#motionPath",
                 align: "#motionPath",
                 alignOrigin: [0.5, 0.2],
                 autoRotate: -40,
             },
-            duration: 20
+            duration: 40
             
-        });
-
+        }, 'start')
+        .to(".image18", {
+            x: "2300px",
+            pin: true,
+            scrub: 2,
+            duration: 40
+            
+        }, '-=30')
         
     </script>
 </body>
