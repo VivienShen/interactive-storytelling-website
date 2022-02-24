@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scene 6-1</title>
+    <link rel="stylesheet" href="../styles/scene6.css">
+    <script src="../scripts/jquery-3.6.0.min.js" type="text/javascript"></script>
+</head>
+<body>
+    
+    <!--Frame 1-->
+    <div id="s6-1" class="scene" style="display: block;">
+        <div id="bg1" class="image">
+            <img class="img-bg" src="../assets/images/scene6/room.png" alt="in the living room">
+        </div> 
+        <img id="rPhone" class="clickable btn" src="../assets/images/scene6/phone ring.png" alt="ringing phone">
+    </div>
+
+    <!--Frame 2-->
+    <div id="s6-2" class="scene" style="display: none;">
+        <div id="bg2" class="image">
+            <img class="img-bg" src="../assets/images/scene6/phone.png" alt="phone closeup">
+            <img id="answer" class="clickable btn" src="../assets/images/scene6/answer call.png" alt="answer call button">
+        </div>
+
+    </div>
+
+    <!--Frame 3-->
+    <div id="s6-3" class="scene" style="display: none;">
+        <div id="bg2" class="image">
+            <img class="img-bg" src="../assets/images/scene6/room.png" alt="in the living room">
+            <img id="aeryn" src="../assets/images/scene6/Aeryn.png" alt="Aeryn talking on the phone">
+            <div class="text">
+                <div id="box3" class="speechbox" >
+                    <p><b>Aeryn:</b> Hey Robin! What’s up?</p>
+                </div>
+            </div>
+            <div id="nextBtn1" class="btn2 btn"></div>
+        </div>  
+    </div>
+
+    <!--Frame 4-->
+    <div id="s6-4" class="scene" style="display: none;">
+        <div id="bg2" class="image">
+            <img class="img-bg" src="../assets/images/scene6/room.png" alt="in the living room">
+            <img id="aeryn" src="../assets/images/scene6/Aeryn.png" alt="Aeryn talking on the phone">
+            <div class="text">
+                <div id="box4" class="speechbox" >
+                    <p><b>Robin:</b> Hey Aeryn, just so you know the photos you took gained a lot of traction on facebook, instagram and twitter! There’s a news station called CanNews that wants us to do an interview, can you meet me there?</p>
+                </div>
+            </div>
+            <div id="nextBtn2" class="btn2 btn"></div>
+        </div>  
+    </div>
+
+    <!--Frame 5-->
+    <div id="s6-5" class="scene" style="display: none;">
+        <div id="bg2" class="image">
+            <img class="img-bg" src="../assets/images/scene6/room.png" alt="in the living room">
+            <img id="aeryn" src="../assets/images/scene6/Aeryn.png" alt="Aeryn talking on the phone">
+            <div class="text">
+                <div id="box3" class="speechbox" >
+                    <p><b>Aeryn:</b> Yes of course!</p>
+                </div>
+            </div>
+        </div>  
+        <div class="inventory">
+            <img id="inventory-bg" src="../assets/images/scene6/inventory-panel.png" alt="inventory box">
+            <progress id="popularity-meter" min="0" max="100" value="0"><span></span></progress>
+            <div class="icons">
+                <img id="camera-icon" class="icon" src="../assets/images/scene6/icon-cam.png" alt="camera item" style="display: block;">
+                <img id="map-icon" class="icon" src="../assets/images/scene6/icon-map.png" alt="map item" style="display: block;">
+                <img id="teleport-icon" class="icon btn clickable" src="../assets/images/scene6/icon.png" alt="teleport button" style="display: block;">
+            </div>
+        </div>
+    </div>
+
+    <!--Frame 6-->
+    <div id="s6-6" class="scene" style="display: none;">
+        <div id="bg2" class="image">
+            <img class="img-bg" src="../assets/images/scene6/room.png" alt="in the living room">
+            <img id="aeryn" src="../assets/images/scene6/Aeryn.png" alt="Aeryn talking on the phone">
+        </div>
+        <img id="popup1" class="popup-travel img-bg" src="../assets/images/scene6/modal.png" alt="teleport panel">
+        <div class="button">
+            <img id="popup3" class="yes-button btn" src="../assets/images/scene6/modal button.png" alt="yes button">
+        </div>
+    </div>
+
+    
+    <script src="../scripts/meter.js"></script>
+    
+</body>
+</html>

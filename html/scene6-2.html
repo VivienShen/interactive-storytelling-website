@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scene 6-2</title>
+    <link rel="stylesheet" href="../styles/scene6.css">
+    <script src="../scripts/jquery-3.6.0.min.js" type="text/javascript"></script>
+</head>
+<body>
+    <!--Frame 1-->
+    <div id="s6a-1" class="scene" style="display: block;">
+        <div id="bg1" class="image">
+            <img class="img-bg" src="../assets/images/scene6/news.png" alt="at the news station">
+        </div> 
+        <div class="text">
+            <div id="box1" class="speechbox" >
+                <p><b>Chelsea:</b> I’m so glad you guys could make it, I saw your posts online. One about the polar bears was especially heartbreaking. </p>
+            </div>
+        </div>
+        <div id="nextBtn" class="btn2 btn"></div>
+    </div>
+
+    <!--Frame 2-->
+    <div id="s6a-2" class="scene" style="display: none;">
+        <div id="bg1" class="image">
+            <img class="img-bg" src="../assets/images/scene6/news.png" alt="at the news station">
+        </div> 
+        <div class="text">
+            <div id="box1" class="speechbox" >
+                <p><b>Chelsea:</b> I knew it was something we had to cover, especially since we barely talk about the climate problem ever since this government came in. <br><br> There’s a lot of viewer submitted questions, are you alright if we just dive in? </p>
+            </div>
+        </div>
+        <div id="nextBtn" class="btn2 btn"></div>
+    </div>
+    
+    <!--Frame 3-->
+    <div id="s6a-3" class="scene" style="display: none;">
+        <div id="bg1" class="image">
+            <img class="img-bg" src="../assets/images/scene6/news.png" alt="at the news station">
+        </div> 
+        <img id="popup1" class="popup-travel img-bg" src="../assets/images/scene6/modal news.png" alt="interview starting panel">
+        <div class="button">
+            <img id="popup2" class="yes-button btn" src="../assets/images/scene6/news yes button.png" alt="yes button">
+        </div>
+    </div>
+    
+    <div id="s6a-4" class="scene" style="display: none;">
+        <div id="bg6" class="image">
+            <img class="img-bg" src="../assets/images/scene6/quiz.png" alt="Q&A segment">
+        </div>
+        <div class="quiz">
+            <p class="quizBox question">Q1: Ocean acidification is destroying the coral reef due to which greenhouse gas?</p>
+            <button id="nextBtn" class="quizBox btn minus-btn disabled " type="button">oxygen</button><br>
+            <button id="nextBtn2" class="quizBox btn plus-btn" type="button">carbon dioxide</button><br>
+            <button id="nextBtn3" class="quizBox btn minus-btn disabled" type="button">nitrogen</button> 
+        </div>
+         
+    </div>
+    <div id="s6-5" class="scene" style="display: none;">
+        <div id="bg6" class="image">
+            <img class="img-bg" src="../assets/images/scene6/quiz.png" alt="Q&A segment">
+        </div>
+        <div class="quiz">
+            <p class="quizBox question">Q2: The Amazon Rainforest is responsible for producing what percent of the world's oxygen?</p>
+            <button id="nextBtn4" class="quizBox btn plus-btn" type="button">20%</button><br>
+            <button id="nextBtn5" class="quizBox btn minus-btn disabled" type="button">10%</button><br>
+            <button id="nextBtn6" class="quizBox btn minus-btn disabled" type="button">30%</button>
+        </div>  
+    </div>
+
+    <div id="s6-6" class="scene" style="display: none;">
+        <div id="bg6" class="image">
+            <img class="img-bg" src="../assets/images/scene6/quiz.png" alt="Q&A segment">
+        </div>
+        <div class="quiz">
+            <p class="quizBox question">Q3: What are the indigenous people of the Arctic called?</p>
+            <button id="nextBtn7" class="quizBox btn plus-btn" type="button">Inuits</button><br>
+            <button id="nextBtn8" class="quizBox btn minus-btn disabled" type="button">Métis</button><br>
+            <button id="nextBtn9" class="quizBox btn minus-btn disabled" type="button">First Nations</button> 
+        </div> 
+    </div>
+
+    <div id="s6-7" class="scene" style="display: none;">
+        <div id="bg6" class="image">
+            <img class="img-bg" src="../assets/images/scene6/news.png" alt="at the news station">
+        </div>
+        <div class="text">
+            <div id="box1" class="speechbox" >
+                <p><b>Chelsea:</b> Well thank you Aeryn and Robin so much for your time, I think we can all say you both really opened our eyes to the issues our earth is currently facing. </p>
+            </div>
+        </div>
+        <div id="nextBtn" class="btn2 btn"></div>
+    </div>
+
+    <div id="s6-8" class="scene" style="display: none;">
+        <div id="bg6" class="image">
+            <img class="img-bg" src="../assets/images/scene6/news.png" alt="at the news station">
+        </div>
+        <div id="box2" class="speechbox" >
+            <p><b>Robin:</b> It’s our pleasure, and to the viewers watching I want to announce that we are organizing a march in Ottawa next Friday and everyone is invited to come, and organize their own march in their city that week as well. </p>
+        </div>
+        <div id="nextBtn" class="btn2 btn"></div>
+    </div>
+
+    <div class="inventory">
+        <img id="inventory-bg" src="../assets/images/scene6/inventory-panel.png" alt="inventory box">
+        <progress id="popularity-meter" min="0" max="100" value="0"><span></span></progress>
+        <div class="icons">
+            <img id="camera-icon" class="icon" src="../assets/images/scene6/icon-cam.png" alt="camera item" style="display: block;">
+            <img id="map-icon" class="icon" src="../assets/images/scene6/icon-map.png" alt="map item" style="display: block;">
+            <img id="teleport-icon" class="icon" src="../assets/images/scene6/icon.png" alt="teleport button" style="display: block;">
+        </div>
+    </div>
+    
+    <script src="../scripts/meter.js"></script>
+    
+</body>
+</html>
