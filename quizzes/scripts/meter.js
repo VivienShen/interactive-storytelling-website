@@ -130,47 +130,5 @@ var myFunction = function() {
 for (var i = 0; i < next.length; i++) {
     next[i].addEventListener('click', myFunction, false);
 }
-/* next.addEventListener("click", function(i) {               
 
-    if (currentIndex < IdStore.length-1) {
-        console.log('next'); 
-        currentIndex += 1;
-        console.log(currentIndex);
-        var divId = IdStore[currentIndex];
-    
-        console.log(divId, currentIndex);
-        document.getElementById(divId).style.display = "block";
-        var prevIndex = currentIndex - 1;
-        console.log(prevIndex);
-        if (prevIndex >= 0) {
-            var preId = IdStore[prevIndex];
-            document.getElementById(preId).style.display = "none";
-        }
-        
-    }
-})
-
-//show or hide the div when answer button 2 is clicked
-var currentIndex = 0
-var next = document.getElementById("nextBtn2");
-next.addEventListener("click", function(i) {               
-
-    if (currentIndex < IdStore.length-1) {
-        console.log('next'); 
-        currentIndex += 1;
-        console.log(currentIndex);
-        var divId = IdStore[currentIndex];
-    
-        console.log(divId, currentIndex);
-        document.getElementById(divId).style.display = "block";
-        var prevIndex = currentIndex - 1;
-        console.log(prevIndex);
-        if (prevIndex >= 0) {
-            var preId = IdStore[prevIndex];
-            document.getElementById(preId).style.display = "none";
-        }
-        
-    }
-})
- */
 
