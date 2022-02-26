@@ -129,3 +129,5 @@ var myFunction = function() {
 for (var i = 0; i < next.length; i++) {
     next[i].addEventListener('click', myFunction, false);
 }
+
+document.getElementById("bg-music").volume = 0.2;

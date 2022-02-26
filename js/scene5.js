@@ -48,6 +48,7 @@ function placeVisited(place, name){
 
 }
 
+var teleport = document.getElementById('teleport-icon');
 
 function reset(){
     visited = false;
@@ -62,6 +63,9 @@ function reset(){
     blink.style.background = "#db130cbd";
     blink2.style.background = "#db130cbd";
     blink3.style.background = "#db130cbd";
+
+    teleport.id = 'teleport-icon';
+    teleport.setAttribute( "onClick", "" );
 }
 
 if(visited4 == "true"){
@@ -77,6 +81,13 @@ if(visited5 == "true"){
 if(visited6 == "true"){
     console.log("visited coral");
     blink3.style.background = "#0cdb39bd";
+}
+
+
+if(visited4 && visited5 && visited6 == "true"){
+    teleport.id = 'teleport-btn';
+    
+    teleport.setAttribute( "onClick", "loadPopup();" );
 }
 
 

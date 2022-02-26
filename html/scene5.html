@@ -40,7 +40,7 @@
         <button class="btn1 btn" id = "btn1" onclick="window.location.href='scene5-amazon.html'; placeVisited('visited2', 'amazonVisited');">Explore the Amazon</button>
         
         <img class="coralReef-icon" id="coral" src="../assets/images/scene5/coralReef_circle.png">
-        <button class="btn2 btn" id = "btn2" onclick="window.location.href='scene5-coral.html'; placeVisited('visited3', 'coralVisited');">Explore the Coral Reef</button>
+        <button class="btn2 btn" id = "btn2" onclick="window.location.href='test.html'; placeVisited('visited3', 'coralVisited');">Explore the Barrier Reef</button>
         
         <img class="arctic-icon"  id="arctic" src="../assets/images/scene5/arctic_circle.png">
         <button class="btn3 btn" id = "btn3" onclick="window.location.href='scene5-arctic.html'; placeVisited('visited', 'arcticVisited');">Explore the Arctic</button>
@@ -66,9 +66,12 @@
             <img id="map-icon" class="icon" src="../assets/images/scene5/icon-map.png" alt="map item" style="display: block;">
             <img id="camera-lock" class="lock" src="../assets/images/scene5/lock.png" alt="camera item" style="display: none;">
             <img id="map-lock" class="lock" src="../assets/images/scene5/lock.png" alt="map item" style="display: none;">
-            <img id="teleport-icon" class="icon" src="../assets/images/scene5/icon.png" alt="teleport button" style="display: block;">
+            <img id="teleport-icon" class="icon" src="../assets/images/scene5/icon.png" alt="teleport button" style="display: block;" onclick="">
         </div>
     </div>
+
+    <img id="modal" class="modal" src="../assets/images/scene5/modal.png" alt="scene 5 modal" style="display: none;">
+    <img id="yes-btn" class="yes-btn" src="../assets/images/scene5/button (2).png" onclick="window.location.href='scene6-1.html'" alt="scene 5 yes btn" style="display: none;">
     
     <!-- <button class="fullscreen" onclick="openFullscreen();">Open Fullscreen</button> -->
 
@@ -76,14 +79,19 @@
         // Using JavaScript to open the page in fullscreen mode
         var elem = document.documentElement;
         function openFullscreen() {
-        if (elem.requestFullscreen) {
-            elem.requestFullscreen();
-        
-        } else if (elem.msRequestFullscreen) { /* IE11 */
-            elem.msRequestFullscreen();
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            
+            } else if (elem.msRequestFullscreen) { /* IE11 */
+                elem.msRequestFullscreen();
+            }
         }
+
+        function loadPopup() {
+            document.getElementById('modal').style.display='block';
+            document.getElementById('yes-btn').style.display='block';
         }
-        
+
         </script>
 
 </body>

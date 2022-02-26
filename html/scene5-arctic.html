@@ -66,9 +66,9 @@
 </head>
 <body>
 
-    <!-- <audio autoplay loop id="bg-music">
+    <audio autoplay loop id="bg-music">
         <source src="../assets/audio/bgm/Mountain_-_JVNA.mp3" type="audio/mpeg" />
-    </audio> -->
+    </audio>
 
     <div id="bg1" class="image">
         <img class="img-bg" src="../assets/images/scene5/arctic/arcticBG.png" alt="arctic background gradient">
@@ -80,16 +80,16 @@
                 <img class="image2" src="../assets/images/scene5/arctic/mountainBG-01.png">
                 <img class="image1" src="../assets/images/scene5/arctic/clouds.png">
                 <img class="image4" src="../assets/images/scene5/arctic/water-01.png">
-                <img class="image3" src="../assets/images/scene5/arctic/mountains-01.png">
+                <img class="image3 clickable" src="../assets/images/scene5/arctic/mountains-01.png">
                 <img class="image3-3" src="../assets/images/scene5/arctic/iceberg-01.png">      
                 <img class="image5" src="../assets/images/scene5/arctic/smallPB-01.png">
-                <img class="image6" src="../assets/images/scene5/arctic/BigPB-01.png">
+                <img class="image6 clickable" src="../assets/images/scene5/arctic/BigPB-01.png">
         
                 <!-- <img class="image5" src="../assets/images/scene5/arctic/scroll1.png">
                 <img class="image6" src="../assets/images/scene5/arctic/scroll2.png">
                 <img class="image7" src="../assets/images/scene5/arctic/scroll3.png"> -->
             </div>
-            <img class="image8" src="../assets/images/scene5/arctic/iceberg2.png">
+            <img class="image8 clickable" src="../assets/images/scene5/arctic/iceberg2.png">
             <img class="image7" src="../assets/images/scene5/arctic/fallingIce.png">
         </div>  
 
@@ -144,10 +144,11 @@
             y: "-100%",
             pin: true
         } ,'start')
-        .to(".image8", 8, {
+        .to(".image8",{
             y: "-239%",
-            pin: true
-        } ,'start')
+            pin: true,
+            duration: 8
+        }, '-=7.5')
         .to(".image4", 10, {
             y: "-100%",
             pin: true

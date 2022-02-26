@@ -78,7 +78,7 @@ body {
     color: #ffa502;
     filter: drop-shadow(0 0 30px #f5d311);
     cursor: pointer;
-    z-index: 1;
+    z-index: 2;
 }
 
 .clickable:hover {
@@ -88,6 +88,7 @@ body {
 }
 
 
+
 /******** QUIZ ********/
 .quiz {
     width: 40%;
@@ -95,8 +96,8 @@ body {
     display: block;
     position: absolute;
     z-index: 1;
-    right: 8%;
-    top: 20%;
+    right: 15%;
+    top: 22%;
     animation: fadeIn linear 1s;
 }
 
@@ -165,6 +166,14 @@ progress:after {
 
 }
 
+.inventory2 {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    z-index: 1;
+}
+
 #inventory-bg {
     max-width: 18%;
     max-height: 18%;
@@ -210,6 +219,21 @@ progress:after {
   }
 
 /* button 2 */
+#nextBtn1 {
+    top: 80%;
+    left: 45%;
+}
+#nextBtn2 {
+    top: 80%;
+}
+#nextBtn3 {
+    top: 85%;
+    left: 75%;
+}
+#nextBtn4 {
+    top: 80%;
+    left: 55%;
+}
 
 .btn2 {
     height: 10px;

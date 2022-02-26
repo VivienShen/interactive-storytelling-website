@@ -4,10 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <script defer src="../js/scene5.js"></script>
+    <title>Scene5 - Barrier Reef</title>
     <link rel="stylesheet" href="../styles/scene5-coral.css">
 </head>
 <body>
+    <audio autoplay loop id="bg-music">
+        <source src="../assets/audio/bgm/Mountain_-_JVNA.mp3" type="audio/mpeg" />
+    </audio>
+    
     <Section class="sec1">
         <img class= "imageBG" src="../assets/images/scene5/coral/coral_bg.png">
         
@@ -30,21 +35,59 @@
         <img class="image16" src="../assets/images/scene5/coral/fish_front-02.png">
         <img class="image17" src="../assets/images/scene5/coral/bubbles-02.png">
         
-        <img class="image12"  src="../assets/images/scene5/coral/coral.png">
+        <img class="image12"  src="../assets/images/scene5/coral/coral2.png">
         <svg id="path"  viewBox="0 100 786 400">
-            <path id="motionPath" d="M 50 150 C 100 250 200 350 200 350 C 200 350 400 550 650 500 " fill="none" stroke="#5dba47" stroke-width="2"/>
+            <path id="motionPath" d="M 50 150 C 100 250 200 350 200 350 C 200 350 400 550 650 500 " fill="none" stroke="#5dba4700" stroke-width="2"/>
         </svg>
-        <img class="image13" src="../assets/images/scene5/coral/turtle.png">
+        <img class="image13 clickable" onclick="openFact('fact1');" src="../assets/images/scene5/coral/turtle.png">
+
+        <p id="fact1" class="factBox fact" style="display: none;">Climate change is a great threat to sea turtles. The sea level rising and the 
+            stronger storms will destroy their beach habitats. Warming oceans also change ocean currents which 
+            introduces the sea turtles to new predators and harms the coral reef that they need to survive.
+            <a href="https://climate.nasa.gov/news/2879/climate-change-puts-pressure-on-sea-turtles/#:~:text=Now%2C%20climate%20change%20is%20exposing,of%20them%20need%20to%20survive.">   
+            Climate Change Puts Pressure on Sea Turtles</a>
+        </p>
+
+        <p id="fact2" class="factBox fact2" style="display: none;">Many fishes depend on corals for their food and habitat, while corals depend 
+            on fishes to feed on them for them to continue reproducing and remove some diseases. Increased ocean temperatures from climate change 
+            will affect the behavior of coral reef fishes.
+        </p>
 
         <img class="image18" src="../assets/images/scene5/coral/fish.png">
 
         <svg id="path2"  viewBox="0 100 786 400">
-            <path id="motionPath2" d="M 800 100 C 700 250 600 350 550 400 C 450 500 200 600 150 550 " fill="none" stroke="#5dba47" stroke-width="2"/>
+            <path id="motionPath2" d="M 800 100 C 700 250 600 350 550 400 C 450 500 200 600 150 550 " fill="none" stroke="#5dba4700" stroke-width="2"/>
         </svg>
-        <img class="image19" src="../assets/images/scene5/coral/fish2.png">
+        <img class="image19 clickable"  onclick="openFact('fact2');" src="../assets/images/scene5/coral/fish2.png">
 
         <img class="image11" src="../assets/images/scene5/coral/humans.png">
     </Section>
+
+    <div class="inventory">
+        <img id="inventory-bg" src="../assets/images/scene5/inventory.png" alt="inventory box">
+        <div class="icons">
+            <img id="camera-icon" class="icon" src="../assets/images/scene5/icon-cam.png" alt="camera item" style="display: block;">
+            <img id="map-icon" class="icon" src="../assets/images/scene5/icon-map.png" alt="map item" style="display: block;" onclick="window.location.href='scene5.html'">
+            <img id="camera-lock" class="lock" src="../assets/images/scene5/lock.png" alt="camera item" style="display: none;">
+            <img id="map-lock" class="lock" src="../assets/images/scene5/lock.png" alt="map item" style="display: none;">
+            <img id="teleport-icon" class="icon" src="../assets/images/scene5/icon.png" alt="teleport button" style="display: block;">
+        </div>
+    </div>
+
+    <div class="text">
+        <div id="box1" class="speechbox" style="display:none;">
+            <p><b>Robin:</b> The great barrier reef, home to an estimated 25% of all known marine life. Are you ready to dive in? 
+            </p>
+        </div>
+    </div>
+
+    <div class="text" >
+        <div id="box2" class="speechbox" style="display:none;">
+            <p><b>Aeryn:</b> Yes I am!</p>
+        </div>
+    </div>
+
+    <div id="nextBtn" class="trans-btn" onclick="switchTb()" style="display:none;"></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
@@ -110,11 +153,15 @@
         .to(".trans-btn",{
             display: "none",
             pin: true
-        })
+        },'disappear')
+        .to("#box1",{
+            display: "none",
+            pin: true
+        },'disappear')
         .to("#box2",{
             display: "none",
             pin: true
-        })
+        },'disappear')
 
         const tl2 = gsap.timeline({
             scrollTrigger: {
@@ -123,7 +170,7 @@
                 start: "top -2%",
                 end: '+=10',
                 pin: true,
-                markers: true
+                // markers: true
             }
         });
 
@@ -165,7 +212,7 @@
                 scrub: 1,
                 start: 'top 100%',
                 end: '+1000',
-                markers: true
+                // markers: true
             }
         }, 'start');
 
@@ -197,6 +244,26 @@
             
         }, '-=30')
         
+        document.getElementById("bg-music").volume = 0.05;
+
+        function switchTb() {  
+            let box1 = document.getElementById('box1');
+            let box2 = document.getElementById('box2');
+            let btn1 = document.getElementById('nextBtn');
+
+            box1.style.display = "none";
+            btn1.style.display = "none";
+            box2.style.display = "block";
+        }
+
+        function openFact(fact) {
+            if(document.getElementById(fact).style.display=='block'){
+                document.getElementById(fact).style.display='none';
+            }else{
+                document.getElementById(fact).style.display='block';
+            }
+        }
+
     </script>
 </body>
 </html>

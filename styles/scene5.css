@@ -276,6 +276,9 @@ body::-webkit-scrollbar {
     opacity: 0;
 }
 
+.image6{
+    cursor: pointer;
+}
 
 #box1, #box3, #box4, #box5 {
     left: 3%;
@@ -419,4 +422,47 @@ body::-webkit-scrollbar {
 
 .lock {
     max-height: 78%;
+}
+
+.modal{
+    width: 100%;
+    position: absolute;
+    
+}
+
+.yes-btn{
+    width: 20%;
+    top: 67%;
+    left: 38%;
+    position: absolute;
+}
+
+.yes-btn:hover {
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#teleport-btn {
+    max-height: 75%;
+    padding-top: 1%;
+    color: #b45b07;
+    filter: drop-shadow(0 0 8px #e4860b);
+    cursor: pointer; 
+}
+
+#teleport-btn:hover {
+    filter: drop-shadow(0 0 30px #faf9f4);
+    cursor: pointer;
+}
+
+.clickable {
+    color: #ffa502;
+    filter: drop-shadow(0 0 30px #f5d311);
+    cursor: pointer;
+    z-index: 1;
+}
+
+.clickable:hover {
+    color: #ffa60207;
+    filter: drop-shadow(0 0 30px #f5d31100);
 }

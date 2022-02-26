@@ -6,9 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scene 7</title>
     <link rel="stylesheet" href="../styles/scene7.css">
-    <script src="../scripts/jquery-3.6.0.min.js" type="text/javascript"></script>
+    <script src="../js/jquery-3.6.0.min.js" type="text/javascript"></script>
 </head>
 <body>
+
+    <audio autoplay loop id="bg-music">
+        <source src="../assets/audio/bgm/ROYALTY_FREE_Political_Campaign_Background_Music_For_Videos___Political_Music_Royalty_Free.mp3" type="audio/mpeg" />
+    </audio>
+
     <!--Frame 1-->
     <div id="s7-1" class="scene" style="display: block;">
         <div id="bg1" class="image">
@@ -106,6 +111,17 @@
         </div> 
     </div>
 
+    <!--End of scene7-->
+    <div id="s7-10" class="scene" style="display: none;">
+        <div id="bg7" class="image">
+            <img class="img-bg" src="../assets/images/scene7/speaking to each other.png" alt="Robin speaking to Aeryn">
+        </div> 
+        <div id="box4" class="speechbox" >
+            <p><b>Robin:</b> Good work Aeryn! Hopefully this will be enough publicity to change the election results. The election is in a couple days, I hope we can continue to keep in touch after that too.</p>
+        </div>
+        <div id="nextBtn4" class="btn2 btn" onclick="window.location.href='scene8.html'"></div>
+    </div>
+
     <div class="inventory">
         <img id="inventory-bg" src="../assets/images/scene7/inventory-panel.png" alt="inventory box">
         <progress id="popularity-meter" min="0" max="100" value="0"><span></span></progress>
@@ -116,7 +132,7 @@
         </div>
     </div>
     
-    <script src="../scripts/meter.js"></script>
+    <script src="../js/meter.js"></script>
 
     <!-- Still need  to figure out how to rotate the wrongly answered questions -->
 </body>
