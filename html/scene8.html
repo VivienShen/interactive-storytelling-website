@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="uft-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Scene8</title>
+        <link rel="stylesheet" href="styles/scene8.css">
+        <!-- <script src="js/script.js"></script> -->
+    </head>
+
+    <body>
+        <!-- <div class="sceneNav">
+            <input id="prev" type='button' value='&lt;' />
+            <input id="next" type='button' value='&gt;' />
+        </div> -->
+
+        <!-- <iframe src="assets/audio/bgm/silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe> -->
+
+        <audio autoplay loop id="bg-music">
+            <source src="assets/audio/bgm/Serenity_-_Aakash_Gandhi.mp3" type="audio/mp3">
+        </audio>
+
+        <div id="s8-1" class="scene" style="display: block;">
+            <div id="bg1" class="image">
+                <img class="img-bg" src="assets/images/scene8/1.png" alt="Aeryn sitting on a couch, watching TV">
+            </div>
+        </div>
+
+        <div id="s8-2" class="scene" style="display: none;">
+            <div id="bg1" class="image">
+                <img class="img-bg" src="assets/images/scene8/2-1.png" alt="Poll result of the election1">
+            </div>
+        </div>
+
+        <div id="s8-3" class="scene" style="display: none;">
+            <div id="bg1" class="image">
+                <img class="img-bg" src="assets/images/scene8/2-2.png" alt="Poll result of the election2">
+            </div>
+        </div>
+
+        <div id="s8-4" class="scene" style="display: none;">
+            <div id="bg1" class="image">
+                <img class="img-bg" src="assets/images/scene8/2-3.png" alt="Poll result of the election3">
+            </div>
+        </div>
+
+        <div id="s8-5" class="scene" style="display: none;">
+            <div id="bg1" class="image">
+                <img class="img-bg" src="assets/images/scene8/3.png" alt="Evelyn giving speech on TV">
+            </div>
+            <div class="text">
+                <div id="box2" class="speechbox-henry" >
+                    <p><b>Evelyn:</b> I want to thank all of you for voting for me and choosing to fight for our future and our earth. 
+                        For so many years the Privilege party has been in charge and finally it is our turn to take over and make the right change happen.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="s8-6" class="scene" style="display: none;">
+            <div id="bg1" class="image">
+                <img class="img-bg" src="assets/images/scene8/3.png" alt="Evelyn giving speech on TV">
+            </div>
+            <div class="text">
+                <div id="box2" class="speechbox-henry" >
+                    <p><b>Evelyn:</b> I couldn’t have done this without our volunteers, sponsors, and most importantly Scientist Robin and Aeryn. 
+                        They inspired Canadians to realize how important it is to fight this climate crisis together, and I hope I can take the reins to create that change for our country.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="s8-7" class="scene" style="display: none;">
+            <div id="bg1" class="image">
+                <img class="img-bg" src="assets/images/scene8/4-1.png" alt="Aeryn cheering on the couch, her phone rings">
+            </div>
+            <div class="text">
+                <div id="box2" class="speechbox-Aeryn" >
+                    <p><b>Aeryn:</b> Yes! I’m so glad she won a majority in parliament.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="s8-8" class="scene" style="display: none;">
+            <div id="bg1" class="image">
+                <img class="img-bg" src="assets/images/scene8/5.png" alt="Aeryn pick up the phone">
+            </div>
+            <div class="text">
+                <div id="box2" class="speechbox1" >
+                    <p><b>Robin:</b> Aeryn we did it! I also got a call from Evelyn Antoine’s office, she wants to meet us as soon as possible to discuss something. 
+                        Meet us in the parliament as soon as you can.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="s8-9" class="scene" style="display: none;">
+            <div id="bg1" class="image">
+                <img class="img-bg" src="assets/images/scene8/5.png" alt="parliament teleport selection">
+            </div>
+            <img class="popup-travel" id="popup1" src="assets/images/scene8/modal.png" alt="would you like to travel">
+            <img class="yes-button" id="popup2" onclick="window.location.href='.html'" src="assets/images/scene8/yes.png" alt="yes button">
+            <div class="inventory">
+                <img id="inventory-bg" src="assets/images/scene8/inventory-2.png" alt="inventory box">
+                <div class="icons">
+                    <img id="camera-lock" class="lock" src="assets/images/scene8/icon-cam.png" alt="camera item" style="display: block;">
+                    <img id="map-lock" class="lock" src="assets/images/scene8/icon-map.png" alt="map item" style="display: block;">
+                    <img id="app-icon" class="icon" src="assets/images/scene8/icon.png" alt="app item" style="display: block;" onclick="loadPopup()">
+                </div>
+            </div>
+        </div>
+
+        <div id="nextBtn" class="btn2"  style="display: none;"></div> 
+
+        <script>
+            /*------Changing div with next and prev button------*/
+
+            //store the divs of the specified className into an array
+            var IdStore = new Array();
+            function storeSceneId(){
+                var className = document.getElementsByClassName('scene');
+                var classNameCount = className.length;
+                
+                for(var j = 0; j < classNameCount; j++){
+                    IdStore.push(className[j].id);
+                }
+                console.log(IdStore);
+            }
+            storeSceneId();
+            
+            //show or hide the div when next button is clicked
+            var currentIndex = 0;
+            
+            var next = document.getElementById("nextBtn");
+            next.addEventListener("click", function(i) {
+
+                //hide next button when clicked each time
+                document.getElementById('nextBtn').style.display= "none";
+
+                if (currentIndex < IdStore.length-1) {
+                    console.log('next'); 
+                    currentIndex += 1;
+                    console.log(currentIndex);
+                    var divId = IdStore[currentIndex];
+
+                    console.log(divId, currentIndex);
+                    document.getElementById(divId).style.display = "block";
+                    var prevIndex = currentIndex - 1;
+                    console.log(prevIndex);
+                    if (prevIndex >= 0) {
+                        var preId = IdStore[prevIndex];
+                        document.getElementById(preId).style.display = "none";
+                    }
+
+                    //next button appearing after 3 second
+                    setTimeout(appeardiv, 500);
+                    function appeardiv() {
+                        //not appear for the last cut
+                        if (currentIndex < IdStore.length-1) {
+                            document.getElementById('nextBtn').style.display= "block";
+                        }
+                        
+                    }
+
+                } else if ((i.keyCode == 37) && (currentIndex >= 1)) { //show or hide the div when prev button is clicked
+                    var divId = IdStore[currentIndex];
+                    console.log(divId, currentIndex);
+                    document.getElementById(divId).style.display = "none";
+                    currentIndex -= 1;
+                    console.log(currentIndex);
+                    var divId2 = IdStore[currentIndex];
+                    document.getElementById(divId2).style.display = "block";
+                } 
+            });
+
+            //make button appear after specific time
+            window.onload = function () {
+                setTimeout(appeardiv, 500);
+            }
+
+            function appeardiv() {
+                document.getElementById('nextBtn').style.display= "block";
+            }
+        </script>
+    </body>
+</html>
+
+<script>
+
+function loadHenry() {
+    var x = document.getElementById("Henry");
+  if (x.style.visibility === "visible") {
+    x.style.visibility = "hidden";
+  } else {
+    x.style.visibility = "visible";
+  }
+    document.getElementById('Evelyn').style.visibility='hidden';
+}
+
+function loadEvelyn() {
+    var x = document.getElementById("Evelyn");
+    if (x.style.visibility === "visible") {
+    x.style.visibility = "hidden";
+  } else {
+    x.style.visibility = "visible";
+  }
+    document.getElementById('Henry').style.visibility='hidden';
+}
+
+function loadPopup() {
+    document.getElementById('popup1').style.display='block';
+    document.getElementById('popup2').style.display='block';
+}
+
+document.getElementById("bg-music").volume = 0.2;
+
+</script>
