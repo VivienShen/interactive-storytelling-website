@@ -141,15 +141,20 @@ body {
     transform: scale(0.98);
 }
 
+.quiz button:disabled {
+    transform: scale(1);
+    background-color: rgba(255, 255, 255, 1);
+}
+
 progress {
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    line-height: 1.8;
+    line-height: 2.5;
     width: 16%;
     height: 4%;
     position: fixed;
     right: 3%;
-    bottom: 75px;
+    bottom: 95px;
 }
 
 progress:after {
@@ -233,6 +238,11 @@ progress:after {
 #nextBtn4 {
     top: 80%;
     left: 55%;
+}
+
+#nextBtn5 {
+    top: 90%;
+    left: 60%;
 }
 
 .btn2 {

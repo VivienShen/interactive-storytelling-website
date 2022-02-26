@@ -24,7 +24,7 @@ var plusFunction = function()
         score = localStorage.getItem("currScore");
     }
 
-    if(score == 95){
+    if(score == 50){
         document.querySelector(".plus-btn").setAttribute("disabled", "disabled")
     }else{
         document.querySelector(".plus-btn").removeAttribute("disabled");
