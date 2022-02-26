@@ -233,9 +233,9 @@
                 <img id="inventory-bg" src="../assets/images/scene4/inventory.png" alt="inventory box">
                 <div class="icons">
                     <img id="camera-icon" class="icon" src="../assets/images/scene4/icon-cam.png" alt="camera item" style="display: none;">
-                    <img id="map-icon" class="icon" src="../assets/images/scene4/icon-map.png" alt="map item" style="display: none;">
+                    <img id="map-icon" class="icon" src="../assets/images/scene4/icon-map.png" alt="map item" style="display: none;" onclick="window.location.href='scene5.html'">
                     <img id="camera-lock" class="lock" src="../assets/images/scene4/lock.png" alt="camera item" style="display: block;">
-                    <img id="map-lock" class="lock" src="../assets/images/scene4/lock.png" alt="map item" style="display: block;">
+                    <img id="map-lock" class="lock" src="../assets/images/scene4/lock.png" alt="map item" style="display: block;" >
                     <img id="teleport-icon" class="icon" src="../assets/images/scene4/icon.png" alt="teleport button" style="display: block;">
                 </div>
 
@@ -246,7 +246,6 @@
 
         <div id="nextBtn" class="btn2" style="display: none;"></div>
         
-
         <script>
             /*------Changing div with next and prev button------*/
 
@@ -288,7 +287,7 @@
                     }
                     
                     //next button appearing after 3 second
-                    setTimeout(appeardiv, 3000);
+                    setTimeout(appeardiv, 500);
                     function appeardiv() {
                         //not appear for the last cut
                         if (currentIndex < IdStore.length-1) {
@@ -317,6 +316,7 @@
                 console.log('cam collected');
                 document.getElementById("camera").style.display = "none";
                 document.getElementById("camera-icon").style.display = "block";
+                document.getElementById("camera-icon").style.display = "block";
                 document.getElementById("camera-lock").style.display = "none";
             });
 
@@ -329,12 +329,14 @@
             
             //make button appear after specific time
             window.onload = function () {
-                setTimeout(appeardiv, 3000);
+                setTimeout(appeardiv, 500);
             }
 
             function appeardiv() {
                 document.getElementById('nextBtn').style.display= "block";
             }
+
+            document.getElementById("bg-music").volume = 0.05;
             
         </script>
         

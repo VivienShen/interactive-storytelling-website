@@ -45,9 +45,7 @@
         
         <div id="s2-3" class="scene" style="display: none;">
             <div>
-                <div id="bg1" class="image">
-                    <img class="img-bg" src="../assets/images/scene3/scene3-2.png" alt="Inside a room">
-                </div>
+                <img class="image" src="../assets/images/scene3/scene3-2.png" alt="Inside a room">
                 <img class="flyer1" onclick="loadHenry()" src="../assets/images/scene3/flyer 1.png" alt="flyer 1">
                 <img class="flyer2" onclick="loadEvelyn()" src="../assets/images/scene3/flyer 2.png" alt="flyer 2">
                 <img class="tv" src="../assets/images/scene3/tv1.png" onclick="window.location.href='scene3-2.html'" alt="tv">
@@ -105,7 +103,7 @@
                     }
 
                     //next button appearing after 3 second
-                    setTimeout(appeardiv, 3000);
+                    setTimeout(appeardiv, 500);
                     function appeardiv() {
                         //not appear for the last cut
                         if (currentIndex < IdStore.length-1) {
@@ -127,7 +125,7 @@
 
             //make button appear after specific time
             window.onload = function () {
-                setTimeout(appeardiv, 3000);
+                setTimeout(appeardiv, 500);
             }
 
             function appeardiv() {
@@ -158,5 +156,7 @@ function loadEvelyn() {
   }
     document.getElementById('Henry').style.visibility='hidden';
 }
+
+document.getElementById("bg-music").volume = 0.05;
 
 </script>

@@ -1,14 +1,14 @@
 body{
     margin: 0;
 
-    -ms-overflow-style: none; /* for Internet Explorer, Edge */
-    scrollbar-width: none; /* for Firefox */
-    overflow: hidden; 
+    /* -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    /*scrollbar-width: none; /* for Firefox */
+    /* overflow: hidden;  */ 
 }
 
-body::-webkit-scrollbar {
-    display: none; /* for Chrome, Safari, and Opera */
-}
+/* body::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera 
+} */
 
 .img-bg {
     width:100%;
@@ -43,7 +43,7 @@ body::-webkit-scrollbar {
 .envelope-open{
     width: 100%;
     position: fixed;
-    top: -12%;
+    top: -7%;
     opacity: 0;
     left: 15px;
 }
@@ -52,7 +52,7 @@ body::-webkit-scrollbar {
     width: 100%;
     transform:scale(0);
     position: fixed;
-    top: -22%;
+    top: -17%;
     right: 5px;
     display: block;
 }
@@ -61,7 +61,7 @@ body::-webkit-scrollbar {
     width: 100%;
     transform:scale(0);
     position: fixed;
-    top: -13%;
+    top: -8%;
     left: 10px;
 }
 
@@ -296,7 +296,7 @@ body::-webkit-scrollbar {
     background-color: #000000;
     outline-color: #ffffff;
     position: fixed;
-    top: 70%;
+    top: 60%;
     left: 51%;
     cursor: pointer;
     display: none;

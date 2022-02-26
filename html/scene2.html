@@ -6,12 +6,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Sincerely, Earth</title>
         <link rel="stylesheet" href="../styles/scene2.css">
-        <script src="js/scripts.js"></script>
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     </head>
 
     <body>
-        <audio autoplay loop>
+        <audio autoplay loop id="bg-music">
             <source src="../assets/audio/bgm/Future_Glider_-_Brian_Bolger.mp3" type="audio/mpeg">
         </audio>
 
@@ -188,7 +187,7 @@
 
             <img src="../assets/images/scene2/modal.png" id = "modal" alt="modal popup">
     
-            <img src="../assets/images/scene2/yes.png" id="yes_button" onclick="window.location.href='scene3-1.html'" alt="yes button" />
+            <img src="../assets/images/scene2/yes.png" id="yes_button" onclick="window.location.href='portal.html'" alt="yes button" />
     
             <div class="inventory">
                 <img id="inventory-bg" src="../assets/images/scene2/inventory.png" alt="inventory box">
@@ -216,6 +215,15 @@
         </div> -->
 
         <script>
+
+            /*Retrieving changed name from local storage*/
+            var inputVal = localStorage.getItem("newName");
+            console.log(inputVal);
+
+            var all = document.querySelectorAll('.speechbox')
+
+            all.forEach(x => x.textContent = x.textContent.replace(/Aeryn/gi, inputVal))
+
             /*------Changing div with next and prev button------*/
 
             //store the divs of the specified className into an array
@@ -256,7 +264,7 @@
                     }
 
                     //next button appearing after 3 second
-                    setTimeout(appeardiv, 3000);
+                    setTimeout(appeardiv, 500);
                     function appeardiv() {
                         //not appear for the last cut
                         if (currentIndex < IdStore.length-2) {
@@ -278,7 +286,7 @@
 
             //make button appear after specific time
             window.onload = function () {
-                setTimeout(appeardiv, 3000);
+                setTimeout(appeardiv, 500);
             }
 
             function appeardiv() {
@@ -289,6 +297,8 @@
                 document.getElementById('yes_button').style.display='block';
                 document.getElementById('modal').style.display='block';
             }       
+
+            document.getElementById("bg-music").volume = 0.05;
 
         </script>
     </body>

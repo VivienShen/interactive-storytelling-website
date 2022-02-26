@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scene 9</title>
+    <link rel="stylesheet" href="../styles/scene9.css">
+    <script src="../scripts/jquery-3.6.0.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <audio autoplay loop id="bg-music">
+        <source src="../assets/audio/bgm/ROYALTY_FREE_Political_Background_Music___Political_Promo_Royalty_Free_Music_by_MUSIC4VIDEO.mp3" type="audio/mpeg" />
+    </audio>
+
+    <div id="s9-1" class="scene" style="display: block;">
+        <div id="bg1" class="image">
+            <img class="img-bg" src="../assets/images/scene9/meetingRoom.jpg" alt="Q&A segment">
+        </div>
+        <div class="text">
+            <div id="box1" class="speechbox" >
+                <p><b>Evelyn:</b> Thank you so much for meeting me, and all the efforts you put into raising awareness on climate change.</p>
+            </div>
+        </div>
+        <div id="nextBtn" class="btn2 btn"></div>
+    </div>
+    <div id="s9-2" class="scene" style="display: none;">
+        <div id="bg1" class="image">
+            <img class="img-bg" src="../assets/images/scene9/meetingRoom.jpg" alt="Q&A segment">
+        </div>
+        <div class="text">
+            <div id="box2" class="speechbox" >
+                <p><b>Aeryn:</b> You’re welcome, if we don’t fix this issue now it will just get so much worse.</p>
+            </div>
+        </div>
+        <div id="nextBtn" class="btn2 btn"></div>
+    </div>
+    <div id="s9-3" class="scene" style="display: none;">
+        <div id="bg1" class="image">
+            <img class="img-bg" src="../assets/images/scene9/meetingRoom.jpg" alt="Q&A segment">
+        </div>
+        <div class="text">
+            <div id="box1" class="speechbox" >
+                <p><b>Evelyn:</b> As you might know, the previous prime minister was very much against taking any measures to solve this issue.</p>
+            </div>
+        </div>
+        <div id="nextBtn" class="btn2 btn"></div>
+    </div>
+    <div id="s9-4" class="scene" style="display: none;">
+        <div id="bg1" class="image">
+            <img class="img-bg" src="../assets/images/scene9/meetingRoom.jpg" alt="Q&A segment">
+        </div>
+        <div class="text">
+            <div id="box1" class="speechbox" >
+                <p><b>Evelyn:</b> While it might seem like he was uneducated about climate change, he was actually knowledgeable on the subject, but chose to turn a blind eye to it in hopes the people would too.</p>
+            </div>
+        </div>
+        <div id="nextBtn" class="btn2 btn"></div>
+    </div>
+    <div id="s9-5" class="scene" style="display: none;">
+        <div id="bg1" class="image">
+            <img class="img-bg" src="../assets/images/scene9/meetingRoom.jpg" alt="Q&A segment">
+        </div>
+        <div class="text">
+            <div id="box1" class="speechbox" >
+                <p><b>Evelyn:</b> Turning a blind is easier especially with all the ties we have in the government to huge corporations and industries creating these issues.</p>
+            </div>
+        </div>
+        <div id="nextBtn" class="btn2 btn"></div>
+    </div>
+    <div id="s9-6" class="scene" style="display: none;">
+        <div id="bg1" class="image">
+            <img class="img-bg" src="../assets/images/scene9/meetingRoom.jpg" alt="Q&A segment">
+        </div>
+        <div class="text">
+            <div id="box3" class="speechbox" >
+                <p><b>Robin:</b> What are your plans to change this?</p>
+            </div>
+        </div>
+        <div id="nextBtn" class="btn2 btn"></div>
+    </div>
+    <div id="s9-7" class="scene" style="display: none;">
+        <div id="bg1" class="image">
+            <img class="img-bg" src="../assets/images/scene9/meetingRoom.jpg" alt="Q&A segment">
+        </div>
+        <div class="text">
+            <div id="box1" class="speechbox" >
+                <p><b>Evelyn:</b> This is where I wanted to get your input, mind if I ask you some question?</p>
+            </div>
+        </div>
+        <div id="nextBtn" class="btn2 btn"></div>
+    </div>
+    <div id="s9-8" class="scene" style="display: none;">
+        <div id="bg1" class="image">
+            <img class="img-bg" src="../assets/images/scene9/meetingRoom.jpg" alt="Q&A segment">
+        </div>
+        <div class="text">
+            <div id="box2" class="speechbox" >
+                <p><b>Aeryn:</b> Of course!</p>
+            </div>
+        </div>
+        <div id="nextBtn" class="btn2 btn"></div>
+    </div>
+    
+    <!-- Quizzes -->
+    <div id="s9-9" class="scene" style="display: none;">
+        <div id="bg1" class="image">
+            <img class="img-bg" src="../assets/images/scene9/meetingRoom.jpg" alt="Q&A segment">
+        </div>
+        <div class="quiz">
+            <p class="quizBox question">Q1: What is one tool I can invest in to remove carbon dioxide from industries?</p>
+            <button id="nextBtn" class="quizBox btn minus-btn disabled" type="button">carbon vacuum</button><br>
+            <button id="nextBtn2" class="quizBox btn plus-btn" type="button">carbon capture</button>
+        </div>
+    </div>
+    <div id="s9-10" class="scene" style="display: none;">
+        <div id="bg1" class="image">
+            <img class="img-bg" src="../assets/images/scene9/meetingRoom.jpg" alt="Q&A segment">
+        </div>
+        <div class="text">
+            <div id="box3" class="speechbox" >
+                <p><b>Robin:</b> Carbon capture can capture 90 percent of carbon dioxide from factories.</p>
+            </div>
+        </div>
+        <div id="nextBtn" class="btn2 btn"></div>
+    </div>
+
+    <div id="s9-11" class="scene" style="display: none;">
+        <div id="bg1" class="image">
+            <img class="img-bg" src="../assets/images/scene9/meetingRoom.jpg" alt="Q&A segment">
+        </div>
+        <div class="quiz">
+            <p class="quizBox question">Q2: What are some alternatives I can invest in to reduce emissions from electricity.        </p>
+            <button id="nextBtn3" class="quizBox btn plus-btn" type="button">solar and wind renewable energies</button><br>
+            <button id="nextBtn4" class="quizBox btn minus-btn disabled" type="button">gas and oil</button>
+        </div>
+    </div>
+    <div id="s9-12" class="scene" style="display: none;">
+        <div id="bg1" class="image">
+            <img class="img-bg" src="../assets/images/scene9/meetingRoom.jpg" alt="Q&A segment">
+        </div>
+        <div class="text">
+            <div id="box3" class="speechbox" >
+                <p><b>Robin:</b> Solar and wind are key to reducing emissions in the electricity sector which is the single largest source of carbon dioxide emissions.</p>
+            </div>
+        </div>
+        <div id="nextBtn" class="btn2 btn"></div>
+    </div>
+
+    <div id="s9-13" class="scene" style="display: none;">
+        <div id="bg1" class="image">
+            <img class="img-bg" src="../assets/images/scene9/meetingRoom.jpg" alt="Q&A segment">
+        </div>
+        <div class="quiz">
+            <p class="quizBox question">Q3: How can I make industries shift to more greener technology</p>
+            <button id="nextBtn5" class="quizBox btn plus-btn" type="button">incentives, laws, and carbon taxes</button><br>
+            <button id="nextBtn6" class="quizBox btn minus-btn disabled" type="button">asking them to</button>  
+        </div>
+    </div>
+    <div id="s9-14" class="scene" style="display: none;">
+        <div id="bg1" class="image">
+            <img class="img-bg" src="../assets/images/scene9/meetingRoom.jpg" alt="Q&A segment">
+        </div>
+        <div class="text">
+            <div id="box3" class="speechbox" >
+                <p><b>Robin:</b> Money incentives to switch to green technology, laws to reduce emissions, and taxes on industries that emit a lot of carbon will force industries to adapt and make reducing emissions a priority. </p>
+            </div>
+        </div> 
+        <div id="nextBtn" class="btn2 btn"></div>
+    </div>
+
+    <div id="s9-15" class="scene" style="display: none;">
+        <div id="bg1" class="image">
+            <img class="img-bg" src="../assets/images/scene9/meetingRoom.jpg" alt="Q&A segment">
+        </div>
+        <div class="text">
+            <div id="box1" class="speechbox" >
+                <p><b>Evelyn:</b> Our talk today was very informative and I can see you both have great passion for the environment. I believe when making decisions for this country it is important to work together with the people and scientists.</p>
+            </div>
+        </div>
+        <div id="nextBtn" class="btn2 btn"></div>
+    </div>
+
+    <div id="s9-16" class="scene" style="display: none;">
+        <div id="bg1" class="image">
+            <img class="img-bg" src="../assets/images/scene9/meetingRoom.jpg" alt="Q&A segment">
+        </div>
+        <div class="text">
+            <div id="box1" class="speechbox" >
+                <p><b>Evelyn:</b> With that being said I wanted to give you both the opportunity to work alongside me in raising awareness and researching this climate problem at the federal level. Together I want to create a brighter and greener future together in Canada. How does that sound?</p>
+            </div>
+        </div>
+        <div id="nextBtn" class="btn2 btn"></div>
+    </div>
+
+    <div id="s9-17" class="scene" style="display: none;">
+        <div id="bg1" class="image">
+            <img class="img-bg" src="../assets/images/scene9/meetingRoom.jpg" alt="Q&A segment">
+        </div>
+        <div class="text">
+            <div id="box3" class="speechbox" >
+                <p><b>Robin:</b> That sounds incredible! I would love to join.</p>
+            </div>
+        </div>
+        <div id="nextBtn" class="btn2 btn"></div>
+    </div>
+
+    <div id="s9-18" class="scene" style="display: none;">
+        <div id="bg1" class="image">
+            <img class="img-bg" src="../assets/images/scene9/meetingRoom.jpg" alt="Q&A segment">
+        </div>
+        <div class="text">
+            <div id="box2" class="speechbox" >
+                <p><b>Aeryn:</b> Same here! I feel like this would be fulfilling my purpose on earth.</p>
+            </div>
+        </div>
+        <div id="nextBtn" class="btn2 btn"></div>
+    </div>
+
+    <div id="s9-19" class="scene" style="display: none;">
+        <div id="bg1" class="image">
+            <img class="img-bg" src="../assets/images/scene9/meetingRoom.jpg" alt="Q&A segment">
+        </div>
+        <div class="text">
+            <div id="box1" class="speechbox" >
+                <p><b>Evelyn:</b> There is a short contract you would need to sign, but take a read I promise there are no ulterior motives, I am 100% committed to working with you guys in solving the climate problem.</p>
+            </div>
+        </div>
+        <div id="nextBtn" class="btn2 btn"></div>
+    </div>
+
+    <div id="s9-20" class="scene" style="display: none;">
+        <div id="bg" class="image-2">
+            <img class="img-bg2" src="../assets/images/scene9/background.png" alt="parallax scene background">
+        </div> 
+    
+        <Section class="sec1">
+            <img class="bg1" src="../assets/images/scene9/sea/sea-bckg.png" alt="sea background">
+            <img class="image15" id="img" src="../assets/images/scene9/sea/seaweed (2)Letter.png">
+            <img class="image16" id="img" src="../assets/images/scene9/sea/seaweedLetter.png">
+            <img class="image14" id="img" src="../assets/images/scene9/sea/rockLetter.png">
+            <img class="image1" id="img" src="../assets/images/scene9/sea/fishes.png">
+            <img class="image11" id="img" src="../assets/images/scene9/sea/corals4Letter.png">
+            <img class="image12" id="img" src="../assets/images/scene9/sea/fishes-bgLetter.png">
+            <img class="image2" id="img" src="../assets/images/scene9/sea/turtl.png">
+            <img class="image4" id="img" src="../assets/images/scene9/sea/Asset 37Letter.png">
+            <img class="image21" id="img" src="../assets/images/scene9/sea/corals.png">
+            <img class="image6" id="img" src="../assets/images/scene9/sea/bottomLetter.png">
+            <img class="image3" id="img" src="../assets/images/scene9/sea/Asset 36Letter.png">
+            <img class="image5" id="img"src="../assets/images/scene9/sea/blackFishLetter.png">
+            <!-- <img class="image7" id="img" src="images/sea/btwn sea and arcticLetter.png"> -->
+            <img class="image8" id="img" src="../assets/images/scene9/sea/bublesLetter.png">
+            <img class="image9" id="img" src="../assets/images/scene9/sea/corals2Letter.png">
+            <img class="image10" id="img" src="../assets/images/scene9/sea/corlas1Letter.png">
+            <img class="image13" id="img" src="../assets/images/scene9/sea/redFishesLetter.png">
+            <img class="image18" id="img" src="../assets/images/scene9/sea/waveLetter.png">
+            <img class="image19" id="img" src="../assets/images/scene9/sea/yelloFish-topLetter.png">
+            <img class="image20" id="img" src="../assets/images/scene9/sea/yelloFishesLetter.png"> 
+        
+        </Section>
+    
+        <img class="image7" id="img" src="../assets/images/scene9/sea/btwn sea and arcticLetter.png"> 
+    
+        <Section class="sec2">
+            <img class="bg2" src="../assets/images/scene9/arctic/arctic-bckg.png" alt="arctic background">
+            <img class="image2-1" src="../assets/images/scene9/arctic/BirdsLetter.png">
+            <img class="image2-2" src="../assets/images/scene9/arctic/floating iceLetter.png">
+            <img class="image2-3" src="../assets/images/scene9/arctic/Ice-bigLetter.png">
+            <img class="image2-4" src="../assets/images/scene9/arctic/IcebergLetter.png">
+            <img class="image2-5" src="../assets/images/scene9/arctic/Iceberg2Letter.png">
+            <img class="image2-6" src="../assets/images/scene9/arctic/polar bearsLetter.png">
+            <img class="image2-7" src="../assets/images/scene9/arctic/polarbear-aloneLetter.png">
+            <img class="image2-8" src="../assets/images/scene9/arctic/walrusLetter.png">
+            <img class="image2-9" src="../assets/images/scene9/arctic/whaleLetter.png">
+        </Section>
+    
+        <Section class="sec3">
+            <div class="container3">
+                <img class="bg3" src="../assets/images/scene9/amazon/amazon-bckg.png" alt="amazon background"> 
+                
+                <img class="image3-7" src="../assets/images/scene9/amazon/bg3Letter.png">
+                <img class="image3-17" src="../assets/images/scene9/amazon/bg_tree (2)Letter.png">
+                <img class="image3-6" src="../assets/images/scene9/amazon/bg2Letter.png">
+                <img class="image3-4" src="../assets/images/scene9/amazon/bg_treesLetter.png">
+                <img class="image3-16" src="../assets/images/scene9/amazon/vinesLetter.png"> 
+                
+                <img class="image3-5" src="../assets/images/scene9/amazon/bg1Letter.png">
+                
+                <img class="image3-2" src="../assets/images/scene9/amazon/tree_rightLetter.png">
+                <img class="image3-8" src="../assets/images/scene9/amazon/birdLetter.png">
+                <img class="image3-9" src="../assets/images/scene9/amazon/JaguarLetter.png">
+                
+                <img class="image3-3" src="../assets/images/scene9/amazon/bg_treeLetter.png">
+                <img class="image3-11" src="../assets/images/scene9/amazon/leaves_secondLetter.png">
+                <img class="image3-1" src="../assets/images/scene9/amazon/tree_leftLetter.png">
+                <img class="image3-10" src="../assets/images/scene9/amazon/leaves_frontLetter.png">
+                <!-- <img class="image3-13" src="images/amazon/leves_thirdLetter.png"> -->
+                <img class="image3-15" src="../assets/images/scene9/amazon/slothLetter.png">
+                
+                <img class="bg4" src="../assets/images/scene1/scene1BG.png" alt="space background"> 
+            </div>
+            
+        </Section>
+
+        <div id="nextBtn next2" class="btn2 btn next2" onclick= "endScene()" style="display: none;"></div>
+    </div>
+    
+    <div class="inventory">
+        <img id="inventory-bg" src="../assets/images/scene6/inventory-panel.png" alt="inventory box">
+        <progress id="popularity-meter" min="0" max="100" value="0"><span></span></progress>
+        <div class="icons">
+            <img id="camera-icon" class="icon" src="../assets/images/scene6/icon-cam.png" alt="camera item" style="display: block;">
+            <img id="map-icon" class="icon" src="../assets/images/scene6/icon-map.png" alt="map item" style="display: block;">
+            <img id="teleport-icon" class="icon" src="../assets/images/scene6/icon.png" alt="teleport button" style="display: block;">
+        </div>
+    </div>
+    
+    <script src="../js/meter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    
+    <script>
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.bg1',
+                scrub: 1,
+                start: 'top top',
+                end: '+=6000',
+                // pin: true,
+                // markers: true
+            }
+        });
+        tl.to(".image18", {
+            y: "-100%",
+            scrub: 2
+        },'start')
+        .to(".image1", {
+            y: "-100%",
+            scrub: 2
+        },'start')
+        .to(".image2", {
+            y: "-100%",
+            scrub: 2
+        },'start')
+        .to(".image3", {
+            y: "-100%",
+            scrub: 2
+        },'start')
+        .to(".image4", {
+            y: "-100%",
+            scrub: 2
+        },'start')
+        .to(".image5", {
+            y: "-100%",
+            scrub: 2
+        },'start')
+        .to(".image6", {
+            y: "-100%",
+            scrub: 2
+        },'start')
+        .to(".image8", {
+            y: "-100%",
+            scrub: 2
+        },'start')
+        .to(".image9", {
+            y: "-100%",
+            scrub: 2
+        },'start')
+        .to(".image10", {
+            y: "-50%",
+            scrub: 2
+        },'start')
+        .to(".image11", {
+            y: "-100%",
+            scrub: 2
+        },'start')
+        .to(".image12", {
+            y: "-100%",
+            scrub: 2
+        },'start')
+        .to(".image13", {
+            y: "-100%",
+            scrub: 2
+        },'start')
+        .to(".image14", {
+            y: "-30%",
+            scrub: 2
+        },'start')
+        .to(".image15", {
+            y: "-100%",
+            scrub: 2
+        },'start')
+        .to(".image16", {
+            y: "-100%",
+            scrub: 2
+        },'start')
+        .to(".image19", {
+            y: "-100%",
+            scrub: 2
+        },'start')
+        .to(".image20", {
+            y: "-100%",
+            scrub: 2
+        },'start')
+        .to(".image7", {
+            y: "-68%",
+            scrub: 2
+        },'start')
+        .to(".image21", {
+            y: "-30%",
+            scrub: 2
+        },'start')
+        
+        const tl2 = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.bg2',
+                scrub: 1,
+                start: 'top top',
+                end: '+=4600',
+                // pin: true,
+                // markers: true
+            }
+        });
+        tl2.to(".image2-1", {
+            y: "-100%",
+            scrub: 2
+        },'start')
+        .to(".image2-2", {
+            y: "-30%",
+            scrub: 2
+        },'start')
+        .to(".image2-3", {
+            y: "-30%",
+            scrub: 2
+        },'start')
+        .to(".image2-4", {
+            y: "-100%",
+            scrub: 2
+        },'start')
+        .to(".image2-5", {
+            y: "-30%",
+            scrub: 2
+        },'start')
+        .to(".image2-6", {
+            y: "-130%",
+            scrub: 2
+        },'start')
+        .to(".image2-7", {
+            y: "-150%",
+            scrub: 2
+        },'start')
+        .to(".image2-8", {
+            y: "-250%",
+            scrub: 2
+        },'start')
+        .to(".image2-9", {
+            y: "-200%",
+            scrub: 2
+        },'start')
+        
+        const tl3 = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.bg3',
+                scrub: 1,
+                start: 'top top',
+                end: '+=1000',
+                // pin: true,
+                // markers: true
+            }
+        });
+        tl2.to(".image3-1", {
+            y: "-30%",
+            scrub: 2
+        },'start')
+        .to(".image3-2", {
+            y: "-30%",
+            scrub: 2
+        },'start')
+        .to(".image3-3", {
+            y: "-30%",
+            scrub: 2
+        },'start')
+        .to(".image3-4", {
+            y: "-20%",
+            scrub: 2
+        },'start')
+        .to(".image3-5", {
+            y: "-30%",
+            scrub: 2
+        },'start')
+        .to(".image3-6", {
+            y: "-30%",
+            scrub: 2
+        },'start')
+        .to(".image3-7", {
+            y: "-30%",
+            scrub: 2
+        },'start')
+        .to(".image3-8", {
+            y: "-140%",
+            scrub: 2
+        },'start')
+        .to(".image3-9", {
+            y: "-70%",
+            scrub: 2
+        },'start')
+        .to(".image3-10", {
+            y: "-15%",
+            scrub: 2
+        },'start')
+        .to(".image3-11", {
+            y: "-50%",
+            scrub: 2
+        },'start')
+        .to(".image3-15", {
+            y: "-165.5%",
+            scrub: 2
+        },'start')
+        .to(".image3-16", {
+            y: "-30%",
+            scrub: 2
+        },'start')
+        .to(".image3-17", {
+            y: "-30%",
+            scrub: 2
+        },'start')
+
+        var next = document.getElementById("nextBtn next2")
+        
+        function endScene() {
+            gsap.to(".bg4", {
+                y: "-100%",
+                scrub: 1,
+                duration: 2
+            })
+
+            next.style.display = "none";
+        }
+
+        var $window = $(window);
+
+        $(window).on('scroll', function() {
+            $topOffset = $(this).scrollTop();
+        
+            console.log($topOffset);
+
+            if($topOffset > 6100){
+                next.style.display = "block";
+            }else{
+                next.style.display = "none";
+            }
+        
+        });
+
+    </Script>
+</body>
+</html>

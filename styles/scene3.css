@@ -406,6 +406,11 @@ body {
     flex-flow: row wrap;
     justify-content: space-around;
   }
+
+.icon:hover{
+    transform: translateY(5px);
+    cursor: pointer;
+}
   
   #map-icon {
     max-height: 78%;

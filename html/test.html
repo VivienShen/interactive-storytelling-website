@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="../js/scene5.js"></script>
+    <title>Scene5 - Barrier Reef</title>
+    <link rel="stylesheet" href="../styles/scene5-coral.css">
+</head>
+<body>
+    <div id="loading">
+        <img id="loading-image" src="../assets/images/scene5/coral/ajax-loader.gif" alt="Loading..." />
+    </div>
+    <audio autoplay loop id="bg-music">
+        <source src="../assets/audio/bgm/Mountain_-_JVNA.mp3" type="audio/mpeg" />
+    </audio>
+    
+    <Section class="sec1">
+        <img class= "imageBG" src="../assets/images/scene5/coral/coral_bg.png">
+        
+        <img class="image1" src="../assets/images/scene5/coral/clouds_back.png">
+        <img class="image2" src="../assets/images/scene5/coral/clouds_front-02.png">
+        <img class="image3" src="../assets/images/scene5/coral/clouds_3-02.png">
+        <img class="image4" src="../assets/images/scene5/coral/clouds_4-02.png">
+        <img class="image5" src="../assets/images/scene5/coral/hills.png">
+        <img class="image6" src="../assets/images/scene5/coral/water_bg-02.png">
+        <img class="image7" src="../assets/images/scene5/coral/boat-02.png">
+        <img class="image8" src="../assets/images/scene5/coral/water_2-02.png">
+        <img class="image9" src="../assets/images/scene5/coral/water_3.png">
+    
+    </Section>
+    <Section class="sec2">
+        <img class= "imageBG2" src="../assets/images/scene5/coral/water_front2.png">
+
+        <img class="image14" src="../assets/images/scene5/coral/fish_back-02.png">
+        <img class="image15" src="../assets/images/scene5/coral/fish_midlle-02.png">
+        <img class="image16" src="../assets/images/scene5/coral/fish_front-02.png">
+        <img class="image17" src="../assets/images/scene5/coral/bubbles-02.png">
+        
+        <img class="image12"  src="../assets/images/scene5/coral/coral2.png">
+        <svg id="path"  viewBox="0 100 786 400">
+            <path id="motionPath" d="M 50 150 C 100 250 200 350 200 350 C 200 350 400 550 650 500 " fill="none" stroke="#5dba4700" stroke-width="2"/>
+        </svg>
+        <img class="image13 clickable" style="z-index: 2;" onclick="openFact('fact1');" src="../assets/images/scene5/coral/turtle.png">
+
+        <p id="fact1" class="factBox fact" style="display: none;">Climate change is a great threat to sea turtles. The sea level rising and the 
+            stronger storms will destroy their beach habitats. Warming oceans also change ocean currents which 
+            introduces the sea turtles to new predators and harms the coral reef that they need to survive.
+            <a href="https://climate.nasa.gov/news/2879/climate-change-puts-pressure-on-sea-turtles/#:~:text=Now%2C%20climate%20change%20is%20exposing,of%20them%20need%20to%20survive." target="_blank">   
+            Climate Change Puts Pressure on Sea Turtles</a>
+        </p>
+
+        <p id="fact2" class="factBox fact2" style="display: none;">Many fishes depend on corals for their food and habitat, while corals depend 
+            on fishes to feed on them for them to continue reproducing and remove some diseases. Increased ocean temperatures from climate change 
+            will affect the behavior of coral reef fishes.
+        </p>
+
+        <img class="image18" src="../assets/images/scene5/coral/fish.png">
+
+        <svg id="path2"  viewBox="0 100 786 400">
+            <path id="motionPath2" d="M 800 100 C 700 250 600 350 550 400 C 450 500 200 600 150 550 " fill="none" stroke="#5dba4700" stroke-width="2"/>
+        </svg>
+        <img class="image19 clickable"  onclick="openFact('fact2');" src="../assets/images/scene5/coral/fish2.png">
+
+        <img class="image11" src="../assets/images/scene5/coral/humans.png">
+    </Section>
+
+    <div class="inventory">
+        <img id="inventory-bg" src="../assets/images/scene5/inventory.png" alt="inventory box">
+        <div class="icons">
+            <img id="camera-icon" class="icon" src="../assets/images/scene5/icon-cam.png" alt="camera item" style="display: block;">
+            <img id="map-icon" class="icon" src="../assets/images/scene5/icon-map.png" alt="map item" style="display: block;" onclick="window.location.href='scene5.html'">
+            <img id="teleport-icon" class="icon" src="../assets/images/scene5/icon.png" alt="teleport button" style="display: block;">
+        </div>
+    </div>
+
+    <div class="text">
+        <div id="box1" class="speechbox" style="display:none;">
+            <p><b>Robin:</b> The great barrier reef, home to an estimated 25% of all known marine life. Are you ready to dive in? 
+            </p>
+        </div>
+        <div id="box2" class="speechbox" style="display:none;">
+            <p><b>Aeryn:</b> Yes I am!</p>
+        </div>
+    </div>
+
+    <!-- <div class="text" >
+        <div id="box2" class="speechbox" style="display:none;">
+            <p><b>Aeryn:</b> Yes I am!</p>
+        </div>
+    </div> -->
+
+    <!-- <div id="nextBtn" class="trans-btn" onclick="switchTb()" style="display:none;"></div> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/MotionPathPlugin.min.js"></script>
+    <script src="../js/jquery-3.6.0.min.js" type="text/javascript"></script>
+
+    <script>
+
+        $(window).on('load', function () {
+            $('#loading').hide();
+        }) 
+                
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.sec1',
+                scrub: 1,
+                start: 'top top',
+                end: '+=10000',
+                pin: true,
+                // markers: true
+            }
+        });
+
+        tl.to(".image1", 2,{
+            y: "-100%",
+            pin: true,
+            duration: 2
+        },'start')
+        .to(".image2", 4, {
+            y: "-100%",
+            pin: true,
+        },'start')
+        .to(".image3", 6, {
+            y: "-100%",
+            pin: true
+        },'start')
+        .to(".image4", 8, {
+            y: "-100%",
+            pin: true
+        },'start')
+        .to(".image5", 10, {
+            y: "-100%",
+            pin: true
+        }, 'start')
+        .to(".image6", 11, {
+            y: "-100%",
+            pin: true
+        }, 'start')
+        .to(".image7", 20,  {
+            y: "-100%",
+            pin: true
+        }, 'start')
+        .to("#box1", 2, {
+            display: "block",
+            pin: true
+        }, 'showtext')
+        .to("#box2", 2, {
+            display: "block",
+            pin: true
+        }, 'showtext')
+        .to(".image8", 22, {
+            y: "-100%",
+            pin: true
+        }, 'start')
+        .to(".image9", 26, {
+            y: "-100%",
+            pin: true
+        }, 'start')
+        .to(".trans-btn",{
+            display: "none",
+            pin: true
+        },'disappear')
+        .to("#box1",{
+            display: "none",
+            pin: true
+        },'disappear')
+        .to("#box2",{
+            display: "none",
+            pin: true
+        },'disappear')
+
+        const tl2 = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.image11',
+                scrub: 1,
+                start: "top -2%",
+                end: '+=10',
+                pin: true,
+                // markers: true
+            }
+        });
+
+        tl2.to(".image11", {
+            y: 100, 
+        }, 'start')
+        .to(".image14", 2, {
+            y: "-20%",
+            duration: 40
+        },'start')
+        .to(".image15", 3,{
+            y: "-20%",
+            duration: 40
+        },'start')
+        .to(".image16", 4,{
+            y: "-20%",
+            duration: 40
+        }, 'start')
+        .to(".image17", 5,{
+            y: "-20%",
+            duration: 40
+        }, 'start')
+
+        gsap.to(".image11", {
+            scrollTrigger: {
+                trigger: '.image11',
+                start: "top -5%", 
+                end: "2000",
+                // markers: true,
+                pin: true,
+                scrub: 2
+                
+            },
+        });
+
+        const tl3 = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.image19',
+                scrub: 1,
+                start: 'top 100%',
+                end: '+1000',
+                // markers: true
+            }
+        }, 'start');
+
+        tl3.to(".image19", {
+            motionPath: {
+                path: "#motionPath2",
+                align: "#motionPath2",
+                alignOrigin: [0.5, 0.2],
+                autoRotate: -150,
+            },
+            duration: 40
+            
+        }, 'start')
+        .to(".image13", {
+            motionPath: {
+                path: "#motionPath",
+                align: "#motionPath",
+                alignOrigin: [0.5, 0.2],
+                autoRotate: -40,
+            },
+            duration: 50
+            
+        }, 'start')
+        .to(".image18", {
+            x: "2300px",
+            pin: true,
+            scrub: 2,
+            duration: 40
+            
+        }, '-=30')
+        
+        document.getElementById("bg-music").volume = 0.05;
+
+        function switchTb() {  
+            let box1 = document.getElementById('box1');
+            let box2 = document.getElementById('box2');
+            let btn1 = document.getElementById('nextBtn');
+
+            box1.style.display = "none";
+            btn1.style.display = "none";
+            box2.style.display = "block";
+        }
+
+        function openFact(fact) {
+            if(document.getElementById(fact).style.display=='block'){
+                document.getElementById(fact).style.display='none';
+            }else{
+                document.getElementById(fact).style.display='block';
+            }
+        }
+
+    </script>
+</body>
+</html>

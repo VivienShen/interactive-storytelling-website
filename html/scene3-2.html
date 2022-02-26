@@ -17,6 +17,10 @@
             <input id="next" type='button' value='&gt;' />
         </div> -->
 
+        <audio autoplay loop id="bg-music">
+            <source src="../assets/audio/bgm/A_Fools_Theme.mp3" type="audio/mpeg" />
+        </audio>
+
         <div id="s2-1" class="scene" style="display: block;" >
             <div id="bg1" class="image">
                 <img class="img-bg" src="../assets/images/scene3/news.png" alt="Prime Minister Henry">
@@ -131,7 +135,7 @@
                     }
 
                     //next button appearing after 3 second
-                    setTimeout(appeardiv, 3000);
+                    setTimeout(appeardiv, 500);
                     function appeardiv() {
                         //not appear for the last cut
                         if (currentIndex < IdStore.length-1) {
@@ -153,7 +157,7 @@
 
             //make button appear after specific time
             window.onload = function () {
-                setTimeout(appeardiv, 3000);
+                setTimeout(appeardiv, 500);
             }
 
             function appeardiv() {
@@ -189,5 +193,6 @@ function popup4() {
         CreativaPopup.create('This is the text of the popup.', 'Title', 'success', { image: 'poster1.jpg'});
     }
 
+    document.getElementById("bg-music").volume = 0.05;
 
 </script>
