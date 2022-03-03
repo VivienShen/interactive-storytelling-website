@@ -200,12 +200,12 @@ body {
 progress {
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    line-height: 2.5;
+    line-height: 1.8;
     width: 16%;
     height: 4%;
     position: fixed;
     right: 3%;
-    bottom: 95px;
+    bottom: 75px;
 }
 
 progress:after {

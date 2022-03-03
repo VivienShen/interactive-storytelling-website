@@ -105,6 +105,7 @@ body{
     display: block;
     position: relative;
     animation: fadeIn linear 1s;
+    z-index: 3;
 }
 
 #inventory-bg {
@@ -265,16 +266,44 @@ body{
 .fact {
     margin-bottom: 15px;
     background-color:rgb(255, 255, 255);
-    top: 1245%;
+    top: 1365%;
     left: 40%;
 }
 
 .fact2 {
     margin-bottom: 15px;
     background-color:rgb(255, 255, 255);
-    top: 1290%;
+    top: 1410%;
     left: 20%;
 }
+
+.fact3 {
+    margin-bottom: 15px;
+    background-color:rgb(255, 255, 255);
+    top: 1440%;
+    left: 45%;
+}
+
+/* .fact {
+    margin-bottom: 15px;
+    background-color:rgb(255, 255, 255);
+    top: 1680%;
+    left: 40%;
+}
+
+.fact2 {
+    margin-bottom: 15px;
+    background-color:rgb(255, 255, 255);
+    top: 1700%;
+    left: 20%;
+}
+
+.fact3 {
+    margin-bottom: 15px;
+    background-color:rgb(255, 255, 255);
+    top: 1730%;
+    left: 45%;
+} */
 
 a{
     cursor: pointer;
