@@ -69,9 +69,9 @@ var minusFunction = function()
     score = localStorage.getItem("currScore");
 
     //point increment by 5
-    // for(let i = 0; i < 5; i++){
-    //     score--;
-    // }
+    for(let i = 0; i < 5; i++){
+        score--;
+    }
 
     //reflect score on the meter bar
     document.getElementById("popularity-meter").value = score;
