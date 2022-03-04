@@ -17,17 +17,17 @@
     </audio>
     
     <Section class="sec1">
-        <img class= "imageBG" src="../assets/images/scene5/coral/coral-bg.jpg">
+        <img class= "imageBG" src="../assets/images/scene5/coral/coral_bg.png">
         
-        <img class="image1" src="../assets/images/scene5/coral/clouds-back.png">
-        <img class="image2" src="../assets/images/scene5/coral/clouds-front.png">
-        <img class="image3" src="../assets/images/scene5/coral/clouds-3.png">
-        <img class="image4" src="../assets/images/scene5/coral/clouds-4.png">
+        <img class="image1" src="../assets/images/scene5/coral/clouds_back.png">
+        <img class="image2" src="../assets/images/scene5/coral/clouds_front-02.png">
+        <img class="image3" src="../assets/images/scene5/coral/clouds_3-02.png">
+        <img class="image4" src="../assets/images/scene5/coral/clouds_4-02.png">
         <img class="image5" src="../assets/images/scene5/coral/hills.png">
-        <img class="image6" src="../assets/images/scene5/coral/water-bg.png">
+        <img class="image6" src="../assets/images/scene5/coral/water_bg-02.png">
         <img class="image7" src="../assets/images/scene5/coral/boat-02.png">
-        <img class="image8" src="../assets/images/scene5/coral/water2.png">
-        <img class="image9" src="../assets/images/scene5/coral/water3.png">
+        <img class="image8" src="../assets/images/scene5/coral/water_2-02.png">
+        <img class="image9" src="../assets/images/scene5/coral/water_3.png">
 
     </Section>
     
@@ -37,9 +37,8 @@
             <img class="image15" src="../assets/images/scene5/coral/fish_midlle-02.png">
             <img class="image16" src="../assets/images/scene5/coral/fish_front-02.png">
             <img class="image17" src="../assets/images/scene5/coral/bubbles-02.png">
-
-            <img class="image-coral clickable" onclick="openFact('fact3');" src="../assets/images/scene5/coral/coral2.png">
             
+            <!-- <img class="image12"  src="../assets/images/scene5/coral/coral2.png"> -->
             <svg id="path"  viewBox="0 100 786 400">
                 <path id="motionPath" d="M 50 150 C 100 250 200 350 200 350 C 200 350 400 550 650 500 " fill="none" stroke="#5dba4700" stroke-width="2"/>
             </svg>
@@ -57,14 +56,6 @@
                 will affect the behavior of coral reef fishes.
             </p>
     
-            <p id="fact3" class="factBox fact3" style="display: none;">The coral reef can help manage global warming since they are essential 
-                to controlling carbon dioxide levels in the ocean. However, increased greenhouse gasses from human activity results in 
-                ocean acidification which destroys the corals.
-                <a href="https://oceanservice.noaa.gov/facts/coralreef-climate.html" target="_blank">
-                    How does climate change effect coral reefs?
-                </a>
-            </p>
-    
             <img class="image18" src="../assets/images/scene5/coral/fish.png">
     
             <svg id="path2"  viewBox="0 100 786 400">
@@ -73,7 +64,7 @@
             <img class="image19 clickable"  onclick="openFact('fact2');" src="../assets/images/scene5/coral/fish2.png">
     
             <img class="image11" src="../assets/images/scene5/coral/humans.png">
-        </Section>
+    </Section>
     
     <div class="inventory">
         <img id="inventory-bg" src="../assets/images/scene5/inventory.png" alt="inventory box">
@@ -118,7 +109,7 @@
                 trigger: '.sec1',
                 scrub: 2,
                 start: 'top top',
-                end: '+=2500',
+                end: '+=1500',
                 pin: true,
                 // markers: true
             }
@@ -274,7 +265,7 @@
                 document.getElementById(fact).style.display='block';
             }
         }
-
-    </script>
+    
+        </script>
     </body>
     </html>

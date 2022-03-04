@@ -318,13 +318,17 @@
                 <img class="envelope_btm" src="../assets/images/scene9/letter_bottom-01.png">
 
                 <img class="envelope_closed" src="../assets/images/scene9/letter_closed-02.png"> 
+                <div class="end-text-container">
+                    <p class="end-text">The End</p>
+                </div>
+                
             </div>
             
         </Section>
 
         <div id="nextBtn next2" class="btn2 btn next2" onclick= "endScene()" style="display: none;"></div>
 
-    </div>
+    </div>   
     
     <div class="inventory">
         <img id="inventory-bg" src="../assets/images/scene6/inventory-panel.png" alt="inventory box">
@@ -481,7 +485,7 @@
         
         const tl3 = gsap.timeline({
             scrollTrigger: {
-                trigger: '.bg3',
+                trigger: '.sec3',
                 scrub: 1,
                 start: 'top top',
                 end: '+=1000',
@@ -489,7 +493,7 @@
                 // markers: true
             }
         });
-        tl2.to(".image3-1", {
+        tl3.to(".image3-1", {
             y: "-30%",
             scrub: 2
         },'start')
@@ -572,14 +576,14 @@
                     duration: 2
                 }, '-=1.5')
                 .to(".contract_end", {
-                    y: "108%",
+                    y: "92%",
                     scrub: 1,
                     duration: 2
                     
                 }, '-=1.5')
                 .to(".contract_end", {
                     opacity: 0,
-                    duration: 1
+                    duration: 2
                     
                 },"envelope")
                 .to(".contract_fold1", {
@@ -591,42 +595,47 @@
                     opacity: 0,
                     duration: 2
                     
-                }, 'envelope2')
+                }, 'envelope')
                 .to(".contract_fold2", {
                     opacity: 1,
                     duration: 2
                     
-                }, 'envelope2')
+                }, 'envelope')
                 .to(".contract_fold2", {
                     y: "33%",
                     x: "5%",
                     duration: 2
                     
-                }, '-=1')
+                }, '-=1.5')
                 .to(".envelope_closed", {
                     opacity: 1,
-                    duration: 2
+                    duration: 0.5
                     
-                }, 'envelope3')
+                }, '-=1')
+                .to(".end-text-container", {
+                    display: "block",
+                    duration: 0.5
+                    
+                }, '-=1')
                 .to(".envelope_top", {
                     opacity: 0,
-                    duration: 2
-                }, 'envelope3')
+                    duration: 1
+                }, '-=1')
                 .to(".envelope_btm", {
                     opacity: 0,
-                    duration: 2
+                    duration: 1
                     
-                }, 'envelope3')
+                }, '-=1')
                 .to(".contract_end", {
                     opacity: 0,
-                    duration: 2
+                    duration: 1
                     
-                }, 'envelope3')
+                }, '-=1')
                 .to(".contract_fold2", {
                     opacity: 0,
-                    duration: 2
+                    duration: 1
                     
-                }, 'envelope3')
+                }, '-=1')
 
                 
             

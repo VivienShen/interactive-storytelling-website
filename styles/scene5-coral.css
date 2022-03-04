@@ -3,8 +3,8 @@
     height: 100vh;
 }
 .sec2{
-    /* background-color: burlywood; */
-    height: 350vh;
+    background-image: url('../assets/images/scene5/coral/waterFront.jpg');
+    height: 370vh;
     top: -10%;
     overflow: hidden;
 
@@ -26,8 +26,8 @@ body{
     opacity: 0.7;
     background-color: #fff;
     z-index: 99;
-  }
-  
+}
+
 #loading-image {
     z-index: 100;
 }
@@ -63,17 +63,24 @@ body{
     left: 0%;
 }
 
-.image12{
+.image-coral{
     width: 100%;
     position: absolute;
     margin-left: auto;
     margin-right: auto;
     display: block;
     object-fit: cover;
-    transform: translate(0%, -100%);
+    top: 709.8%;
 }
 
-.image13, .image19{
+.image13{
+    position: absolute;
+    width: 60%;
+    left: -25%;
+    margin-top: 100%;
+}
+
+.image19{
     position: absolute;
     width: 20%;
     left: 0%;
@@ -105,6 +112,7 @@ body{
     display: block;
     position: relative;
     animation: fadeIn linear 1s;
+    z-index: 1;
 }
 
 #inventory-bg {
@@ -265,15 +273,20 @@ body{
 .fact {
     margin-bottom: 15px;
     background-color:rgb(255, 255, 255);
-    top: 1245%;
-    left: 40%;
+    top: 651%;
+    left: 45%;
 }
 
 .fact2 {
     margin-bottom: 15px;
     background-color:rgb(255, 255, 255);
-    top: 1290%;
-    left: 20%;
+    top: 685%;
+    left: 18%;
+}
+
+.fact3{
+    top: 735%;
+    left: 35%;
 }
 
 a{

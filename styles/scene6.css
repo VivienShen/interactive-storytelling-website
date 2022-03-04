@@ -95,10 +95,10 @@ body {
 
 #answer {
     position: absolute;
-    max-width: 9%;
-    max-height: 9%;
+    max-width: 10%;
+    max-height: 10%;
     left: 52%;
-    bottom: 16.3%;
+    bottom: 8.6%;
 }
 
 #aeryn {
@@ -137,12 +137,13 @@ body {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     z-index: 1;
+    cursor: pointer;
 }
 
 .yes-button:hover {
     margin-top: 10px;
+    cursor: pointer;
 }
-
 
 
 /******** QUIZ ********/
@@ -200,12 +201,12 @@ body {
 progress {
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    line-height: 1.8;
+    line-height: 2.4;
     width: 16%;
-    height: 4%;
+    height: 4.5%;
     position: fixed;
     right: 3%;
-    bottom: 75px;
+    bottom: 80px;
 }
 
 progress:after {
@@ -254,8 +255,21 @@ progress:after {
     max-height: 75%;
     padding-top: 1%;
     z-index: 1;
+    color: #b45b07;
+    filter: drop-shadow(0 0 8px #e4860b);
+    cursor: pointer;
 }
 
+#teleport-icon2 {
+    max-height: 75%;
+    padding-top: 1%;
+    z-index: 1;
+}
+
+#teleport-icon:hover {
+    filter: drop-shadow(0 0 30px #faf9f4);
+    cursor: pointer;
+}
 
 @keyframes fadeIn {
     0% {opacity:0;}

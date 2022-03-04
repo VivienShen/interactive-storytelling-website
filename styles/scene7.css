@@ -149,12 +149,12 @@ body {
 progress {
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    line-height: 2.5;
+    line-height: 2.4;
     width: 16%;
-    height: 4%;
+    height: 4.5%;
     position: fixed;
     right: 3%;
-    bottom: 95px;
+    bottom: 80px;
 }
 
 progress:after {
@@ -169,14 +169,6 @@ progress:after {
     display: block;
     position: absolute;
 
-}
-
-.inventory2 {
-    width: 100%;
-    height: 100%;
-    display: block;
-    position: absolute;
-    z-index: 1;
 }
 
 #inventory-bg {
@@ -212,7 +204,6 @@ progress:after {
     padding-top: 1%;
     z-index: 1;
 }
-
 
 @keyframes fadeIn {
     0% {opacity:0;}

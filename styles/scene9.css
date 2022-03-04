@@ -134,12 +134,12 @@ body {
 progress {
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    line-height: 1.8;
+    line-height: 2.4;
     width: 16%;
-    height: 4%;
+    height: 4.5%;
     position: fixed;
     right: 3%;
-    bottom: 75px;
+    bottom: 80px;
 }
 
 progress:after {
@@ -407,31 +407,31 @@ progress:after {
 
 .image2-2{
     width: 100%;
-    top: 430%;
+    top: 450%;
     left: 10%;
     position: absolute;
 }
 .image2-3{
     width: 85%;
-    top: 460%;
+    top: 474%;
     left: 20%;
     position: absolute;
 }
 .image2-4{
     width: 55%;
-    top: 450%;
+    top: 477%;
     left: 60%;
     position: absolute;
 }
 .image2-5{
     width: 80%;
-    top: 358%;
+    top: 367%;
     left: -1%;
     position: absolute;
 }
 .image2-6{
     width: 50%;
-    top: 518%;
+    top: 538%;
     left: 42%;
     position: absolute;
 }
@@ -449,7 +449,7 @@ progress:after {
 }
 .image2-9{
     width: 32%;
-    top: 435%;
+    top: 455%;
     left: 38%;
     position: absolute;
 }
@@ -589,10 +589,10 @@ progress:after {
 }
 
 .contract_end{
-    width:25%;
+    width:27%;
     position: absolute;
     top: 30%;
-    left: 35%;
+    left: 31.7%;
     display: none;
     transform: rotate(-12deg);
 }
@@ -606,27 +606,50 @@ progress:after {
 .envelope_closed{
     width:100%;
     position: absolute;
-    top: 65%;
+    top: 64.7%;
     left: -1.5%;
     transform: rotate(2deg);
     opacity: 0;
 }
 
-
 .contract_fold1{
     width:85%;
     position: absolute;
-    top: 57%;
-    left: 3%;
+    top: 56%;
+    left: 1%;
     transform: rotate(-12deg);
     opacity: 0;
 }
 
 .contract_fold2{
-    width:85%;
+    width:87%;
     position: absolute;
-    top: 58%;
-    left: 3%;
-    transform: rotate(-12deg);
+    top: 55.9%;
+    left: 2%;
+    transform: rotate(-12.7deg);
     opacity: 0;
+}
+
+.end-text-container{
+    transform: rotate(-10deg);
+    display: none;
+    top: 80.5%;
+    left: 43%;
+    position: absolute;
+}
+
+.end-text {
+    white-space: nowrap;
+    overflow: hidden;    
+    font-size: 2.5rem;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: rgba(255,255,255,.70);
+    animation: animated-text 3s steps(30,end) 1s 1 normal both;
+    position: absolute;
+    
+}
+
+@keyframes animated-text{
+    from{width: 0;}
+    to{width: 472px;}
 }

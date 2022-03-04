@@ -19,7 +19,7 @@ body::-webkit-scrollbar {
     object-fit: cover;
     object-position: 0 30%;
 }
-
+ 
 .image {
     justify-content: center;
     position: absolute; 

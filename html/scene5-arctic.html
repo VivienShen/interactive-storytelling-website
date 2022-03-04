@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer src="../js/scene5.js"></script>
+    
     <title>Scene5 - Arctic</title>
     <link rel="stylesheet" href="../styles/scene5.css">
 
@@ -20,9 +20,18 @@
             opacity: 1;
             z-index: 1;
         }
-        .image4, .image5, .image6{
+        .image4, .image5{
             top: 100%;
             opacity: 1;
+        }
+
+        .image6{
+            opacity: 1;
+            max-width: 10%;
+            max-height: 10%;
+            top: 100%;
+            right: 10%;
+            z-index: 3;
         }
 
         .image5{
@@ -58,8 +67,36 @@
             top: 100%;
         }
 
-        .image5, image6{
+        .image5, .image6{
             z-index: 4;
+        }
+
+        .factBox {
+            font-size: 1.05rem;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+            border: 1px solid #fff; 
+            font-weight: 500;
+            line-height: 1.4;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            color: #000;
+            border-radius: 15px;
+            background-color: rgba(255, 255, 255, 1);
+            padding: 20px;
+            position: absolute;
+            width:fit-content;
+            max-width: 500px;
+            height:fit-content;
+            z-index: 1;
+        }
+
+        .fact {
+            margin-bottom: 15px;
+            background-color:rgb(255, 255, 255);
+            top: 45%;
+            left: 60%;
+            z-index: 10;
+            position:fixed;
         }
         
     </style>
@@ -83,7 +120,7 @@
                 <img class="image3 clickable" src="../assets/images/scene5/arctic/mountains-01.png">
                 <img class="image3-3" src="../assets/images/scene5/arctic/iceberg-01.png">      
                 <img class="image5" src="../assets/images/scene5/arctic/smallPB-01.png">
-                <img class="image6 clickable" src="../assets/images/scene5/arctic/BigPB-01.png">
+                <img class="image6 clickable" onclick="openFact('fact1');" src="../assets/images/scene5/arctic/BigPB-02.png">
         
                 <!-- <img class="image5" src="../assets/images/scene5/arctic/scroll1.png">
                 <img class="image6" src="../assets/images/scene5/arctic/scroll2.png">
@@ -98,12 +135,17 @@
             <div class="icons">
                 <img id="camera-icon" class="icon" src="../assets/images/scene5/icon-cam.png" alt="camera item" style="display: block;">
                 <img id="map-icon" class="icon" src="../assets/images/scene5/icon-map.png" alt="map item" style="display: block;" onclick="window.location.href='scene5.html'">
-                <img id="camera-lock" class="lock" src="../assets/images/scene5/lock.png" alt="camera item" style="display: none;">
-                <img id="map-lock" class="lock" src="../assets/images/scene5/lock.png" alt="map item" style="display: none;">
                 <img id="teleport-icon" class="icon" src="../assets/images/scene5/icon.png" alt="teleport button" style="display: block;">
             </div>
         </div>
     </div>
+
+    <p id="fact1" class="factBox fact" style="display: none;">Polar bears are well adapted to survive in one of the harshest environments on our planet, the Arctic. 
+        This is because of their thick fur and skin that helps them keep warm. The Arctic is warming twice as fast as it’s supposed to, causing the ice that polar bears 
+        live on to melt away. The loss of sea ice also makes it harder for the polar bear to find food.
+        <a href="https://www.wwf.org.uk/learn/wildlife/polar-bears" target="_blank">   
+        World Wildlife Fund - polar bears</a>
+    </p>
 
     <div class="text">
         <div id="box3" class="speechbox" style="display:none;">
@@ -114,7 +156,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
-
+    <script src="../js/scene5.js"></script>
     <script>
         const tl = gsap.timeline({
             scrollTrigger: {
@@ -158,7 +200,7 @@
             pin: true
         },'start')
         .to(".image6", 11, {
-            y: "-102%",
+            y: "-240%",
             pin: true
         },'start')
         .to("#box3",{
@@ -170,7 +212,7 @@
             duration: 50
         }, 'polarBear')
         .to(".image6", {
-            x: "-20%",
+            x: "-95%",
             pin: true,
             duration: 50
         }, 'polarBear')
@@ -217,6 +259,14 @@
         //     pin: true,
         //     duration: 2
         // }, 'img2-change')
+
+        function openFact(fact) {
+            if(document.getElementById(fact).style.display=='block'){
+                document.getElementById(fact).style.display='none';
+            }else{
+                document.getElementById(fact).style.display='block';
+            }
+        }
 
         document.getElementById("bg-music").volume = 0.05;
 
