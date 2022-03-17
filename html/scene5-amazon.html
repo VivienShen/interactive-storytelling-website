@@ -17,18 +17,132 @@
         }
 
 
-        .image3, .image5, .image7 {
+        .image1, .image3, .image5, .image7 {
             /* left: -50%; */
             opacity: 1;
+            top: 0%;
+        }
+
+        .image2{
+            top: 20%;
+        }
+        
+        .image2-3 {
+            top: 40%;
+        }
+
+        .image2-2{
             top: 100%;
         }
 
         .image4, .image6, .image8{
             top: 0%;
             opacity: 1;
-            top: 100%;
+            /* top: 100%; */
             /* right: -65%; */
         }
+
+        .blinker{
+            margin:100px;
+            width: 2%;
+            height: 4%;
+            border-radius: 50%;
+            background: #ffffffbd;
+            box-shadow: 0 0 0 rgba(133, 133, 133, 0.4);
+            animation: pulse 2s infinite;
+            position: absolute; 
+            display: block;
+            margin: 0;
+            cursor: pointer;
+        }
+
+        .blink{
+            transform: translate(4140%, 340%);
+        }
+
+        .blink2{
+            transform: translate(720%, 1540%);
+        }
+
+        .blink3{
+            transform: translate(2500%, 1040%);
+        }
+
+        .factBox {
+            font-size: 1.05rem;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+            border: 1px solid #fff; 
+            font-weight: 500;
+            line-height: 1.4;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            color: #000;
+            border-radius: 15px;
+            background-color: rgba(255, 255, 255, 1);
+            padding: 20px;
+            position: absolute;
+            width:fit-content;
+            max-width: 500px;
+            height:fit-content;
+            z-index: 1;
+        }
+
+        .fact {
+            margin-bottom: 15px;
+            background-color:rgb(255, 255, 255);
+            top: 45%;
+            left: 50%;
+            z-index: 10;
+            position:fixed;
+        }
+
+        #fact1{
+            top: 65%;
+            left: 12%;
+        }
+
+        #fact2{
+            top: 17%;
+            left: 50%;
+        }
+
+        #fact3{
+            top: 44%;
+            left: 52%;
+        }
+
+        #fact4{
+            top: 44%;
+            left: 22%;
+        }
+
+
+        .btn-text {
+            max-width: 0;
+            display: inline-block;
+            -webkit-transition: color .25s 1.5s, max-width 2s;
+            transition: color .25s 1.5s, max-width 2s;
+            -webkit-transition: color .25s 1.5s, max-height 2s;
+            transition: color .25s 1.5s, max-height 2s;
+            vertical-align: top;
+            white-space: nowrap;
+            overflow: hidden;
+            color: rgb(2, 2, 2);
+        }
+
+        button:hover .btn-text {
+            width:fit-content;
+            max-width: 500px;
+            height:fit-content;
+            white-space: normal;
+            color: rgb(0, 0, 0);
+        }
+
+        
+        button:hover .btn-icon {
+            display: none;
+        }
+
 
     </style>
 </head>
@@ -51,15 +165,42 @@
                 <img class="image2-3" src="../assets/images/scene5/amazon/bushes-01.png">
                 <img class="image7" src="../assets/images/scene5/amazon/backLeft-01.png">
                 <img class="image8" src="../assets/images/scene5/amazon/backRight-01.png">
-                <img class="image5 clickable" src="../assets/images/scene5/amazon/middelLeft-01.png">
+                <img class="image5" src="../assets/images/scene5/amazon/middelLeft-01.png">
                 <img class="image6" src="../assets/images/scene5/amazon/middleRight-01.png">
                 <img class="image3" src="../assets/images/scene5/amazon/frontLeft-01.png">
                 <img class="image4" src="../assets/images/scene5/amazon/frontRight-01.png">
                 <!-- <img class="image3" src="../assets/images/scene5/amazon/trees.png">
                 <img class="image4" src="../assets/images/scene5/amazon/trees2.png">
                 <img class="image5" src="../assets/images/scene5/amazon/trees3.png"> -->
+
+                <div class="blink blinker"></div>
+                <div class="blink2 blinker"></div>
+                <div class="blink3 blinker"></div>
             </div>
         </div>  
+
+        <p id="fact1" class="factBox fact" style="display: block;">The Amaozn is also called the "Lungs of the Earth" because ...
+            <a href="https://www.wwf.org.uk/learn/wildlife/polar-bears" target="_blank">   
+            World Wildlife Fund - polar bears</a>
+        </p>
+
+        <button id="fact4" class="factBox clickable">
+            <span class="btn-icon">Fact</span>
+            <span class="btn-text">The Amaozn is also called the "Lungs of the Earth" because ...
+                <a href="https://www.wwf.org.uk/learn/wildlife/polar-bears" target="_blank">   
+                World Wildlife Fund - polar bears</a></span>
+        </button> 
+
+        <p id="fact2" class="factBox fact" style="display: block;">The Amaon is one of the last places on Earth that's home to jaguars...
+            <a href="https://www.wwf.org.uk/learn/wildlife/polar-bears" target="_blank">   
+            World Wildlife Fund - polar bears</a>
+        </p>
+
+        <p id="fact3" class="factBox fact" style="display: block;">Almost all wildfires in the Amazon are deliberately ignited by people, who
+            typically burn trees after cutting them down or, less commonly, when they eant to clear a large part of the forest
+            <a href="https://www.wwf.org.uk/learn/wildlife/polar-bears" target="_blank">   
+            World Wildlife Fund - polar bears</a>
+        </p>
 
         <div class="inventory">
             <img id="inventory-bg" src="../assets/images/scene5/inventory.png" alt="inventory box">
@@ -78,7 +219,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
 
     <div class="text">
-        <div id="box4" class="speechbox" style="display:none;">
+        <div id="box4" class="speechbox" style="display:block;">
             <p><b>Robin:</b> The Amazon rainforest, it’s supposed to be the earth's carbon sink but recently it is emitting more carbon than absorbing. Walk with me. 
             </p>
         </div>
@@ -104,110 +245,130 @@
             }
         });
 
-        tl.to(".image1", 2,{
-            y: "-100%",
-            pin: true,
-            duration: 2
-        },'start')
-        .to(".image2", 4, {
-            y: "-80%",
-            pin: true
-        },'start')
-        .to(".image2-3", 5, {
-            y: "-80%",
-            pin: true
-        },'start')
-        .to("#box4", 5, {
-            display: "block",
-            pin: true
-        },'start')
-        .to("#box4", 2, {
-            display: "none",
-            pin: true
-        },'start2')
-        .to("#box5", 2, {
-            display: "block",
-            pin: true
-        },'start2')
+        // tl.to(".image1", 2,{
+        //     y: "-100%",
+        //     pin: true,
+        //     duration: 2
+        // },'start')
+        // .to(".image2", 4, {
+        //     y: "-80%",
+        //     pin: true
+        // },'start')
+        // .to(".image2-3", 5, {
+        //     y: "-80%",
+        //     pin: true
+        // },'start')
+        // .to("#box4", 5, {
+        //     display: "block",
+        //     pin: true
+        // },'start')
+        // .to("#box4", 2, {
+        //     display: "none",
+        //     pin: true
+        // },'start2')
+        // .to("#box5", 2, {
+        //     display: "block",
+        //     pin: true
+        // },'start2')
         
-        .to("#box4", 5, {
-            display: "block",
-            pin: true
-        },'start')
-        .to(".image3", 4, {
-            y: "-100%",
-            pin: true
-        },'start')
-        .to(".image4", 6, {
-            y: "-100%",
-            pin: true
-        },'start')
-        .to(".image5", 7, {
-            y: "-100%",
-            pin: true
-        },'start')
-        .to(".image6", 8, {
-            y: "-100%",
-            pin: true
-        },'start')
-        .to(".image7", 9, {
-            y: "-100%",
-            pin: true
-        },'start')
-        .to(".image8", 10, {
-            y: "-100%",
-            pin: true
-        },'start')
+        // .to("#box4", 5, {
+        //     display: "block",
+        //     pin: true
+        // },'start')
+        // .to(".image3", 4, {
+        //     y: "-100%",
+        //     pin: true
+        // },'start')
+        // .to(".image4", 6, {
+        //     y: "-100%",
+        //     pin: true
+        // },'start')
+        // .to(".image5", 7, {
+        //     y: "-100%",
+        //     pin: true
+        // },'start')
+        // .to(".image6", 8, {
+        //     y: "-100%",
+        //     pin: true
+        // },'start')
+        // .to(".image7", 9, {
+        //     y: "-100%",
+        //     pin: true
+        // },'start')
+        // .to(".image8", 10, {
+        //     y: "-100%",
+        //     pin: true
+        // },'start')
         
-        .to(".image3",  {
+        tl.to(".image3",  {
             x: "-50%",
             pin: true,
-            duration: 30
+            duration: 50
         },'front')
         .to(".image4",{
             x: "56%",
             pin: true,
-            duration: 30
+            duration: 50
         },'front')
-        .to(".image5", 35, {
+        .to(".image5", {
             x: "-50%",
             pin: true,
-            duration: 30
-        },'front')
-        .to(".image6", 35, {
+            duration: 50
+        },'-=30')
+        .to(".image6", {
             x: "50%",
             pin: true,
-            duration: 30
-        },'front')
-        .to(".image7", 35,  {
+            duration: 50
+        },'-=50')
+        .to(".image7",  {
             x: "-50%",
             pin: true,
-            duration: 30
-        },'front')
-        .to(".image8", 35,{
+            duration: 50
+        },'-=40')
+        .to(".image8",{
             x: "66%",
             pin: true,
-            duration: 30
-        },'front')
+            duration: 50
+        },'-=50')
+        .to("#box4", {
+            display: "none",
+            duration: 2
+        },'-=75')
+        .to("#box5", 5, {
+            display: "block",
+            duration: 2
+        },'-=75')
 
-        .to(".image2-2", 32, {
+        .to(".image2-2", {
             y: "-100%",
             pin: true,
-            duration: 30
+            duration: 50
             
         },'front')
-        .to(".image2", 32,{
-            y: "-100%",
+        .to(".image2",{
+            y: "-20%",
             pin: true,
-            duration: 30
+            duration: 50
         },'front')
-        .to(".image2-3", 35, {
-            y: "-100%",
+        .to(".image2-3", {
+            y: "-40%",
             pin: true,
-            duration: 30
+            duration: 50
         },'front')
+        .to("#box5", 5, {
+            display: "none",
+            duration: 2
+        },'-=60')
 
         document.getElementById("bg-music").volume = 0.05;
+
+        //Retrieving changed name from local storage
+        var inputVal = localStorage.getItem("newName");
+            console.log(inputVal);
+
+            var all = document.querySelectorAll('.speechbox');
+
+            all.forEach(x => x.textContent = x.textContent.replace(/Aeryn/gi, inputVal));
 
     </script>
 </body>

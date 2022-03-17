@@ -7,9 +7,6 @@
         <title>Sincerely, Earth</title>
         <link rel="stylesheet" href="../styles/scene4.css">
         <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
-        <script defer src="../node_modules/swup/dist/swup.min.js"></script>
-        <script defer src="/transitionBtn/script.js"></script>
-        <link href="/transitionBtn/styles.css" rel="stylesheet">
     </head>
 
     <body>
@@ -238,8 +235,6 @@
                     <img id="map-lock" class="lock" src="../assets/images/scene4/lock.png" alt="map item" style="display: block;" >
                     <img id="teleport-icon" class="icon" src="../assets/images/scene4/icon.png" alt="teleport button" style="display: block;">
                 </div>
-
-                
             </div>
             
         </div>
@@ -338,6 +333,14 @@
             }
 
             document.getElementById("bg-music").volume = 0.05;
+
+            //Retrieving changed name from local storage
+            var inputVal = localStorage.getItem("newName");
+            console.log(inputVal);
+
+            var all = document.querySelectorAll('.speechbox');
+
+            all.forEach(x => x.textContent = x.textContent.replace(/Aeryn/gi, inputVal));
             
         </script>
         

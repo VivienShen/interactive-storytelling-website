@@ -1,0 +1,36 @@
+body{
+    margin:0;
+    margin-bottom: 0;
+}
+
+
+#bg5{
+    animation-name:travel;
+    animation-duration:3s;
+    display: inline-block; 
+    overflow: hidden;
+    width: 50%;
+}
+
+@keyframes travel{
+	0%{
+        transform:  rotate(0deg) scale(1) translate(0px, 0px) ; 
+        /*rotate(0deg) ;*/
+    } 
+
+	100%{
+        transform:  rotate(10deg) scale(10) translate(-300px, 50px) ;
+        /*rotate(360deg) ;*/
+        
+    }
+}
+
+.travel{
+    width: 100%;
+    display: inline-block; 
+    overflow: hidden;
+}
+
+.travel:hover{
+    transform: scale(2);
+}

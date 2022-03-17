@@ -99,6 +99,24 @@
             position:fixed;
         }
         
+        .camera-capture{
+            position: fixed;
+            top: 50%;
+            left: 10%;
+            left: var(--mouse-x);
+            top: var(--mouse-y);
+            transform-origin: center;
+            transform: scale(0.5, 0.5)
+            
+        }
+
+        .cam_container {
+            width: 100%;
+            height: 200%;
+            overflow: hidden;
+            position: absolute;
+            background-color: chartreuse;
+        }
     </style>
 </head>
 <body>
@@ -112,7 +130,7 @@
     </div> 
 
     <div class="container" >
-        <div class="container_img">
+        <div class="container_img" id="container_img">
             <div class="img" >
                 <img class="image2" src="../assets/images/scene5/arctic/mountainBG-01.png">
                 <img class="image1" src="../assets/images/scene5/arctic/clouds.png">
@@ -128,12 +146,17 @@
             </div>
             <img class="image8 clickable" src="../assets/images/scene5/arctic/iceberg2.png">
             <img class="image7" src="../assets/images/scene5/arctic/fallingIce.png">
+            
         </div>  
+
+        <div class="cam_container">
+            <img class="camera-capture" style="display: none;" id="cam" onmousedown="camClicked()" onmouseup="camReleased()" src="../assets/images/scene5/cam-capture.png">
+        </div>
 
         <div class="inventory">
             <img id="inventory-bg" src="../assets/images/scene5/inventory.png" alt="inventory box">
             <div class="icons">
-                <img id="camera-icon" class="icon" src="../assets/images/scene5/icon-cam.png" alt="camera item" style="display: block;">
+                <img id="camera-icon" class="icon" src="../assets/images/scene5/icon-cam.png" alt="camera item" style="display: block;" onclick="openCam()">
                 <img id="map-icon" class="icon" src="../assets/images/scene5/icon-map.png" alt="map item" style="display: block;" onclick="window.location.href='scene5.html'">
                 <img id="teleport-icon" class="icon" src="../assets/images/scene5/icon.png" alt="teleport button" style="display: block;">
             </div>
@@ -269,6 +292,42 @@
         }
 
         document.getElementById("bg-music").volume = 0.05;
+
+        //Retrieving changed name from local storage
+        var inputVal = localStorage.getItem("newName");
+            console.log(inputVal);
+
+            var all = document.querySelectorAll('.speechbox');
+
+            all.forEach(x => x.textContent = x.textContent.replace(/Aeryn/gi, inputVal));
+
+        //MINI CAMERA GAME
+    
+        let root = document.documentElement;
+
+        root.addEventListener("mousemove", e => {
+            root.style.setProperty('--mouse-x', e.clientX - 573 + "px");
+            root.style.setProperty('--mouse-y', e.clientY - 310 + "px");
+        });
+
+        var camera = document.getElementById("cam");
+
+        function openCam() {
+            if(camera.style.display=='block'){
+                camera.style.display='none';
+            }else{
+                camera.style.display='block';
+            }
+        }
+
+        function camClicked(){
+            camera.style.transform = "scale(0.45, 0.45)";
+        }
+
+        function camReleased(){
+            camera.style.transform= "scale(0.5, 0.5)";
+            
+        }
 
     </script>
 </body>

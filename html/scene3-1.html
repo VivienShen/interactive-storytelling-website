@@ -131,32 +131,36 @@
             function appeardiv() {
                 document.getElementById('nextBtn').style.display= "block";
             }
+
+            function loadHenry() {
+                    var x = document.getElementById("Henry");
+                if (x.style.visibility === "visible") {
+                    x.style.visibility = "hidden";
+                } else {
+                    x.style.visibility = "visible";
+                }
+                    document.getElementById('Evelyn').style.visibility='hidden';
+                }
+
+                function loadEvelyn() {
+                    var x = document.getElementById("Evelyn");
+                    if (x.style.visibility === "visible") {
+                    x.style.visibility = "hidden";
+                } else {
+                    x.style.visibility = "visible";
+                }
+                    document.getElementById('Henry').style.visibility='hidden';
+            }
+
+            document.getElementById("bg-music").volume = 0.05;
+
+            //Retrieving changed name from local storage
+            var inputVal = localStorage.getItem("newName");
+            console.log(inputVal);
+
+            var all = document.querySelectorAll('.speechbox');
+
+            all.forEach(x => x.textContent = x.textContent.replace(/Aeryn/gi, inputVal));
         </script>
     </body>
 </html>
-
-<script>
-
-function loadHenry() {
-    var x = document.getElementById("Henry");
-  if (x.style.visibility === "visible") {
-    x.style.visibility = "hidden";
-  } else {
-    x.style.visibility = "visible";
-  }
-    document.getElementById('Evelyn').style.visibility='hidden';
-}
-
-function loadEvelyn() {
-    var x = document.getElementById("Evelyn");
-    if (x.style.visibility === "visible") {
-    x.style.visibility = "hidden";
-  } else {
-    x.style.visibility = "visible";
-  }
-    document.getElementById('Henry').style.visibility='hidden';
-}
-
-document.getElementById("bg-music").volume = 0.05;
-
-</script>

@@ -69,9 +69,9 @@ var minusFunction = function()
     score = localStorage.getItem("currScore");
 
     //point increment by 5
-    for(let i = 0; i < 5; i++){
-        score--;
-    }
+    // for(let i = 0; i < 5; i++){
+    //     score--;
+    // }
 
     //reflect score on the meter bar
     document.getElementById("popularity-meter").value = score;
@@ -131,3 +131,11 @@ for (var i = 0; i < next.length; i++) {
 }
 
 document.getElementById("bg-music").volume = 0.05;
+
+//Retrieving changed name from local storage
+var inputVal = localStorage.getItem("newName");
+console.log(inputVal);
+
+var all = document.querySelectorAll('.speechbox');
+
+all.forEach(x => x.textContent = x.textContent.replace(/Aeryn/gi, inputVal));

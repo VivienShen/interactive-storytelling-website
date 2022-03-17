@@ -19,7 +19,7 @@ body::-webkit-scrollbar {
     object-fit: cover;
     object-position: 0 30%;
 }
- 
+
 .image {
     justify-content: center;
     position: absolute; 
@@ -33,7 +33,6 @@ body::-webkit-scrollbar {
     transform: translate(160%, 260%);
     width: 10%;
     cursor: pointer;
-    display: none;
 }
 
 .coralReef-icon{
@@ -41,14 +40,12 @@ body::-webkit-scrollbar {
     transform: translate(730%, 250%);
     width: 11%;
     cursor: pointer;
-    display: none;
 }
 
 .arctic-icon{
     position: absolute;
     transform: translate(220%, 10%);
     width: 14%;
-    display: none;
     cursor: pointer;
     transition: transform .2s;
 }
@@ -185,7 +182,6 @@ body::-webkit-scrollbar {
     cursor: pointer;
     outline: none;
     position: absolute;
-    display: none;
     padding: 5px 5px;
     margin: 0;
     z-index: 1;

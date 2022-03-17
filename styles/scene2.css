@@ -136,11 +136,11 @@ body {
 }
 
 #form{
-    margin-top:500px;
     position:absolute;
-    left: 30%;
-    height: 100%;
-    width: 100%;
+    left: 42.5%;
+    top: 60%;
+    height: 10%;
+    width: 30%;
 }
 
 audio{
@@ -250,4 +250,41 @@ audio{
 
 .lock {
     max-height: 78%;
+}
+
+.nameModal{
+    position: absolute;
+    width: 80%;
+    top: 16.5%;
+    left: 10%;
+    
+}
+
+.characterIcon{
+    width: 100%;
+    position: absolute;
+}
+
+.setName{
+    width: 15%;
+    position: absolute;
+    cursor: pointer;
+    top: 70%;
+    left: 42%;
+}
+
+.setName:hover{
+    top: 71%;
+}
+
+.skipBtn{
+    width: 15%;
+    position: absolute;
+    cursor: pointer;
+    top: 80%;
+    left: 42%;
+}
+
+.skipBtn:hover{
+    top: 81%;
 }

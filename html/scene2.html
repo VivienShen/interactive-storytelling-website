@@ -10,9 +10,9 @@
     </head>
 
     <body>
-        <audio autoplay loop id="bg-music">
+        <!-- <audio autoplay loop id="bg-music">
             <source src="../assets/audio/bgm/Future_Glider_-_Brian_Bolger.mp3" type="audio/mpeg">
-        </audio>
+        </audio> -->
 
         <div id="s2-1" class="scene" style="display: block;">
             <div id="bg1" class="image">
@@ -48,27 +48,21 @@
             </div>
         </div>
 
-        <!-- <div id="s2-4" class="scene" style="display: none;">
+        <div id="s2-4" class="scene" style="display: none;">
             <div id="bg4" class="image">
-                <img src="img/go.png" alt="robot presenting a pop-up box with the option to name your character">
+                <img class="img-bg" src="../assets/images/scene2/go.png" alt="robot presenting a pop-up box with the option to name your character">
             </div>
-            <div class="text" >
-                <div id="pop-up" class="speechbox" >
-                    <p><b>Robot:</b> Would you like to change the name of the character?</p>
-                </div>
-                </div>
-                <div id="form">
-                    <form>
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name">
-                        <input type="submit" value="Submit">
-                    </form>
-                </div>
-                <audio controls autoplay>
-                    <source src="sound/robot.wav" type="audio/mpeg">
-                </audio>
+
+            <img class="nameModal" src="../assets/images/scene2/name modal.png"  alt="">
+            <img class="characterIcon" src="../assets/images/scene2/girl name.png"  alt="">
+            <img id="nextBtn2" class="skipBtn" src="../assets/images/scene2/skip.png" alt="">
+            <img id="nextBtn3" class="setName" src="../assets/images/scene2/set name.png" onclick="getInputValue()" alt="">
+
+            <div id="form">
+                <input id="myInput" type="text" name="fname" placeholder="Enter Name here..">
             </div>
-        </div> -->
+    
+        </div>
 
         <div id="s2-5" class="scene" style="display: none;">
             <div id="bg3" class="image">
@@ -76,7 +70,7 @@
             </div>
             <div class="text" >
                 <div id="box4" class="speechbox" >
-                    <p><b>Robot:</b> Well *name*  you won’t have to wait much longer, I came here to let you know that you were one of the people selected to go back to Earth.</p>
+                    <p><b>Robot:</b> Well Aeryn you won’t have to wait much longer, I came here to let you know that you were one of the people selected to go back to Earth.</p>
                 </div>
                 <!-- <audio controls autoplay>
                     <source src="sound/robot.wav" type="audio/mpeg">
@@ -216,13 +210,31 @@
 
         <script>
 
-            /*Retrieving changed name from local storage*/
-            var inputVal = localStorage.getItem("newName");
-            console.log(inputVal);
+             //setting character name
+            var inputVal2 = sessionStorage.getItem("newName");
+                    console.log(inputVal2);
 
-            var all = document.querySelectorAll('.speechbox')
+                    
+            function getInputValue(){
+                var inputVal = document.getElementById("myInput").value;
+                        
+                var all = document.querySelectorAll('.speechbox')
 
-            all.forEach(x => x.textContent = x.textContent.replace(/Aeryn/gi, inputVal))
+                all.forEach(x => x.textContent = x.textContent.replace(/Aeryn/gi, inputVal))
+                
+                localStorage.setItem("newName", inputVal);
+                console.log(inputVal);
+
+            }
+            
+            //Retrieving changed name from local storage
+            // var inputVal = localStorage.getItem("newName");
+            // console.log(inputVal);
+
+            // var all = document.querySelectorAll('.speechbox');
+
+            // all.forEach(x => x.textContent = x.textContent.replace(/Aeryn/gi, inputVal));
+
 
             /*------Changing div with next and prev button------*/
 
@@ -243,6 +255,9 @@
             var currentIndex = 0;
             
             var next = document.getElementById("nextBtn");
+            var next2 = document.getElementById("nextBtn2");
+            var next3 = document.getElementById("nextBtn3");
+
             next.addEventListener("click", function(i) {
 
                 //hide next button when clicked each time
@@ -283,6 +298,44 @@
                     document.getElementById(divId2).style.display = "block";
                 } 
             }); 
+
+            next2.addEventListener("click", function(i) {
+                if (currentIndex < IdStore.length-1) {
+                    console.log('next'); 
+                    currentIndex += 1;
+                    console.log(currentIndex);
+                    var divId = IdStore[currentIndex];
+
+                    console.log(divId, currentIndex);
+                    document.getElementById(divId).style.display = "block";
+                    var prevIndex = currentIndex - 1;
+                    console.log(prevIndex);
+                    if (prevIndex >= 0) {
+                        var preId = IdStore[prevIndex];
+                        document.getElementById(preId).style.display = "none";
+                    }
+
+                }
+            });
+
+            next3.addEventListener("click", function(i) {
+                if (currentIndex < IdStore.length-1) {
+                    console.log('next'); 
+                    currentIndex += 1;
+                    console.log(currentIndex);
+                    var divId = IdStore[currentIndex];
+
+                    console.log(divId, currentIndex);
+                    document.getElementById(divId).style.display = "block";
+                    var prevIndex = currentIndex - 1;
+                    console.log(prevIndex);
+                    if (prevIndex >= 0) {
+                        var preId = IdStore[prevIndex];
+                        document.getElementById(preId).style.display = "none";
+                    }
+
+                }
+            });
 
             //make button appear after specific time
             window.onload = function () {

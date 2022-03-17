@@ -1,22 +1,4 @@
 
-function toggleMapElements(icon, btn) {
-    let txt = icon;
-    let txt2 = btn;
-    console.log(txt);
-    var x = document.getElementById(txt);
-    var y = document.getElementById(txt2);
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }
-    if (y.style.display === "none") {
-        y.style.display = "block";
-    } else {
-        y.style.display = "none";
-    }
-}
-
 let visited = false;
 let visited2 = false;
 let visited3 = false;
