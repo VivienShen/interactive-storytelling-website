@@ -2,13 +2,14 @@
     background-color: rebeccapurple;
     height: 100vh;
 }
+
 .sec2{
-    background-image: url('../assets/images/scene5/coral/waterFront.jpg');
     height: 370vh;
     top: -10%;
     overflow: hidden;
-
+    position: relative;
 }
+
 body{
     margin: 0;
     overflow-x: hidden;
@@ -68,9 +69,11 @@ body{
     position: absolute;
     margin-left: auto;
     margin-right: auto;
+    margin-top: auto;
     display: block;
     object-fit: cover;
-    top: 709.8%;
+    top: 84.7%;
+    bottom: 0%;
 }
 
 .image13{
@@ -98,12 +101,18 @@ body{
     position: absolute;
     left: 0%;
     margin-top: 95%;
+    /* margin-left: auto;
+    margin-right: auto;
+    margin-top: auto; */
 }
 
 #path2{
     position: absolute;
     left: 0%;
     margin-top: 100%;
+    /* margin-left: auto;
+    margin-right: auto;
+    margin-top: auto; */
 }
 
 .inventory {
@@ -372,34 +381,40 @@ a{
 }
 
 #indicator1{
-    top: 657%;
-    left: 78%;
+    top: 660%;
+    left: 76%;
+    bottom: 0%;
 }
 
 #indicator2{
     top: 669%;
     left: 11%;
+    bottom: 0%;
     
 }
 
 #indicator3{
     top: 713%;
     left: 23.5%;
+    bottom: 0%;
 }
 
 #fact1 {
     top: 651%;
     left: 45%;
+    bottom: 0%;
 }
 
 #fact2 {
     top: 685%;
     left: 18%;
+    bottom: 0%;
 }
 
 #fact3{
     top: 735%;
     left: 30%;
+    bottom: 0%;
 }
 
 .factBox {
