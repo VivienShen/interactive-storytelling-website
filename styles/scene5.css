@@ -131,15 +131,15 @@ body::-webkit-scrollbar {
 @media screen and (min-height: 900px) {
     .map-pin1{ 
         transform: translate(1550%, 220%);
-        z-index: 1;
+        z-index: 0;
     }
     .map-pin2{ 
         transform: translate(1100%, 680%);
-        z-index: 1;
+        z-index: 0;
     }
     .map-pin3{ 
         transform: translate(2450%, 800%);
-        z-index: 1;
+        z-index: 0;
     }
     .blinker{
         width: 2%;
@@ -401,14 +401,24 @@ body::-webkit-scrollbar {
 #camera-icon {
     max-height: 58%;
     padding-top: 3%;
+    cursor: auto;
+}
+
+#camera-icon:hover{
+    transform: translateY(0px);
 }
 
 #teleport-icon {
     max-height: 75%;
     padding-top: 1%;
+    cursor: auto;
     /* color: #b45b07;
     filter: drop-shadow(0 0 8px #e4860b);
     cursor: pointer; */
+}
+
+#teleport-icon:hover{
+    transform: translateY(0px);
 }
 
 #teleport-icon:hover{
@@ -418,6 +428,21 @@ body::-webkit-scrollbar {
 
 .lock {
     max-height: 78%;
+}
+
+progress {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 2.4;
+    width: 16%;
+    height: 4.5%;
+    position: fixed;
+    right: 3%;
+    bottom: 80px;
+}
+
+progress:after {
+    content: attr(value)'%';
 }
 
 .modal{
@@ -438,17 +463,18 @@ body::-webkit-scrollbar {
     cursor: pointer;
 }
 
-#teleport-btn {
-    max-height: 75%;
-    padding-top: 1%;
+#icon-glow {
+    max-height: 60%;
+    padding-top: 3%;
     color: #b45b07;
     filter: drop-shadow(0 0 8px #e4860b);
     cursor: pointer; 
 }
 
-#teleport-btn:hover {
+#icon-glow:hover {
     filter: drop-shadow(0 0 30px #faf9f4);
     cursor: pointer;
+    transform: translateY(5px);
 }
 
 .clickable {
@@ -461,4 +487,32 @@ body::-webkit-scrollbar {
 .clickable:hover {
     color: #ffa60207;
     filter: drop-shadow(0 0 30px #f5d31100);
+}
+
+.indicator{
+    display: block;
+    width: 37px;
+    height: 37px;
+    margin: 160px auto;
+    animation: ripple 0.6s linear infinite;
+    border-radius: 50px;
+    position: absolute;
+    cursor: pointer;
+    
+}
+
+/* ripple effect */
+@keyframes ripple {
+    0% {
+        box-shadow: 0 0 0 0 rgba(181, 184, 25, 0.1),
+                    0 0 0 5px rgba(181, 184, 25, 0.1),
+                    0 0 0 15px rgba(181, 184, 25, 0.1),
+                    0 0 0 25px rgba(181, 184, 25, 0.1);
+    }
+    100% {
+        box-shadow: 0 0 0 5px rgba(181, 184, 25, 0.1),
+                    0 0 0 15px rgba(181, 184, 25, 0.1),
+                    0 0 0 25px rgba(181, 184, 25, 0.1),
+                    0 0 0 35px rgba(181, 184, 25, 0);
+    }
 }

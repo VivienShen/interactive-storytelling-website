@@ -84,6 +84,86 @@ for (var i = 0; i < minus.length; i++) {
     minus[i].addEventListener('click', minusFunction, false);
 }
 
+
+//When correct capture is taken from camera
+var camera = document.getElementById("cam");
+var polarBear = document.getElementById("big-pb");
+let isCaptured = false;
+
+function camClicked(){
+    camera.style.transform = "scale(0.45, 0.45)";
+
+    //Check if camera overlaps object
+            
+    var rect2 = camera.getBoundingClientRect();
+    var rect1 = polarBear.getBoundingClientRect();
+
+    console.log(rect2);
+    console.log(rect1);
+
+    if (!
+        (rect1.top > rect2.bottom ||
+        rect1.right < rect2.left ||
+        rect1.bottom < rect2.top ||
+        rect1.left > rect2.right)
+    ){
+        isCaptured = true;
+        console.log("overlapping");
+        document.getElementById("game-txt").innerHTML = "Captured";
+        for(let i = 0; i < 5; i++){
+            score++;
+        }
+        //setting increment input value
+        document.getElementById("popularity-meter").value = score;
+
+        //store score in local storage
+        localStorage.setItem("currScore", score);
+        console.log("score is: " + score);
+            
+    }else{
+        isCaptured = false;
+        document.getElementById("game-txt").innerHTML = "Not Captured";
+    }
+
+    console.log(isCaptured);
+
+    // TAKE SCREENSHOT
+
+    //create new element for screenshot
+    var imageTaken = document.createElement("newImg");
+
+    imageTaken.setAttribute('id','newImg');
+    imageTaken.setAttribute('class','output');
+
+    var currentDiv = document.getElementById("parent-cam"); 
+    currentDiv.insertBefore(imageTaken, currentDiv.cam); 
+
+    // Use the html2canvas function to take a screenshot and append it to the output div
+
+    html2canvas(document.body, {
+        x: window.scrollX + rect2.left,
+        y: window.scrollY + rect2.top,
+        width: rect2.width,
+        height: rect2.height,
+                
+    }).then(canvas => {
+        document.getElementById('newImg').appendChild(canvas);
+    });
+
+    camera.setAttribute('onmousedown','');
+
+    //remove image after 3 seconds
+    setTimeout(appeardiv, 3000);
+
+    function appeardiv() {
+        //remove image and restore camera functionality
+        imageTaken.remove();
+        camera.setAttribute('onmousedown','camClicked()');
+    }
+            
+};
+        
+
 /////////SWITCH QUIZ QUESTIONS////////////
 //same code from next button, but removed timer to apply to quiz buttons.
 //Note: put "scene" in className of each quiz questions div

@@ -67,7 +67,7 @@ if(visited6 == "true"){
 
 
 if(visited4 && visited5 && visited6 == "true"){
-    teleport.id = 'teleport-btn';
+    teleport.id = 'icon-glow';
     
     teleport.setAttribute( "onClick", "loadPopup();" );
 }

@@ -14,7 +14,7 @@
             <img class="img-bg2" src="../assets/images/scene9/background.png" alt="parallax scene background">
         </div> 
     
-        <Section class="sec1" >
+        <Section class="sec1" id="sec1">
             <img class="bg1" src="../assets/images/scene9/sea/sea-bckg.png" alt="sea background">
             <img class="image15" id="img" src="../assets/images/scene9/sea/seaweed (2)Letter.png">
             <img class="image16" id="img" src="../assets/images/scene9/sea/seaweedLetter.png">
@@ -52,12 +52,24 @@
             <svg id="path4"  viewBox="30 0 786 400">
                 <path id="motionPath4" d="M 1075 181 C 957 47 791 29 600 102 C 385 195 158 253 7 259" fill="none" stroke="#5dba4700" stroke-width="2"/>
             </svg>
+
+            <div class="text" id="text1" style="display:none;">
+                <div id="box1" class="textbox" >
+                    <p>While Aeryn's future is undetermined, you have done the best you can do to create a better life for her and others living on earth and space. </p>
+                </div>
+            </div>
+
+            <!--SCROLL DOWN INDICATOR-->
+            <div class="scroll-indicator">
+                <div class="scroll"></div>
+                <p class="scroll-text">Scroll Down</p>
+            </div>
         
         </Section>
     
         <img class="image7" id="img" src="../assets/images/scene9/divider-03.png"> 
     
-        <Section class="sec2">
+        <Section class="sec2" id="sec2">
             <img class="bg2" src="../assets/images/scene9/arctic/arctic-bckg.png" alt="arctic background">
             <img class="image2-1" src="../assets/images/scene9/arctic/BirdsLetter.png">
             <img class="image2-2" src="../assets/images/scene9/arctic/floating iceLetter.png">
@@ -68,9 +80,15 @@
             <img class="image2-7" src="../assets/images/scene9/arctic/polarbear-aloneLetter.png">
             <img class="image2-8" src="../assets/images/scene9/arctic/walrusLetter.png">
             <img class="image2-9" src="../assets/images/scene9/arctic/whaleLetter.png">
+
+            <div class="text" id="text2" style="display:none;">
+                <div id="box2" class="textbox" >
+                    <p>We hope that by 2050 a net zero can be achieved where greenhouse gasses are no longer emitted so the global temperature doesn’t increase and destroy habitats for animals and homes for people. </p>
+                </div>
+            </div>
         </Section>
     
-        <Section class="sec3" >
+        <Section class="sec3"  id="sec3">
             <div class="container3">
                 <img class="bg3" src="../assets/images/scene9/amazon/amazon-bckg.png" alt="amazon background"> 
                 <img class="image3-0" id="img" src="../assets/images/scene9/divider2-03.png"> 
@@ -105,6 +123,14 @@
                 <div class="end-text-container">
                     <p class="end-text">The End</p>
                 </div>
+
+                <div class="text" id="text3" style="display:none;">
+                    <div id="box3" class="textbox" >
+                        <p>With the help of politicians, industries, scientists, and the general population, we can take care of our Earth and make sure there’s a brighter future for all. </p>
+                    </div>
+                </div>
+
+                <button class="restart-btn" onclick="window.location.href='intro.html'" style="display:none;">Restart?</button>
                 
             </div>
             
@@ -134,9 +160,9 @@
                 trigger: '.sec1',
                 scrub: 1,
                 start: 'top top',
-                end: '+=6000',
+                end: '+=6500',
                 // pin: true,
-                // markers: true
+                //markers: true
             }
         });
         tl.to(".image18", {
@@ -212,22 +238,30 @@
         //     scrub: 2
         // },'start')
         .to(".image7", {
-            y: "-90%",
+            y: "-50%",
             scrub: 2
         },'start')
         .to(".image21", {
             y: "-50%",
             scrub: 2
         },'start')
+        .to("#text1", {
+            display: "block",
+            scrub: 2
+        },'start')
+        .to(".scroll-indicator", {
+            opacity: 0,
+            duration: 2
+        },'start')
         
         const tl2 = gsap.timeline({
             scrollTrigger: {
                 trigger: '.sec2',
                 scrub: 1,
-                start: 'top',
+                start: 'top top',
                 end: '+=4600',
                 // pin: true,
-               // markers: true
+                //markers: true
             }
         });
         tl2.to(".image2-1", {
@@ -270,6 +304,10 @@
         },'start')
         .to(".image2-9", {
             y: "-240%",
+            scrub: 2
+        },'start')
+        .to("#text2", {
+            display: "block",
             scrub: 2
         },'start')
         
@@ -345,6 +383,10 @@
             y: "-55%",
             scrub: 2
         },'start')
+        .to("#text3", {
+            display: "block",
+            scrub: 2
+        },'start')
 
         const tl4 = gsap.timeline({
             scrollTrigger: {
@@ -397,7 +439,7 @@
             
         }, '-=35')
 
-        var next = document.getElementById("nextBtn next2")
+        var next = document.getElementById("nextBtn next2");
         
         function endScene() {
             gsap.timeline()
@@ -483,10 +525,26 @@
                     duration: 1
                     
                 }, '-=1')
+                .to(".restart-btn", {
+                    display: "block",
+                    duration: 1
+                    
+                }, '-=1')
 
-                
-            
             next.style.display = "none";
+
+            var $window = $(window);
+
+            $(window).on('scroll', function() {
+                $topOffset = $(this).scrollTop();
+            
+                console.log($topOffset);
+
+                if($topOffset > 6100){
+                    next.style.display = "none";
+                }
+            
+            });
         }
 
         var $window = $(window);
@@ -506,16 +564,11 @@
 
         //Retrieving changed name from local storage
         var inputVal = localStorage.getItem("newName");
-            console.log(inputVal);
+        console.log(inputVal);
 
-            var all = document.querySelectorAll('.speechbox');
+        var all = document.querySelectorAll('.speechbox');
 
-            all.forEach(x => x.textContent = x.textContent.replace(/Aeryn/gi, inputVal));
-
-        
-        
-        var lastScene = document.getElementById("s9-21");
-        var secondLst = document.getElementById("s9-20");
+        all.forEach(x => x.textContent = x.textContent.replace(/Aeryn/gi, inputVal));
         
 
         function showEnding() {

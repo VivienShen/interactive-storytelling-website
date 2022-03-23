@@ -135,14 +135,6 @@ body {
     overflow: hidden;
 }
 
-#form{
-    position:absolute;
-    left: 42.5%;
-    top: 60%;
-    height: 10%;
-    width: 30%;
-}
-
 audio{
     position:fixed;
     display:inline;
@@ -252,6 +244,13 @@ audio{
     max-height: 78%;
 }
 
+/*CHANGE NAME FEATURE*/
+.dullBg{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+}
+
 .nameModal{
     position: absolute;
     width: 80%;
@@ -263,28 +262,48 @@ audio{
 .characterIcon{
     width: 100%;
     position: absolute;
+    transform-origin: center;
 }
 
 .setName{
     width: 15%;
     position: absolute;
     cursor: pointer;
-    top: 70%;
+    top: 68%;
     left: 42%;
 }
 
 .setName:hover{
-    top: 71%;
+    top: 69%;
 }
 
 .skipBtn{
     width: 15%;
     position: absolute;
     cursor: pointer;
-    top: 80%;
+    top: 79%;
     left: 42%;
 }
 
 .skipBtn:hover{
-    top: 81%;
+    top: 80%;
+}
+
+#form{
+    position:absolute;
+    left: 37.7%;
+    top: 56%;
+    height: 10%;
+    width: 30%;
+    
+}
+
+#myInput{
+    width: 70%;
+    height: 35%;
+    font-size: large;
+    padding: 8px 20px;
+    border: 3px solid rgb(50, 255, 245);
+    border-radius: 10px;
+    background-color: hsl(180, 77%, 88%);
 }

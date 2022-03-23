@@ -289,7 +289,7 @@ progress:after {
 
 .image1{
     width: 40%;
-    top: 120%;
+    top: 135%;
     left: 55%;
 }
 
@@ -307,7 +307,7 @@ progress:after {
 .image3{
     width: 35%;
     top: 270%;
-    left: 2%;
+    left: -3%;
 }
 .image4{
     width: 15%;
@@ -321,7 +321,7 @@ progress:after {
 }
 .image6{
     width: 100%;
-    top: 287%;
+    top: 283%;
     left: 0%;
 }
 .image8{
@@ -331,12 +331,12 @@ progress:after {
 }
 .image9{
     width: 70%;
-    top: 255%;
+    top: 280%;
     left: 30%;
 }
 .image10{
     width: 50%;
-    top: 220%;
+    top: 250%;
     left: -14%;
 }
 .image11{
@@ -346,7 +346,7 @@ progress:after {
 }
 .image12{
     width: 60%;
-    top: 130%;
+    top: 180%;
     left: 5%;
 }
 .image13{
@@ -356,17 +356,17 @@ progress:after {
 }
 .image14{
     width: 67%;
-    top: 246%;
+    top: 243%;
     left: 40%;
 }
 .image15{
     width: 10%;
-    top: 277%;
+    top: 255%;
     left: 44%;
 }
 .image16{
     width: 35%;
-    top: 220%;
+    top: 230%;
     left: -10%;
 }
 .image19{
@@ -394,7 +394,7 @@ progress:after {
 }
 
 .image21{
-    top: 220%;
+    top: 227%;
     width: 50%;
     left: 50%;
     position: absolute;
@@ -614,6 +614,15 @@ progress:after {
     opacity: 0;
 }
 
+.restart-btn{
+    width: 7%;
+    height: 1.5%;
+    position: absolute;
+    top: 92.2%;
+    left: 48.3%;
+    transform: rotate(-10deg);
+}
+
 .contract_fold1{
     width:85%;
     position: absolute;
@@ -635,17 +644,21 @@ progress:after {
 .end-text-container{
     transform: rotate(-10deg);
     display: none;
-    top: 80.5%;
-    left: 43%;
+    top: 79.1%;
+    left: 40.8%;
     position: absolute;
 }
+
+@font-face { font-family: roboto-regular; 
+    src: url('../assets/fonts/SpectralSC-SemiBold.ttf');
+} 
 
 .end-text {
     white-space: nowrap;
     overflow: hidden;    
-    font-size: 2.5rem;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    color: rgba(255,255,255,.70);
+    font-size: 4.2rem;
+    font-family: SpectralSC-SemiBold;
+    color: rgba(255, 255, 255, 0.7);
     animation: animated-text 3s steps(30,end) 1s 1 normal both;
     position: absolute;
     
@@ -678,4 +691,92 @@ progress:after {
     position: absolute;
     left: 0%;
     top: 200%;
+}
+
+#box1 {
+    color: black;
+    background-color: rgba(178, 236, 250, 0.9);
+    border: 2px solid rgb(50, 186, 240);
+    left: 75%;
+    top: 70%;
+}
+
+#box2 {
+    color: black;
+    background-color: rgba(158, 205, 233, 0.9);
+    border: 2px solid rgb(35, 133, 224);
+    left: -5%;
+    top: 350%;
+}
+
+#box3 {
+    color: black;
+    background-color: rgba(158, 233, 196, 0.9);
+    border: 2px solid rgb(11, 83, 150);
+    left: 75%;
+    top: 15%;
+}
+
+.textbox {
+    font-size: 1.3rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 5px;
+    padding: 0 15px 0 15px;
+    width: fit-content;
+    height:fit-content;
+    max-width: 600px;
+    display: block; 
+    /* position: fixed; */
+    left: 50%;
+    bottom: 20px;
+    transform: translate(-50%, -20%);
+    margin: 0 auto;
+    position: absolute;
+    animation: fadeIn linear 2s;
+    text-align: center;
+}
+
+/*SCROLL INDICATOR*/
+.scroll-indicator{
+    position: absolute;
+    top: 20%;
+    left: 45%;
+}
+
+.scroll {
+    width: 45px; 
+    height: 80px;
+    left: 33%;
+    border: 3.8px solid rgba(15, 80, 221, 0.904); 
+    border-radius: 50px; 
+    position: relative;
+}
+.scroll:before {
+    content: ""; 
+    position: absolute;
+    width: 15px; 
+    height: 15px;
+    background: rgba(15, 80, 221, 0.904); 
+    margin: auto;
+    left: 0; 
+    right: 0;
+    top: 30px; 
+    border-radius: 50%;
+    animation: animate 1s linear infinite; 
+}
+@keyframes animate {
+    0% {
+        opacity: 1; top: 5px;
+    }
+    100% {
+        opacity: 0; top: 65px;
+        transform: scale(0.8);
+    }
+}
+
+.scroll-text{
+    font-size: 1.8rem;
+    font-weight: 700;
+    font-family: SpectralSC-SemiBold;
+    color: rgba(12, 72, 184, 0.87);
 }
