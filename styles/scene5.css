@@ -17,7 +17,7 @@ body::-webkit-scrollbar {
     margin-right: auto;
     display: block;
     object-fit: cover;
-    object-position: 0 30%;
+    /* object-position: 0 30%; */
 }
 
 .image {
@@ -63,50 +63,50 @@ body::-webkit-scrollbar {
 }
 
 .map-pin1{ 
-    transform: translate(1550%, 170%);
+    top: 14%;
+    left: 46.5%;
 
 }
 
 .map-pin2{
-    transform: translate(1100%, 630%);
+    top: 50%;
+    left: 32%;
 }
 
 .map-pin3{
-    transform: translate(2450%, 730%);
+    top: 56.5%;
+    left: 74%;
 }
 
 .pin:hover{
     margin-top: -10px;
 }
 
-.pin:active {
-    /* transform: scale(0.50);
-    transform: translateY(4px); */
-}
 
 .blinker{
-    margin:100px;
     width: 2%;
-    height: 4%;
+    height: 4.2%;
     border-radius: 50%;
     background: #db130cbd;
     box-shadow: 0 0 0 rgba(44, 204, 65, 0.4);
     animation: pulse 2s infinite;
     position: absolute; 
     display: block;
-    margin: 0;
 }
 
 .blink1{
-    transform: translate(2350%, 480%);
+    top: 19.3%;
+    left: 47%;
 }
 
 .blink2{
-    transform: translate(1675%, 1425%);
+    top: 55.15%;
+    left: 32.5%;
 }
 
 .blink3{
-    transform: translate(3702%, 1627%);
+    top: 61.7%;
+    left: 74.5%;
 }
 
 .blinker:hover {
@@ -128,7 +128,7 @@ body::-webkit-scrollbar {
     }
 }
 
-@media screen and (min-height: 900px) {
+/* @media screen and (min-height: 900px) {
     .map-pin1{ 
         transform: translate(1550%, 220%);
         z-index: 0;
@@ -164,10 +164,11 @@ body::-webkit-scrollbar {
     .coralReef-icon{
         transform: translate(730%, 300%);
     }
-}
+} */
+
 .btn {
-    min-width: 13%;
-    min-height: 5.5%;
+    min-width: fit-content;
+    min-height: fit-content;
     font-family: 'Nunito', sans-serif;
     font-size: 90%;
     text-transform: uppercase;
@@ -182,22 +183,24 @@ body::-webkit-scrollbar {
     cursor: pointer;
     outline: none;
     position: absolute;
-    padding: 5px 5px;
+    padding: 10px 20px;
     margin: 0;
     z-index: 1;
 }
 
 .btn1{
-    transform: translate(105%, 1270%);
+    top: 70%;
+    left: 13.5%
 }
 
 .btn2{
-    transform: translate(500%, 1285%);
-    padding: 5px 10px;
+    top: 70.5%;
+    left: 77%;
 }
 
 .btn3{
-    transform: translate(245%, 520%);
+    top: 28%;
+    left: 31.5%;
 }
 
 .btn::before {
