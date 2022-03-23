@@ -225,7 +225,7 @@
 
     <div class="container" >
         <div class="container_img">
-            <div class="img" >
+            <div class="img" onclick=" clickToClose()">
                 <img class="image1" src="../assets/images/scene5/amazon/wind.png">
                 <img class="image2" src="../assets/images/scene5/amazon/mountains-01.png">
                 <img class="image2-2" src="../assets/images/scene5/amazon/fire-01.png">
@@ -240,15 +240,16 @@
                 <img class="image4" src="../assets/images/scene5/amazon/trees2.png">
                 <img class="image5" src="../assets/images/scene5/amazon/trees3.png"> -->
 
-                <div class="indicator" id = "indicator1" onclick="toggleFactBoxes('fact1');"></div>
-                <div class="indicator" id = "indicator2" onclick="toggleFactBoxes('fact2');"></div>
-                <div class="indicator" id = "indicator3" onclick="toggleFactBoxes('fact3');"></div>
+            </div>
 
-                <!--SCROLL DOWN INDICATOR-->
-                <div class="scroll-indicator">
-                    <div class="scroll"></div>
-                    <p class="scroll-text">Scroll Down</p>
-                </div>
+            <div class="indicator" id = "indicator1" onclick="toggleFactBoxes('fact1');"></div>
+            <div class="indicator" id = "indicator2" onclick="toggleFactBoxes('fact2');"></div>
+            <div class="indicator" id = "indicator3" onclick="toggleFactBoxes('fact3');"></div>
+
+            <!--SCROLL DOWN INDICATOR-->
+            <div class="scroll-indicator">
+                <div class="scroll"></div>
+                <p class="scroll-text">Scroll Down</p>
             </div>
         </div>  
 
@@ -257,8 +258,7 @@
             of carbon dioxide, which means the forest is releasing more greenhouse gasses than removing.
 
             <a href="https://www.livescience.com/amazon-rainforest-accelerate-climate-change.html" target="_blank">   
-                The Amazon rainforest is officially creating
-                more greenhouse gasses than it is absorbing</a>
+                Read more</a>
         </p>
 
         <!-- <button id="fact4" class="factBox clickable">
@@ -273,7 +273,7 @@
             of the increased temperatures and reduced rainfalls, it may reduce habitats for these species during the dry warm months.
 
             <a href="https://www.worldwildlife.org/stories/what-animals-live-in-the-amazon-and-8-other-amazon-facts#:~:text=The%20Amazon%20is%20one%20of,than%20370%20types%20of%20reptiles." target="_blank">   
-            What animals live in the Amazon? And 8 other Amazon facts</a>
+                Read more</a>
         </p>
 
         <p id="fact3" class="factBox fact" style="display: none;">Almost all wildfires in the Amazon are deliberately ignited by people, who typically 
@@ -281,7 +281,7 @@
 
             <a href="https://www.vox.com/down-to-earth/2021/8/27/22639885/amazon-rainforest-fires-climate-change-2021
             " target="_blank">   
-            Fires in the Amazon are out of control. Again.</a>
+            Read more</a>
         </p>
 
         <div class="cam_container">
@@ -307,14 +307,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
 
     <div class="text">
-        <div id="box4" class="speechbox" style="opacity:0;">
-            <p><b>Robin:</b> The Amazon rainforest, it’s supposed to be the earth's carbon sink but recently it is emitting more carbon than absorbing. Walk with me. 
+        <div id="box4" class="speechbox" style="opacity:0; display: none;">
+            <p><b>Robin:</b> The Amazon Rainforest, it’s supposed to be the earth's carbon sink but recently it is emitting more carbon than absorbing. Walk with me. 
             </p>
         </div>
     </div>
 
     <div class="text">
-        <div id="box5" class="speechbox" style="opacity:0;">
+        <div id="box5" class="speechbox" style="opacity:0; display: none;">
             <p><b>Robin:</b> We are as close to this forest fire as we can get, once you get your photo we need to get out of here as fast as possible. 
             </p>
         </div>
@@ -380,16 +380,19 @@
         },'-=50')
         .to("#box4", {
             opacity: 1,
+            display: "block",
             duration: 2
-        },'-=80')
+        },'-=79')
         .to("#box4", {
             opacity: 0,
+            display: "none",
             duration: 2
-        },'-=70')
+        },'-=65')
         .to("#box5", 5, {
             opacity: 1,
+            display: "block",
             duration: 2
-        },'-=70')
+        },'-=65')
 
         .to(".image2-2", {
             y: "-100%",
@@ -409,6 +412,7 @@
         },'front')
         .to("#box5", 5, {
             opacity: 0,
+            display: "none",
             duration: 2
         },'-=45')
         .to("#indicator3", {
@@ -552,6 +556,12 @@
             }
 
             console.log("fact opened");
+        }
+
+        function clickToClose(){
+            document.getElementById("fact1").style.display = "none";
+            document.getElementById("fact2").style.display = "none";
+            document.getElementById("fact3").style.display = "none";
         }
 
     </script>

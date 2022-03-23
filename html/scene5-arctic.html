@@ -246,7 +246,7 @@
 
     <div class="container" >
         <div class="container_img" id="container_img">
-            <div class="img" id="photo" >
+            <div class="img" onclick=" clickToClose()">
                 <img class="image2" src="../assets/images/scene5/arctic/mountainBG-01.png">
                 <img class="image1" src="../assets/images/scene5/arctic/clouds.png">
                 <img class="image4" src="../assets/images/scene5/arctic/water-01.png">
@@ -258,7 +258,9 @@
                 <!-- <img class="image5" src="../assets/images/scene5/arctic/scroll1.png">
                 <img class="image6" src="../assets/images/scene5/arctic/scroll2.png">
                 <img class="image7" src="../assets/images/scene5/arctic/scroll3.png"> -->
+                
             </div>
+            
             <img class="image8" src="../assets/images/scene5/arctic/iceberg2.png">
             <img class="image7" src="../assets/images/scene5/arctic/fallingIce.png">
 
@@ -297,7 +299,7 @@
         This is because of their thick fur and skin that helps them keep warm. The Arctic is warming twice as fast as it’s supposed to, causing the ice that polar bears 
         live on to melt away. The loss of sea ice also makes it harder for the polar bear to find food.
         <a href="https://www.wwf.org.uk/learn/wildlife/polar-bears" target="_blank">   
-        World Wildlife Fund - polar bears</a>
+        Read more</a>
     </p>
 
     <p id="fact2" class="factBox fact" style="display: none;">The water in icebergs is colder and less salty than sea water, so when icebergs melt, 
@@ -306,7 +308,7 @@
         <a href="https://education.seattlepi.com/effect-global-warming-icebergs-4877.html
 
         " target="_blank">   
-        Why Archimedes Won't Help</a>
+        Read more</a>
     </p>
 
     <p id="fact3" class="factBox fact" style="display: none;">Around four million people live in the Arctic, amongst them are indigenous people called the Inuits. 
@@ -314,11 +316,11 @@
         harder for Inuit people to continue their traditions
         <a href="https://www.natgeokids.com/uk/discover/geography/general-geography/ten-facts-about-the-arctic/
         " target="_blank">   
-        10 FACTS ABOUT THE ARCTIC!</a>
+        Read more</a>
     </p>
 
     <div class="text">
-        <div id="box3" class="speechbox" style="opacity:0">
+        <div id="box3" class="speechbox" style="opacity:0; display:none;">
             <p><b>Robin:</b> We are now in the Arctic, home to about 4 million people.
             </p>
         </div>
@@ -393,6 +395,7 @@
         },'start')
         .to("#box3",{
             opacity: 1,
+            display: "block",
             duration: 2
         })
         .to(".image5", {
@@ -425,6 +428,7 @@
         }, "-=32")
         .to("#box3",{
             opacity: 0,
+            display: "none",
             duration: 2
         },"-=38")
 
@@ -515,6 +519,12 @@
             }
 
             console.log("fact opened");
+        }
+
+        function clickToClose(){
+            document.getElementById("fact1").style.display = "none";
+            document.getElementById("fact2").style.display = "none";
+            document.getElementById("fact3").style.display = "none";
         }
     </script>
 
