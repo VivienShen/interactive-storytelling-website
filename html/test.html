@@ -101,6 +101,13 @@
         <img class="camera-capture" style="display: none;" id="cam" onclick="" onmousedown="camClicked()" onmouseup="camReleased()" src="../assets/images/scene5/cam-capture.png">
     </div>
 
+    <div id="cam-explanation" style="display:none;">
+        <div id="exp" class="explanation" >
+            <p><b>Camera Unlocked!</b><br><br> Take a screenshot of the coral reef for 5 points
+            </p>
+        </div>
+    </div>
+
     <iframe class="reef-counter" title='Rise in sea levels (cm)' src='https://www.theworldcounts.com/embed/challenges/68?background_color=white&color=black&font_family=%22Helvetica+Neue%22%2C+Arial%2C+sans-serif&font_size=14' style='border: none' height='100' width='300'></iframe>
     
     <div class="inventory">
@@ -326,6 +333,8 @@
             }else{
                 camera.style.display='block';
             }
+
+            exp.style.display = "none";
         }
 
 
@@ -336,6 +345,7 @@
 
         var $window = $(window);
         var cam = document.getElementById("camera-icon");
+        var exp = document.getElementById("cam-explanation");
 
         $(window).on('scroll', function() {
             $topOffset = $(this).scrollTop();
@@ -346,9 +356,11 @@
             if($topOffset > 5300){
                 cam.id = "icon-glow";
                 cam.setAttribute('onclick','openCam()');
+                exp.style.display = "block";
             }else{
                 cam.id = "camera-icon";
                 cam.setAttribute('onclick','');
+                exp.style.display = "none";
             }
 
         });

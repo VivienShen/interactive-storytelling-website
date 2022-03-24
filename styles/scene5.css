@@ -301,6 +301,13 @@ body::-webkit-scrollbar {
     border: 2px solid rgb(255, 255, 255);
 }
 
+#exp{
+    color: rgb(255, 255, 255);
+    background-color: rgba(129, 129, 129, 0.76);
+    left: 72%;
+    bottom: 16%;
+}
+
 .speechbox {
     font-size: 1.3rem;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
@@ -315,6 +322,21 @@ body::-webkit-scrollbar {
     color: rgb(0, 0, 0);
     background-color: rgba(176, 228, 236, 0.9);
     border: 2px solid black;
+}
+
+.explanation {
+    font-size: 1rem;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 10px;
+    width:fit-content;
+    max-width: 400px;
+    height:fit-content;
+    padding: 10px 10px 10px 20px; 
+    display: block;
+    position: fixed;
+    animation: fadeIn linear 1s;
+    color: rgb(255, 255, 255);
+    background-color: rgba(105, 105, 105, 0.61);
 }
 
 @keyframes fadeIn {

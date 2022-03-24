@@ -245,6 +245,10 @@
             to {top: 105%; }
         }
 
+        #exp{
+            left: 75.5%;
+        }
+
 
     </style>
 </head>
@@ -322,6 +326,13 @@
 
         <div class="cam_container" id="parent-cam">
             <img class="camera-capture" style="display: none;" id="cam" onclick="" onmousedown="camClicked()" onmouseup="camReleased()" src="../assets/images/scene5/cam-capture.png">
+        </div>
+
+        <div id="cam-explanation" style="display:none;">
+            <div id="exp" class="explanation" >
+                <p><b>Camera Unlocked!</b><br><br> Take a screenshot of the forest fire for 5 points
+                </p>
+            </div>
         </div>
 
         <iframe class="amazon-counter" title='Tons of CO2 emitted into the atmosphere' src='https://www.theworldcounts.com/embed/challenges/23?background_color=white&color=black&font_family=%22Helvetica+Neue%22%2C+Arial%2C+sans-serif&font_size=14' style='border: none' height='105' width='320'></iframe>
@@ -490,6 +501,8 @@
             }else{
                 camera.style.display='block';
             }
+
+            exp.style.display = "block";
         }
 
 
@@ -500,6 +513,7 @@
 
         var $window = $(window);
         var cam = document.getElementById("camera-icon");
+        var exp = document.getElementById("cam-explanation");
 
         var $window = $(window);
         var cam = document.getElementById("camera-icon");
@@ -513,9 +527,11 @@
             if($topOffset > 9500){
                 cam.id = "icon-glow";
                 cam.setAttribute('onclick','openCam()');
+                exp.style.display = "block";
             }else{
                 cam.id = "camera-icon";
                 cam.setAttribute('onclick','');
+                exp.style.display = "none";
             }
         
         });

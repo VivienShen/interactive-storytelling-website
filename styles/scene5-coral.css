@@ -509,3 +509,25 @@ a{
     from {top: 25%; }
     to {top: 105%; }
 }
+
+#exp{
+    color: rgb(255, 255, 255);
+    background-color: rgba(129, 129, 129, 0.76);
+    left: 73.8%;
+    bottom: 16%;
+}
+
+.explanation {
+    font-size: 1rem;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 10px;
+    width:fit-content;
+    max-width: 400px;
+    height:fit-content;
+    padding: 10px 10px 10px 20px; 
+    display: block;
+    position: fixed;
+    animation: fadeIn linear 1s;
+    color: rgb(255, 255, 255);
+    background-color: rgba(105, 105, 105, 0.61);
+}
