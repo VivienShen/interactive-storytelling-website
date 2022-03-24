@@ -65,7 +65,7 @@ body{
 }
 
 .image-coral{
-    width: 100%;
+    width: 25%;
     position: absolute;
     margin-left: auto;
     margin-right: auto;
@@ -74,6 +74,33 @@ body{
     object-fit: cover;
     top: 84.7%;
     bottom: 0%;
+    left: 0%;
+}
+
+.image-coral2{
+    width: 10%;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    display: block;
+    object-fit: cover;
+    top: 84.7%;
+    bottom: 0%;
+    left: 45%;
+}
+
+.image-coral3{
+    width: 25%;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    display: block;
+    object-fit: cover;
+    top: 84.7%;
+    bottom: 0%;
+    right: 0%;
 }
 
 .image13{
@@ -113,6 +140,21 @@ body{
     /* margin-left: auto;
     margin-right: auto;
     margin-top: auto; */
+}
+
+progress {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 2.4;
+    width: 16%;
+    height: 4.5%;
+    position: fixed;
+    right: 3%;
+    bottom: 80px;
+}
+
+progress:after {
+    content: attr(value)'%';
 }
 
 .inventory {
@@ -442,4 +484,28 @@ a{
     top: 45%;
     left: 60%;
     z-index: 10;
+}
+
+.gameText{
+    position: fixed;
+    top: 5%;
+    left: 25%;
+    font-size: 2rem;
+}
+
+.output{
+    position: fixed;
+    transform: scale(1.2, 1.2);
+    transform: rotate(-10deg);
+    top: 225%;
+    left: 35%;
+    animation-name: example;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes example {
+    from {top: 25%; }
+    to {top: 105%; }
 }

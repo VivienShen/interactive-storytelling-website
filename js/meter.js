@@ -88,6 +88,11 @@ for (var i = 0; i < minus.length; i++) {
 //When correct capture is taken from camera
 var camera = document.getElementById("cam");
 var polarBear = document.getElementById("big-pb");
+var coral1 = document.getElementById("coral1");
+var coral2 = document.getElementById("coral2");
+var coral3 = document.getElementById("coral3");
+var fire = document.getElementById("fire");
+
 let isCaptured = false;
 
 function camClicked(){
@@ -96,33 +101,102 @@ function camClicked(){
     //Check if camera overlaps object
             
     var rect2 = camera.getBoundingClientRect();
-    var rect1 = polarBear.getBoundingClientRect();
 
-    console.log(rect2);
-    console.log(rect1);
+    if(polarBear != null){
+        var rect1 = polarBear.getBoundingClientRect();
 
-    if (!
-        (rect1.top > rect2.bottom ||
-        rect1.right < rect2.left ||
-        rect1.bottom < rect2.top ||
-        rect1.left > rect2.right)
-    ){
-        isCaptured = true;
-        console.log("overlapping");
-        document.getElementById("game-txt").innerHTML = "Captured";
-        for(let i = 0; i < 5; i++){
-            score++;
+        if (!
+            (rect1.top > rect2.bottom ||
+            rect1.right < rect2.left ||
+            rect1.bottom < rect2.top ||
+            rect1.left > rect2.right))
+        {
+            isCaptured = true;
+            console.log("overlapping");
+            document.getElementById("game-txt").innerHTML = "Captured";
+            for(let i = 0; i < 5; i++){
+                score++;
+            }
+            //setting increment input value
+            document.getElementById("popularity-meter").value = score;
+    
+            //store score in local storage
+            localStorage.setItem("currScore", score);
+            console.log("score is: " + score);
+                
+        }else{
+            isCaptured = false;
+            document.getElementById("game-txt").innerHTML = "Not Captured";
         }
-        //setting increment input value
-        document.getElementById("popularity-meter").value = score;
+    }
 
-        //store score in local storage
-        localStorage.setItem("currScore", score);
-        console.log("score is: " + score);
-            
-    }else{
-        isCaptured = false;
-        document.getElementById("game-txt").innerHTML = "Not Captured";
+    if(coral1 != null && coral2!= null && coral3 != null){
+        var rect3 = coral1.getBoundingClientRect();
+        var rect4 = coral2.getBoundingClientRect();
+        var rect5 = coral3.getBoundingClientRect();
+
+        if (!(rect3.top > rect2.bottom ||
+                rect3.right < rect2.left ||
+                rect3.bottom < rect2.top ||
+                rect3.left > rect2.right)
+    
+            ||!(rect4.top > rect2.bottom ||
+                rect4.right < rect2.left ||
+                rect4.bottom < rect2.top ||
+                rect4.left > rect2.right)
+    
+            ||!(rect5.top > rect2.bottom ||
+                rect5.right < rect2.left ||
+                rect5.bottom < rect2.top ||
+                rect5.left > rect2.right)
+        ){
+            isCaptured = true;
+            console.log("overlapping");
+            document.getElementById("game-txt").innerHTML = "Captured";
+            for(let i = 0; i < 5; i++){
+                score++;
+            }
+            //setting increment input value
+            document.getElementById("popularity-meter").value = score;
+    
+            //store score in local storage
+            localStorage.setItem("currScore", score);
+            console.log("score is: " + score);
+                
+        }else{
+            isCaptured = false;
+            document.getElementById("game-txt").innerHTML = "Not Captured";
+        }
+
+        //console.log(rect3);
+    }
+    
+    if(fire != null){
+        var rect6 = fire.getBoundingClientRect();
+
+        if (!
+            (rect6.top > rect2.bottom ||
+            rect6.right < rect2.left ||
+            rect6.bottom < rect2.top ||
+            rect6.left > rect2.right))
+        {
+            isCaptured = true;
+            console.log("overlapping");
+            document.getElementById("game-txt").innerHTML = "Captured";
+            for(let i = 0; i < 5; i++){
+                score++;
+            }
+            //setting increment input value
+            document.getElementById("popularity-meter").value = score;
+    
+            //store score in local storage
+            localStorage.setItem("currScore", score);
+            console.log("score is: " + score);
+                
+        }else{
+            isCaptured = false;
+            document.getElementById("game-txt").innerHTML = "Not Captured";
+        }
     }
 
     console.log(isCaptured);

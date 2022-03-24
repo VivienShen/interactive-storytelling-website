@@ -34,7 +34,17 @@
         }
 
         .image2-2{
+            width: 100% !important;
+            transform: scale(0.5,0.5);
+            top: 120%;
+            left: 15%
+        }
+
+        .image2-1{
+            width: 50% !important;
+            transform: scale(0.8, 0.8);
             top: 100%;
+            left: 38%
         }
 
         .image4, .image6, .image8{
@@ -210,6 +220,31 @@
             
         }
 
+        .gameText{
+            position: fixed;
+            top: 5%;
+            left: 25%;
+            font-size: 2rem;
+        }
+
+        .output{
+            position: fixed;
+            transform: scale(1.2, 1.2);
+            transform: rotate(-10deg);
+            top: 25%;
+            left: 35%;
+            animation-name: example;
+            animation-duration: 2s;
+            animation-delay: 1s;
+            animation-fill-mode: forwards;
+        
+        }
+
+        @keyframes example {
+            from {top: 25%; }
+            to {top: 105%; }
+        }
+
 
     </style>
 </head>
@@ -228,7 +263,8 @@
             <div class="img" onclick=" clickToClose()">
                 <img class="image1" src="../assets/images/scene5/amazon/wind.png">
                 <img class="image2" src="../assets/images/scene5/amazon/mountains-01.png">
-                <img class="image2-2" src="../assets/images/scene5/amazon/fire-01.png">
+                <img class="image2-1" src="../assets/images/scene5/amazon/smoke.png">
+                <img class="image2-2" id ="fire" src="../assets/images/scene5/amazon/fire2.png">
                 <img class="image2-3" src="../assets/images/scene5/amazon/bushes-01.png">
                 <img class="image7" src="../assets/images/scene5/amazon/backLeft-01.png">
                 <img class="image8" src="../assets/images/scene5/amazon/backRight-01.png">
@@ -284,24 +320,24 @@
             Read more</a>
         </p>
 
-        <div class="cam_container">
+        <div class="cam_container" id="parent-cam">
             <img class="camera-capture" style="display: none;" id="cam" onclick="" onmousedown="camClicked()" onmouseup="camReleased()" src="../assets/images/scene5/cam-capture.png">
         </div>
 
         <iframe class="amazon-counter" title='Tons of CO2 emitted into the atmosphere' src='https://www.theworldcounts.com/embed/challenges/23?background_color=white&color=black&font_family=%22Helvetica+Neue%22%2C+Arial%2C+sans-serif&font_size=14' style='border: none' height='105' width='320'></iframe>
 
         <div class="inventory">
-            <img id="inventory-bg" src="../assets/images/scene5/inventory.png" alt="inventory box">
+            <img id="inventory-bg" src="../assets/images/scene7/inventory-panel.png" alt="inventory box">
+            <progress id="popularity-meter" min="0" max="100" value="0"><span></span></progress>
             <div class="icons">
                 <img id="camera-icon" class="icon" src="../assets/images/scene5/icon-cam.png" alt="camera item" style="display: block;" onclick="">
                 <img id="map-icon" class="icon" src="../assets/images/scene5/icon-map.png" alt="map item" style="display: block;" onclick="window.location.href='scene5.html'">
-                <img id="camera-lock" class="lock" src="../assets/images/scene5/lock.png" alt="camera item" style="display: none;">
-                <img id="map-lock" class="lock" src="../assets/images/scene5/lock.png" alt="map item" style="display: none;">
                 <img id="teleport-icon" class="icon" src="../assets/images/scene5/icon.png" alt="teleport button" style="display: block;">
             </div>
         </div>
     </div>
 
+    <p class="gameText" id="game-txt">Game Status</p>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
@@ -400,6 +436,12 @@
             duration: 50
             
         },'front')
+        .to(".image2-1", {
+            y: "-100%",
+            pin: true,
+            duration: 80
+            
+        },'front')
         .to(".image2",{
             y: "-20%",
             pin: true,
@@ -432,7 +474,7 @@
         all.forEach(x => x.textContent = x.textContent.replace(/Aeryn/gi, inputVal));
 
         
-        //MINI CAMERA GAME
+        //CAMERA FUNCTIONALITY
         let root = document.documentElement;
 
         root.addEventListener("mousemove", e => {
@@ -450,67 +492,14 @@
             }
         }
 
-        var polarBear = document.getElementById("big-pb");
-        let isCaptured = false;
-
-        // var div = document.getElementById('photo');
-        // var div2 = div.cloneNode(true);
-
-        function camClicked(){
-            camera.style.transform = "scale(0.45, 0.45)";
-
-            //Check if camera overlaps object
-            
-            var rect2 = camera.getBoundingClientRect();
-            var rect1 = polarBear.getBoundingClientRect();
-
-            console.log(rect2);
-            console.log(rect1);
-
-            if (!
-                (rect1.top > rect2.bottom ||
-                rect1.right < rect2.left ||
-                rect1.bottom < rect2.top ||
-                rect1.left > rect2.right)
-            ){
-                isCaptured = true;
-                console.log("overlapping");
-                document.getElementById("game-txt").innerHTML = "Captured";
-            
-            }else{
-                isCaptured = false;
-                document.getElementById("game-txt").innerHTML = "Not Captured";
-            }
-
-            // Take Screenshot
-
-            // Use the html2canvas function to take a screenshot and append it to the output div
-            
-            // html2canvas(div).then(
-            //     function (canvas) {
-            //         document
-            //         .getElementById('output')
-            //         .appendChild(canvas);
-            //     })
-
-            // document.getElementById('output').appendChild(div2);
-
-            // div2.style.width = "100%";
-            // div2.style.height = "100%";
-            // div2.style.marginTop = "-100%";
-            // div2.style.objectFit = "cover";
-            // div2.style.overflow = "hidden";
-            // div2.style.zIndex = 3;
-
-            console.log(isCaptured);
-            
-        };
-        
 
         function camReleased(){
             camera.style.transform= "scale(0.5, 0.5)";
             
         }
+
+        var $window = $(window);
+        var cam = document.getElementById("camera-icon");
 
         var $window = $(window);
         var cam = document.getElementById("camera-icon");
@@ -565,5 +554,8 @@
         }
 
     </script>
+
+<script src="../js/meter.js"></script>
+
 </body>
 </html>

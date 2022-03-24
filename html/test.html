@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="../js/scene5.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
     <title>Scene5 - Barrier Reef</title>
     <link rel="stylesheet" href="../styles/scene5-coral.css">
 </head>
@@ -46,7 +47,9 @@
             <img class="image16" src="../assets/images/scene5/coral/fish_front-02.png">
             <img class="image17" src="../assets/images/scene5/coral/bubbles-02.png">
 
-            <img class="image-coral" src="../assets/images/scene5/coral/coral2.png">
+            <img class="image-coral" id="coral1" src="../assets/images/scene5/coral/coral2-1.png">
+            <img class="image-coral2" id="coral2" src="../assets/images/scene5/coral/coral2-2.png">
+            <img class="image-coral3" id="coral3" src="../assets/images/scene5/coral/coral2-3.png">
             
             <svg id="path"  viewBox="-25 170 786 400">
                 <path id="motionPath" d="M -112 108 C 61 260 165 339 166 339 C 166 339 400 550 650 500 " fill="none" stroke="#5dba4700" stroke-width="2"/>
@@ -94,14 +97,15 @@
         </a>
     </p>
 
-    <div class="cam_container">
+    <div class="cam_container" id="parent-cam">
         <img class="camera-capture" style="display: none;" id="cam" onclick="" onmousedown="camClicked()" onmouseup="camReleased()" src="../assets/images/scene5/cam-capture.png">
     </div>
 
     <iframe class="reef-counter" title='Rise in sea levels (cm)' src='https://www.theworldcounts.com/embed/challenges/68?background_color=white&color=black&font_family=%22Helvetica+Neue%22%2C+Arial%2C+sans-serif&font_size=14' style='border: none' height='100' width='300'></iframe>
     
     <div class="inventory">
-        <img id="inventory-bg" src="../assets/images/scene5/inventory.png" alt="inventory box">
+        <img id="inventory-bg" src="../assets/images/scene7/inventory-panel.png" alt="inventory box">
+        <progress id="popularity-meter" min="0" max="100" value="0"><span></span></progress>
         <div class="icons">
             <img id="camera-icon" class="icon" src="../assets/images/scene5/icon-cam.png" alt="camera item" style="display: block;" onclick="">
             <img id="map-icon" class="icon" src="../assets/images/scene5/icon-map.png" alt="map item" style="display: block;" onclick="window.location.href='scene5.html'">
@@ -118,14 +122,8 @@
                 <p><b>Aeryn:</b> Yes I am!</p>
             </div>
     </div>
-    
-        <!-- <div class="text" >
-            <div id="box2" class="speechbox" style="display:none;">
-                <p><b>Aeryn:</b> Yes I am!</p>
-            </div>
-        </div> -->
-    
-        <!-- <div id="nextBtn" class="trans-btn" onclick="switchTb()" style="display:none;"></div> -->
+
+    <p class="gameText" id="game-txt">Game Status</p>
     
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
@@ -312,7 +310,7 @@
 
         all.forEach(x => x.textContent = x.textContent.replace(/Aeryn/gi, inputVal));
 
-        //MINI CAMERA GAME
+        //CAMERA FUNTIONALITY
         let root = document.documentElement;
 
         root.addEventListener("mousemove", e => {
@@ -329,62 +327,6 @@
                 camera.style.display='block';
             }
         }
-
-        var polarBear = document.getElementById("big-pb");
-        let isCaptured = false;
-
-        // var div = document.getElementById('photo');
-        // var div2 = div.cloneNode(true);
-
-        function camClicked(){
-            camera.style.transform = "scale(0.45, 0.45)";
-
-            //Check if camera overlaps object
-            
-            var rect2 = camera.getBoundingClientRect();
-            var rect1 = polarBear.getBoundingClientRect();
-
-            console.log(rect2);
-            console.log(rect1);
-
-            if (!
-                (rect1.top > rect2.bottom ||
-                rect1.right < rect2.left ||
-                rect1.bottom < rect2.top ||
-                rect1.left > rect2.right)
-            ){
-                isCaptured = true;
-                console.log("overlapping");
-                document.getElementById("game-txt").innerHTML = "Captured";
-            
-            }else{
-                isCaptured = false;
-                document.getElementById("game-txt").innerHTML = "Not Captured";
-            }
-
-            // Take Screenshot
-
-            // Use the html2canvas function to take a screenshot and append it to the output div
-            
-            // html2canvas(div).then(
-            //     function (canvas) {
-            //         document
-            //         .getElementById('output')
-            //         .appendChild(canvas);
-            //     })
-
-            // document.getElementById('output').appendChild(div2);
-
-            // div2.style.width = "100%";
-            // div2.style.height = "100%";
-            // div2.style.marginTop = "-100%";
-            // div2.style.objectFit = "cover";
-            // div2.style.overflow = "hidden";
-            // div2.style.zIndex = 3;
-
-            console.log(isCaptured);
-            
-        };
 
 
         function camReleased(){
@@ -445,5 +387,8 @@
         }
 
     </script>
+
+    <script src="../js/meter.js"></script>
+
     </body>
     </html>
