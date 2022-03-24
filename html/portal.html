@@ -23,11 +23,46 @@
         width: 100%;
         height: 100%;
     }
+
+    #box3{
+        color: rgb(255, 255, 255);
+        background-color: rgba(39, 34, 61, 0.9);
+        border: 2px solid rgb(255, 255, 255);
+        left: 35%;
+        bottom: 38%;
+    }
+
+    .speechbox {
+        font-size: 1.5rem;
+        line-height: 2;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        border-radius: 30px;
+        width:fit-content;
+        max-width: 400px;
+        text-align: center;
+        height:fit-content;
+        padding: 20px 10px 20px 10px; 
+        display: block;
+        position: absolute;
+        animation: fadeIn linear 1s;
+    }
+
+    @keyframes fadeIn {
+        0% {opacity:0;}
+        100% {opacity:1;}
+    }
 </style>
 
 <body>
 
     <canvas></canvas>
+
+    <div class="text">
+        <div id="box3" class="speechbox">
+            <p>Travelling through time from 2100 to the year 2022...
+            </p>
+        </div>
+    </div>
 
 
     <script type="module">
@@ -127,7 +162,7 @@
 
         var timer = setTimeout(function() {
             window.location='scene3-1.html'
-        }, 5000);
+        }, 4500);
 
 
     </script>
