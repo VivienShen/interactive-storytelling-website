@@ -531,3 +531,147 @@ a{
     color: rgb(255, 255, 255);
     background-color: rgba(105, 105, 105, 0.61);
 }
+
+@media (min-height: 900px) {
+    #indicator1{
+        top: 640%;
+        left: 76%;
+        bottom: 0%;
+    }
+    
+    #indicator2{
+        top: 649%;
+        left: 11%;
+        bottom: 0%;
+        
+    }
+    
+    #indicator3{
+        top: 693%;
+        left: 23.5%;
+        bottom: 0%;
+    }
+
+    #fact1 {
+        top: 631%;
+        left: 45%;
+        bottom: 0%;
+    }
+    
+    #fact2 {
+        top: 665%;
+        left: 18%;
+        bottom: 0%;
+    }
+    
+    #fact3{
+        top: 705%;
+        left: 30%;
+        bottom: 0%;
+    }
+
+    
+}
+
+@media (min-height: 780px) and (max-height: 840px) {
+    #indicator1{
+        top: 680%;
+        left: 76%;
+    }
+    
+    #indicator2{
+        top: 689%;
+        left: 11%;
+        
+    }
+    
+    #indicator3{
+        top: 733%;
+        left: 23.5%;
+    }
+
+    #fact1 {
+        top: 681%;
+        left: 45%;
+    }
+    
+    #fact2 {
+        top: 695%;
+        left: 18%;
+    }
+    
+    #fact3{
+        top: 735%;
+        left: 30%;
+    }
+    
+
+}
+
+@media (min-height: 680px) and (max-height: 779px) {
+    #indicator1{
+        top: 710%;
+        left: 76%;
+    }
+    
+    #indicator2{
+        top: 719%;
+        left: 11%;
+        
+    }
+    
+    #indicator3{
+        top: 763%;
+        left: 23.5%;
+    }
+
+    #fact1 {
+        top: 711%;
+        left: 45%;
+    }
+    
+    #fact2 {
+        top: 725%;
+        left: 18%;
+    }
+    
+    #fact3{
+        top: 765%;
+        left: 30%;
+    }
+}
+
+@media (max-height: 679px) {
+    #indicator1{
+        top: 750%;
+        left: 76%;
+    }
+    
+    #indicator2{
+        top: 759%;
+        left: 11%;
+        
+    }
+    
+    #indicator3{
+        top: 803%;
+        left: 23.5%;
+    }
+
+    #fact1 {
+        top: 751%;
+        left: 45%;
+    }
+    
+    #fact2 {
+        top: 765%;
+        left: 18%;
+    }
+    
+    #fact3{
+        top: 805%;
+        left: 30%;
+    }
+    
+
+}
