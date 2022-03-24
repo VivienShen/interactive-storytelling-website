@@ -204,9 +204,10 @@ h1 {
 @keyframes fadeOut {
     0% {opacity:1;}
     100% {opacity:0;}
-  }
-  
-.item:hover:before {
+}
+
+
+/* .item:hover:before {
     transform: scale(1.2);
     box-shadow: 0 0 15px #d35400;
     filter: blur(3px);
@@ -216,7 +217,7 @@ h1 {
     color: #ffa502;
     box-shadow: 0 0 15px #d35400;
     text-shadow: 0 0 15px #d35400;
-}
+} */
 
  /* button 2 */
  .btn2 {
@@ -258,4 +259,16 @@ h1 {
     0% { transform: scale(1); }
     50% { transform: scale(4); opacity:1; }
     100% { transform: scale(8); opacity:0; }
+}
+
+.clickable {
+    color: #ffa502;
+    filter: drop-shadow(0 0 20px #f5d311);
+    cursor: pointer;
+    z-index: 1;
+}
+
+.clickable:hover {
+    color: #ffa60207;
+    filter: drop-shadow(0 0 20px #f5d31100);
 }
