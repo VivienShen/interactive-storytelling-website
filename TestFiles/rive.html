@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            display: grid;
+            justify-content: center;
+            transition: background-color 1s;
+        }
+
+        canvas {
+            margin-top: -5em;
+            margin-bottom:-3em;
+            pointer-events: none;
+        }
+
+        .content{
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <canvas id="canvas" width="700" height="700" ></canvas>
+        <div class="content">
+            <a href="#">Upload Now</a>
+        </div>
+        <p></p>
+
+    </div>
+    
+
+    <script src="https://unpkg.com/rive-js"></script>
+    <script>
+
+        new rive.Rive({
+            src: 'letter.riv',
+            canvas: document.getElementById('canvas'),
+            autoplay: true
+        });
+    </script>
+</body>
+</html>

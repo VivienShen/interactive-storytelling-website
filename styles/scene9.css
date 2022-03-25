@@ -32,21 +32,6 @@ body {
     width:100%;
 }
 
-.textbox {
-    font-size: 1.3rem;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    border-radius: 5px;
-    padding: 0 15px 0 15px;
-    width: fit-content;
-    position: absolute;
-    left: 50%; /*translate box to 50% of screen width*/
-    bottom: 20px;
-    transform: translate(-50%, -50%); /*translate pivot to center of box*/
-    animation: fadeIn linear 1s;
-    color: black;
-    background-color: rgba(191,241,240, 0.9);
-    border: 2px solid black;
-}
 
 .speechbox {
     font-size: 1.3rem;
@@ -64,17 +49,17 @@ body {
     border: 2px solid black;
 }
 
-#box1 {
+#sbox1 {
     top: 15%;
     left: 5%;
 }
 
-#box2 {
+#sbox2 {
     right: 10%;
     bottom: 15%;
 }
 
-#box3 {
+#sbox3 {
     left: 10%;
     bottom: 15%;
 }
@@ -705,7 +690,7 @@ progress:after {
     color: black;
     background-color: rgba(158, 205, 233, 0.9);
     border: 2px solid rgb(35, 133, 224);
-    left: -5%;
+    left: 23%;
     top: 350%;
 }
 

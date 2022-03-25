@@ -253,13 +253,14 @@
 
              //setting character name
             var inputVal2 = sessionStorage.getItem("newName");
-                    console.log(inputVal2);
+            console.log(inputVal2);
 
                     
             function getInputValue(){
                 var inputVal = document.getElementById("myInput").value;
                         
-                var all = document.querySelectorAll('.speechbox')
+                var all = document.querySelectorAll('b');
+
 
                 all.forEach(x => x.textContent = x.textContent.replace(/Aeryn/gi, inputVal))
                 

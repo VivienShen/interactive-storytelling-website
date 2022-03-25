@@ -106,6 +106,15 @@
         <div id="nextBtn" class="btn2"  style="display: none;"></div> 
 
         <script>
+
+            //Retrieving changed name from local storage
+            var inputVal = localStorage.getItem("newName");
+            console.log(inputVal);
+
+            var all = document.querySelectorAll('b');
+
+            all.forEach(x => x.textContent = x.textContent.replace(/Aeryn/gi, inputVal));
+
             /*------Changing div with next and prev button------*/
 
             //store the divs of the specified className into an array
@@ -174,6 +183,8 @@
             function appeardiv() {
                 document.getElementById('nextBtn').style.display= "block";
             }
+
+
         </script>
     </body>
 </html>
@@ -206,13 +217,5 @@
     }
 
     document.getElementById("bg-music").volume = 0.05;
-
-    //Retrieving changed name from local storage
-    var inputVal = localStorage.getItem("newName");
-            console.log(inputVal);
-
-            var all = document.querySelectorAll('.speechbox');
-
-            all.forEach(x => x.textContent = x.textContent.replace(/Aeryn/gi, inputVal));
 
 </script>
