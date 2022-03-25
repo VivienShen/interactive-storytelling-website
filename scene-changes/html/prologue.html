@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="uft-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Prologue</title>
+        <link rel="stylesheet" href="../styles/prologue.css">
+    </head>
+
+    <body>
+        <!-- <div class="sceneNav">
+            <input id="prev" type='button' value='&lt;' />
+            <input id="next" type='button' value='&gt;' />
+        </div> -->
+
+        <audio autoplay loop id="bg-music">
+            <source src="../assets/audio/bgm/Earth_Appears_-_Brian_Bolger.mp3" type="audio/mpeg" />
+        </audio>
+
+        <div id="sp-1" class="scene" style="display: block;">
+            <div id="bg1" class="image">
+                <img class="img-bg" src="../assets/images/prologue/hologram1.png" alt="Hologram of the Earth">
+            </div>
+            <div class="text">
+                <div id="box2" class="speechbox1" >
+                    <p>In the year 2050 many parts of the world felt the harsh impacts of climate change.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="sp-2" class="scene" style="display: none;">
+            <div id="bg1" class="image">
+                <img class="img-bg" src="../assets/images/prologue/hologram2.png" alt="Hologram of factories">
+            </div>
+            <div class="text">
+                <div id="box2" class="speechbox1" >
+                    <p>Countries were not able to reach carbon neutral by 2050 and many countries kept releasing carbon dioxide.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="sp-3" class="scene" style="display: none;">
+            <div id="bg1" class="image">
+                <img class="img-bg" src="../assets/images/prologue/hologram3.png" alt="Hologram of spaceship">
+            </div>
+            <div class="text">
+                <div id="box2" class="speechbox1" >
+                    <p>In 2050, a spaceship named <b>EcoLife</b> was created to take 200 scientists and other important people in society to space.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="sp-4" class="scene" style="display: none;">
+            <div id="bg1" class="image">
+                <img class="img-bg" src="../assets/images/prologue/hologram4.png" alt="Hologram of a scientist inside a space station">
+            </div>
+            <div class="btn2" onclick="window.location.href='prologue.html'"></div>
+            <div class="text">
+                <div id="box2" class="speechbox1" >
+                    <p>The goal of this mission to space was to provide a safe space for those people to find a solution to the climate problem, while being kept away from Earth that was getting worse.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="nextBtn" class="btn2"  style="display: none;"></div> 
+
+        <script>
+            /*------Changing div with next and prev button------*/
+
+            //store the divs of the specified className into an array
+            var IdStore = new Array();
+            function storeSceneId(){
+                var className = document.getElementsByClassName('scene');
+                var classNameCount = className.length;
+                
+                for(var j = 0; j < classNameCount; j++){
+                    IdStore.push(className[j].id);
+                }
+                console.log(IdStore);
+            }
+            storeSceneId();
+            
+            //show or hide the div when next button is clicked
+            var currentIndex = 0;
+            
+            var next = document.getElementById("nextBtn");
+            next.addEventListener("click", function(i) {
+
+                //hide next button when clicked each time
+                document.getElementById('nextBtn').style.display= "none";
+
+                if (currentIndex < IdStore.length-1) {
+                    console.log('next'); 
+                    currentIndex += 1;
+                    console.log(currentIndex);
+                    var divId = IdStore[currentIndex];
+
+                    console.log(divId, currentIndex);
+                    document.getElementById(divId).style.display = "block";
+                    var prevIndex = currentIndex - 1;
+                    console.log(prevIndex);
+                    if (prevIndex >= 0) {
+                        var preId = IdStore[prevIndex];
+                        document.getElementById(preId).style.display = "none";
+                    }
+
+                    //next button appearing after 3 second
+                    setTimeout(appeardiv, 500);
+                    function appeardiv() {
+                        //not appear for the last cut
+                        if (currentIndex < IdStore.length-1) {
+                            document.getElementById('nextBtn').style.display= "block";
+                        }
+                        
+                    }
+
+                } else if ((i.keyCode == 37) && (currentIndex >= 1)) { //show or hide the div when prev button is clicked
+                    var divId = IdStore[currentIndex];
+                    console.log(divId, currentIndex);
+                    document.getElementById(divId).style.display = "none";
+                    currentIndex -= 1;
+                    console.log(currentIndex);
+                    var divId2 = IdStore[currentIndex];
+                    document.getElementById(divId2).style.display = "block";
+                } 
+            });
+
+            //make button appear after specific time
+            window.onload = function () {
+                setTimeout(appeardiv, 500);
+            }
+
+            function appeardiv() {
+                document.getElementById('nextBtn').style.display= "block";
+            }
+
+            function loadHenry() {
+                    var x = document.getElementById("Henry");
+                if (x.style.visibility === "visible") {
+                    x.style.visibility = "hidden";
+                } else {
+                    x.style.visibility = "visible";
+                }
+                    document.getElementById('Evelyn').style.visibility='hidden';
+                }
+
+                function loadEvelyn() {
+                    var x = document.getElementById("Evelyn");
+                    if (x.style.visibility === "visible") {
+                    x.style.visibility = "hidden";
+                } else {
+                    x.style.visibility = "visible";
+                }
+                    document.getElementById('Henry').style.visibility='hidden';
+            }
+
+            document.getElementById("bg-music").volume = 0.05;
+
+            //Retrieving changed name from local storage
+            var inputVal = localStorage.getItem("newName");
+            console.log(inputVal);
+
+            var all = document.querySelectorAll('.speechbox');
+
+            all.forEach(x => x.textContent = x.textContent.replace(/Aeryn/gi, inputVal));
+        </script>
+    </body>
+</html>

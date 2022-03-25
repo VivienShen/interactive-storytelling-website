@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="uft-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Scene3-1</title>
+        <link rel="stylesheet" href="../styles/scene3.css">
+    </head>
+
+    <body>
+        <!-- <div class="sceneNav">
+            <input id="prev" type='button' value='&lt;' />
+            <input id="next" type='button' value='&gt;' />
+        </div> -->
+
+        <audio autoplay loop id="bg-music">
+            <source src="../assets/audio/bgm/Serenity_-_Aakash_Gandhi.mp3" type="audio/mpeg" />
+        </audio>
+
+        <div id="s2-1" class="scene" style="display: block;">
+            <div id="bg1" class="image">
+                <img class="img-bg" src="../assets/images/scene3/scene3-1.png" alt="Aeryn standing by the window">
+            </div>
+            <div class="text">
+                <div id="box2" class="speechbox1" >
+                    <p><b>Aeryn:</b> Oh wow I’ve read so much about how it is on Earth, but it’s even better in person!</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="s2-2" class="scene" style="display: none;">
+            <div id="bg1" class="image">
+                <img class="img-bg" src="../assets/images/scene3/scene3-1.png" alt="Aeryn standing by the window">
+            </div>
+            <div class="text">
+                <div id="box2" class="speechbox1" >
+                    <p><b>Aeryn:</b> According to my research we are in the capital of Canada, Ottawa.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="s2-3" class="scene" style="display: none;">
+            <div>
+                <img class="image" src="../assets/images/scene3/scene3-2.png" alt="Inside a room">
+                <img class="flyer1" onclick="loadHenry()" src="../assets/images/scene3/flyer 1.png" alt="flyer 1" title="See Campaign Flier">
+                <img class="flyer2" onclick="loadEvelyn()" src="../assets/images/scene3/flyer 2.png" alt="flyer 2" title="See Campaign Flier">
+                <img class="tv" src="../assets/images/scene3/tv1.png" onclick="window.location.href='scene3-2.html'" alt="tv" title="Watch T.V">
+                <img class="poster1" id="Evelyn" onclick="myFunction2()" src="../assets/images/scene3/poster1.png" alt="poster1">
+                <img class="poster2" id="Henry" onclick="myFunction2()" src="../assets/images/scene3/poster2.png" alt="poster2">
+            </div>
+            
+            <div class="text" >
+                <div id="box2" class="speechbox1" >
+                    <p><b>Aeryn:</b> I love my new place, I wonder what I could look at that might help me figure out where to start to save Earth.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="nextBtn" class="btn2"  style="display: none;"></div> 
+
+        <script>
+            /*------Changing div with next and prev button------*/
+
+            //store the divs of the specified className into an array
+            var IdStore = new Array();
+            function storeSceneId(){
+                var className = document.getElementsByClassName('scene');
+                var classNameCount = className.length;
+                
+                for(var j = 0; j < classNameCount; j++){
+                    IdStore.push(className[j].id);
+                }
+                console.log(IdStore);
+            }
+            storeSceneId();
+            
+            //show or hide the div when next button is clicked
+            var currentIndex = 0;
+            
+            var next = document.getElementById("nextBtn");
+            next.addEventListener("click", function(i) {
+
+                //hide next button when clicked each time
+                document.getElementById('nextBtn').style.display= "none";
+
+                if (currentIndex < IdStore.length-1) {
+                    console.log('next'); 
+                    currentIndex += 1;
+                    console.log(currentIndex);
+                    var divId = IdStore[currentIndex];
+
+                    console.log(divId, currentIndex);
+                    document.getElementById(divId).style.display = "block";
+                    var prevIndex = currentIndex - 1;
+                    console.log(prevIndex);
+                    if (prevIndex >= 0) {
+                        var preId = IdStore[prevIndex];
+                        document.getElementById(preId).style.display = "none";
+                    }
+
+                    //next button appearing after 3 second
+                    setTimeout(appeardiv, 500);
+                    function appeardiv() {
+                        //not appear for the last cut
+                        if (currentIndex < IdStore.length-1) {
+                            document.getElementById('nextBtn').style.display= "block";
+                        }
+                        
+                    }
+
+                } else if ((i.keyCode == 37) && (currentIndex >= 1)) { //show or hide the div when prev button is clicked
+                    var divId = IdStore[currentIndex];
+                    console.log(divId, currentIndex);
+                    document.getElementById(divId).style.display = "none";
+                    currentIndex -= 1;
+                    console.log(currentIndex);
+                    var divId2 = IdStore[currentIndex];
+                    document.getElementById(divId2).style.display = "block";
+                } 
+            });
+
+            //make button appear after specific time
+            window.onload = function () {
+                setTimeout(appeardiv, 500);
+            }
+
+            function appeardiv() {
+                document.getElementById('nextBtn').style.display= "block";
+            }
+
+            function loadHenry() {
+                    var x = document.getElementById("Henry");
+                if (x.style.visibility === "visible") {
+                    x.style.visibility = "hidden";
+                } else {
+                    x.style.visibility = "visible";
+                }
+                    document.getElementById('Evelyn').style.visibility='hidden';
+                }
+
+                function loadEvelyn() {
+                    var x = document.getElementById("Evelyn");
+                    if (x.style.visibility === "visible") {
+                    x.style.visibility = "hidden";
+                } else {
+                    x.style.visibility = "visible";
+                }
+                    document.getElementById('Henry').style.visibility='hidden';
+            }
+
+            document.getElementById("bg-music").volume = 0.05;
+
+            //Retrieving changed name from local storage
+            var inputVal = localStorage.getItem("newName");
+            console.log(inputVal);
+
+            var all = document.querySelectorAll('.speechbox');
+
+            all.forEach(x => x.textContent = x.textContent.replace(/Aeryn/gi, inputVal));
+        </script>
+    </body>
+</html>
