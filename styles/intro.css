@@ -1,7 +1,57 @@
-html{
+html {
     scroll-behavior: smooth;
-    background-image: url('../assets/images/scene1/scene1BG.png');
+    background-image: url("../assets/images/scene1/scene1BG.png");
     background-repeat: no-repeat;
-    background-attachment: fixed;  
+    background-attachment: fixed;
     background-size: cover;
+}
+
+.tooltiptext {
+    visibility: visible;
+    width: 120px;
+    top: 200%;
+    left: 50%;
+    margin-left: -60px;
+    background-color: #607082;
+    color: #fff;
+    text-align: center;
+    padding: 5px 5px;
+    border-radius: 6px;
+    cursor: default;
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+    animation: fadeIn linear 5s;
+}
+
+.tooltiptext::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%; /* At the bottom of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #607082 transparent;
+    cursor: default;
+    animation: fadeIn linear 5s;
+}
+
+.disclaimer {
+    cursor: default;
+    width: 1000px;
+    top: 2100%;
+    left: 50%;
+    margin-left: -530px;
+    background-color: rgba(208, 163, 212, 0.7);
+    border: 1px solid #bf84b4;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    animation: fadeIn linear 5s;
+
+  /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
 }

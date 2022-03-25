@@ -206,21 +206,8 @@ h1 {
     100% {opacity:0;}
 }
 
-
-/* .item:hover:before {
-    transform: scale(1.2);
-    box-shadow: 0 0 15px #d35400;
-    filter: blur(3px);
-}
-  
-.item:hover {
-    color: #ffa502;
-    box-shadow: 0 0 15px #d35400;
-    text-shadow: 0 0 15px #d35400;
-} */
-
  /* button 2 */
- .btn2 {
+.btn2 {
     height: 10px;
     width: 10px;
     border-radius: 50%;
@@ -271,4 +258,14 @@ h1 {
 .clickable:hover {
     color: #ffa60207;
     filter: drop-shadow(0 0 20px #f5d31100);
+}
+
+.explained {
+    visibility: hidden;
+    bottom: 13%;
+    width: 25%;
+    height: 25%;
+    right: 0%;
+    position: fixed;
+    display: flex;
 }

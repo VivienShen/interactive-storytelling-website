@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="uft-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Scene1-1</title>
+        <link rel="stylesheet" href="../styles/scene2.css">
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+
+    <body>
+        <audio autoplay loop id="bg-music">
+            <source src="../assets/audio/bgm/Future_Glider_-_Brian_Bolger.mp3" type="audio/mpeg">
+        </audio>
+
+        <div id="s2-1" class="scene" style="display: block;">
+            <div id="bg1" class="image">
+                <img class="img-bg" src="../assets/images/scene2/scene2-1.png" alt="A spaceship in the space">
+            </div>
+            <div class="text">
+                <div id="box1" class="textbox" >
+                    <p>In the year 2100, home to more than 200 people, is a spaceship called Ecolife.</p>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div id="s2-2" class="scene" style="display: none;">
+            <div id="bg2" class="image">
+                <img class="img-bg" src="../assets/images/scene2/scene2-2.png" alt="Girl holding a monocular while talking with robot">
+                <img class="telescope" src="../assets/images/scene2/telescope.png" onclick="window.location.href='scene1-2.html'" alt="telescope" title="telescope">
+                <span class="tooltiptext">Click on items that are glowing</span>
+            </div>
+        </div>
+
+        <div id="nextBtn" class="btn2" style="display: none;" ></div> 
+
+        <script>
+            /*------Changing div with next and prev button------*/
+
+            //store the divs of the specified className into an array
+            var IdStore = new Array();
+            function storeSceneId(){
+                var className = document.getElementsByClassName('scene');
+                var classNameCount = className.length;
+                
+                for(var j = 0; j < classNameCount; j++){
+                    IdStore.push(className[j].id);
+                }
+                console.log(IdStore);
+            }
+            storeSceneId();
+            
+            //show or hide the div when next button is clicked
+            var currentIndex = 0;
+            
+            var next = document.getElementById("nextBtn");
+            next.addEventListener("click", function(i) {
+
+                //hide next button when clicked each time
+                document.getElementById('nextBtn').style.display= "none";
+
+                if (currentIndex < IdStore.length-1) {
+                    console.log('next'); 
+                    currentIndex += 1;
+                    console.log(currentIndex);
+                    var divId = IdStore[currentIndex];
+
+                    console.log(divId, currentIndex);
+                    document.getElementById(divId).style.display = "block";
+                    var prevIndex = currentIndex - 1;
+                    console.log(prevIndex);
+                    if (prevIndex >= 0) {
+                        var preId = IdStore[prevIndex];
+                        document.getElementById(preId).style.display = "none";
+                    }
+
+                    //next button appearing after 3 second
+                    setTimeout(appeardiv, 500);
+                    function appeardiv() {
+                        //not appear for the last cut
+                        if (currentIndex < IdStore.length-1) {
+                            document.getElementById('nextBtn').style.display= "block";
+                        }
+                        
+                    }
+
+                } else if ((i.keyCode == 37) && (currentIndex >= 1)) { //show or hide the div when prev button is clicked
+                    var divId = IdStore[currentIndex];
+                    console.log(divId, currentIndex);
+                    document.getElementById(divId).style.display = "none";
+                    currentIndex -= 1;
+                    console.log(currentIndex);
+                    var divId2 = IdStore[currentIndex];
+                    document.getElementById(divId2).style.display = "block";
+                } 
+            });
+
+            //make button appear after specific time
+            window.onload = function () {
+                setTimeout(appeardiv, 500);
+            }
+
+            function appeardiv() {
+                document.getElementById('nextBtn').style.display= "block";
+            }
+
+            function loadHenry() {
+                    var x = document.getElementById("Henry");
+                if (x.style.visibility === "visible") {
+                    x.style.visibility = "hidden";
+                } else {
+                    x.style.visibility = "visible";
+                }
+                    document.getElementById('Evelyn').style.visibility='hidden';
+                }
+
+                function loadEvelyn() {
+                    var x = document.getElementById("Evelyn");
+                    if (x.style.visibility === "visible") {
+                    x.style.visibility = "hidden";
+                } else {
+                    x.style.visibility = "visible";
+                }
+                    document.getElementById('Henry').style.visibility='hidden';
+            }
+
+            document.getElementById("bg-music").volume = 0.05;
+
+            //Retrieving changed name from local storage
+            var inputVal = localStorage.getItem("newName");
+            console.log(inputVal);
+
+            var all = document.querySelectorAll('.speechbox');
+
+            all.forEach(x => x.textContent = x.textContent.replace(/Aeryn/gi, inputVal));
+        </script>
+    </body>
+</html>

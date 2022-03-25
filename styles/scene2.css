@@ -307,3 +307,101 @@ audio{
     border-radius: 10px;
     background-color: hsl(180, 77%, 88%);
 }
+
+.telescope {
+    position: absolute;
+    left: 60%;
+    top: 19%;
+    color: #ffa502;
+    filter: drop-shadow(0 0 10px #fce61f);
+    cursor: pointer;
+  }
+  
+  .telescope:hover {
+    color: #ffa502;
+    filter: drop-shadow(0 0 10px #e4860b00);
+    cursor: pointer;
+  }
+  
+  .tooltiptext {
+    visibility: visible;
+    width: 120px;
+    top: 36%;
+    left: 62%;
+    margin-left: -60px;
+    background-color: #607082;
+    color: #fff;
+    text-align: center;
+    padding: 5px 5px;
+    border-radius: 6px;
+    cursor: default;
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+    animation: fadeIn linear 3s;
+  }
+  
+  .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%; /* At the bottom of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #607082 transparent;
+    cursor: default;
+    animation: fadeIn linear 3s;
+  }
+  
+  .tooltiptext1 {
+    width: 90px;
+    bottom: 15%;
+    right: 7%;
+    margin-left: -60px;
+    background-color: #3f4852;
+    color: #fff;
+    text-align: center;
+    padding: 5px 5px;
+    border-radius: 6px;
+    cursor: default;
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+    animation: fadeIn linear 3s;
+  }
+  
+  .tooltiptext2 {
+    width: 80px;
+    bottom: 10%;
+    right: 13%;
+    margin-left: -60px;
+    background-color: #3f4852;
+    color: #fff;
+    text-align: center;
+    padding: 5px 5px;
+    border-radius: 6px;
+    cursor: default;
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+    animation: fadeIn linear 3s;
+  }
+  
+  .tooltiptext3 {
+    width: 90px;
+    bottom: 10%;
+    right: 3%;
+    margin-left: -60px;
+    background-color: #3f4852;
+    color: #fff;
+    text-align: center;
+    padding: 5px 5px;
+    border-radius: 6px;
+    cursor: default;
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+    animation: fadeIn linear 3s;
+  }
+

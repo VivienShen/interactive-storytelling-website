@@ -24,9 +24,9 @@
         <div id="s2-1" class="scene" style="display: block;">
             <div>
                 <img class="image" src="../assets/images/scene3/scene3-2.png" alt="Inside a room">
-                <img class="flyer1" onclick="loadHenry()" src="../assets/images/scene3/flyer 1.png" alt="flyer 1">
-                <img class="flyer2" onclick="loadEvelyn()" src="../assets/images/scene3/flyer 2.png" alt="flyer 2">
-                <img class="tv" src="../assets/images/scene3/tv1.png" onclick="window.location.href='scene3-2.html'" alt="tv">
+                <img class="flyer1" onclick="loadHenry()" src="../assets/images/scene3/flyer 1.png" alt="flyer 1" title="See Campaign Flier">
+                <img class="flyer2" onclick="loadEvelyn()" src="../assets/images/scene3/flyer 2.png" alt="flyer 2" title="See Campaign Flier">
+                <img class="tv" src="../assets/images/scene3/tv1.png" onclick="window.location.href='scene3-2.html'" alt="tv" title="Watch T.V">
                 <img class="poster1" id="Evelyn" onclick="myFunction2()" src="../assets/images/scene3/poster1.png" alt="poster1">
                 <img class="poster2" id="Henry" onclick="myFunction2()" src="../assets/images/scene3/poster2.png" alt="poster2">
             </div>
@@ -137,7 +137,7 @@
             var inputVal = localStorage.getItem("newName");
             console.log(inputVal);
 
-            var all = document.querySelectorAll('b');
+            var all = document.querySelectorAll('.speechbox');
 
             all.forEach(x => x.textContent = x.textContent.replace(/Aeryn/gi, inputVal));
             

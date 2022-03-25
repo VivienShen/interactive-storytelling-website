@@ -4,7 +4,7 @@
 		<meta charset="uft-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Sincerely, Earth</title>
+        <title>Scene4</title>
         <link rel="stylesheet" href="../styles/scene4.css">
         <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
     </head>
@@ -212,10 +212,10 @@
             </div>
             <div class="text" >
                 <div id="box17" class="speechbox" >
-                    <p><b>Robin:</b> When we get to the location I need you to take photos with this <u>camera</u>, which I will post on social media to spread awareness. </br></br>*To influence people and this election we need over <u>50% popularity</u> from people. With every photo we will get closer to our goal.</p>
+                    <p><b>Robin:</b> When we get to the location I need you to take photos with my camera so I can post it on social media to spread awareness, this is the first way to make a change and show Canadians why they should care about climate change.</p>
                 </div>
             </div>
-        </div>
+        </div> 
 
         <!--Frame 8-->
         <div id="s4-8b" class="scene" style="display: none;">
@@ -223,8 +223,9 @@
                 <img class="img-bg" src="../assets/images/scene4/cut8.png" alt="Laboratory counter top">
             </div>
             <div id="items">
-                <img id="map" class="item clickable" src="../assets/images/scene4/map1.png" title="map">
+                <img id="map" class="item clickable" src="../assets/images/scene4/map1.png" title="map" onclick="mapOnclick()">
                 <img id="camera" class="item clickable" src="../assets/images/scene4/gopro1.png" title="camera">
+                <img id="explained" class="explained" src="../assets/images/scene4/explained.png" alt="popularity meter explained">
             </div>
             <div class="inventory">
                 <img id="inventory-bg" src="../assets/images/scene4/inventory.png" alt="inventory box">
@@ -338,9 +339,13 @@
             var inputVal = localStorage.getItem("newName");
             console.log(inputVal);
 
-            var all = document.querySelectorAll('b');
+            var all = document.querySelectorAll('.speechbox');
 
             all.forEach(x => x.textContent = x.textContent.replace(/Aeryn/gi, inputVal));
+
+            function mapOnclick() {
+                document.getElementById('explained').style.visibility= "visible";
+            }
             
         </script>
         

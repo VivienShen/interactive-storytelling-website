@@ -19,6 +19,11 @@
             <div id="bg1" class="image">
                 <img class="img-bg" src="../assets/images/scene8/1.png" alt="Aeryn sitting on a couch, watching TV">
             </div>
+            <div class="text">
+                <div id="box2" class="speechbox" >
+                    <p><b>Aeryn:</b> Today’s the day of the election, lets see who ends up winning on T.V with the most seats in parliament.</p>
+                </div>
+            </div>
         </div>
 
         <div id="s8-2" class="scene" style="display: none;">
@@ -106,15 +111,6 @@
         <div id="nextBtn" class="btn2"  style="display: none;"></div> 
 
         <script>
-
-            //Retrieving changed name from local storage
-            var inputVal = localStorage.getItem("newName");
-            console.log(inputVal);
-
-            var all = document.querySelectorAll('b');
-
-            all.forEach(x => x.textContent = x.textContent.replace(/Aeryn/gi, inputVal));
-
             /*------Changing div with next and prev button------*/
 
             //store the divs of the specified className into an array
@@ -183,8 +179,6 @@
             function appeardiv() {
                 document.getElementById('nextBtn').style.display= "block";
             }
-
-
         </script>
     </body>
 </html>
@@ -217,5 +211,13 @@
     }
 
     document.getElementById("bg-music").volume = 0.05;
+
+    //Retrieving changed name from local storage
+    var inputVal = localStorage.getItem("newName");
+            console.log(inputVal);
+
+            var all = document.querySelectorAll('.speechbox');
+
+            all.forEach(x => x.textContent = x.textContent.replace(/Aeryn/gi, inputVal));
 
 </script>
