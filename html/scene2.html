@@ -224,9 +224,9 @@
             function getInputValue(){
                 var inputVal = document.getElementById("myInput").value;
                         
-                var all = document.querySelectorAll('.speechbox')
+                var all = document.querySelectorAll('p');
 
-                all.forEach(x => x.textContent = x.textContent.replace(/Aeryn/gi, inputVal))
+                all.forEach(x => x.innerHTML = x.innerHTML.replace(/Aeryn/gi, inputVal));
                 
                 localStorage.setItem("newName", inputVal);
                 console.log(inputVal);

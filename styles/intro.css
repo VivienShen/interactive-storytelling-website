@@ -8,14 +8,16 @@ html {
 
 .tooltiptext {
     visibility: visible;
-    width: 120px;
+    width: fit-content;
+    height: fit-content;
+    min-width: 140px;
     top: 200%;
     left: 50%;
     margin-left: -60px;
     background-color: #607082;
     color: #fff;
     text-align: center;
-    padding: 5px 5px;
+    padding: 10px 5px;
     border-radius: 6px;
     cursor: default;
     /* Position the tooltip text - see examples below! */
