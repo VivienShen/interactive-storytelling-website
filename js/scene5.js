@@ -1,3 +1,7 @@
+$(window).on('load', function () {
+    $('#loading').hide();
+}) 
+
 
 let visited = false;
 let visited2 = false;

@@ -769,3 +769,42 @@ progress:after {
     font-family: SpectralSC-SemiBold;
     color: rgba(12, 72, 184, 0.87);
 }
+
+#loading {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+
+#loading-image {
+    z-index: 100;
+    width: 30%;
+    margin-bottom: 8%;
+}
+
+#loading-bg{
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    opacity: 0.93;
+}
+
+.loading-txt{
+    font-size: 2rem;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    font-weight: 500;
+    line-height: 1.4;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    z-index: 1;
+    top: 60%;
+}

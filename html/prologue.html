@@ -4,15 +4,18 @@
 		<meta charset="uft-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
         <title>Prologue</title>
         <link rel="stylesheet" href="../styles/prologue.css">
     </head>
 
     <body>
-        <!-- <div class="sceneNav">
-            <input id="prev" type='button' value='&lt;' />
-            <input id="next" type='button' value='&gt;' />
-        </div> -->
+
+        <div id="loading">
+            <img id="loading-bg" src="../assets/images/scene1BG.png" alt="space background" />
+            <img id="loading-image" src="../assets/images/ezgif.com-gif-maker.gif" alt="Loading..." />
+            <p class="loading-txt">Loading</p>
+        </div>
 
         <audio autoplay loop id="bg-music">
             <source src="../assets/audio/bgm/Earth_Appears_-_Brian_Bolger.mp3" type="audio/mpeg" />
@@ -66,6 +69,11 @@
         <div id="nextBtn" class="btn2"  style="display: none;"></div> 
 
         <script>
+
+            $(window).on('load', function () {
+                $('#loading').hide();
+            }) 
+
             /*------Changing div with next and prev button------*/
 
             //store the divs of the specified className into an array

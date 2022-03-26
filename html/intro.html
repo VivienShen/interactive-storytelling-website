@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Scene 1</title>
     <link rel="stylesheet" href="../styles/scene1.css">
     <link rel="stylesheet" href="../styles/intro.css">
@@ -21,10 +22,15 @@
 </head>
 <body>
 
+    <div id="loading">
+        <img id="loading-bg" src="../assets/images/scene1BG.png" alt="space background" />
+        <img id="loading-image" src="../assets/images/ezgif.com-gif-maker.gif" alt="Loading..." />
+        <p class="loading-txt">Loading</p>
+    </div>
+
     <audio autoplay loop id="bg-music">
         <source src="../assets/audio/bgm/Earth_Appears_-_Brian_Bolger.mp3" type="audio/mpeg" />
     </audio>
-
 
     <img class="logo" src="../assets/images/scene1/earthLetter.png">
         
@@ -62,6 +68,10 @@
     <script src="https://unpkg.com/rive-js"></script> 
 
     <script>
+
+        $(window).on('load', function () {
+            $('#loading').hide();
+        }) 
 
         window.onload = (event) => {
             window.pageYOffset = 0;

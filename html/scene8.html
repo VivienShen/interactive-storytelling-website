@@ -4,6 +4,7 @@
 		<meta charset="uft-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
         <title>Scene8</title>
         <link rel="stylesheet" href="../styles/scene8.css">
         <!-- <script src="js/script.js"></script> -->
@@ -14,6 +15,12 @@
         <audio autoplay loop id="bg-music">
             <source src="../assets/audio/bgm/Serenity_-_Aakash_Gandhi.mp3" type="audio/mpeg" />
         </audio>
+
+        <div id="loading">
+            <img id="loading-bg" src="../assets/images/scene1BG.png" alt="space background" />
+            <img id="loading-image" src="../assets/images/ezgif.com-gif-maker.gif" alt="Loading..." />
+            <p class="loading-txt">Loading</p>
+        </div>
 
         <div id="s8-1" class="scene" style="display: block;">
             <div id="bg1" class="image">
@@ -111,6 +118,11 @@
         <div id="nextBtn" class="btn2"  style="display: none;"></div> 
 
         <script>
+
+            $(window).on('load', function () {
+                $('#loading').hide();
+            }) 
+
             /*------Changing div with next and prev button------*/
 
             //store the divs of the specified className into an array
@@ -216,8 +228,16 @@
     var inputVal = localStorage.getItem("newName");
     console.log(inputVal);
 
-    var all = document.querySelectorAll('p');
+    if (inputVal == ""){
+        var all2 = document.querySelectorAll('p');
 
-    all.forEach(x => x.innerHTML = x.innerHTML.replace(/Aeryn/gi, inputVal));
+        all2.forEach(x => x.innerHTML = x.innerHTML.replace(/Aeryn/gi, "Aeryn"));
+        console.log("name is null");
+    }
+
+    else{
+        var all = document.querySelectorAll('p');
+        all.forEach(x => x.innerHTML = x.innerHTML.replace(/Aeryn/gi, inputVal));
+    }
 
 </script>

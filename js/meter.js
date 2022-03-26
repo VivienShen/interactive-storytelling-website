@@ -290,6 +290,20 @@ document.getElementById("bg-music").volume = 0.05;
 var inputVal = localStorage.getItem("newName");
 console.log(inputVal);
 
-var all = document.querySelectorAll('p');
+if (inputVal == ""){
+    var all2 = document.querySelectorAll('p');
 
-all.forEach(x => x.innerHTML = x.innerHTML.replace(/Aeryn/gi, inputVal));
+    all2.forEach(x => x.innerHTML = x.innerHTML.replace(/Aeryn/gi, "Aeryn"));
+    console.log("name is null");
+}
+
+else{
+    var all = document.querySelectorAll('p');
+    all.forEach(x => x.innerHTML = x.innerHTML.replace(/Aeryn/gi, inputVal));
+}
+
+
+
+$(window).on('load', function () {
+    $('#loading').hide();
+}) 

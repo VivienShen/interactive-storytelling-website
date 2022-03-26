@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
     <title>Scene5 - Arctic</title>
     <link rel="stylesheet" href="../styles/scene5.css">
@@ -240,6 +240,12 @@
     <audio autoplay loop id="bg-music">
         <source src="../assets/audio/bgm/Mountain_-_JVNA.mp3" type="audio/mpeg" />
     </audio>
+    
+    <div id="loading">
+        <img id="loading-bg" src="../assets/images/scene1BG.png" alt="space background" />
+        <img id="loading-image" src="../assets/images/ezgif.com-gif-maker.gif" alt="Loading..." />
+        <p class="loading-txt">Loading</p>
+    </div>
 
     <div id="bg1" class="image">
         <img class="img-bg" src="../assets/images/scene5/arctic/arcticBG.png" alt="arctic background gradient">
@@ -465,6 +471,26 @@
         root.addEventListener("mousemove", e => {
             root.style.setProperty('--mouse-x', e.clientX - 573 + "px");
             root.style.setProperty('--mouse-y', e.clientY - 310 + "px");
+
+            //console.log(e.clientX);
+
+            if(e.clientX >= (window.innerWidth - 300)){
+                root.style.setProperty('--mouse-x', (window.innerWidth - 880) + "px"); 
+            }
+
+            if(e.clientY >= (window.innerHeight - 169)){
+                root.style.setProperty('--mouse-y', (window.innerHeight - 469) + "px"); 
+            }
+
+            if(e.clientY <= 155){
+                root.style.setProperty('--mouse-y', -155 + "px"); 
+            }
+
+            if(e.clientX <= 280){
+                root.style.setProperty('--mouse-x', - 285 + "px"); 
+            }
+
+
         });
 
         var camera = document.getElementById("cam");

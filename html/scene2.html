@@ -10,6 +10,12 @@
     </head>
 
     <body>
+        <div id="loading">
+            <img id="loading-bg" src="../assets/images/scene1BG.png" alt="space background" />
+            <img id="loading-image" src="../assets/images/ezgif.com-gif-maker.gif" alt="Loading..." />
+            <p class="loading-txt">Loading</p>
+        </div>
+
         <audio autoplay loop id="bg-music">
             <source src="../assets/audio/bgm/Future_Glider_-_Brian_Bolger.mp3" type="audio/mpeg">
         </audio>
@@ -20,7 +26,7 @@
             </div>
             <div class="text" >
                 <div id="box2" class="speechbox" >
-                    <p><b>Aeryn:</b> It’s so scary looking back at what remains of earth, I wish I could see Earth back when things weren’t so bad. You know I’ve trained all my life to return to Earth, I know my purpose isn’t to live in this spaceship forever or to move to Mars but to save our actual home on Earth.</p>
+                    <p>It’s so scary looking back at what remains of earth, I wish I could see Earth back when things weren’t so bad. You know I’ve trained all my life to return to Earth, I know my purpose isn’t to live in this spaceship forever or to move to Mars but to save our actual home on Earth.</p>
                 </div>
             </div>
         </div>
@@ -30,10 +36,13 @@
                 <img class="img-bg" src="../assets/images/scene2/go.png" alt="robot presenting a pop-up box with the option to name your character">
             </div>
 
-            <img class="nameModal" src="../assets/images/scene2/name modal.png"  alt="">
-            <img class="characterIcon" src="../assets/images/scene2/girl name.png"  alt="">
-            <img id="nextBtn2" class="skipBtn" src="../assets/images/scene2/skip.png" alt="">
-            <img id="nextBtn3" class="setName" src="../assets/images/scene2/set name.png" onclick="getInputValue()" alt="">
+            <div class="image">
+                <img class="nameModal" src="../assets/images/scene2/name modal.png"  alt="">
+                <img class="characterIcon" src="../assets/images/scene2/girl name.png"  alt="">
+                <img id="nextBtn2" class="skipBtn" src="../assets/images/scene2/skip.png" alt="">
+                <img id="nextBtn3" class="setName" src="../assets/images/scene2/set name.png" onclick="getInputValue()" alt="">
+            </div>
+            
 
             <div id="form">
                 <input id="myInput" type="text" name="fname" placeholder="Enter Name here..">
@@ -183,12 +192,14 @@
                 <span id="inventory" class="tooltiptext1">Inventory</span>
                 <span id="lock" class="tooltiptext2">Locked</span>
                 <span id="time" class="tooltiptext3">Time Travel</span>
+
+            </div >
+
+            <div class="image">
+                <img src="../assets/images/scene2/modal.png" id = "modal" alt="modal popup" style="display:none">
+                <img src="../assets/images/scene2/yes.png" id="yes_button" onclick="window.location.href='portal.html'" alt="yes button" style="display:none" />
             </div>
 
-            <img src="../assets/images/scene2/modal.png" id = "modal" alt="modal popup">
-    
-            <img src="../assets/images/scene2/yes.png" id="yes_button" onclick="window.location.href='portal.html'" alt="yes button" />
-    
             <div class="inventory">
                 <img id="inventory-bg" src="../assets/images/scene2/inventory.png" alt="inventory box">
                 <div class="icons">
@@ -216,30 +227,34 @@
 
         <script>
 
+            $(window).on('load', function () {
+                $('#loading').hide();
+            }) 
+
              //setting character name
             var inputVal2 = sessionStorage.getItem("newName");
-                    console.log(inputVal2);
+            console.log(inputVal2);
 
-                    
             function getInputValue(){
                 var inputVal = document.getElementById("myInput").value;
                         
-                var all = document.querySelectorAll('p');
+                if (inputVal == ""){
+                    var all2 = document.querySelectorAll('p');
 
-                all.forEach(x => x.innerHTML = x.innerHTML.replace(/Aeryn/gi, inputVal));
+                    all2.forEach(x => x.innerHTML = x.innerHTML.replace(/Aeryn/gi, "Aeryn"));
+                    console.log("name is null");
+                }
+
+                else{
+                    var all = document.querySelectorAll('p');
+                    all.forEach(x => x.innerHTML = x.innerHTML.replace(/Aeryn/gi, inputVal));
+                }
                 
                 localStorage.setItem("newName", inputVal);
                 console.log(inputVal);
 
             }
             
-            //Retrieving changed name from local storage
-            // var inputVal = localStorage.getItem("newName");
-            // console.log(inputVal);
-
-            // var all = document.querySelectorAll('.speechbox');
-
-            // all.forEach(x => x.textContent = x.textContent.replace(/Aeryn/gi, inputVal));
 
 
             /*------Changing div with next and prev button------*/
@@ -264,10 +279,11 @@
             var next2 = document.getElementById("nextBtn2");
             var next3 = document.getElementById("nextBtn3");
 
+
             next.addEventListener("click", function(i) {
 
                 //hide next button when clicked each time
-                document.getElementById('nextBtn').style.display= "none";
+                next.style.display= "none";
 
                 if (currentIndex < IdStore.length-1) {
                     console.log('next'); 
@@ -288,8 +304,17 @@
                     setTimeout(appeardiv, 500);
                     function appeardiv() {
                         //not appear for the last cut
+                        
                         if (currentIndex < IdStore.length-2) {
-                            document.getElementById('nextBtn').style.display= "block";
+                            
+                            if(currentIndex == 1){
+                                next.style.display = "none";
+                                console.log("remove next btn");
+                            }
+                            else{
+                                next.style.display = "block";
+                            }
+
                         }
                         
                     }
@@ -321,6 +346,8 @@
                         document.getElementById(preId).style.display = "none";
                     }
 
+                    next.style.display = "block";
+
                 }
             });
 
@@ -339,6 +366,8 @@
                         var preId = IdStore[prevIndex];
                         document.getElementById(preId).style.display = "none";
                     }
+
+                    next.style.display = "block";
 
                 }
             });
