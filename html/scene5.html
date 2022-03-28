@@ -8,6 +8,9 @@
     <title>Scene5</title>
     <script defer src="../js/scene5.js"></script>
     <link rel="stylesheet" href="../styles/scene5.css">
+    <link rel="stylesheet" href="../styles/nav.css">
+    <script src="../js/nav.js"></script>
+    <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
 </head>
 <body>
     <!-- <audio autoplay loop id="bg-music">
@@ -17,8 +20,47 @@
     <div id="loading">
         <img id="loading-bg" src="../assets/images/scene1BG.png" alt="space background" />
         <img id="loading-image" src="../assets/images/ezgif.com-gif-maker.gif" alt="Loading..." />
-        <p class="loading-txt">Loading</p>
+        <p class="loading-txt">Loading...</p>
     </div>
+
+    <header class="page-header">
+        <div class="hamburger-menu">
+            <input id="menu__toggle" type="checkbox" />
+            <label class="menu__btn" for="menu__toggle">
+                <span></span>
+            </label>
+        
+            <ul class="menu__box">
+                <div class="menu__div">
+                    <div class="chapter-menu">
+                        <ul class="chapter__list">
+                            <li><a class="chapter__item" id="ch-Home" href="intro.html">Home</a></li>
+                            <li><a class="chapter__item" id="chapter0" href="prologue.html">Prologue</a></li>
+                            <li><a class="chapter__item" id="chapter1" href="scene1-1.html">Chapter 1</a></li>
+                            <li><a class="chapter__item" id="chapter2" href="scene3-1.html">Chapter 2</a></li>
+                            <li><a class="chapter__item" id="chapter3" href="scene5.html" style="color: #30C9E9">Chapter 3</a></li>
+                            <li><a class="chapter__item" id="chapter4" href="scene6-1.html">Chapter 4</a></li>
+                            <li><a class="chapter__item" id="chapter5" href="scene8.html">Chapter 5</a></li>
+                        </ul>
+                    </div>
+                    <br><hr><br>
+                    <div class="menu__info">
+                        <span class="iconify menu__icon" data-icon="ant-design:info-circle-filled"></span>
+                        <h1 class="about"> About Sincerely, Earth</h1>
+                        <p>
+                            Sincerely, Earth is a dynamic storytelling website that provides an educational and immersive experience about climate change. Through this experience, we hope to inspire the next generation to become more aware and motivated to make a change.
+                        </p>
+                    </div>
+                    <br><hr><br>
+                    <div class="list">
+                        <span class="iconify menu__item" data-icon="ion:help-circle-sharp"></span>
+                        <span id="on" class="iconify menu__item" data-icon="teenyicons:sound-on-outline" onClick="soundOff()" style="display: inline"></span>
+                        <span id="off" class="iconify menu__item" data-icon="teenyicons:sound-off-solid" onClick="soundOn()" style="display: none"></span>
+                    </div>
+                </div> 
+            </ul>    
+        </div>  
+    </header>
 
     <div class = "map">
         <div id="bg1" class="image">
@@ -35,13 +77,13 @@
         <button class="btn3 btn" id = "btn3"  style="display: none;" onclick="window.location.href='scene5-arctic.html'; placeVisited('visited', 'arcticVisited');">Explore the Arctic</button>
         
         <div class="blink1 blinker" id="blink1"></div>
-        <img class="map-pin1 pin" id="pin1" src="../assets/images/scene5/pin.png" onclick="toggleMapElements('arctic', 'btn3')">
+        <img class="map-pin1 pin clickable" id="pin1" src="../assets/images/scene5/pin.png" onclick="toggleMapElements('arctic', 'btn3')">
         
         <div class="blink2 blinker" id="blink2"></div>
-        <img class="map-pin2 pin" id="pin2" src="../assets/images/scene5/pin.png" onclick="toggleMapElements('amazon', 'btn1')"> 
+        <img class="map-pin2 pin clickable" id="pin2" src="../assets/images/scene5/pin.png" onclick="toggleMapElements('amazon', 'btn1')"> 
         
         <div class="blink3 blinker" id="blink3"></div>
-        <img class="map-pin3 pin" id="pin3" src="../assets/images/scene5/pin.png" onclick="toggleMapElements('coral', 'btn2')"> 
+        <img class="map-pin3 pin clickable" id="pin3" src="../assets/images/scene5/pin.png" onclick="toggleMapElements('coral', 'btn2')"> 
 
         <button style="position: absolute; right: 97%;" onclick="reset()">reset</button>
         
@@ -53,14 +95,19 @@
         <div class="icons">
             <img id="camera-icon" class="icon" src="../assets/images/scene5/icon-cam.png" alt="camera item" style="display: block;">
             <img id="map-icon" class="icon" src="../assets/images/scene5/icon-map.png" alt="map item" style="display: block;">
-            <img id="camera-lock" class="lock" src="../assets/images/scene5/lock.png" alt="camera item" style="display: none;">
-            <img id="map-lock" class="lock" src="../assets/images/scene5/lock.png" alt="map item" style="display: none;">
             <img id="teleport-icon" class="icon" src="../assets/images/scene5/icon.png" alt="teleport button" style="display: block;" onclick="">
         </div>
     </div>
 
     <img id="modal" class="modal" src="../assets/images/scene5/modal.png" alt="scene 5 modal" style="display: none;">
-    <img id="yes-btn" class="yes-btn" src="../assets/images/scene5/button (2).png" onclick="window.location.href='scene6-1.html'" alt="scene 5 yes btn" style="display: none;">
+    <img id="yes-btn" class="yes-btn" src="../assets/images/scene5/button (2).png" onclick="openCh4(); window.location.href='scene6-1.html'" alt="scene 5 yes btn" style="display: none;">
+
+    <div class="dividers" id="divider1" style="display: block;" >
+        <a href="#" id="fill" class="fill-div">
+            <img id="ch1" class="chapter" src="../assets/images/chapter 3.png" alt="Chapter 3">
+            <p class="chapStart">Click anywhere to close</p>
+        </a>
+    </div>
     
     <!-- <button class="fullscreen" onclick="openFullscreen();">Open Fullscreen</button> -->
 
@@ -99,7 +146,36 @@
             console.log("opened");
         }
 
-        </script>
+        //Chapter Divider
+        var ch1 = document.getElementById("ch1");
+        var chap1 = document.getElementById("divider1");
+        $(".fill-div").click(function() {
+            document.getElementById('fill').className = 'chapAni';
+            document.getElementById('divider1').className = 'divAni';
+            if (ch1.style.opacity == 0){
+                console.log("hide");
+                setTimeout(function () {
+                    chap1.style.display = "none";
+                }, 800);
+            }
+        });
+
+        function openCh4() {
+            localStorage.setItem("ch4-lock", 1);
+        }
+
+        function soundOff() {
+            document.getElementById("bg-music").muted = true;  
+            document.getElementById("on").style.display = "none";
+            document.getElementById("off").style.display = "inline";
+        }
+
+        function soundOn() {
+            document.getElementById("bg-music").muted = false; 
+            document.getElementById("off").style.display = "none"; 
+            document.getElementById("on").style.display = "inline";
+        }
+    </script>
 
 </body>
 </html>

@@ -108,6 +108,10 @@ body {
     left: 15%;
     max-width: 680px;
   }
+
+  #box5 {
+    top: 100px;
+  }
   
   .clickable {
     color: #ffa502;

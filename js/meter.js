@@ -302,6 +302,19 @@ else{
     all.forEach(x => x.innerHTML = x.innerHTML.replace(/Aeryn/gi, inputVal));
 }
 
+//Chapter Divider
+var ch1 = document.getElementById("ch1");
+var chap1 = document.getElementById("divider1");
+$(".fill-div").click(function() {
+    document.getElementById('fill').className = 'chapAni';
+    document.getElementById('divider1').className = 'divAni';
+    if (ch1.style.opacity == 0){
+        console.log("hide");
+        setTimeout(function () {
+            chap1.style.display = "none";
+        }, 800);
+    }
+});
 
 
 $(window).on('load', function () {

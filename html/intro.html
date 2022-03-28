@@ -8,6 +8,9 @@
     <title>Scene 1</title>
     <link rel="stylesheet" href="../styles/scene1.css">
     <link rel="stylesheet" href="../styles/intro.css">
+    <link rel="stylesheet" href="../styles/nav.css">
+    <script src="../js/nav.js"></script>
+    <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
 
     <style>
         
@@ -25,7 +28,7 @@
     <div id="loading">
         <img id="loading-bg" src="../assets/images/scene1BG.png" alt="space background" />
         <img id="loading-image" src="../assets/images/ezgif.com-gif-maker.gif" alt="Loading..." />
-        <p class="loading-txt">Loading</p>
+        <p class="loading-txt">Loading...</p>
     </div>
 
     <audio autoplay loop id="bg-music">
@@ -43,6 +46,44 @@
     </div>  
     
     <h2 class="title" >Scroll to start</h2> -->
+    <header class="page-header">
+        <div class="hamburger-menu">
+            <input id="menu__toggle" type="checkbox" />
+            <label class="menu__btn" for="menu__toggle">
+                <span></span>
+            </label>
+        
+            <ul class="menu__box">
+                <div class="menu__div">
+                    <div class="chapter-menu">
+                        <ul class="chapter__list">
+                            <li><a class="chapter__item" id="ch-Home" href="intro.html" style="color: #30C9E9">Home</a></li>
+                            <li><a class="chapter__item" id="chapter0" href="prologue.html">Prologue</a></li>
+                            <li><a class="chapter__item" id="chapter1" href="scene1-1.html">Chapter 1</a></li>
+                            <li><a class="chapter__item" id="chapter2" href="scene3-1.html">Chapter 2</a></li>
+                            <li><a class="chapter__item" id="chapter3" href="scene5.html">Chapter 3</a></li>
+                            <li><a class="chapter__item" id="chapter4" href="scene6-1.html">Chapter 4</a></li>
+                            <li><a class="chapter__item" id="chapter5" href="scene8.html">Chapter 5</a></li>
+                        </ul>
+                    </div>
+                    <br><hr><br>
+                    <div class="menu__info">
+                        <span class="iconify menu__icon" data-icon="ant-design:info-circle-filled"></span>
+                        <h1 class="about"> About Sincerely, Earth</h1>
+                        <p>
+                            Sincerely, Earth is a dynamic storytelling website that provides an educational and immersive experience about climate change. Through this experience, we hope to inspire the next generation to become more aware and motivated to make a change.
+                        </p>
+                    </div>
+                    <br><hr><br>
+                    <div class="list">
+                        <span class="iconify menu__item" data-icon="ion:help-circle-sharp"></span>
+                        <span id="on" class="iconify menu__item" data-icon="teenyicons:sound-on-outline" onClick="soundOff()" style="display: inline"></span>
+                        <span id="off" class="iconify menu__item" data-icon="teenyicons:sound-off-solid" onClick="soundOn()" style="display: none"></span>
+                    </div>
+                </div>
+            </ul>
+        </div>  
+    </header>
 
     <div class="start-btn">
         <button class="btn" onclick="scrollWin(); playAudio()">Click to Start</button>
@@ -57,7 +98,7 @@
         <canvas id ="canvas" width="700" height="700"></canvas>
     </div>
 
-    <div class="btn2" onclick="window.location.href='prologue.html'">
+    <div class="btn2" onclick="openCh0(); window.location.href='prologue.html'">
         <span class="tooltiptext">Click here to go next or use the left and right arrow keys</span>
         <span class="disclaimer">WHILE INFORMATION ON GLOBAL WARMING IN THIS STORY IS BASED ON CURRENT RESEARCH, THE CHARACTERS AND SITUATIONS ARE FICTIONAL.</span>
     </div> 
@@ -130,6 +171,23 @@
                 elem.msRequestFullscreen();
             }
         }
+
+        function openCh0() {
+            localStorage.setItem("ch0-lock", 1);
+        }
+
+        function soundOff() {
+            document.getElementById("bg-music").muted = true;  
+            document.getElementById("on").style.display = "none";
+            document.getElementById("off").style.display = "inline";
+        }
+
+        function soundOn() {
+            document.getElementById("bg-music").muted = false; 
+            document.getElementById("off").style.display = "none"; 
+            document.getElementById("on").style.display = "inline";
+        }
+
 
     </script>
 </body>
