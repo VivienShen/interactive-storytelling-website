@@ -514,12 +514,15 @@ body::-webkit-scrollbar {
 
 #map-icon {
     max-height: 78%;
+    cursor: auto;
+    filter: grayscale(100%);
 }
 
 #camera-icon {
     max-height: 58%;
     padding-top: 3%;
     cursor: auto;
+    filter: grayscale(100%);
 }
 
 #camera-icon:hover{
@@ -583,7 +586,7 @@ progress:after {
 }
 
 #icon-glow {
-    max-height: 60%;
+    max-height: 58%;
     padding-top: 3%;
     color: #b45b07;
     filter: drop-shadow(0 0 8px #e4860b);
@@ -591,6 +594,19 @@ progress:after {
 }
 
 #icon-glow:hover {
+    filter: drop-shadow(0 0 30px #faf9f4);
+    cursor: pointer;
+    transform: translateY(5px);
+}
+
+#icon-glow2 {
+    max-height: 78%;
+    color: #b45b07;
+    filter: drop-shadow(0 0 8px #e4860b);
+    cursor: pointer; 
+}
+
+#icon-glow2:hover {
     filter: drop-shadow(0 0 30px #faf9f4);
     cursor: pointer;
     transform: translateY(5px);

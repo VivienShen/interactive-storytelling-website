@@ -381,7 +381,7 @@
             <div class="icons">
                 <img id="camera-icon" class="icon" src="../assets/images/scene5/icon-cam.png" alt="camera item" style="display: block;" onclick="">
                 <img id="map-icon" class="icon" src="../assets/images/scene5/icon-map.png" alt="map item" style="display: block;" onclick="window.location.href='scene5.html'">
-                <img id="teleport-icon" class="icon" src="../assets/images/scene5/icon.png" alt="teleport button" style="display: block;">
+                <img id="teleport-icon" class="icon" src="../assets/images/scene5/icon.png" alt="teleport button" style="display: block; pointer-events: none; filter: grayscale(100%);">
             </div>
         </div>
 
@@ -389,7 +389,7 @@
 
     <button id="fact1" class="factBox clickable">
         <span class="btn-icon"> 
-            <img class="info-icon" src="../../assets/images/information.png" alt="info btn icon">
+            <img class="info-icon" src="../assets/images/information.png" alt="info btn icon">
         </span>
         <span class="btn-text">Polar bears are well adapted to survive in one of the harshest environments on our planet, the Arctic. 
             This is because of their thick fur and skin that helps them keep warm. The Arctic is warming twice as fast as it’s supposed to, causing the ice that polar bears 
@@ -400,7 +400,7 @@
 
     <button id="fact2" class="factBox clickable">
         <span class="btn-icon"> 
-            <img class="info-icon" src="../../assets/images/information.png" alt="info btn icon">
+            <img class="info-icon" src="../assets/images/information.png" alt="info btn icon">
         </span>
         <span class="btn-text">The water in icebergs is colder and less salty than sea water, so when icebergs melt, 
             the difference in density between iceberg water and sea water causes the sea level to slightly rise.
@@ -410,7 +410,7 @@
 
     <button id="fact3" class="factBox clickable">
         <span class="btn-icon">
-            <img class="info-icon" src="../../assets/images/information.png" alt="info btn icon">
+            <img class="info-icon" src="../assets/images/information.png" alt="info btn icon">
         </span>
         <span class="btn-text">Around four million people live in the Arctic, amongst them are indigenous people called the Inuits. 
             Inuit people have been noticing the change in the Arctic from global warming, and because their culture is adapted to the Arctic’s cold climate, it makes it 
@@ -605,6 +605,7 @@
         var $window = $(window);
         var cam = document.getElementById("camera-icon");
         var exp = document.getElementById("cam-explanation");
+        var map = document.getElementById("map-icon");
 
         $(window).on('scroll', function() {
             $topOffset = $(this).scrollTop();
@@ -616,10 +617,12 @@
                 cam.id = "icon-glow";
                 cam.setAttribute('onclick','openCam()');
                 exp.style.display = "block";
+                map.id = "icon-glow2";
             }else{
                 cam.id = "camera-icon";
                 cam.setAttribute('onclick','');
                 exp.style.display = "none";
+                map.id = "map-icon";
             }
         
         });
@@ -651,11 +654,11 @@
             console.log("fact opened");
         }
 
-        function clickToClose(){
+        /* function clickToClose(){
             document.getElementById("fact1").style.display = "none";
             document.getElementById("fact2").style.display = "none";
             document.getElementById("fact3").style.display = "none";
-        }
+        } */
 
         function soundOff() {
             document.getElementById("bg-music").muted = true;  

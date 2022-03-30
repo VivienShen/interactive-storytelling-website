@@ -123,7 +123,7 @@
 
         <button id="fact1" class="factBox clickable">
             <span class="btn-icon"> 
-                <img class="info-icon" src="../../assets/images/information.png" alt="info btn icon">
+                <img class="info-icon" src="../assets/images/information.png" alt="info btn icon">
             </span>
             <span class="btn-text">Climate change is a great threat to sea turtles. The sea level rising and the 
                 stronger storms will destroy their beach habitats. Warming oceans also change ocean currents which 
@@ -135,7 +135,7 @@
 
         <button id="fact2" class="factBox clickable">
             <span class="btn-icon"> 
-                <img class="info-icon" src="../../assets/images/information.png" alt="info btn icon">
+                <img class="info-icon" src="../assets/images/information.png" alt="info btn icon">
             </span>
             <span class="btn-text">Many fishes depend on corals for their food and habitat, while corals depend 
                 on fishes to feed on them for them to continue reproducing and remove some diseases. Increased ocean temperatures from climate change 
@@ -148,7 +148,7 @@
 
         <button id="fact3" class="factBox clickable">
             <span class="btn-icon"> 
-                <img class="info-icon" src="../../assets/images/information.png" alt="info btn icon">
+                <img class="info-icon" src="../assets/images/information.png" alt="info btn icon">
             </span>
             <span class="btn-text">The coral reef can help manage global warming since they are essential 
                 to controlling carbon dioxide levels in the ocean. However, increased greenhouse gasses from human activity results in 
@@ -189,7 +189,7 @@
         <div class="icons">
             <img id="camera-icon" class="icon" src="../assets/images/scene5/icon-cam.png" alt="camera item" style="display: block;" onclick="">
             <img id="map-icon" class="icon" src="../assets/images/scene5/icon-map.png" alt="map item" style="display: block;" onclick="window.location.href='scene5.html'">
-            <img id="teleport-icon" class="icon" src="../assets/images/scene5/icon.png" alt="teleport button" style="display: block;">
+            <img id="teleport-icon" class="icon" src="../assets/images/scene5/icon.png" alt="teleport button" style="display: block; pointer-events: none; filter: grayscale(100%);">
         </div>
     </div>
     
@@ -429,10 +429,11 @@
         var $window = $(window);
         var cam = document.getElementById("camera-icon");
         var exp = document.getElementById("cam-explanation");
+        var map = document.getElementById("map-icon");
 
         $(window).on('scroll', function() {
             $topOffset = $(this).scrollTop();
-
+        
             console.log($topOffset);
 
             //Make Camera Glow At end of scroll
@@ -440,12 +441,15 @@
                 cam.id = "icon-glow";
                 cam.setAttribute('onclick','openCam()');
                 exp.style.display = "block";
+                map.id = "icon-glow2";
             }else{
                 cam.id = "camera-icon";
                 cam.setAttribute('onclick','');
                 exp.style.display = "none";
+                // map.id = "map-icon";
+                map.id = "icon-glow2";
             }
-
+        
         });
 
         //OPEN FACTS
@@ -475,11 +479,11 @@
             console.log("fact opened");
         }
 
-        function clickToClose(){
+        /* function clickToClose(){
             document.getElementById("fact1").style.display = "none";
             document.getElementById("fact2").style.display = "none";
             document.getElementById("fact3").style.display = "none";
-        }
+        } */
 
         function soundOff() {
             document.getElementById("bg-music").muted = true;  

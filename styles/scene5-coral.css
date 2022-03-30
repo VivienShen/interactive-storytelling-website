@@ -178,16 +178,15 @@ progress:after {
 
 #map-icon {
     max-height: 78%;
-}
-
-#map-icon:hover{
-    cursor: pointer;
+    cursor: auto;
+    filter: grayscale(100%);
 }
 
 #camera-icon {
     max-height: 58%;
     padding-top: 3%;
     cursor: auto;
+    filter: grayscale(100%);
 }
 
 #camera-icon:hover{
@@ -221,6 +220,19 @@ progress:after {
 }
 
 #icon-glow:hover {
+    filter: drop-shadow(0 0 30px #faf9f4);
+    cursor: pointer;
+    transform: translateY(5px);
+}
+
+#icon-glow2 {
+    max-height: 78%;
+    color: #b45b07;
+    filter: drop-shadow(0 0 8px #e4860b);
+    cursor: pointer; 
+}
+
+#icon-glow2:hover {
     filter: drop-shadow(0 0 30px #faf9f4);
     cursor: pointer;
     transform: translateY(5px);
@@ -557,43 +569,24 @@ button:hover .info-icon {
     background-color: rgba(105, 105, 105, 0.61);
 }
 
-/* @media (min-height: 900px) {
-    #indicator1{
-    top: 540%;
-    left: 76%;
-    bottom: 0%;
-    }
-
-    #indicator2{
-    top: 549%;
-    left: 11%;
-    bottom: 0%;
-
-    }
-
-    #indicator3{
-    top: 593%;
-    left: 23.5%;
-    bottom: 0%;
-    }
-
+@media (min-height: 900px) {
     #fact1 {
-    top: 531%;
-    left: 45%;
+    top: 80%;
+    left: 65%;
     bottom: 0%;
     }
 
     #fact2 {
-    top: 565%;
+    top: 82%;
     left: 18%;
     bottom: 0%;
     }
 
     #fact3{
-    top: 595%;
+    top: 88%;
     left: 30%;
     bottom: 0%;
-}
+    }
 
 
 }
@@ -601,91 +594,59 @@ button:hover .info-icon {
 @media (min-height: 780px) and (max-height: 840px) {
 
     #fact1{
-        top: 680%;
-        left: 68%;
+        top: 80%;
+        left: 65%;
     }
     
     #fact2{
-        top: 695%;
+        top: 85%;
         left: 20%;
         
     }
     
     #fact3{
-        top: 731%;
-        left: 22%;
+        top: 93%;
+        left: 45%;
     }
 
 
 }
 
 @media (min-height: 680px) and (max-height: 779px) {
-    #indicator1{
-        top: 550%;
-        left: 76%;
-    }
-
-    #indicator2{
-        top: 565%;
-        left: 11%;
-
-    }
-
-    #indicator3{
-        top: 613%;
-        left: 23.5%;
-    }
-
     #fact1 {
-        top: 575%;
-        left: 50%;
+        top: 75%;
+        left: 60%;
     }
 
     #fact2 {
-        top: 575%;
+        top: 80%;
         left: 15%;
     }
 
     #fact3{
-        top: 635%;
-        left: 30%;
-    }
-}
-
-@media (max-height: 679px) {
-    #indicator1{
-        top: 580%;
-        left: 76%;
-    }
-
-    #indicator2{
-        top: 595%;
-        left: 11%;
-
-    }
-
-    #indicator3{
-        top: 645%;
-        left: 25%;
-    }
-
-    #fact1 {
-        top: 610%;
+        top: 93%;
         left: 45%;
     }
 
+
+}
+
+@media (max-height: 679px) {
+    #fact1 {
+        top: 72%;
+        left: 55%;
+    }
+
     #fact2 {
-        top: 615%;
+        top: 77%;
         left: 15%;
     }
 
     #fact3{
-        top: 662%;
-        left: 30%;
+        top: 92%;
+        left: 45%;
     }
-
-
-} */
+}
 
 #loading {
     position: fixed;

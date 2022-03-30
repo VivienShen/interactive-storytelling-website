@@ -52,7 +52,7 @@ body {
   }
   
   .description1 {
-    top: 1%;
+    top: 10%;
     left: 1%;
     max-width: 700px;
     font-size: 1.3rem;
@@ -104,13 +104,26 @@ body {
   }
   
   #box4 {
-    bottom: 30%;
+    bottom: 10%;
     left: 15%;
     max-width: 680px;
   }
 
   #box5 {
-    top: 100px;
+    top: 10%;
+    left: 1%;
+    max-width: 680px;
+    font-size: 1.3rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px 10px 10px 10px;
+    display: block;
+    position: absolute;
+    animation: fadeIn linear 1s;
+    color: black;
+    background-color: rgba(238, 240, 136, 0.9);
+    border: 2px solid black;
   }
   
   .clickable {
@@ -258,27 +271,11 @@ body {
   }
   
   /* button 2 */
-  #nextBtn1 {
-    top: 80%;
-    left: 45%;
-  }
-  #nextBtn2 {
-    top: 80%;
-  }
-  #nextBtn3 {
-    top: 85%;
-    left: 75%;
-  }
-  #nextBtn4 {
-    top: 80%;
-    left: 55%;
-  }
   
   #nextBtn5 {
-    top: 90%;
-    left: 60%;
+    top: 50%;
+    left: 30%;
   }
-  
   .btn2 {
     height: 10px;
     width: 10px;
@@ -286,8 +283,8 @@ body {
     background-color: #000000;
     outline-color: #ffffff;
     position: fixed;
-    top: 500px;
-    left: 51%;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     cursor: pointer;
     display: block;

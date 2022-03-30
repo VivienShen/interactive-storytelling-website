@@ -92,7 +92,7 @@
         <div class="blink3 blinker" id="blink3"></div>
         <img class="map-pin3 pin clickable" id="pin3" src="../assets/images/scene5/pin.png" onclick="toggleMapElements('coral', 'btn2');  playEffect('btn-se');"> 
 
-        <button style="position: absolute; right: 80%; z-index: 20;" onclick="reset()">reset</button>
+        <button style="position: absolute; right: 0%; z-index: 20;" onclick="reset()">reset</button>
         
 
     </div>
@@ -100,8 +100,8 @@
     <div class="inventory">
         <img id="inventory-bg" src="../assets/images/scene5/inventory.png" alt="inventory box">
         <div class="icons">
-            <img id="camera-icon" class="icon" src="../assets/images/scene5/icon-cam.png" alt="camera item" style="display: block;">
-            <img id="map-icon" class="icon" src="../assets/images/scene5/icon-map.png" alt="map item" style="display: block;">
+            <img id="camera-icon" class="icon" src="../assets/images/scene5/icon-cam.png" alt="camera item" style="display: block; pointer-events: none; filter: grayscale(100%);">
+            <img id="map-icon" class="icon" src="../assets/images/scene5/icon-map.png" alt="map item" style="display: block; pointer-events: none; filter: grayscale(100%);">
             <img id="teleport-icon" class="icon" src="../assets/images/scene5/icon.png" alt="teleport button" style="display: block;" onclick="">
         </div>
     </div>

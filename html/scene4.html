@@ -139,15 +139,15 @@
 
         <!--Frame 4-->
         <div id="s4-4" class="scene" style="display: none;">
-            <div id="bg4" class="image">
+            <!-- <div id="bg4" class="image">
                 <img class="img-bg" src="../assets/images/scene4/s4-bg2.png" alt="Laboratory room wall">
-            </div>
+            </div> -->
             <video class="clock" autoplay loop>
                 <source src="../assets/motionGraphics/clock.mp4" alt="clock ticking" type="video/mp4">
                 Your browser does not support the video tag.  
             </video>
             <div id="headerText" class="text" >
-                <h1 class="center-text">1 Hour Later...</h1>
+                <h1 class="center-text">Moments Later...</h1>
             </div>
         </div>
 
@@ -290,11 +290,11 @@
             <div class="inventory">
                 <img id="inventory-bg" src="../assets/images/scene4/inventory.png" alt="inventory box">
                 <div class="icons">
-                    <img id="camera-icon" class="icon" src="../assets/images/scene4/icon-cam.png" alt="camera item" style="display: none;">
+                    <img id="camera-icon" class="icon" src="../assets/images/scene4/icon-cam.png" alt="camera item" style="display: none; pointer-events: none; filter: grayscale(100%);">
                     <img id="map-icon" class="icon clickable" src="../assets/images/scene4/icon-map.png" alt="map item" style="display: none;" onclick= "openCh3(); playEffect('btn-se'); window.location.href='scene5.html'">
                     <img id="camera-lock" class="lock" src="../assets/images/scene4/lock.png" alt="camera item" style="display: block;">
                     <img id="map-lock" class="lock" src="../assets/images/scene4/lock.png" alt="map item" style="display: block;" >
-                    <img id="teleport-icon" class="icon" src="../assets/images/scene4/icon.png" alt="teleport button" style="display: block;">
+                    <img id="teleport-icon" class="icon" src="../assets/images/scene4/icon.png" alt="teleport button" style="display: block; pointer-events: none; filter: grayscale(100%);">
                 </div>
             </div>
             
