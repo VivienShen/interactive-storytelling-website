@@ -18,14 +18,22 @@
             <input id="next" type='button' value='&gt;' />
         </div> -->
 
-        <div id="loading">
+        <!-- <div id="loading">
             <img id="loading-bg" src="../assets/images/scene1BG.png" alt="space background" />
             <img id="loading-image" src="../assets/images/ezgif.com-gif-maker.gif" alt="Loading..." />
             <p class="loading-txt">Loading...</p>
-        </div>
+        </div> -->
         
         <audio autoplay loop id="bg-music">
             <source src="../assets/audio/bgm/Serenity_-_Aakash_Gandhi.mp3" type="audio/mpeg" />
+        </audio>
+
+        <audio id="city-se">
+            <source src="../assets/audio/soundEffects/scene3/big_city.wav" type="audio/wav" />
+        </audio>
+
+        <audio id="pickup-se">
+            <source src="../assets/audio/soundEffects/scene3/paper-poster-pickup.mp3" type="audio/mpeg" />
         </audio>
 
         <header class="page-header">
@@ -67,7 +75,15 @@
             </div>  
         </header>
 
-        <div id="s2-1" class="scene" style="display: block;">
+        <div id="s2-1" class="scene image" style="display: block;">
+            <video class="img-bg" autoplay>
+                <source src="../assets/motionGraphics/eyesOpen_1.mp4" alt="A spaceship in the space" type="video/mp4">
+                Your browser does not support the video tag.  
+            </video>
+        </div>
+
+
+        <div id="s2-2" class="scene" style="display: none;">
             <div id="bg1" class="image">
                 <img class="img-bg" src="../assets/images/scene3/scene3-1.png" alt="Aeryn standing by the window">
             </div>
@@ -78,7 +94,7 @@
             </div>
         </div>
 
-        <div id="s2-2" class="scene" style="display: none;">
+        <div id="s2-3" class="scene" style="display: none;">
             <div id="bg1" class="image">
                 <img class="img-bg" src="../assets/images/scene3/scene3-1.png" alt="Aeryn standing by the window">
             </div>
@@ -89,12 +105,12 @@
             </div>
         </div>
         
-        <div id="s2-3" class="scene" style="display: none;">
+        <div id="s2-4" class="scene" style="display: none;">
             <div>
                 <img class="image" src="../assets/images/scene3/scene3-2.png" alt="Inside a room">
-                <img class="flyer1" onclick="loadHenry()" src="../assets/images/scene3/flyer 1.png" alt="flyer 1" title="See Campaign Flier">
-                <img class="flyer2" onclick="loadEvelyn()" src="../assets/images/scene3/flyer 2.png" alt="flyer 2" title="See Campaign Flier">
-                <img class="tv" src="../assets/images/scene3/tv1.png" onclick="window.location.href='scene3-2.html'" alt="tv" title="Watch T.V">
+                <img class="flyer1" onclick="loadHenry(); playEffect('pickup-se')" src="../assets/images/scene3/flyer 1.png" alt="flyer 1" title="See Campaign Flier">
+                <img class="flyer2" onclick="loadEvelyn(); playEffect('pickup-se')" src="../assets/images/scene3/flyer 2.png" alt="flyer 2" title="See Campaign Flier">
+                <img class="tv" src="../assets/images/scene3/tv1.png" onclick="window.location.href='scene3-2.html';" alt="tv" title="Watch T.V">
                 <img class="poster1" id="Evelyn" onclick="myFunction2()" src="../assets/images/scene3/poster1.png" alt="poster1">
                 <img class="poster2" id="Henry" onclick="myFunction2()" src="../assets/images/scene3/poster2.png" alt="poster2">
             </div>
@@ -118,9 +134,9 @@
 
         <script>
 
-            $(window).on('load', function () {
-                $('#loading').hide();
-            }) 
+            // $(window).on('load', function () {
+            //     $('#loading').hide();
+            // }) 
 
             //Chapter Divider
             var ch1 = document.getElementById("ch1");
@@ -174,6 +190,16 @@
                     if (prevIndex >= 0) {
                         var preId = IdStore[prevIndex];
                         document.getElementById(preId).style.display = "none";
+                    }
+
+                    var soundEffect = document.getElementById("city-se");
+                    soundEffect.volume = 0.07;
+
+                    if(currentIndex == 1 ){
+                        soundEffect.play();
+                    }
+                    else if(currentIndex == 3){
+                        soundEffect.pause();
                     }
 
                     //next button appearing after 3 second
@@ -276,6 +302,14 @@
                 document.getElementById("bg-music").muted = false; 
                 document.getElementById("off").style.display = "none"; 
                 document.getElementById("on").style.display = "inline";
+            }
+
+
+            function playEffect(sound) {
+
+                var soundEffect2 = document.getElementById(sound);
+                soundEffect2.play();
+
             }
         </script>
     </body>

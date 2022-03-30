@@ -27,31 +27,105 @@ body::-webkit-scrollbar {
     height:100%;
 }
 
-
 .amazon-icon{
     position: absolute;
-    transform: translate(160%, 260%);
-    width: 10%;
+    top: 47%;
+    left: 18%;
+    width: 11%;
     cursor: pointer;
+    transition: transform .2s;
+    filter: grayscale(0.5);
 }
 
 .coralReef-icon{
     position: absolute;
-    transform: translate(730%, 250%);
-    width: 11%;
+    top: 43%;
+    left: 62%;
+    width: 12%;
     cursor: pointer;
+    transition: transform .2s;
+    filter: grayscale(0.5);
 }
 
 .arctic-icon{
     position: absolute;
-    transform: translate(220%, 10%);
-    width: 14%;
+    top: -3%;
+    left: 31%;
+    width: 15%;
     cursor: pointer;
     transition: transform .2s;
+    filter: grayscale(0.5);
 }
 
 .arctic-icon:hover{
-    /* transform: scale(1.5); */
+    transform-origin: center;
+    transform: scale(1.5);
+    filter: grayscale(0); 
+}
+
+.arctic-icon:hover + #text3{
+    display: block;
+    animation: animationFade 0.7s;
+}
+
+.icon-text{
+    position: absolute;
+    color: rgb(255, 255, 255);
+    max-width: 200px;
+    text-align: center;
+    display: none;
+    font-size: 1.8rem;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#text1{
+    top: 68%;
+    left:  16.3vw;
+}
+
+#text2{
+    top: 41%;
+    left:  73.6vw;
+}
+
+#text3{
+    top: 10%;
+    left:  20vw;
+}
+
+.amazon-icon:hover{
+    transform-origin: center;
+    transform: scale(1.5);
+    filter: grayscale(0);
+    
+}
+
+.amazon-icon:hover + #text1{
+    display: block;
+    animation: animationFade 0.7s;
+}
+
+.coralReef-icon:hover{
+    transform-origin: center;
+    transform: scale(1.5); 
+    filter: grayscale(0);
+}
+
+.coralReef-icon:hover + #text2{
+    display: block;
+    animation: animationFade 0.7s;
+}
+
+@keyframes animationFade {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .pin{
@@ -344,6 +418,24 @@ body::-webkit-scrollbar {
     100% {opacity:1;}
 }
 
+.fadeOut{
+    position: fixed;
+    top: 35%;
+    left: 43%;
+    font-size: 2rem;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    font-weight: 600;
+    transform: rotate(-3deg);
+    z-index: 4;
+    animation: fadeOut 2s forwards;
+}
+
+@keyframes fadeOut {
+    0% {opacity:1;}
+    100% {opacity:0;}
+}
+
 
 /* button 2 */
 .trans-btn {
@@ -393,6 +485,7 @@ body::-webkit-scrollbar {
     display: block;
     position: relative;
     animation: fadeIn linear 1s;
+    z-index: 3;
 }
 
 #inventory-bg {
@@ -477,14 +570,15 @@ progress:after {
 }
 
 .yes-btn{
-    width: 20%;
-    top: 67%;
-    left: 38%;
-    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    bottom: -62vh;
+    width: 17%;
 }
 
 .yes-btn:hover {
-    margin-top: 10px;
+    bottom: -64vh;
     cursor: pointer;
 }
 
@@ -503,8 +597,8 @@ progress:after {
 }
 
 .clickable {
-    color: #ffa502;
-    filter: drop-shadow(0 0 30px #f5d311);
+    color: #fffb02;
+    filter: drop-shadow(0 0 30px #fad507);
     cursor: pointer;
     z-index: 1;
 }

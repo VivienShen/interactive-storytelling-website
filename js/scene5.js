@@ -1,7 +1,6 @@
-$(window).on('load', function () {
-    $('#loading').hide();
-}) 
-
+// $(window).on('load', function () {
+//     $('#loading').hide();
+// }) 
 
 let visited = false;
 let visited2 = false;
@@ -70,11 +69,27 @@ if(visited6 == "true"){
 }
 
 
-if(visited4 && visited5 && visited6 == "true"){
+if(visited4 == "true" && visited5 == "true" && visited6 == "true"){
     teleport.id = 'icon-glow';
-    
-    teleport.setAttribute( "onClick", "loadPopup();" );
+    console.log("all placed visited")
+    teleport.setAttribute( "onClick", "loadPopup(); playEffect('btn-se');" );
 }
+
+
+ //Chapter Divider
+var chap1 = document.getElementById("divider1");
+
+if(!(visited4 == "false" && visited5 == "false" && visited6 == "false")){  
+    chap1.style.display = "none"; 
+
+    //console.log("place visited");
+    
+}
+else{
+
+}
+
+
 
 
 

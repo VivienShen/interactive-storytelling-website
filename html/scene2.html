@@ -13,14 +13,18 @@
     </head>
 
     <body>
-        <div id="loading">
+        <!-- <div id="loading">
             <img id="loading-bg" src="../assets/images/scene1BG.png" alt="space background" />
             <img id="loading-image" src="../assets/images/ezgif.com-gif-maker.gif" alt="Loading..." />
             <p class="loading-txt">Loading...</p>
-        </div>
+        </div> -->
 
         <audio autoplay loop id="bg-music">
             <source src="../assets/audio/bgm/Future_Glider_-_Brian_Bolger.mp3" type="audio/mpeg">
+        </audio>
+
+        <audio id="btn-se">
+            <source src="../assets/audio/soundEffects/scene2/button.wav" type="audio/wav" />
         </audio>
 
         <header class="page-header">
@@ -81,8 +85,8 @@
             <div class="image">
                 <img class="nameModal" src="../assets/images/scene2/name modal.png"  alt="">
                 <img class="characterIcon" src="../assets/images/scene2/girl name.png"  alt="">
-                <img id="nextBtn2" class="skipBtn" src="../assets/images/scene2/skip.png" alt="">
-                <img id="nextBtn3" class="setName" src="../assets/images/scene2/set name.png" onclick="getInputValue()" alt="">
+                <img id="nextBtn2" class="skipBtn" onclick="playEffect();" src="../assets/images/scene2/skip.png" alt="">
+                <img id="nextBtn3" class="setName" src="../assets/images/scene2/set name.png" onclick="playEffect();" alt="">
             </div>
             
 
@@ -239,7 +243,7 @@
 
             <div class="image">
                 <img src="../assets/images/scene2/modal.png" id = "modal" alt="modal popup" style="display:none">
-                <img src="../assets/images/scene2/yes.png" id="yes_button" onclick="window.location.href='portal.html'" alt="yes button" style="display:none" />
+                <img src="../assets/images/scene2/yes.png" id="yes_button" onclick="window.location.href='portal.html'; playEffect();" alt="yes button" style="display:none" />
             </div>
 
             <div class="inventory">
@@ -247,7 +251,7 @@
                 <div class="icons">
                     <img id="camera-lock" class="lock" src="../assets/images/scene2/lock.png" alt="locked item" style="display: block;">
                     <img id="map-lock" class="lock" src="../assets/images/scene2/lock.png" alt="locked item" style="display: block;">
-                    <img id="app-icon" class="icon" src="../assets/images/scene2/icon.png" alt="teleport item" style="display: block;" onclick="loadPopup()">
+                    <img id="app-icon" class="icon" src="../assets/images/scene2/icon.png" alt="teleport item" style="display: block;" onclick="loadPopup(); playEffect();">
                 </div>
             </div>
         </div>
@@ -269,9 +273,17 @@
 
         <script>
 
-            $(window).on('load', function () {
-                $('#loading').hide();
-            }) 
+            var soundEffect = document.getElementById("btn-se");
+
+            function playEffect() {
+
+                soundEffect.play();
+
+            }
+
+            // $(window).on('load', function () {
+            //     $('#loading').hide();
+            // }) 
 
              //setting character name
             var inputVal2 = sessionStorage.getItem("newName");

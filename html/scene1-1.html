@@ -14,11 +14,11 @@
 
     <body>
 
-        <div id="loading">
+        <!-- <div id="loading">
             <img id="loading-bg" src="../assets/images/scene1BG.png" alt="space background" />
             <img id="loading-image" src="../assets/images/ezgif.com-gif-maker.gif" alt="Loading..." />
             <p class="loading-txt">Loading...</p>
-        </div>
+        </div> -->
 
         <audio autoplay loop id="bg-music">
             <source src="../assets/audio/bgm/Future_Glider_-_Brian_Bolger.mp3" type="audio/mpeg">
@@ -64,9 +64,13 @@
         </header>
 
         <div id="s2-1" class="scene" style="display: block;">
-            <div id="bg1" class="image">
-                <img class="img-bg" src="../assets/images/scene2/scene2-1.png" alt="A spaceship in the space">
+            <div class="image">
+                <video class="img-bg" autoplay loop>
+                    <source src="../assets/motionGraphics/stars 2.mp4" alt="A spaceship in the space" type="video/mp4">
+                    Your browser does not support the video tag. 
+                </video>
             </div>
+            
             <div class="text">
                 <div id="box1" class="textbox" >
                     <p>In the year 2100, home to more than 200 people, is a spaceship called Ecolife.</p>
@@ -77,7 +81,7 @@
         
         <div id="s2-2" class="scene" style="display: none;">
             <div id="bg2" class="image">
-                <img class="img-bg" src="../assets/images/scene2/scene2-2.png" alt="Girl holding a monocular while talking with robot">
+                <img class="img-bg" src="../assets/images/scene2/telescope lookout.png" alt="Girl holding a monocular while talking with robot">
                 <img class="telescope" src="../assets/images/scene2/telescope.png" onclick="window.location.href='scene1-2.html'" alt="telescope" title="telescope">
                 <span class="tooltiptext">Click on items that are glowing</span>
             </div>
@@ -94,9 +98,9 @@
 
 
         <script>
-            $(window).on('load', function () {
-                $('#loading').hide();
-            }) 
+            // $(window).on('load', function () {
+            //     $('#loading').hide();
+            // }) 
 
             //Chapter Divider
             var ch1 = document.getElementById("ch1");

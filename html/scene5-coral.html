@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="../js/scene5.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
     <title>Scene5 - Great Barrier Reef</title>
     <link rel="stylesheet" href="../styles/scene5-coral.css">
     <link rel="stylesheet" href="../styles/nav.css">
@@ -15,14 +16,22 @@
 </head>
 <body>
 
-    <div id="loading">
+    <!-- <div id="loading">
         <img id="loading-bg" src="../assets/images/scene1BG.png" alt="space background" />
         <img id="loading-image" src="../assets/images/ezgif.com-gif-maker.gif" alt="Loading..." />
         <p class="loading-txt">Loading...</p>
-    </div>
+    </div> -->
 
     <audio autoplay loop id="bg-music">
-        <source src="../assets/audio/bgm/Mountain_-_JVNA.mp3" type="audio/mpeg" />
+        <source src="../assets/audio/bgm//mountain.mp3" type="audio/mpeg" />
+    </audio>
+
+    <audio autoplay loop id="forest-se">
+        <source src="../assets/audio/soundEffects/scene5/underwater.mp3" type="audio/mpeg" />
+    </audio>
+
+    <audio  id="camera-se">
+        <source src="../assets/audio/soundEffects/scene5/camera.wav" type="audio/wav" />
     </audio>
 
     <header class="page-header">
@@ -112,6 +121,44 @@
         </svg>
         <img class="image13 " src="../assets/images/scene5/coral/turtle.png">
 
+        <button id="fact1" class="factBox clickable">
+            <span class="btn-icon"> 
+                <img class="info-icon" src="../../assets/images/information.png" alt="info btn icon">
+            </span>
+            <span class="btn-text">Climate change is a great threat to sea turtles. The sea level rising and the 
+                stronger storms will destroy their beach habitats. Warming oceans also change ocean currents which 
+                introduces the sea turtles to new predators and harms the coral reef that they need to survive.
+                <a href="https://climate.nasa.gov/news/2879/climate-change-puts-pressure-on-sea-turtles/#:~:text=Now%2C%20climate%20change%20is%20exposing,of%20them%20need%20to%20survive." target="_blank">   
+                    Read more</a>
+            </span>
+        </button> 
+
+        <button id="fact2" class="factBox clickable">
+            <span class="btn-icon"> 
+                <img class="info-icon" src="../../assets/images/information.png" alt="info btn icon">
+            </span>
+            <span class="btn-text">Many fishes depend on corals for their food and habitat, while corals depend 
+                on fishes to feed on them for them to continue reproducing and remove some diseases. Increased ocean temperatures from climate change 
+                will affect the behavior of coral reef fishes.
+                <a href="https://eatlas.org.au/content/relationship-between-corals-and-fishes-great-barrier-reef#:~:text=There%20are%20strong%20mutual%20dependencies,may%20be%20mitigated%20by%20fishes" target="_blank">
+                    Read more
+                </a>
+            </span>
+        </button> 
+
+        <button id="fact3" class="factBox clickable">
+            <span class="btn-icon"> 
+                <img class="info-icon" src="../../assets/images/information.png" alt="info btn icon">
+            </span>
+            <span class="btn-text">The coral reef can help manage global warming since they are essential 
+                to controlling carbon dioxide levels in the ocean. However, increased greenhouse gasses from human activity results in 
+                ocean acidification which destroys the corals.
+                <a href="https://blogpatagonia.australis.com/10-fun-facts-about-coral-reefs/" target="_blank">
+                    Read more
+                </a>
+            </span>
+        </button> 
+
         <img class="image18" src="../assets/images/scene5/coral/fish.png">
 
         <svg id="path2"  viewBox="5 180 786 400">
@@ -122,33 +169,6 @@
         <img class="image11" src="../assets/images/scene5/coral/humans.png">
         
     </Section>
-
-    <div class="indicator" id = "indicator1" onclick="toggleFactBoxes('fact1');"></div>
-    <div class="indicator" id = "indicator2" onclick="toggleFactBoxes('fact2');"></div>
-    <div class="indicator" id = "indicator3" onclick="toggleFactBoxes('fact3');"></div>
-
-    <p id="fact1" class="factBox fact" style="display: none;">Climate change is a great threat to sea turtles. The sea level rising and the 
-        stronger storms will destroy their beach habitats. Warming oceans also change ocean currents which 
-        introduces the sea turtles to new predators and harms the coral reef that they need to survive.
-        <a href="https://climate.nasa.gov/news/2879/climate-change-puts-pressure-on-sea-turtles/#:~:text=Now%2C%20climate%20change%20is%20exposing,of%20them%20need%20to%20survive." target="_blank">   
-            Read more</a>
-    </p>
-
-    <p id="fact2" class="factBox fact" style="display: none;">Many fishes depend on corals for their food and habitat, while corals depend 
-        on fishes to feed on them for them to continue reproducing and remove some diseases. Increased ocean temperatures from climate change 
-        will affect the behavior of coral reef fishes.
-        <a href="https://eatlas.org.au/content/relationship-between-corals-and-fishes-great-barrier-reef#:~:text=There%20are%20strong%20mutual%20dependencies,may%20be%20mitigated%20by%20fishes" target="_blank">
-            Read more
-        </a>
-    </p>
-
-    <p id="fact3" class="factBox fact" style="display: none;">The coral reef can help manage global warming since they are essential 
-        to controlling carbon dioxide levels in the ocean. However, increased greenhouse gasses from human activity results in 
-        ocean acidification which destroys the corals.
-        <a href="https://blogpatagonia.australis.com/10-fun-facts-about-coral-reefs/" target="_blank">
-            Read more
-        </a>
-    </p>
 
     <div class="cam_container" id="parent-cam">
         <img class="camera-capture" style="display: none;" id="cam" onclick="" onmousedown="camClicked()" onmouseup="camReleased()" src="../assets/images/scene5/cam-capture.png">
@@ -174,7 +194,7 @@
     </div>
     
 
-    <p class="gameText" id="game-txt">Game Status</p>
+    <p class="gameText" id="game-txt"></p>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
@@ -194,27 +214,27 @@
             }
         });
         tl.to(".image1", {
-            y: "-100%",
+            y: "-25%",
             scrub: 1
         },'start')
         .to(".image2", 2,{
-            y: "-100%",
+            y: "-25%",
             scrub: 1
         },'start')
         .to(".image3", 4,{
-            y: "-100%",
+            y: "-25%",
             scrub: 1
         },'start')
         .to(".image4", 6,{
-            y: "-100%",
+            y: "-25%",
             scrub: 1
         },'start')
         .to(".image5", 8,{
-            y: "-100%",
+            y: "-25%",
             scrub: 1
         },'start')
         .to(".image6", 9,{
-            y: "-100%",
+            y: "-25%",
             scrub: 1
         },'start')
         .to(".image7", 12,{
@@ -229,8 +249,13 @@
             y: "-100%",
             scrub: 1
         },'start')
-        .to(".scroll-indicator", {
+        .to(".scroll-text", {
             opacity: 0,
+            duration: 2
+        },'start')
+        .to(".scroll", {
+            y: "-320%",
+            scale: 0.5,
             duration: 2
         },'start')
         .to("#box1", {
@@ -466,6 +491,13 @@
             document.getElementById("bg-music").muted = false; 
             document.getElementById("off").style.display = "none"; 
             document.getElementById("on").style.display = "inline";
+        }
+
+        function playEffect(sound) {
+
+            var soundEffect2 = document.getElementById(sound);
+            soundEffect2.play();
+
         }
 
     </script>

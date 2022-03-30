@@ -1,10 +1,11 @@
-html {
-    scroll-behavior: smooth;
-    background-image: url("../assets/images/scene1/scene1BG.png");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    overflow: hidden;
+#bg1{
+    position: fixed;
+    margin-top: 0;
+}
+
+.stars{
+    position: fixed;
+    width: 100%;
 }
 
 .tooltiptext {

@@ -1,9 +1,9 @@
 body {
     margin: 0;
 
-    /* -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
     /*scrollbar-width: none; /* for Firefox */
-    /* overflow: hidden;  */
+    overflow: hidden; 
 }
 
 /* body::-webkit-scrollbar {
@@ -221,22 +221,21 @@ body {
   }
   
   .classname {
-    animation: animationZoom 1.2s;
+    animation: animationZoom 1.8s  forwards;
   }
   
   .classname2 {
-    animation-fill-mode: forwards;
-    animation: animationFade 1.2s;
+    animation: animationFade 1.2s forwards;
   }
   
   @keyframes animationZoom {
     0% {
-      transform: scale(0.85);
+      transform: scale(1);
       opacity: 0;
     }
   
     100% {
-      transform: scale(1);
+      transform: scale(1.15);
       opacity: 1;
     }
   }
@@ -303,7 +302,7 @@ body {
   
   .logo {
     width: 30%;
-    margin-top: 100px;
+    padding-top: 5%;
     position: relative;
     display: block;
     margin-left: auto;

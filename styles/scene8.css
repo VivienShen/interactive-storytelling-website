@@ -19,8 +19,6 @@ body {
   height: 100%;
 }
 
-
-
 .popup-travel {
   display: none;
   position: absolute;
@@ -31,16 +29,18 @@ body {
 
 .yes-button {
   display: none;
-  position: absolute;
-  width: 20%;
-  height: 12%;
-  left: 40%;
-  top: 50%;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
   cursor: pointer;
+  width: 20%;
+  padding-top: 25.5%;
+  margin-bottom: auto;
 }
 
 .yes-button:hover {
-  margin-top: 10px;
+  padding-top: 26%;
 }
 
 .back-button {

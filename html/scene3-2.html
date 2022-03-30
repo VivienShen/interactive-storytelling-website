@@ -20,15 +20,23 @@
             <input id="next" type='button' value='&gt;' />
         </div> -->
         
-        <div id="loading">
+        <!-- <div id="loading">
             <img id="loading-bg" src="../assets/images/scene1BG.png" alt="space background" />
             <img id="loading-image" src="../assets/images/ezgif.com-gif-maker.gif" alt="Loading..." />
             <p class="loading-txt">Loading...</p>
-        </div>
+        </div> -->
         
         <audio autoplay loop id="bg-music">
             <source src="../assets/audio/bgm/A_Fools_Theme.mp3" type="audio/mpeg" />
         </audio>
+
+        <audio autoplay id="btn-se">
+            <source src="../assets/audio/soundEffects/scene2/button.wav" type="audio/wav" />
+        </audio>
+
+        <!-- <audio autoplay id="tv-se">
+            <source src="../assets/audio/soundEffects/scene3/tv_on.wav" type="audio/wav" />
+        </audio> -->
 
         <header class="page-header">
             <div class="hamburger-menu">
@@ -129,7 +137,7 @@
         <div id="s2-6" class="scene" style="display: none;">
             <div id="bg1" class="image">
                 <img class="img-bg" src="../assets/images/scene3/news.png" alt="Prime Minister Henry">
-                <img class="back-button" src="../assets/images/scene3/back.png" onclick="window.location.href='scene3-3.html'" alt="back-button">
+                <img class="back-button" src="../assets/images/scene3/back.png" onclick="window.location.href='scene3-3.html';" alt="back-button">
             </div>
             <div class="text">
                 <div id="box2" class="speechbox-henry2" >
@@ -144,9 +152,9 @@
 
         <script>
 
-            $(window).on('load', function () {
-                $('#loading').hide();
-            }) 
+            // $(window).on('load', function () {
+            //     $('#loading').hide();
+            // }) 
 
             /*------Changing div with next and prev button------*/
 
@@ -284,6 +292,7 @@
                 document.getElementById("off").style.display = "none"; 
                 document.getElementById("on").style.display = "inline";
             }
+
         </script>
     </body>
 </html>

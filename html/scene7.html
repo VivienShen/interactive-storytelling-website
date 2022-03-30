@@ -17,12 +17,20 @@
         <source src="../assets/audio/bgm/ROYALTY_FREE_Political_Campaign_Background_Music_For_Videos___Political_Music_Royalty_Free.mp3" type="audio/mpeg" />
     </audio>
 
+    <audio autoplay loop id="crowd-se">
+        <source src="../assets/audio/soundEffects/scene7/crowd.wav" type="audio/mpeg" />
+    </audio>
+
+    <audio autoplay loop id="chant-se">
+        <source src="../assets/audio/soundEffects/scene7/crowd_chant.wav" type="audio/mpeg" />
+    </audio>
+
     
-    <div id="loading">
+    <!-- <div id="loading">
         <img id="loading-bg" src="../assets/images/scene1BG.png" alt="space background" />
         <img id="loading-image" src="../assets/images/ezgif.com-gif-maker.gif" alt="Loading..." />
         <p class="loading-txt">Loading...</p>
-    </div>
+    </div> -->
 
     <header class="page-header">
         <div class="hamburger-menu">
@@ -316,6 +324,10 @@
             document.getElementById("off").style.display = "none"; 
             document.getElementById("on").style.display = "inline";
         }
+
+        document.getElementById("bg-music").volume = 0.1;
+        document.getElementById("crowd-se").volume = 0.05;
+        document.getElementById("chant-se").volume = 0.08;
     </script>
     
 </body>

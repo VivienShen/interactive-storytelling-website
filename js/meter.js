@@ -113,7 +113,20 @@ function camClicked(){
         {
             isCaptured = true;
             console.log("overlapping");
-            document.getElementById("game-txt").innerHTML = "Captured";
+
+            setTimeout(showTxt, 200);
+            function showTxt() {
+                document.getElementById("game-txt").innerHTML = "Captured!";
+            document.getElementById("game-txt").style.color = "green";
+            }
+
+            setTimeout(removeTxt, 2000);
+
+            function removeTxt() {
+                //remove text
+                document.getElementById("game-txt").innerHTML = "";
+            }
+
             for(let i = 0; i < 5; i++){
                 score++;
             }
@@ -126,7 +139,19 @@ function camClicked(){
                 
         }else{
             isCaptured = false;
-            document.getElementById("game-txt").innerHTML = "Not Captured";
+
+            setTimeout(showTxt, 200);
+            function showTxt() {
+                document.getElementById("game-txt").innerHTML = "Not Captured :(";
+                document.getElementById("game-txt").style.color = "red";
+            }
+
+            setTimeout(removeTxt, 2000);
+
+            function removeTxt() {
+                //remove text
+                document.getElementById("game-txt").innerHTML = "";
+            }
         }
     }
 
@@ -152,7 +177,20 @@ function camClicked(){
         ){
             isCaptured = true;
             console.log("overlapping");
-            document.getElementById("game-txt").innerHTML = "Captured";
+
+            setTimeout(showTxt, 200);
+            function showTxt() {
+                document.getElementById("game-txt").innerHTML = "Captured!";
+            document.getElementById("game-txt").style.color = "green";
+            }
+
+            setTimeout(removeTxt, 2000);
+
+            function removeTxt() {
+                //remove text
+                document.getElementById("game-txt").innerHTML = "";
+            }
+
             for(let i = 0; i < 5; i++){
                 score++;
             }
@@ -165,7 +203,18 @@ function camClicked(){
                 
         }else{
             isCaptured = false;
-            document.getElementById("game-txt").innerHTML = "Not Captured";
+            setTimeout(showTxt, 200);
+            function showTxt() {
+                document.getElementById("game-txt").innerHTML = "Not Captured :(";
+                document.getElementById("game-txt").style.color = "red";
+            }
+
+            setTimeout(removeTxt, 2000);
+
+            function removeTxt() {
+                //remove text
+                document.getElementById("game-txt").innerHTML = "";
+            }
         }
 
         //console.log(rect3);
@@ -182,7 +231,20 @@ function camClicked(){
         {
             isCaptured = true;
             console.log("overlapping");
-            document.getElementById("game-txt").innerHTML = "Captured";
+
+            setTimeout(showTxt, 200);
+            function showTxt() {
+                document.getElementById("game-txt").innerHTML = "Captured!";
+            document.getElementById("game-txt").style.color = "green";
+            }
+
+            setTimeout(removeTxt, 2000);
+
+            function removeTxt() {
+                //remove text
+                document.getElementById("game-txt").innerHTML = "";
+            }
+            
             for(let i = 0; i < 5; i++){
                 score++;
             }
@@ -195,7 +257,19 @@ function camClicked(){
                 
         }else{
             isCaptured = false;
-            document.getElementById("game-txt").innerHTML = "Not Captured";
+
+            setTimeout(showTxt, 200);
+            function showTxt() {
+                document.getElementById("game-txt").innerHTML = "Not Captured :(";
+                document.getElementById("game-txt").style.color = "red";
+            }
+
+            setTimeout(removeTxt, 2000);
+
+            function removeTxt() {
+                //remove text
+                document.getElementById("game-txt").innerHTML = "";
+            }
         }
     }
 
@@ -232,7 +306,7 @@ function camClicked(){
     function appeardiv() {
         //remove image and restore camera functionality
         imageTaken.remove();
-        camera.setAttribute('onmousedown','camClicked()');
+        camera.setAttribute('onmousedown','camClicked(); playEffect("camera-se");');
     }
             
 };
@@ -280,11 +354,11 @@ var myFunction = function() {
     }
 }
 
+
 for (var i = 0; i < next.length; i++) {
     next[i].addEventListener('click', myFunction, false);
 }
 
-document.getElementById("bg-music").volume = 0.05;
 
 //Retrieving changed name from local storage
 var inputVal = localStorage.getItem("newName");
@@ -317,6 +391,8 @@ $(".fill-div").click(function() {
 });
 
 
-$(window).on('load', function () {
-    $('#loading').hide();
-}) 
+document.getElementById("bg-music").volume = 0.05;
+
+// $(window).on('load', function () {
+//     $('#loading').hide();
+// }) 

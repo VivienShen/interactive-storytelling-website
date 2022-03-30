@@ -57,72 +57,54 @@
             /* right: -65%; */
         }
 
-        .indicator{
-            background-color: rgba(232, 233, 233, 0.76);
-            
+        #fact1{
+            top: 20%;
+            left: 11%;
         }
 
-        #indicator1{
-            top: 2%;
-            left: 12.5%;
+        #fact2{
+            top: 8%;
+            left: 65%;
         }
 
-        #indicator2{
-            top: -9%;
-            left: 89%;
-        }
-
-        #indicator3{
+        #fact3{
             top: 100%;
-            left: 40%;
+            left: 38%;
         }
 
         .factBox {
             font-size: 1.05rem;
             font-family:Verdana, Geneva, Tahoma, sans-serif;
             text-align: center;
-            border: 1px solid #fff; 
+            border: 1px solid rgba(255, 255, 255, 0); 
             font-weight: 500;
             line-height: 1.4;
-            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            box-shadow: rgba(0, 0, 0, 0) 0px 3px 8px;
             color: #000;
-            border-radius: 15px;
-            background-color: rgba(255, 255, 255, 1);
-            padding: 20px;
-            position: absolute;
+            border-radius: 50px;
+            background-color: rgba(255, 255, 255, 0.897);
+            padding: 10px;
+            position: fixed;
             width:fit-content;
             max-width: 500px;
             height:fit-content;
             z-index: 1;
         }
 
+        .factBox:hover{
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            background-color: rgba(255, 255, 255, 0.925);
+            border-radius: 20px;
+            padding: 20px;
+        }
+
         .fact {
             margin-bottom: 15px;
             background-color:rgb(255, 255, 255);
             top: 45%;
-            left: 50%;
+            left: 60%;
             z-index: 10;
             position:fixed;
-        }
-
-        #fact1{
-            top: 8%;
-            left: 17%;
-        }
-
-        #fact2{
-            top: 13%;
-            left: 57%;
-        }
-
-        #fact3{
-            top: 76%;
-            left: 30%;
-        }
-
-        #fact4{
-            top: 55%;
-            left: 17%;
         }
 
         .btn-text {
@@ -146,8 +128,13 @@
             color: rgb(0, 0, 0);
         }
 
+        button .info-icon{
+            width: 40px;
+            padding-left: 6px;
+            padding-top: 6px;
+        }
         
-        button:hover .btn-icon {
+        button:hover .info-icon {
             display: none;
         }
 
@@ -211,6 +198,7 @@
             height: 100%;
             overflow: hidden;
             position: fixed;
+            z-index: 2;
             /* background-color: chartreuse; */
         }
 
@@ -225,9 +213,14 @@
 
         .gameText{
             position: fixed;
-            top: 5%;
-            left: 25%;
+            top: 35%;
+            left: 43%;
             font-size: 2rem;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+            font-weight: 600;
+            transform: rotate(-3deg);
+            z-index: 4;
         }
 
         .output{
@@ -236,14 +229,14 @@
             transform: rotate(-10deg);
             top: 25%;
             left: 35%;
-            animation-name: example;
+            animation-name: slideDown;
             animation-duration: 2s;
-            animation-delay: 1s;
+            animation-delay: 2s;
             animation-fill-mode: forwards;
         
         }
 
-        @keyframes example {
+        @keyframes slideDown {
             from {top: 25%; }
             to {top: 105%; }
         }
@@ -258,14 +251,21 @@
 <body>
 
     <audio autoplay loop id="bg-music">
-        <source src="../assets/audio/bgm/Mountain_-_JVNA.mp3" type="audio/mpeg" />
+        <source src="../assets/audio/bgm/mountain.mp3" type="audio/mpeg" />
+    </audio>
+
+    <audio autoplay loop id="forest-se">
+        <source src="../assets/audio/soundEffects/scene5/rainforest.mp3" type="audio/mpeg" />
     </audio>
     
-    <div id="loading">
+    <audio  id="camera-se">
+        <source src="../assets/audio/soundEffects/scene5/camera.wav" type="audio/wav" />
+    </audio>
+    <!-- <div id="loading">
         <img id="loading-bg" src="../assets/images/scene1BG.png" alt="space background" />
         <img id="loading-image" src="../assets/images/ezgif.com-gif-maker.gif" alt="Loading..." />
         <p class="loading-txt">Loading...</p>
-    </div>
+    </div> -->
 
     <header class="page-header">
         <div class="hamburger-menu">
@@ -330,10 +330,6 @@
 
             </div>
 
-            <div class="indicator" id = "indicator1" onclick="toggleFactBoxes('fact1');"></div>
-            <div class="indicator" id = "indicator2" onclick="toggleFactBoxes('fact2');"></div>
-            <div class="indicator" id = "indicator3" onclick="toggleFactBoxes('fact3');"></div>
-
             <!--SCROLL DOWN INDICATOR-->
             <div class="scroll-indicator">
                 <div class="scroll"></div>
@@ -341,36 +337,39 @@
             </div>
         </div>  
 
-        <p id="fact1" class="factBox fact" style="display: none;">The Amazon is also called the “Lungs of the Earth” because it produces more than 
-            20% of the world's oxygen. Because of human disturbance in the Amazon ecosystem, the forest is now releasing more than 1.1 billion tons
-            of carbon dioxide, which means the forest is releasing more greenhouse gasses than removing.
 
-            <a href="https://www.livescience.com/amazon-rainforest-accelerate-climate-change.html" target="_blank">   
-                Read more</a>
-        </p>
+        <button id="fact1" class="factBox clickable">
+            <span class="btn-icon"> 
+                <img class="info-icon" src="../../assets/images/information.png" alt="info btn icon">
+            </span>
+            <span class="btn-text">The Amazon is also called the “Lungs of the Earth” because it produces more than 
+                20% of the world's oxygen. Because of human disturbance in the Amazon ecosystem, the forest is now releasing more than 1.1 billion tons
+                of carbon dioxide, which means the forest is releasing more greenhouse gasses than removing.
+                <a href="https://www.livescience.com/amazon-rainforest-accelerate-climate-change.html" target="_blank">   
+                    Read more</a></span>
+        </button> 
 
-        <!-- <button id="fact4" class="factBox clickable">
-            <span class="btn-icon">Fact</span>
-            <span class="btn-text">The Amaozn is also called the "Lungs of the Earth" because ...
-                <a href="https://www.wwf.org.uk/learn/wildlife/polar-bears" target="_blank">   
-                World Wildlife Fund - polar bears</a></span>
-        </button>  -->
+        <button id="fact2" class="factBox clickable">
+            <span class="btn-icon"> 
+                <img class="info-icon" src="../../assets/images/information.png" alt="info btn icon">
+            </span>
+            <span class="btn-text">The Amazon is one of the last places on Earth that’s home to jaguars, harpy eagles, 
+                pink river dolphins, sloths and more. It contains 1/10 known species on Earth, like 40,000 plant species and 370 types of reptiles. Because 
+                of the increased temperatures and reduced rainfalls, it may reduce habitats for these species during the dry warm months.
+                <a href="https://www.worldwildlife.org/stories/what-animals-live-in-the-amazon-and-8-other-amazon-facts#:~:text=The%20Amazon%20is%20one%20of,than%20370%20types%20of%20reptiles." target="_blank">   
+                    Read more</a></span>
+        </button> 
 
-        <p id="fact2" class="factBox fact" style="display: none;">The Amazon is one of the last places on Earth that’s home to jaguars, harpy eagles, 
-            pink river dolphins, sloths and more. It contains 1/10 known species on Earth, like 40,000 plant species and 370 types of reptiles. Because 
-            of the increased temperatures and reduced rainfalls, it may reduce habitats for these species during the dry warm months.
-
-            <a href="https://www.worldwildlife.org/stories/what-animals-live-in-the-amazon-and-8-other-amazon-facts#:~:text=The%20Amazon%20is%20one%20of,than%20370%20types%20of%20reptiles." target="_blank">   
-                Read more</a>
-        </p>
-
-        <p id="fact3" class="factBox fact" style="display: none;">Almost all wildfires in the Amazon are deliberately ignited by people, who typically 
-            burn trees after cutting them down or, less commonly, when they want to clear a large part of the forest.
-
-            <a href="https://www.vox.com/down-to-earth/2021/8/27/22639885/amazon-rainforest-fires-climate-change-2021
-            " target="_blank">   
-            Read more</a>
-        </p>
+        <button id="fact3" class="factBox clickable">
+            <span class="btn-icon"> 
+                <img class="info-icon" src="../../assets/images/information.png" alt="info btn icon">
+            </span>
+            <span class="btn-text">Almost all wildfires in the Amazon are deliberately ignited by people, who typically 
+                burn trees after cutting them down or, less commonly, when they want to clear a large part of the forest.
+                <a href="https://www.vox.com/down-to-earth/2021/8/27/22639885/amazon-rainforest-fires-climate-change-2021
+                " target="_blank">   
+                Read more</a></span>
+        </button> 
 
         <div class="cam_container" id="parent-cam">
             <img class="camera-capture" style="display: none;" id="cam" onclick="" onmousedown="camClicked()" onmouseup="camReleased()" src="../assets/images/scene5/cam-capture.png">
@@ -396,7 +395,7 @@
         </div>
     </div>
 
-    <p class="gameText" id="game-txt">Game Status</p>
+    <p class="gameText" id="game-txt"></p>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
@@ -439,8 +438,13 @@
             pin: true,
             duration: 50
         },'front')
-        .to(".scroll-indicator", {
+        .to(".scroll-text", {
             opacity: 0,
+            duration: 2
+        },'front')
+        .to(".scroll", {
+            y: "-370%",
+            scale: 0.5,
             duration: 2
         },'front')
         .to(".image5", {
@@ -448,11 +452,11 @@
             pin: true,
             duration: 50
         },'-=30')
-        .to("#indicator1", {
-            x: "-800%",
+        .to("#fact1", {
+            left: "-10%",
             pin: true,
             duration: 30
-        },'-=70')
+        },'-=53')
         .to(".image6", {
             x: "50%",
             pin: true,
@@ -463,11 +467,11 @@
             pin: true,
             duration: 50
         },'-=40')
-        .to("#indicator2", {
-            x: "600%",
+        .to("#fact2", {
+            left: "100%",
             pin: true,
             duration: 20
-        },'-=80')
+        },'-=76')
         .to(".image8",{
             x: "66%",
             pin: true,
@@ -475,30 +479,20 @@
         },'-=50')
         .to("#box4", {
             opacity: 1,
-            display: "block",
             duration: 2
-        },'-=79')
+        },'-=80')
         .to("#box4", {
             opacity: 0,
-            display: "none",
             duration: 2
-        },'-=65')
+        },'-=70')
         .to("#box5", 5, {
             opacity: 1,
-            display: "block",
             duration: 2
-        },'-=65')
-
+        },'-=70')
         .to(".image2-2", {
             y: "-100%",
             pin: true,
             duration: 50
-            
-        },'front')
-        .to(".image2-1", {
-            y: "-100%",
-            pin: true,
-            duration: 80
             
         },'front')
         .to(".image2",{
@@ -513,16 +507,14 @@
         },'front')
         .to("#box5", 5, {
             opacity: 0,
-            display: "none",
             duration: 2
         },'-=45')
-        .to("#indicator3", {
-            y: "-1150%",
+        .to("#fact3", {
+            top: "62%",
             pin: true,
             duration: 20
         },'-=60')
 
-        document.getElementById("bg-music").volume = 0.05;
 
         //Retrieving changed name from local storage
         var inputVal = localStorage.getItem("newName");
@@ -578,12 +570,10 @@
             
         }
 
-        var $window = $(window);
         var cam = document.getElementById("camera-icon");
         var exp = document.getElementById("cam-explanation");
 
         var $window = $(window);
-        var cam = document.getElementById("camera-icon");
 
         $(window).on('scroll', function() {
             $topOffset = $(this).scrollTop();
@@ -648,6 +638,14 @@
             document.getElementById("off").style.display = "none"; 
             document.getElementById("on").style.display = "inline";
         }
+
+        function playEffect(sound) {
+
+            var soundEffect2 = document.getElementById(sound);
+            soundEffect2.play();
+
+        }
+
 
     </script>
 

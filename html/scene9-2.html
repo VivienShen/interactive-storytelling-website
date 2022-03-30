@@ -13,15 +13,19 @@
 </head>
 <body>
 
+    <audio autoplay loop id="bg-music">
+        <source src="../assets/audio/soundEffects/scene9/Main.mp3" type="audio/mpeg" />
+    </audio>
+
         <div id="bg" class="image-2">
             <img class="img-bg2" src="../assets/images/scene9/background.png" alt="parallax scene background">
         </div> 
         
-        <div id="loading">
+        <!-- <div id="loading">
             <img id="loading-bg" src="../assets/images/scene1BG.png" alt="space background" />
             <img id="loading-image" src="../assets/images/ezgif.com-gif-maker.gif" alt="Loading..." />
             <p class="loading-txt">Loading...</p>
-        </div>
+        </div> -->
     
         <header class="page-header">
             <div class="hamburger-menu">
@@ -105,14 +109,10 @@
                     <p>While Aeryn's future is undetermined, you have done the best you can do to create a better life for her and others living on earth and space. </p>
                 </div>
             </div>
-
-            <!--SCROLL DOWN INDICATOR-->
-            <div class="scroll-indicator">
-                <div class="scroll"></div>
-                <p class="scroll-text">Scroll Down</p>
-            </div>
         
         </Section>
+
+        
     
         <img class="image7" id="img" src="../assets/images/scene9/divider-03.png"> 
     
@@ -157,7 +157,7 @@
                 <img class="image3-10" src="../assets/images/scene9/amazon/leaves_frontLetter.png">
                 <img class="image3-15" src="../assets/images/scene9/amazon/slothLetter.png">
                 
-                <img class="bg4" src="../assets/images/scene1/scene1BG.png" alt="space background"> 
+                <img class="bg4" src="../assets/images/scene1BG.png" alt="space background"> 
                 
                 <img class="envelope_top" src="../assets/images/scene9/letter_top-01.png">
                 <img class="contract_end" src="../assets/images/scene9/contract_lastFrame.png">
@@ -184,6 +184,11 @@
 
         <div id="nextBtn next2" class="btn2 btn next2" onclick= "endScene()" style="display: none;"></div>
 
+        <!--SCROLL DOWN INDICATOR-->
+        <div class="scroll-indicator">
+            <div class="scroll"></div>
+            <p class="scroll-text">Scroll Down</p>
+        </div>
     
     <div class="inventory">
         <img id="inventory-bg" src="../assets/images/scene6/inventory-panel.png" alt="inventory box">
@@ -202,9 +207,9 @@
     
     <script>
 
-        $(window).on('load', function () {
-            $('#loading').hide();
-        }) 
+        // $(window).on('load', function () {
+        //     $('#loading').hide();
+        // }) 
         
         const tl = gsap.timeline({
             scrollTrigger: {
@@ -300,9 +305,14 @@
             display: "block",
             scrub: 2
         },'start')
-        .to(".scroll-indicator", {
+        .to(".scroll-text", {
             opacity: 0,
-            duration: 2
+            duration: 0.03
+        },'start')
+        .to(".scroll", {
+            y: "-180%",
+            scale: 0.5,
+            duration: 0.1
         },'start')
         
         const tl2 = gsap.timeline({
@@ -581,6 +591,10 @@
                     duration: 1
                     
                 }, '-=1')
+                .to(".scroll", {
+                    opacity: 0,
+                    duration: 2
+                },'-=7')
 
             next.style.display = "none";
 

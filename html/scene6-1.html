@@ -17,11 +17,15 @@
         <source src="../assets/audio/bgm/Serenity_-_Aakash_Gandhi.mp3" type="audio/mpeg" />
     </audio>
     
-    <div id="loading">
+    <!-- <div id="loading">
         <img id="loading-bg" src="../assets/images/scene1BG.png" alt="space background" />
         <img id="loading-image" src="../assets/images/ezgif.com-gif-maker.gif" alt="Loading..." />
         <p class="loading-txt">Loading...</p>
-    </div>
+    </div> -->
+
+    <audio id="phone-se">
+        <source src="../assets/audio/soundEffects/scene6/phone-ring.wav" type="audio/mpeg" />
+    </audio>
     
     <header class="page-header">
         <div class="hamburger-menu">
@@ -67,7 +71,7 @@
         <div id="bg1" class="image">
             <img class="img-bg" src="../assets/images/scene6/room.png" alt="in the living room">
         </div> 
-        <img id="rPhone" class="clickable btn" src="../assets/images/scene6/phone ring.png" alt="ringing phone">
+        <img id="rPhone" onclick="pauseEffect('phone-se')" class="clickable btn" src="../assets/images/scene6/phone ring.png" alt="ringing phone">
     </div>
 
     <!--Frame 2-->
@@ -141,7 +145,7 @@
         </div>
     </div>
 
-    <div class="dividers" id="divider1" style="display: block;" >
+    <div class="dividers" id="divider1" style="display: block;" onclick="playEffect('phone-se')" >
         <a href="#" id="fill" class="fill-div">
             <img id="ch1" class="chapter" src="../assets/images/chapter 4.png" alt="Chapter 4">
             <p class="chapStart">Click anywhere to close</p>
@@ -150,6 +154,7 @@
 
     <script src="../js/meter.js"></script>
     <script>
+
         function soundOff() {
             document.getElementById("bg-music").muted = true;  
             document.getElementById("on").style.display = "none";
@@ -160,6 +165,20 @@
             document.getElementById("bg-music").muted = false; 
             document.getElementById("off").style.display = "none"; 
             document.getElementById("on").style.display = "inline";
+        }
+
+        function playEffect(sound) {
+
+            var soundEffect2 = document.getElementById(sound);
+            soundEffect2.play();
+
+        }
+
+        function pauseEffect(sound) {
+
+            var soundEffect2 = document.getElementById(sound);
+            soundEffect2.pause();
+
         }
     </script>
 </body>

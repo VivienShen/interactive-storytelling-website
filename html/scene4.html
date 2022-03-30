@@ -18,12 +18,24 @@
         <audio autoplay loop id="bg-music">
             <source src="../assets/audio/bgm/No.4_Piano_Journey_-_Esther_Abrami.mp3" type="audio/mpeg" />
         </audio>
-        
-        <div id="loading">
+
+        <audio id="add-se">
+            <source src="../assets/audio/soundEffects/scene4/add-to-inventory.wav" type="audio/mpeg" />
+        </audio>
+
+        <audio autoplay loop id="lab-se">
+            <source src="../assets/audio/soundEffects/scene4/lab.ogg" type="audio/mpeg" />
+        </audio>
+
+        <audio  id="btn-se">
+            <source src="../assets/audio/soundEffects/scene2/button.wav" type="audio/wav" />
+        </audio>
+    
+        <!-- <div id="loading">
             <img id="loading-bg" src="../assets/images/scene1BG.png" alt="space background" />
             <img id="loading-image" src="../assets/images/ezgif.com-gif-maker.gif" alt="Loading..." />
             <p class="loading-txt">Loading...</p>
-        </div>    
+        </div>     -->
 
         <header class="page-header">
             <div class="hamburger-menu">
@@ -130,6 +142,10 @@
             <div id="bg4" class="image">
                 <img class="img-bg" src="../assets/images/scene4/s4-bg2.png" alt="Laboratory room wall">
             </div>
+            <video class="clock" autoplay loop>
+                <source src="../assets/motionGraphics/clock.mp4" alt="clock ticking" type="video/mp4">
+                Your browser does not support the video tag.  
+            </video>
             <div id="headerText" class="text" >
                 <h1 class="center-text">1 Hour Later...</h1>
             </div>
@@ -267,15 +283,15 @@
                 <img class="img-bg" src="../assets/images/scene4/cut8.png" alt="Laboratory counter top">
             </div>
             <div id="items">
-                <img id="map" class="item clickable" src="../assets/images/scene4/map1.png" title="map" onclick="mapOnclick()">
-                <img id="camera" class="item clickable" src="../assets/images/scene4/gopro1.png" title="camera">
+                <img id="map" class="item clickable" src="../assets/images/scene4/map1.png" title="map" onclick="mapOnclick(); playEffect('add-se')">
+                <img id="camera" class="item clickable" src="../assets/images/scene4/gopro1.png" title="camera" onclick=" playEffect('add-se')">
                 <img id="explained" class="explained" src="../assets/images/scene4/explained.png" alt="popularity meter explained">
             </div>
             <div class="inventory">
                 <img id="inventory-bg" src="../assets/images/scene4/inventory.png" alt="inventory box">
                 <div class="icons">
                     <img id="camera-icon" class="icon" src="../assets/images/scene4/icon-cam.png" alt="camera item" style="display: none;">
-                    <img id="map-icon" class="icon clickable" src="../assets/images/scene4/icon-map.png" alt="map item" style="display: none;" onclick= "openCh3(); window.location.href='scene5.html'">
+                    <img id="map-icon" class="icon clickable" src="../assets/images/scene4/icon-map.png" alt="map item" style="display: none;" onclick= "openCh3(); playEffect('btn-se'); window.location.href='scene5.html'">
                     <img id="camera-lock" class="lock" src="../assets/images/scene4/lock.png" alt="camera item" style="display: block;">
                     <img id="map-lock" class="lock" src="../assets/images/scene4/lock.png" alt="map item" style="display: block;" >
                     <img id="teleport-icon" class="icon" src="../assets/images/scene4/icon.png" alt="teleport button" style="display: block;">
@@ -289,9 +305,9 @@
 
         <script>
 
-            $(window).on('load', function () {
-                $('#loading').hide();
-            }) 
+            // $(window).on('load', function () {
+            //     $('#loading').hide();
+            // }) 
 
             /*------Changing div with next and prev button------*/
 
@@ -402,6 +418,10 @@
 
             document.getElementById("bg-music").volume = 0.05;
 
+            document.getElementById("lab-se").volume = 0.15;
+
+            document.getElementById("add-se").volume = 0.15;
+
             //Retrieving changed name from local storage
             var inputVal = localStorage.getItem("newName");
             console.log(inputVal);
@@ -436,6 +456,13 @@
                 document.getElementById("bg-music").muted = false; 
                 document.getElementById("off").style.display = "none"; 
                 document.getElementById("on").style.display = "inline";
+            }
+
+            function playEffect(sound) {
+
+                var soundEffect2 = document.getElementById(sound);
+                soundEffect2.play();
+
             }
 
         </script>

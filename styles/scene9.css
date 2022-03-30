@@ -727,7 +727,7 @@ progress:after {
 
 /*SCROLL INDICATOR*/
 .scroll-indicator{
-    position: absolute;
+    position: fixed;
     top: 20%;
     left: 45%;
 }

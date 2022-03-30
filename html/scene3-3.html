@@ -20,14 +20,22 @@
             <input id="next" type='button' value='&gt;' />
         </div> -->
 
-        <div id="loading">
+        <!-- <div id="loading">
             <img id="loading-bg" src="../assets/images/scene1BG.png" alt="space background" />
             <img id="loading-image" src="../assets/images/ezgif.com-gif-maker.gif" alt="Loading..." />
             <p class="loading-txt">Loading...</p>
-        </div>    
+        </div>     -->
         
         <audio autoplay loop id="bg-music">
             <source src="../assets/audio/bgm/Serenity_-_Aakash_Gandhi.mp3" type="audio/mpeg" />
+        </audio>
+
+        <audio autoplay id="btn-se">
+            <source src="../assets/audio/soundEffects/scene2/button.wav" type="audio/wav" />
+        </audio>
+
+        <audio id="pickup-se">
+            <source src="../assets/audio/soundEffects/scene3/paper-poster-pickup.mp3" type="audio/mpeg" />
         </audio>
 
         <header class="page-header">
@@ -72,11 +80,11 @@
         <div id="s2-1" class="scene" style="display: block;">
             <div>
                 <img class="image" src="../assets/images/scene3/scene3-2.png" alt="Inside a room">
-                <img class="flyer1" onclick="loadHenry()" src="../assets/images/scene3/flyer 1.png" alt="flyer 1" title="See Campaign Flier">
-                <img class="flyer2" onclick="loadEvelyn()" src="../assets/images/scene3/flyer 2.png" alt="flyer 2" title="See Campaign Flier">
+                <img class="flyer1" onclick="loadHenry(); playEffect('pickup-se')" src="../assets/images/scene3/flyer 1.png" alt="flyer 1" title="See Campaign Flier">
+                <img class="flyer2" onclick="loadEvelyn(); playEffect('pickup-se')" src="../assets/images/scene3/flyer 2.png" alt="flyer 2" title="See Campaign Flier">
                 <img class="tv" src="../assets/images/scene3/tv1.png" onclick="window.location.href='scene3-2.html'" alt="tv" title="Watch T.V">
-                <img class="poster1" id="Evelyn" onclick="myFunction2()" src="../assets/images/scene3/poster1.png" alt="poster1">
-                <img class="poster2" id="Henry" onclick="myFunction2()" src="../assets/images/scene3/poster2.png" alt="poster2">
+                <img class="poster1" id="Evelyn" onclick="myFunction2();" src="../assets/images/scene3/poster1.png" alt="poster1">
+                <img class="poster2" id="Henry" onclick="myFunction2();" src="../assets/images/scene3/poster2.png" alt="poster2">
             </div>
             
         </div>
@@ -98,13 +106,13 @@
                 <img class="img-bg" src="../assets/images/scene3/scene3-4.png" alt="Girl sitting on a sofa">
             </div>
             <img class="popup-travel" id="popup1" src="../assets/images/scene3/scene3-5-1.png" alt="would you like to travel">
-            <img class="yes-button" id="popup2" onclick="window.location.href='portal2.html'" src="../assets/images/scene3/yes.png" alt="yes button">
+            <img class="yes-button" id="popup2" onclick="window.location.href='scene4.html'; playEffect('btn-se')" src="../assets/images/scene3/yes.png" alt="yes button" style="display:none;">
             <div class="inventory">
                 <img id="inventory-bg" src="../assets/images/scene3/inventory.png" alt="inventory box">
                 <div class="icons">
                     <img id="camera-lock" class="lock" src="../assets/images/scene3/lock.png" alt="camera item" style="display: block;">
                     <img id="map-lock" class="lock" src="../assets/images/scene3/lock.png" alt="map item" style="display: block;">
-                    <img id="app-icon" class="icon" src="../assets/images/scene3/icon.png" alt="app item" style="display: block;" onclick="loadPopup()">
+                    <img id="app-icon" class="icon" src="../assets/images/scene3/icon.png" alt="app item" style="display: block;" onclick="loadPopup(); playEffect('btn-se')">
                 </div>
             </div>
         </div>
@@ -113,9 +121,9 @@
         
         <script>
 
-            $(window).on('load', function () {
-                $('#loading').hide();
-            }) 
+            // $(window).on('load', function () {
+            //     $('#loading').hide();
+            // }) 
 
             /*------Changing div with next and prev button------*/
 
@@ -261,6 +269,13 @@
                 document.getElementById("bg-music").muted = false; 
                 document.getElementById("off").style.display = "none"; 
                 document.getElementById("on").style.display = "inline";
+            }
+
+            function playEffect(sound) {
+
+                var soundEffect2 = document.getElementById(sound);
+                soundEffect2.play();
+
             }
         </script>
     </body>

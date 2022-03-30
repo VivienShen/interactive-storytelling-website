@@ -18,11 +18,11 @@
             <source src="../assets/audio/bgm/Serenity_-_Aakash_Gandhi.mp3" type="audio/mpeg" />
         </audio>
 
-        <div id="loading">
+        <!-- <div id="loading">
             <img id="loading-bg" src="../assets/images/scene1BG.png" alt="space background" />
             <img id="loading-image" src="../assets/images/ezgif.com-gif-maker.gif" alt="Loading..." />
             <p class="loading-txt">Loading...</p>
-        </div>
+        </div> -->
 
         <header class="page-header">
             <div class="hamburger-menu">
@@ -75,25 +75,14 @@
             </div>
         </div>
 
-        <div id="s8-2" class="scene" style="display: none;">
-            <div id="bg1" class="image">
-                <img class="img-bg" src="../assets/images/scene8/2-1.png" alt="Poll result of the election1">
-            </div>
+        <div id="s8-2" class="scene image" style="display: none;">
+            <video class="img-bg" autoplay >
+                <source src="../assets/motionGraphics//polls_1.mp4" alt="poll results" type="video/mp4">
+                Your browser does not support the video tag.  
+            </video>
         </div>
 
         <div id="s8-3" class="scene" style="display: none;">
-            <div id="bg1" class="image">
-                <img class="img-bg" src="../assets/images/scene8/2-2.png" alt="Poll result of the election2">
-            </div>
-        </div>
-
-        <div id="s8-4" class="scene" style="display: none;">
-            <div id="bg1" class="image">
-                <img class="img-bg" src="../assets/images/scene8/2-3.png" alt="Poll result of the election3">
-            </div>
-        </div>
-
-        <div id="s8-5" class="scene" style="display: none;">
             <div id="bg1" class="image">
                 <img class="img-bg" src="../assets/images/scene8/3.png" alt="Evelyn giving speech on TV">
             </div>
@@ -105,7 +94,7 @@
             </div>
         </div>
 
-        <div id="s8-6" class="scene" style="display: none;">
+        <div id="s8-4" class="scene" style="display: none;">
             <div id="bg1" class="image">
                 <img class="img-bg" src="../assets/images/scene8/3.png" alt="Evelyn giving speech on TV">
             </div>
@@ -118,7 +107,7 @@
             </div>
         </div>
 
-        <div id="s8-7" class="scene" style="display: none;">
+        <div id="s8-5" class="scene" style="display: none;">
             <div id="bg1" class="image">
                 <img class="img-bg" src="../assets/images/scene8/4-1.png" alt="Aeryn cheering on the couch, her phone rings">
             </div>
@@ -129,7 +118,7 @@
             </div>
         </div>
 
-        <div id="s8-8" class="scene" style="display: none;">
+        <div id="s8-6" class="scene" style="display: none;">
             <div id="bg1" class="image">
                 <img class="img-bg" src="../assets/images/scene8/5.png" alt="Aeryn pick up the phone">
             </div>
@@ -141,12 +130,12 @@
             </div>
         </div>
 
-        <div id="s8-9" class="scene" style="display: none;">
+        <div id="s8-7" class="scene" style="display: none;">
             <div id="bg1" class="image">
                 <img class="img-bg" src="../assets/images/scene8/5.png" alt="parliament teleport selection">
             </div>
             <img class="popup-travel" id="popup1" src="../assets/images/scene8/modal.png" alt="would you like to travel">
-            <img class="yes-button" id="popup2" onclick="window.location.href='scene9.html'" src="../assets/images/scene8/yes.png" alt="yes button">
+            <img class="yes-button" id="popup2" onclick="window.location.href='scene9.html'" src="../assets/images/scene8/yes.png" alt="yes button" style="display:none">
             <div class="inventory">
                 <img id="inventory-bg" src="../assets/images/scene8/inventory-2.png" alt="inventory box">
                 <div class="icons">
@@ -168,9 +157,9 @@
 
         <script>
 
-            $(window).on('load', function () {
-                $('#loading').hide();
-            }) 
+            // $(window).on('load', function () {
+            //     $('#loading').hide();
+            // }) 
 
             //Chapter Divider
             var ch1 = document.getElementById("ch1");
