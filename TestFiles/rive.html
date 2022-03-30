@@ -28,23 +28,35 @@
 <body>
 
     <div class="container">
-        <canvas id="canvas" width="700" height="700" ></canvas>
+        <canvas id="canvas" width="1200" height="1200" ></canvas>
         <div class="content">
             <a href="#">Upload Now</a>
         </div>
         <p></p>
-
     </div>
     
 
     <script src="https://unpkg.com/rive-js"></script>
     <script>
 
-        new rive.Rive({
-            src: 'letter.riv',
+        const btn = document.querySelector('a');
+
+        const r = new rive.Rive({
+            src: 'envelopeC.riv',
             canvas: document.getElementById('canvas'),
-            autoplay: true
+            autoplay: true,
+            stateMachines: 'State Machine 1',
+            fit: rive.Fit.cover,
+            onLoad: (_) => {
+                const inputs = r.stateMachineInputs('State Machine 1')
+                const trigger = inputs.find(i => i.name === 'Trigger 1')
+                btn.onclick = (e) => {
+                    e.preventDefault();
+                    trigger.fire();
+                }
+            }
         });
+
     </script>
 </body>
 </html>

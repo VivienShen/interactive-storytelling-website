@@ -331,7 +331,7 @@ body {
   .btn {
     min-width: 160px;
     min-height: 50px;
-    font-family: "Nunito", sans-serif;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 1.3px;
@@ -345,7 +345,7 @@ body {
     cursor: pointer;
     outline: none;
     position: relative;
-    padding: 10px;
+    padding: 1% 1%;
     margin-top: 50px;
     z-index: 1;
   }

@@ -572,6 +572,7 @@
 
         var cam = document.getElementById("camera-icon");
         var exp = document.getElementById("cam-explanation");
+        var body = document.querySelector("body");
 
         var $window = $(window);
 
@@ -581,7 +582,7 @@
             console.log($topOffset);
 
             //Make Camera Glow At end of scroll
-            if($topOffset > 9500){
+            if($topOffset > body.scrollHeight * 0.60){
                 cam.id = "icon-glow";
                 cam.setAttribute('onclick','openCam()');
                 exp.style.display = "block";

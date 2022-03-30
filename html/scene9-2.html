@@ -159,13 +159,16 @@
                 
                 <img class="bg4" src="../assets/images/scene1BG.png" alt="space background"> 
                 
-                <img class="envelope_top" src="../assets/images/scene9/letter_top-01.png">
+                <!-- <img class="envelope_top" src="../assets/images/scene9/letter_top-01.png">
                 <img class="contract_end" src="../assets/images/scene9/contract_lastFrame.png">
                 <img class="contract_fold1" src="../assets/images/scene9/letter_fold1-02.png">
                 <img class="contract_fold2" src="../assets/images/scene9/letter_fold2-02.png">
                 <img class="envelope_btm" src="../assets/images/scene9/letter_bottom-01.png">
 
-                <img class="envelope_closed" src="../assets/images/scene9/letter_closed-02.png"> 
+                <img class="envelope_closed" src="../assets/images/scene9/letter_closed-02.png">  -->
+
+                <canvas id="canvas" width="2000" height="2000" ></canvas>
+
                 <div class="end-text-container">
                     <p class="end-text">The End</p>
                 </div>
@@ -176,7 +179,9 @@
                     </div>
                 </div>
 
-                <button class="restart-btn" onclick="window.location.href='intro.html'" style="display:none;">Restart?</button>
+                <div class="restart-btn" style="display:none">
+                    <button class="endBtn" onclick="window.location.href='intro.html'; removeLS();">Restart?</button>
+                </div>
                 
             </div>
             
@@ -204,6 +209,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/MotionPathPlugin.min.js"></script>
+    <script src="https://unpkg.com/rive-js"></script>
     
     <script>
 
@@ -509,88 +515,16 @@
                     scrub: 1,
                     duration: 2
                 })
-                .to(".envelope_top", {
-                    y: "-100%",
-                    scrub: 1,
-                    duration: 2
-                }, '-=1')
-                .to(".envelope_btm", {
-                    y: "-100%",
-                    scrub: 1,
-                    duration: 2
-                    
-                }, '-=2')
-                .to(".contract_end", {
-                    display: "block",
-                    scrub: 1,
-                    duration: 2
-                }, '-=1.5')
-                .to(".contract_end", {
-                    y: "92%",
-                    scrub: 1,
-                    duration: 2
-                    
-                }, '-=1.5')
-                .to(".contract_end", {
-                    opacity: 0,
-                    duration: 2
-                    
-                },"envelope")
-                .to(".contract_fold1", {
-                    opacity: 1,
-                    duration: 2
-                    
-                }, 'envelope')
-                .to(".contract_fold1", {
-                    opacity: 0,
-                    duration: 2
-                    
-                }, 'envelope')
-                .to(".contract_fold2", {
-                    opacity: 1,
-                    duration: 2
-                    
-                }, 'envelope')
-                .to(".contract_fold2", {
-                    y: "33%",
-                    x: "5%",
-                    duration: 2
-                    
-                }, '-=1.5')
-                .to(".envelope_closed", {
-                    opacity: 1,
-                    duration: 0.5
-                    
-                }, '-=1')
                 .to(".end-text-container", {
                     display: "block",
                     duration: 0.5
                     
-                }, '-=1')
-                .to(".envelope_top", {
-                    opacity: 0,
-                    duration: 1
-                }, '-=1')
-                .to(".envelope_btm", {
-                    opacity: 0,
-                    duration: 1
-                    
-                }, '-=1')
-                .to(".contract_end", {
-                    opacity: 0,
-                    duration: 1
-                    
-                }, '-=1')
-                .to(".contract_fold2", {
-                    opacity: 0,
-                    duration: 1
-                    
-                }, '-=1')
+                }, '+=3')
                 .to(".restart-btn", {
                     display: "block",
                     duration: 1
                     
-                }, '-=1')
+                }, '+=2')
                 .to(".scroll", {
                     opacity: 0,
                     duration: 2
@@ -600,26 +534,40 @@
 
             var $window = $(window);
 
-            $(window).on('scroll', function() {
-                $topOffset = $(this).scrollTop();
-            
-                console.log($topOffset);
+             //ENDING ANIMATION
 
-                if($topOffset > 6100){
-                    next.style.display = "none";
-                }
-            
-            });
+            setTimeout(startAnim, 2000);
+
+            function startAnim() {
+                const r = new rive.Rive({
+                    src: '../assets/envEnd.riv',
+                    canvas: document.getElementById('canvas'),
+                    autoplay: true,
+                    stateMachines: 'State Machine 1',
+                    fit: rive.Fit.cover,
+                    onLoad: (_) => {
+                        const inputs = r.stateMachineInputs('State Machine 1')
+                        const trigger = inputs.find(i => i.name === 'Trigger 1')
+                
+                            trigger.fire();
+                        
+                    }
+                });
+            }
+
         }
 
         var $window = $(window);
+
+        var body = document.querySelector("body");
 
         $(window).on('scroll', function() {
             $topOffset = $(this).scrollTop();
         
             console.log($topOffset);
+            console.log(body.scrollHeight);
 
-            if($topOffset > 6100){
+            if($topOffset > body.scrollHeight * 0.85){
                 next.style.display = "block";
             }else{
                 next.style.display = "none";
@@ -658,6 +606,10 @@
         document.getElementById("bg-music").muted = false; 
         document.getElementById("off").style.display = "none"; 
         document.getElementById("on").style.display = "inline";
+    }
+
+    function removeLS(){
+        window.localStorage.clear();
     }
 
     </Script>
