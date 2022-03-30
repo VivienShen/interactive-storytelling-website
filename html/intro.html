@@ -45,7 +45,7 @@
         Your browser does not support the video tag.
     </video>
 
-    <img class="logo" src="../assets/images/scene1/earthLetter.png">
+    <img class="logo" id="logo" src="../assets/images/scene1/earthLetter.png">
         
     <!-- <div class="mouse_scroll">
 		<div>
@@ -95,28 +95,31 @@
         </div>  
     </header>
 
-    <div class="start-btn">
+    <div class="start-btn" id="start">
         <button class="btn" onclick="scrollWin(); playAudio()">Click to Start</button>
     </div>
     
-    <div class="envelope">
+    <!-- <div class="envelope">
         <img class="envelope-closed" src="../assets/images/scene1/envelopeClosedStart-04.png">
         <img class="envelope-open" src="../assets/images/scene1/envelope_front2-03-03.png">
         <img class="envelope-plants" src="../assets/images/scene1/plantsLetter-03.png">
         <img class="letter" src="../assets/images/scene1/letterStart-03.png">
         <img class="envelope-open" src="../assets/images/scene1/envelope_front-03.png">
         <canvas id ="canvas" width="700" height="700"></canvas>
-    </div>
+    </div> -->
 
-    <div class="btn2" onclick="openCh0(); window.location.href='prologue.html'">
+    <canvas id="canvas" width="2000" height="2000" ></canvas>
+
+    <div class="btn2" id="next" style="display:none" onclick="openCh0(); window.location.href='prologue.html'">
         <span class="tooltiptext">Click here to go next or use the left and right arrow keys</span>
-        <span class="disclaimer">WHILE INFORMATION ON GLOBAL WARMING IN THIS STORY IS BASED ON CURRENT RESEARCH, THE CHARACTERS AND SITUATIONS ARE FICTIONAL.</span>
     </div> 
+
+    <p class="disclaimer" id="disclaimer" style="display:none">PLEASE NOTE THAT WHILE INFORMATION ON GLOBAL WARMING IN THIS STORY IS BASED ON CURRENT RESEARCH, THE CHARACTERS AND SITUATIONS ARE FICTIONAL.</p>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
 
-    <script src="https://unpkg.com/rive-js"></script> 
+    <script src="https://unpkg.com/rive-js"></script>
 
     <script>
 
@@ -158,7 +161,40 @@
 
         function scrollWin() {
 
-            window.scrollTo(0, 1700);
+            // window.scrollTo(0, 1700);
+
+            var disclaimer = document.getElementById("disclaimer");
+            var btn = document.getElementById("start");
+            var logo = document.getElementById("logo");
+            var next = document.getElementById("next");
+
+            
+            btn.style.display = "none";
+            logo.style.opacity = 0;
+
+            setTimeout(startAnim, 500);
+
+            function startAnim() {
+
+                disclaimer.style.display ="block";
+                next.style.display ="block";
+            }
+
+            //Intro ANIMATION
+            const r = new rive.Rive({
+                    src: '../assets/envStart.riv',
+                    canvas: document.getElementById('canvas'),
+                    autoplay: true,
+                    stateMachines: 'State Machine 2',
+                    fit: rive.Fit.cover,
+                    onLoad: (_) => {
+                        const inputs = r.stateMachineInputs('State Machine 2')
+                        const trigger = inputs.find(i => i.name === 'Trigger 2')
+                
+                            trigger.fire();
+                        
+                    }
+                });
 
         } 
 
