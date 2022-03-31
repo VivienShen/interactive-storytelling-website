@@ -94,7 +94,7 @@
             </div>
             <div class="text">
                 <div id="box1" class="speechbox-reporter" >
-                    <p><b>Reporter:</b> Mr. Prime minister, what about scientist Robin? Is she in prison? Are you scared of her?
+                    <p><b>Reporter:</b> Prime minister, what about scientist Robin? Is she in prison? Are you scared of her?
                     </p>
                 </div>
             </div>
@@ -106,7 +106,7 @@
             </div>
             <div class="text">
                 <div id="box2" class="speechbox-henry2" >
-                    <p><b>Henry:</b> As you know, Robin has been spewing misinformation about the earth warming, and global warming bla bla bla, when we know the earth has always been warming it’s not an actual problem.</p>
+                    <p><b>Henry:</b> As you know, Robin has been spewing misinformation about the Earth warming, and global warming bla bla bla, when we know the Earth has always been warming it’s not an actual problem.</p>
                 </div>
             </div>
         </div>
@@ -250,9 +250,18 @@
             var inputVal = localStorage.getItem("newName");
             console.log(inputVal);
 
-            var all = document.querySelectorAll('.speechbox');
+            if (inputVal == "" || inputVal == null){
 
-            all.forEach(x => x.textContent = x.textContent.replace(/Aeryn/gi, inputVal));
+                var all2 = document.querySelectorAll('p');
+
+                all2.forEach(x => x.innerHTML = x.innerHTML.replace(/Aeryn/gi, "Aeryn"));
+                console.log("name is null");
+            }
+
+            else{
+                var all = document.querySelectorAll('p');
+                all.forEach(x => x.innerHTML = x.innerHTML.replace(/Aeryn/gi, inputVal));
+            }
 
             function loadHenry() {
                 var x = document.getElementById("Henry");

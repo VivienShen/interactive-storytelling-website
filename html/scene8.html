@@ -88,7 +88,7 @@
             </div>
             <div class="text">
                 <div id="box2" class="speechbox-henry" >
-                    <p><b>Evelyn:</b> I want to thank all of you for voting for me and choosing to fight for our future and our earth. 
+                    <p><b>Evelyn:</b> I want to thank all of you for voting for me and choosing to fight for our future and our Earth. 
                         For so many years the Privilege party has been in charge and finally it is our turn to take over and make the right change happen.</p>
                 </div>
             </div>
@@ -296,7 +296,8 @@
             var inputVal = localStorage.getItem("newName");
             console.log(inputVal);
 
-            if (inputVal == ""){
+            if (inputVal == "" || inputVal == null){
+
                 var all2 = document.querySelectorAll('p');
 
                 all2.forEach(x => x.innerHTML = x.innerHTML.replace(/Aeryn/gi, "Aeryn"));

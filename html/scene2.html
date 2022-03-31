@@ -72,7 +72,7 @@
             </div>
             <div class="text" >
                 <div id="box2" class="speechbox" >
-                    <p>It’s so scary looking back at what remains of earth, I wish I could see Earth back when things weren’t so bad. You know I’ve trained all my life to return to Earth, I know my purpose isn’t to live in this spaceship forever or to move to Mars but to save our actual home on Earth.</p>
+                    <p>It’s so scary looking back at what remains of Earth, I wish I could see Earth back when things weren’t so bad. You know I’ve trained all my life to return to Earth, I know my purpose isn’t to live in this spaceship forever or to move to Mars but to save our actual home on Earth.</p>
                 </div>
             </div>
         </div>
@@ -86,7 +86,7 @@
                 <img class="nameModal" src="../assets/images/scene2/name modal.png"  alt="">
                 <img class="characterIcon" src="../assets/images/scene2/girl name.png"  alt="">
                 <img id="nextBtn2" class="skipBtn" onclick="playEffect();" src="../assets/images/scene2/skip.png" alt="">
-                <img id="nextBtn3" class="setName" src="../assets/images/scene2/set name.png" onclick="playEffect();" alt="">
+                <img id="nextBtn3" class="setName" src="../assets/images/scene2/set name.png" onclick="playEffect(); getInputValue();" alt="">
             </div>
             
 
@@ -293,6 +293,13 @@
                 var inputVal = document.getElementById("myInput").value;
                         
                 if (inputVal == ""){
+                    var all2 = document.querySelectorAll('p');
+
+                    all2.forEach(x => x.innerHTML = x.innerHTML.replace(/Aeryn/gi, "Aeryn"));
+                    console.log("name is null");
+                }
+
+                if (inputVal == null){
                     var all2 = document.querySelectorAll('p');
 
                     all2.forEach(x => x.innerHTML = x.innerHTML.replace(/Aeryn/gi, "Aeryn"));

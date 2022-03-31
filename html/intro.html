@@ -31,7 +31,7 @@
         <p class="loading-txt">Loading...</p>
     </div> -->
 
-    <audio autoplay loop id="bg-music">
+    <audio loop id="bg-music">
         <source src="../assets/audio/bgm/Earth_Appears_-_Brian_Bolger.mp3" type="audio/mpeg" />
     </audio>
 
@@ -41,7 +41,7 @@
     </div>
 
     <video class="stars" autoplay loop>
-        <source src="../assets/motionGraphics/stars_no_bg.mp4" type="video/mp4">
+        <source src="../assets/motionGraphics/stars.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
@@ -182,7 +182,7 @@
             btn.style.display = "none";
             logo.style.opacity = 0;
 
-            setTimeout(startAnim, 500);
+            setTimeout(startAnim, 3000);
 
             function startAnim() {
 

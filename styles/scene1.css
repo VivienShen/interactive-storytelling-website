@@ -87,11 +87,11 @@ body {
 
 .zoomBtn {
     position: absolute;
-    top: 83%;
-    left: 0.5%;
-    width: 8%;
+    top: 82.5%;
+    left: 0.7%;
+    width: 9%;
     height: 17%;
-    padding: 0;
+    padding: 1% 1%;
     background-color: rgba(255, 255, 255, 0);
     border: none;
     cursor: pointer;
@@ -104,18 +104,13 @@ body {
     box-shadow: 0 0 30px #f5d311;
 }
 
-/* .zoomBtn-img:before {
-    background: #d35400;
-    transition: .5s;
-    transform: scale(.9);
-    z-index: -1;
+.zoomBtn-disabled {
+  width: 80%;
+  border-radius: 50%;
+  color: #ffa60200;
+  box-shadow: 0 0 30px #f5d31100;
+  cursor: auto;
 }
-
-.zoomBtn-img:hover:before {
-    transform: scale(1.2);
-    box-shadow: 0 0 15px #d35400;
-    filter: blur(3px);
-} */
 
 .zoomBtn-img:hover {
     color: #ffa60200;

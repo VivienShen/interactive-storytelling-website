@@ -273,12 +273,12 @@
 </head>
 <body>
 
-    <audio autoplay loop id="forest-se">
+    <audio autoplay loop id="wind-se">
         <source src="../assets/audio/soundEffects/scene5/wind.wav" type="audio/mpeg" />
     </audio>
 
     <audio autoplay loop id="bg-music">
-        <source src="../assets/audio/bgm//mountain.mp3" type="audio/mpeg" />
+        <source src="../assets/audio/bgm/" type="audio/mpeg" />
     </audio>
     
     <audio  id="camera-se">
@@ -412,7 +412,7 @@
         <span class="btn-icon">
             <img class="info-icon" src="../assets/images/information.png" alt="info btn icon">
         </span>
-        <span class="btn-text">Around four million people live in the Arctic, amongst them are indigenous people called the Inuits. 
+        <span class="btn-text">Around four million people live in the Arctic, amongst them are indigenous people called the Inuit. 
             Inuit people have been noticing the change in the Arctic from global warming, and because their culture is adapted to the Arctic’s cold climate, it makes it 
             harder for Inuit people to continue their traditions
             <a href="https://www.natgeokids.com/uk/discover/geography/general-geography/ten-facts-about-the-arctic/" target="_blank">   
@@ -546,6 +546,7 @@
         }
 
         document.getElementById("bg-music").volume = 0.05;
+        document.getElementById("wind-se").volume = 0.3;
 
         //Retrieving changed name from local storage
         var inputVal = localStorage.getItem("newName");
