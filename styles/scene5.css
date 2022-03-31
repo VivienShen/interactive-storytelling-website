@@ -501,7 +501,7 @@ body::-webkit-scrollbar {
     height: 8%;
     position: fixed;
     right: 3%;
-    bottom: 2%;
+    bottom: 1%;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
