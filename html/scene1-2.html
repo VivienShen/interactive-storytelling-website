@@ -34,8 +34,8 @@
         <source src="../assets/audio/bgm/Future_Glider_-_Brian_Bolger.mp3" type="audio/mpeg" />
     </audio>
 
-    <audio id="zoom-se">
-        <source src="../assets/audio/soundEffects/scene1/zoom.wav" type="audio/wav" />
+    <audio id="zoomBtn-se">
+        <source src="../assets/audio/soundEffects/scene4/add-to-inventory.wav" type="audio/mpeg" />
     </audio>
 
     <header class="page-header">
@@ -102,13 +102,13 @@
                 
         <div class="text">
             <div id="box1" class="textbox" >
-                <p>This is how earth looks like from the spaceship.</p>
+                <p>This is how Earth looks like from the spaceship.</p>
             </div>
         </div>
 
         <div class="text">
             <div id="box2" class="textbox2" >
-                <p>The temperature on earth is 3 degrees higher than pre-industrial temperatures and has left many countries with food shortages, extreme weather like droughts, and some places have gone underwater because of the high sea levels.</p>
+                <p>The temperature on Earth is 3 degrees higher than pre-industrial temperatures and has left many countries with food shortages, extreme weather like droughts, and some places have gone underwater because of the high sea levels.</p>
             </div>
         </div>
 
@@ -120,8 +120,8 @@
         </div>
 
 
-        <button class="zoomBtn" onclick="zoomIn(); playEffect();">
-            <img class="zoomBtn-img" src="../assets/images/scene1/zoomBtn.png" title="zoom in button">
+        <button class="zoomBtn" id = "zoom" onclick="zoomIn(); playEffect();">
+            <img class="zoomBtn-img" id = "zoomImg" src="../assets/images/scene1/zoomBtn.png" title="zoom in button">
         </button>
 
         <div class="btn2" id="nextBtn" onclick="window.location.href='scene2.html'" style="display: none"></div> 
@@ -133,7 +133,7 @@
         // $(window).on('load', function () {
         //     $('#loading').hide();
         // }) 
-        var soundEffect = document.getElementById("zoom-se");
+        var soundEffect = document.getElementById("zoomBtn-se");
 
         function playEffect() {
 
@@ -215,6 +215,10 @@
                 document.getElementById('box3').className = "textbox2-animated";
 
                 waitForBtn(next);
+
+                document.getElementById("zoom").setAttribute('onclick', "");
+                document.getElementById("zoom").style.cursor = "auto";
+                document.getElementById("zoomImg").className = "zoomBtn-disabled";
                 
             }
 
@@ -228,6 +232,7 @@
         }
 
         document.getElementById("bg-music").volume = 0.05;
+        document.getElementById("zoomBtn-se").volume = 0.3;
 
         function soundOff() {
             document.getElementById("bg-music").muted = true;  
