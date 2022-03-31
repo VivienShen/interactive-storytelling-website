@@ -159,6 +159,9 @@ function camClicked(){
                 //remove text
                 document.getElementById("game-txt").innerHTML = "";
             }
+            for(let i = 0; i < 5; i++){
+                score++;
+            }
         }
     }
 
