@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <title>Scene1-2</title>
+    <link rel="stylesheet" href="../styles/scene1.css">
+    <link rel="stylesheet" href="../styles/nav.css">
+    <script src="../js/nav.js"></script>
+    <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+
+    <style>
+        body{
+            -ms-overflow-style: none;   
+            scrollbar-width: none;  
+            overflow-y: scroll;  
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div id="loading">
+        <img id="loading-bg" src="../assets/images/scene1BG.png" alt="space background" />
+        <img id="loading-image" src="../assets/images/ezgif.com-gif-maker.gif" alt="Loading..." />
+        <p class="loading-txt">Loading...</p>
+    </div> -->
+
+    <audio autoplay loop id="bg-music">
+        <source src="../assets/audio/bgm/Future_Glider_-_Brian_Bolger.mp3" type="audio/mpeg" />
+    </audio>
+
+    <audio id="zoomBtn-se">
+        <source src="../assets/audio/soundEffects/scene4/add-to-inventory.wav" type="audio/mpeg" />
+    </audio>
+
+    <header class="page-header">
+        <div class="hamburger-menu">
+            <input id="menu__toggle" type="checkbox" />
+            <label class="menu__btn" for="menu__toggle">
+                <span></span>
+            </label>
+        
+            <ul class="menu__box">
+                <div class="menu__div">
+                    <div class="chapter-menu">
+                        <ul class="chapter__list">
+                            <li><a class="chapter__item" id="ch-Home" href="index.html">Home</a></li>
+                            <li><a class="chapter__item" id="chapter0" href="prologue.html">Prologue</a></li>
+                            <li><a class="chapter__item" id="chapter1" href="scene1-1.html" style="color: #30C9E9">Chapter 1</a></li>
+                            <li><a class="chapter__item" id="chapter2" href="scene3-1.html">Chapter 2</a></li>
+                            <li><a class="chapter__item" id="chapter3" href="scene5.html">Chapter 3</a></li>
+                            <li><a class="chapter__item" id="chapter4" href="scene6-1.html">Chapter 4</a></li>
+                            <li><a class="chapter__item" id="chapter5" href="scene8.html">Chapter 5</a></li>
+                        </ul>
+                    </div>
+                    <br><hr><br>
+                    <div class="menu__info">
+                        <span class="iconify menu__icon" data-icon="ant-design:info-circle-filled"></span>
+                        <h1 class="about"> About Sincerely, Earth</h1>
+                        <p>
+                            Sincerely, Earth is a dynamic storytelling website that provides an educational and immersive experience about climate change. Through this experience, we hope to inspire the next generation to become more aware and motivated to make a change.
+                        </p>
+                        <div class="present" style="display: flex">
+                            <div id="teamLogo" style="display: block; width: fit-content">
+                                <p style="font-size:1.4vh; color: black; margin-top:0">Presented By</p>
+                                <img src="../assets/images/eco_logo.png" alt="EcoLife Studio Logo" style="max-width: 8vh; margin-top:-5px">
+                            </div>
+                            <div id="mktSite" style="width: fit-content">
+                                <a class="mktSiteLink" href="https://ecolifestudio5.wixsite.com/ecolife-studio" >Learn More <span class="iconify" data-icon="ci:external-link"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <br><hr><br>
+                    <div class="list">
+                        <span class="iconify menu__item" data-icon="ion:help-circle-sharp"></span>
+                        <span id="on" class="iconify menu__item" data-icon="teenyicons:sound-on-outline" onClick="soundOff()" style="display: inline"></span>
+                        <span id="off" class="iconify menu__item" data-icon="teenyicons:sound-off-solid" onClick="soundOn()" style="display: none"></span>
+                    </div>
+                </div> 
+            </ul>    
+        </div>  
+    </header>
+
+    <div class="main-page">
+        <div id="bg1" class="image">
+            <img class="img-bg" src="../assets/images/scene1BG.png" alt="in the laboratory">
+        </div>  
+
+        <div class="image" id="bg-cover"></div>
+
+        <div id="telescope-imgs" class="image">
+            <!-- <img class="img-b" id="target1" src="../assets/images/scene1/earth.png"  scale="1.15" > -->
+            <video class="img-b" id="target2" autoplay loop scale="1.15">
+                <source src="../assets/motionGraphics/smoke_1.mp4" alt="A spaceship in the space" type="video/mp4">
+                Your browser does not support the video tag.  
+            </video>
+            <img class="img-b" id="target3" src="../assets/images/scene1/zoom2.png"  scale="1.15" >
+            <video class="img-b" id="target1" autoplay loop scale="1.15">
+                <source src="../assets/motionGraphics/earthSpin.mp4" alt="A spaceship in the space" type="video/mp4">
+                Your browser does not support the video tag.  
+            </video>
+        </div>
+
+        <img class="image" src="../assets/images/scene1/telescope.png">
+        <span id="tooltip" class="tooltiptext">Click to zoom in</span>
+                
+        <div class="text">
+            <div id="box1" class="textbox" >
+                <p>This is how Earth looks like from the spaceship.</p>
+            </div>
+        </div>
+
+        <div class="text">
+            <div id="box2" class="textbox2" >
+                <p>The temperature on Earth is 3 degrees higher than pre-industrial temperatures and has left many countries with food shortages, extreme weather like droughts, and some places have gone underwater because of the high sea levels.</p>
+            </div>
+        </div>
+
+
+        <div class="text">
+            <div id="box3" class="textbox2" >
+                <p>2 billion people migrate to other countries because their countries are unlivable, which isn’t always possible for those in poverty. Masks are also needed in some places to protect the lungs from smog.</p>
+            </div>
+        </div>
+
+
+        <button class="zoomBtn" id = "zoom" onclick="zoomIn(); playEffect();">
+            <img class="zoomBtn-img" id = "zoomImg" src="../assets/images/scene1/zoomBtn.png" title="zoom in button">
+        </button>
+
+        <div class="btn2" id="nextBtn" onclick="window.location.href='scene2.html'" style="display: none"></div> 
+
+    </div>
+
+    <script>
+
+        // $(window).on('load', function () {
+        //     $('#loading').hide();
+        // }) 
+        var soundEffect = document.getElementById("zoomBtn-se");
+
+        function playEffect() {
+
+            soundEffect.play();
+
+        }
+        
+        var pic1 = document.getElementById("target1");
+        var pic2 = document.getElementById("target2");
+        var pic3 = document.getElementById("target3");
+        var pic4 = document.getElementById("bg-cover");
+        var tb1 = document.getElementById("box1");
+        var tb2 = document.getElementById("box2");
+        var tb3 = document.getElementById("box3");
+        var next = document.getElementById("nextBtn");
+
+        var counter = 0;
+        console.log(counter);
+    
+        function zoomIn() {
+            document.getElementById('tooltip').style.visibility='hidden';
+
+            counter += 1;
+
+            console.log(counter);
+
+            if(counter > 2){
+                counter = 0;
+            }
+
+            if(counter == 0){
+                pic1.style.opacity = 1;
+                pic2.style.opacity = 0;
+                pic3.style.opacity = 0;
+                pic4.style.opacity = 0;
+                tb1.style.display = "block";
+                tb2.style.opacity = 0;
+                tb3.style.opacity = 0;
+        
+
+                document.getElementById('target1').className = 'classname';
+                document.getElementById('target3').className = 'classname2';
+                document.getElementById('box1').className = 'textbox';
+                document.getElementById('box2').className = "textbox2";
+                document.getElementById('box3').className = "textbox2";
+  
+            }
+
+            else if(counter == 1){
+                pic1.style.opacity = 0;
+                pic2.style.opacity = 1;
+                pic3.style.opacity = 0;
+                pic4.style.opacity = 1;
+                tb1.style.display = "none";
+                tb2.style.opacity = 1;
+                tb3.style.opacity = 0;
+
+                document.getElementById('target2').className = 'classname';
+                document.getElementById('target1').className = 'classname2';
+                document.getElementById('box1').className = 'textbox';
+                document.getElementById('box2').className = "textbox2-animated";
+                document.getElementById('box3').className = "textbox2";                
+
+            }
+
+            else if(counter == 2) {
+                pic1.style.opacity = 0;
+                pic2.style.opacity = 0;
+                pic3.style.opacity = 1;
+                pic4.style.opacity = 1;
+                tb1.style.display = "none";
+                tb2.style.opacity = 0;
+                tb3.style.opacity = 1;
+
+                document.getElementById('target3').className = 'classname';
+                document.getElementById('target2').className = 'classname2';
+                document.getElementById('box1').className = 'textbox';
+                document.getElementById('box2').className = "textbox2";
+                document.getElementById('box3').className = "textbox2-animated";
+
+                waitForBtn(next);
+
+                document.getElementById("zoom").setAttribute('onclick', "");
+                document.getElementById("zoom").style.cursor = "auto";
+                document.getElementById("zoomImg").className = "zoomBtn-disabled";
+                
+            }
+
+        }
+        
+
+        function waitForBtn(btn) {
+            setTimeout (function () {
+                btn.style.display = "block";
+            }, 3000);
+        }
+
+        document.getElementById("bg-music").volume = 0.05;
+        document.getElementById("zoomBtn-se").volume = 0.3;
+
+        function soundOff() {
+            document.getElementById("bg-music").muted = true;  
+            document.getElementById("on").style.display = "none";
+            document.getElementById("off").style.display = "inline";
+        }
+
+        function soundOn() {
+            document.getElementById("bg-music").muted = false; 
+            document.getElementById("off").style.display = "none"; 
+            document.getElementById("on").style.display = "inline";
+        }
+
+    </script>
+</body>
+</html>

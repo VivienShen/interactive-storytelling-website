@@ -1,21 +1,6 @@
-
-function toggleMapElements(icon, btn) {
-    let txt = icon;
-    let txt2 = btn;
-    console.log(txt);
-    var x = document.getElementById(txt);
-    var y = document.getElementById(txt2);
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }
-    if (y.style.display === "none") {
-        y.style.display = "block";
-    } else {
-        y.style.display = "none";
-    }
-}
+// $(window).on('load', function () {
+//     $('#loading').hide();
+// }) 
 
 let visited = false;
 let visited2 = false;
@@ -84,11 +69,29 @@ if(visited6 == "true"){
 }
 
 
-if(visited4 && visited5 && visited6 == "true"){
-    teleport.id = 'teleport-btn';
-    
-    teleport.setAttribute( "onClick", "loadPopup();" );
+if(visited4 == "true" && visited5 == "true" && visited6 == "true"){
+    teleport.id = 'icon-glow';
+    console.log("all placed visited")
+    teleport.setAttribute( "onClick", "loadPopup(); playEffect('btn-se');" );
 }
+
+
+ //Chapter Divider
+var chap1 = document.getElementById("divider1");
+
+if(!(visited4 == "false" && visited5 == "false" && visited6 == "false")){  
+    chap1.style.display = "none"; 
+
+    //console.log("place visited");
+    
+}
+else{
+
+}
+
+
+
+
 
 
 

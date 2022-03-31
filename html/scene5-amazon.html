@@ -5,8 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="../js/scene5.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
     <title>Scene5 - Amazon</title>
     <link rel="stylesheet" href="../styles/scene5.css">
+    <link rel="stylesheet" href="../styles/nav.css">
+    <script src="../js/nav.js"></script>
+    <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
 
     <style>
         body{
@@ -17,26 +22,298 @@
         }
 
 
-        .image3, .image5, .image7 {
+        .image1, .image3, .image5, .image7 {
             /* left: -50%; */
             opacity: 1;
+            top: 0%;
+        }
+
+        .image2{
+            top: 20%;
+        }
+        
+        .image2-3 {
+            top: 40%;
+        }
+
+        .image2-2{
+            width: 100% !important;
+            transform: scale(0.5,0.5);
+            top: 120%;
+            left: 15%
+        }
+
+        .image2-1{
+            width: 50% !important;
+            transform: scale(0.8, 0.8);
             top: 100%;
+            left: 38%
         }
 
         .image4, .image6, .image8{
             top: 0%;
             opacity: 1;
-            top: 100%;
+            /* top: 100%; */
             /* right: -65%; */
         }
+
+        #fact1{
+            top: 20%;
+            left: 11%;
+        }
+
+        #fact2{
+            top: 8%;
+            left: 65%;
+        }
+
+        #fact3{
+            top: 100%;
+            left: 38%;
+        }
+
+        .factBox {
+            font-size: 1.05rem;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0); 
+            font-weight: 500;
+            line-height: 1.4;
+            box-shadow: rgba(0, 0, 0, 0) 0px 3px 8px;
+            color: #000;
+            border-radius: 50px;
+            background-color: rgba(255, 255, 255, 0.897);
+            padding: 10px;
+            position: fixed;
+            width:fit-content;
+            max-width: 500px;
+            height:fit-content;
+            z-index: 1;
+        }
+
+        .factBox:hover{
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            background-color: rgba(255, 255, 255, 0.925);
+            border-radius: 20px;
+            padding: 20px;
+        }
+
+        .fact {
+            margin-bottom: 15px;
+            background-color:rgb(255, 255, 255);
+            top: 45%;
+            left: 60%;
+            z-index: 10;
+            position:fixed;
+        }
+
+        .btn-text {
+            max-width: 0;
+            display: inline-block;
+            -webkit-transition: color .25s 1.5s, max-width 2s;
+            transition: color .25s 1.5s, max-width 2s;
+            -webkit-transition: color .25s 1.5s, max-height 2s;
+            transition: color .25s 1.5s, max-height 2s;
+            vertical-align: top;
+            white-space: nowrap;
+            overflow: hidden;
+            color: rgb(2, 2, 2);
+        }
+
+        button:hover .btn-text {
+            width:fit-content;
+            max-width: 500px;
+            height:fit-content;
+            white-space: normal;
+            color: rgb(0, 0, 0);
+        }
+
+        button .info-icon{
+            width: 40px;
+            padding-left: 6px;
+            padding-top: 6px;
+        }
+        
+        button:hover .info-icon {
+            display: none;
+        }
+
+        .scroll-indicator{
+            position: absolute;
+            top: 40%;
+            left: 47%;
+        }
+
+        .scroll {
+            width: 45px; 
+            height: 80px;
+            left: 33%;
+            border: 3.8px solid rgba(94, 47, 9, 0.932); 
+            border-radius: 50px; 
+            position: relative;
+        }
+        .scroll:before {
+            content: ""; 
+            position: absolute;
+            width: 15px; 
+            height: 15px;
+            background: rgba(107, 54, 4, 0.904); 
+            margin: auto;
+            left: 0; 
+            right: 0;
+            top: 30px; 
+            border-radius: 50%;
+            animation: animate 1s linear infinite; 
+        }
+        @keyframes animate {
+            0% {
+                opacity: 1; top: 5px;
+            }
+            100% {
+                opacity: 0; top: 65px;
+                transform: scale(0.8);
+            }
+        }
+
+        .scroll-text{
+            font-size: 1.8rem;
+            font-weight: 700;
+            font-family: SpectralSC-SemiBold;
+            color: rgba(94, 47, 9, 0.932);
+        }
+
+        .camera-capture{
+            position: fixed;
+            top: 50%;
+            left: 10%;
+            left: var(--mouse-x);
+            top: var(--mouse-y);
+            transform-origin: center;
+            transform: scale(0.5, 0.5)
+            
+        }
+
+        .cam_container {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: fixed;
+            z-index: 2;
+            /* background-color: chartreuse; */
+        }
+
+        .amazon-counter{
+            position: fixed;
+            top: 83%;
+            left: 2%;
+            border-radius: 50px;
+            box-shadow: 6px 5px #b9b9b97e;
+            
+        }
+
+        .gameText{
+            position: fixed;
+            top: 35%;
+            left: 43%;
+            font-size: 2rem;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+            font-weight: 600;
+            transform: rotate(-3deg);
+            z-index: 4;
+        }
+
+        .output{
+            position: fixed;
+            transform: scale(1.2, 1.2);
+            transform: rotate(-10deg);
+            top: 25%;
+            left: 35%;
+            animation-name: slideDown;
+            animation-duration: 2s;
+            animation-delay: 2s;
+            animation-fill-mode: forwards;
+        
+        }
+
+        @keyframes slideDown {
+            from {top: 25%; }
+            to {top: 105%; }
+        }
+
+        #exp{
+            left: 75.5%;
+        }
+
 
     </style>
 </head>
 <body>
 
     <audio autoplay loop id="bg-music">
-        <source src="../assets/audio/bgm/Mountain_-_JVNA.mp3" type="audio/mpeg" />
+        <source src="../assets/audio/bgm/" type="audio/mpeg" />
     </audio>
+
+    <audio autoplay loop id="forest-se">
+        <source src="../assets/audio/soundEffects/scene5/rainforest.mp3" type="audio/mpeg" />
+    </audio>
+    
+    <audio  id="camera-se">
+        <source src="../assets/audio/soundEffects/scene5/camera.wav" type="audio/wav" />
+    </audio>
+    <!-- <div id="loading">
+        <img id="loading-bg" src="../assets/images/scene1BG.png" alt="space background" />
+        <img id="loading-image" src="../assets/images/ezgif.com-gif-maker.gif" alt="Loading..." />
+        <p class="loading-txt">Loading...</p>
+    </div> -->
+
+    <header class="page-header">
+        <div class="hamburger-menu">
+            <input id="menu__toggle" type="checkbox" />
+            <label class="menu__btn" for="menu__toggle">
+                <span></span>
+            </label>
+        
+            <ul class="menu__box">
+                <div class="menu__div">
+                    <div class="chapter-menu">
+                        <ul class="chapter__list">
+                            <li><a class="chapter__item" id="ch-Home" href="index.html">Home</a></li>
+                            <li><a class="chapter__item" id="chapter0" href="prologue.html">Prologue</a></li>
+                            <li><a class="chapter__item" id="chapter1" href="scene1-1.html">Chapter 1</a></li>
+                            <li><a class="chapter__item" id="chapter2" href="scene3-1.html">Chapter 2</a></li>
+                            <li><a class="chapter__item" id="chapter3" href="scene5.html" style="color: #30C9E9">Chapter 3</a></li>
+                            <li><a class="chapter__item" id="chapter4" href="scene6-1.html">Chapter 4</a></li>
+                            <li><a class="chapter__item" id="chapter5" href="scene8.html">Chapter 5</a></li>
+                        </ul>
+                    </div>
+                    <br><hr><br>
+                    <div class="menu__info">
+                        <span class="iconify menu__icon" data-icon="ant-design:info-circle-filled"></span>
+                        <h1 class="about"> About Sincerely, Earth</h1>
+                        <p>
+                            Sincerely, Earth is a dynamic storytelling website that provides an educational and immersive experience about climate change. Through this experience, we hope to inspire the next generation to become more aware and motivated to make a change.
+                        </p>
+                        <div class="present" style="display: flex">
+                            <div id="teamLogo" style="display: block; width: fit-content">
+                                <p style="font-size:1.4vh; color: black; margin-top:0">Presented By</p>
+                                <img src="../assets/images/eco_logo.png" alt="EcoLife Studio Logo" style="max-width: 8vh; margin-top:-5px">
+                            </div>
+                            <div id="mktSite" style="width: fit-content">
+                                <a class="mktSiteLink" href="https://ecolifestudio5.wixsite.com/ecolife-studio" >Learn More <span class="iconify" data-icon="ci:external-link"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <br><hr><br>
+                    <div class="list">
+                        <span class="iconify menu__item" data-icon="ion:help-circle-sharp"></span>
+                        <span id="on" class="iconify menu__item" data-icon="teenyicons:sound-on-outline" onClick="soundOff()" style="display: inline"></span>
+                        <span id="off" class="iconify menu__item" data-icon="teenyicons:sound-off-solid" onClick="soundOn()" style="display: none"></span>
+                    </div>
+                </div> 
+            </ul>    
+        </div>  
+    </header>
 
     <div id="bg1" class="image">
         <img class="img-bg" src="../assets/images/scene5/amazon/amazon_bg.png" alt="in the laboratory">
@@ -44,48 +321,103 @@
 
     <div class="container" >
         <div class="container_img">
-            <div class="img" >
+            <div class="img" onclick=" clickToClose()">
                 <img class="image1" src="../assets/images/scene5/amazon/wind.png">
                 <img class="image2" src="../assets/images/scene5/amazon/mountains-01.png">
-                <img class="image2-2" src="../assets/images/scene5/amazon/fire-01.png">
+                <img class="image2-1" src="../assets/images/scene5/amazon/smoke.png">
+                <img class="image2-2" id ="fire" src="../assets/images/scene5/amazon/fire2.png">
                 <img class="image2-3" src="../assets/images/scene5/amazon/bushes-01.png">
                 <img class="image7" src="../assets/images/scene5/amazon/backLeft-01.png">
                 <img class="image8" src="../assets/images/scene5/amazon/backRight-01.png">
-                <img class="image5 clickable" src="../assets/images/scene5/amazon/middelLeft-01.png">
+                <img class="image5" src="../assets/images/scene5/amazon/middelLeft-01.png">
                 <img class="image6" src="../assets/images/scene5/amazon/middleRight-01.png">
                 <img class="image3" src="../assets/images/scene5/amazon/frontLeft-01.png">
                 <img class="image4" src="../assets/images/scene5/amazon/frontRight-01.png">
                 <!-- <img class="image3" src="../assets/images/scene5/amazon/trees.png">
                 <img class="image4" src="../assets/images/scene5/amazon/trees2.png">
                 <img class="image5" src="../assets/images/scene5/amazon/trees3.png"> -->
+
+            </div>
+
+            <!--SCROLL DOWN INDICATOR-->
+            <div class="scroll-indicator">
+                <div class="scroll"></div>
+                <p class="scroll-text">Scroll Down</p>
             </div>
         </div>  
 
+
+        <button id="fact1" class="factBox clickable">
+            <span class="btn-icon"> 
+                <img class="info-icon" src="../assets/images/information.png" alt="info btn icon">
+            </span>
+            <span class="btn-text">The Amazon is also called the “Lungs of the Earth” because it produces more than 
+                20% of the world's oxygen. Because of human disturbance in the Amazon ecosystem, the forest is now releasing more than 1.1 billion tons
+                of carbon dioxide, which means the forest is releasing more greenhouse gasses than removing.
+                <a href="https://www.livescience.com/amazon-rainforest-accelerate-climate-change.html" target="_blank">   
+                    Read more</a></span>
+        </button> 
+
+        <button id="fact2" class="factBox clickable">
+            <span class="btn-icon"> 
+                <img class="info-icon" src="../assets/images/information.png" alt="info btn icon">
+            </span>
+            <span class="btn-text">The Amazon is one of the last places on Earth that’s home to jaguars, harpy eagles, 
+                pink river dolphins, sloths and more. It contains 1/10 known species on Earth, like 40,000 plant species and 370 types of reptiles. Because 
+                of the increased temperatures and reduced rainfalls, it may reduce habitats for these species during the dry warm months.
+                <a href="https://www.worldwildlife.org/stories/what-animals-live-in-the-amazon-and-8-other-amazon-facts#:~:text=The%20Amazon%20is%20one%20of,than%20370%20types%20of%20reptiles." target="_blank">   
+                    Read more</a></span>
+        </button> 
+
+        <button id="fact3" class="factBox clickable">
+            <span class="btn-icon"> 
+                <img class="info-icon" src="../assets/images/information.png" alt="info btn icon">
+            </span>
+            <span class="btn-text">Almost all wildfires in the Amazon are deliberately ignited by people, who typically 
+                burn trees after cutting them down or, less commonly, when they want to clear a large part of the forest.
+                <a href="https://www.vox.com/down-to-earth/2021/8/27/22639885/amazon-rainforest-fires-climate-change-2021
+                " target="_blank">   
+                Read more</a></span>
+        </button> 
+
+        <div class="cam_container" id="parent-cam">
+            <img class="camera-capture" style="display: none;" id="cam" onclick="" onmousedown="camClicked()" onmouseup="camReleased()" src="../assets/images/scene5/cam-capture.png">
+        </div>
+
+        <div id="cam-explanation" style="display:none;">
+            <div id="exp" class="explanation" >
+                <p><b>Camera Unlocked!</b><br><br> Take a screenshot of the forest fire for 5 points
+                </p>
+            </div>
+        </div>
+
+        <iframe class="amazon-counter" title='Tons of CO2 emitted into the atmosphere' src='https://www.theworldcounts.com/embed/challenges/23?background_color=white&color=black&font_family=%22Helvetica+Neue%22%2C+Arial%2C+sans-serif&font_size=14' style='border: none' height='105' width='320'></iframe>
+
         <div class="inventory">
-            <img id="inventory-bg" src="../assets/images/scene5/inventory.png" alt="inventory box">
+            <img id="inventory-bg" src="../assets/images/scene7/inventory-panel.png" alt="inventory box">
+            <progress id="popularity-meter" min="0" max="100" value="0"><span></span></progress>
             <div class="icons">
-                <img id="camera-icon" class="icon" src="../assets/images/scene5/icon-cam.png" alt="camera item" style="display: block;">
+                <img id="camera-icon" class="icon" src="../assets/images/scene5/icon-cam.png" alt="camera item" style="display: block;" onclick="">
                 <img id="map-icon" class="icon" src="../assets/images/scene5/icon-map.png" alt="map item" style="display: block;" onclick="window.location.href='scene5.html'">
-                <img id="camera-lock" class="lock" src="../assets/images/scene5/lock.png" alt="camera item" style="display: none;">
-                <img id="map-lock" class="lock" src="../assets/images/scene5/lock.png" alt="map item" style="display: none;">
-                <img id="teleport-icon" class="icon" src="../assets/images/scene5/icon.png" alt="teleport button" style="display: block;">
+                <img id="teleport-icon" class="icon" src="../assets/images/scene5/icon.png" alt="teleport button" style="display: block; pointer-events: none; filter: grayscale(100%);">
             </div>
         </div>
     </div>
 
+    <p class="gameText" id="game-txt"></p>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
 
     <div class="text">
-        <div id="box4" class="speechbox" style="display:none;">
-            <p><b>Robin:</b> The Amazon rainforest, it’s supposed to be the earth's carbon sink but recently it is emitting more carbon than absorbing. Walk with me. 
+        <div id="box4" class="speechbox" style="opacity:0; display: none;">
+            <p><b>Robin:</b> The Amazon Rainforest, it’s supposed to be the earth's carbon sink but recently it is emitting more carbon than absorbing. Walk with me. 
             </p>
         </div>
     </div>
 
     <div class="text">
-        <div id="box5" class="speechbox" style="display:none;">
+        <div id="box5" class="speechbox" style="opacity:0; display: none;">
             <p><b>Robin:</b> We are as close to this forest fire as we can get, once you get your photo we need to get out of here as fast as possible. 
             </p>
         </div>
@@ -104,111 +436,233 @@
             }
         });
 
-        tl.to(".image1", 2,{
-            y: "-100%",
-            pin: true,
-            duration: 2
-        },'start')
-        .to(".image2", 4, {
-            y: "-80%",
-            pin: true
-        },'start')
-        .to(".image2-3", 5, {
-            y: "-80%",
-            pin: true
-        },'start')
-        .to("#box4", 5, {
-            display: "block",
-            pin: true
-        },'start')
-        .to("#box4", 2, {
-            display: "none",
-            pin: true
-        },'start2')
-        .to("#box5", 2, {
-            display: "block",
-            pin: true
-        },'start2')
         
-        .to("#box4", 5, {
-            display: "block",
-            pin: true
-        },'start')
-        .to(".image3", 4, {
-            y: "-100%",
-            pin: true
-        },'start')
-        .to(".image4", 6, {
-            y: "-100%",
-            pin: true
-        },'start')
-        .to(".image5", 7, {
-            y: "-100%",
-            pin: true
-        },'start')
-        .to(".image6", 8, {
-            y: "-100%",
-            pin: true
-        },'start')
-        .to(".image7", 9, {
-            y: "-100%",
-            pin: true
-        },'start')
-        .to(".image8", 10, {
-            y: "-100%",
-            pin: true
-        },'start')
-        
-        .to(".image3",  {
+        tl.to(".image3",  {
             x: "-50%",
             pin: true,
-            duration: 30
+            duration: 50
         },'front')
         .to(".image4",{
             x: "56%",
             pin: true,
-            duration: 30
+            duration: 50
         },'front')
-        .to(".image5", 35, {
+        .to(".scroll-text", {
+            opacity: 0,
+            duration: 2
+        },'front')
+        .to(".scroll", {
+            y: "-370%",
+            scale: 0.5,
+            duration: 2
+        },'front')
+        .to(".image5", {
             x: "-50%",
             pin: true,
+            duration: 50
+        },'-=30')
+        .to("#fact1", {
+            left: "-10%",
+            pin: true,
             duration: 30
-        },'front')
-        .to(".image6", 35, {
+        },'-=53')
+        .to(".image6", {
             x: "50%",
             pin: true,
-            duration: 30
-        },'front')
-        .to(".image7", 35,  {
+            duration: 50
+        },'-=50')
+        .to(".image7",  {
             x: "-50%",
             pin: true,
-            duration: 30
-        },'front')
-        .to(".image8", 35,{
+            duration: 50
+        },'-=40')
+        .to("#fact2", {
+            left: "100%",
+            pin: true,
+            duration: 20
+        },'-=76')
+        .to(".image8",{
             x: "66%",
             pin: true,
-            duration: 30
-        },'front')
-
-        .to(".image2-2", 32, {
+            duration: 50
+        },'-=50')
+        .to("#box4", {
+            opacity: 1,
+            duration: 2
+        },'-=80')
+        .to("#box4", {
+            opacity: 0,
+            duration: 2
+        },'-=70')
+        .to("#box5", 5, {
+            opacity: 1,
+            duration: 2
+        },'-=70')
+        .to(".image2-2", {
             y: "-100%",
             pin: true,
-            duration: 30
+            duration: 50
             
         },'front')
-        .to(".image2", 32,{
-            y: "-100%",
+        .to(".image2",{
+            y: "-20%",
             pin: true,
-            duration: 30
+            duration: 50
         },'front')
-        .to(".image2-3", 35, {
-            y: "-100%",
+        .to(".image2-3", {
+            y: "-40%",
             pin: true,
-            duration: 30
+            duration: 50
         },'front')
+        .to("#box5", 5, {
+            opacity: 0,
+            duration: 2
+        },'-=45')
+        .to("#fact3", {
+            top: "62%",
+            pin: true,
+            duration: 20
+        },'-=60')
 
-        document.getElementById("bg-music").volume = 0.05;
+
+        //Retrieving changed name from local storage
+        var inputVal = localStorage.getItem("newName");
+        console.log(inputVal);
+
+        var all = document.querySelectorAll('.speechbox');
+
+        all.forEach(x => x.textContent = x.textContent.replace(/Aeryn/gi, inputVal));
+
+        
+        //CAMERA FUNCTIONALITY
+        let root = document.documentElement;
+
+        root.addEventListener("mousemove", e => {
+            root.style.setProperty('--mouse-x', e.clientX - 573 + "px");
+            root.style.setProperty('--mouse-y', e.clientY - 310 + "px");
+
+            //console.log(e.clientX);
+
+            if(e.clientX >= (window.innerWidth - 300)){
+                root.style.setProperty('--mouse-x', (window.innerWidth - 880) + "px"); 
+            }
+
+            if(e.clientY >= (window.innerHeight - 169)){
+                root.style.setProperty('--mouse-y', (window.innerHeight - 469) + "px"); 
+            }
+
+            if(e.clientY <= 155){
+                root.style.setProperty('--mouse-y', -155 + "px"); 
+            }
+
+            if(e.clientX <= 280){
+                root.style.setProperty('--mouse-x', - 285 + "px"); 
+            }
+
+
+        });
+        var camera = document.getElementById("cam");
+
+        function openCam() {
+            if(camera.style.display=='block'){
+                camera.style.display='none';
+            }else{
+                camera.style.display='block';
+            }
+
+            exp.style.display = "block";
+        }
+
+
+        function camReleased(){
+            camera.style.transform= "scale(0.5, 0.5)";
+            
+        }
+
+        var cam = document.getElementById("camera-icon");
+        var exp = document.getElementById("cam-explanation");
+        var map = document.getElementById("map-icon");
+        var body = document.querySelector("body");
+
+        var $window = $(window);
+
+        $(window).on('scroll', function() {
+            $topOffset = $(this).scrollTop();
+        
+            console.log($topOffset);
+
+            //Make Camera Glow At end of scroll
+            if($topOffset > body.scrollHeight * 0.60){
+                cam.id = "icon-glow";
+                cam.setAttribute('onclick','openCam()');
+                exp.style.display = "block";
+                map.id = "icon-glow2";
+            }else{
+                cam.id = "camera-icon";
+                cam.setAttribute('onclick','');
+                exp.style.display = "none";
+                map.id = "map-icon";
+            }
+        
+        });
+
+        //OPEN FACTS
+        function toggleFactBoxes(fact) {
+            
+            var x = document.getElementById(fact);
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+
+            if(fact == "fact1"){
+                document.getElementById("fact2").style.display = "none";
+                document.getElementById("fact3").style.display = "none";
+                console.log("fact1 clicked");
+            }
+            else if(fact == "fact2"){
+                document.getElementById("fact1").style.display = "none";
+                document.getElementById("fact3").style.display = "none";
+            }
+            else{
+                document.getElementById("fact1").style.display = "none";
+                document.getElementById("fact2").style.display = "none";
+            }
+
+            console.log("fact opened");
+        }
+
+        /* function clickToClose(){
+            document.getElementById("fact1").style.display = "none";
+            document.getElementById("fact2").style.display = "none";
+            document.getElementById("fact3").style.display = "none";
+        } */
+
+
+        function soundOff() {
+            document.getElementById("bg-music").muted = true;  
+            document.getElementById("on").style.display = "none";
+            document.getElementById("off").style.display = "inline";
+        }
+
+        function soundOn() {
+            document.getElementById("bg-music").muted = false; 
+            document.getElementById("off").style.display = "none"; 
+            document.getElementById("on").style.display = "inline";
+        }
+
+        function playEffect(sound) {
+
+            var soundEffect2 = document.getElementById(sound);
+            soundEffect2.play();
+
+        }
+
 
     </script>
+
+<script src="../js/meter.js"></script>
+
 </body>
 </html>

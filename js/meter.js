@@ -69,9 +69,9 @@ var minusFunction = function()
     score = localStorage.getItem("currScore");
 
     //point increment by 5
-    /* for(let i = 0; i < 5; i++){
-        score--;
-    } */
+    // for(let i = 0; i < 5; i++){
+    //     score--;
+    // }
 
     //reflect score on the meter bar
     document.getElementById("popularity-meter").value = score;
@@ -83,6 +83,247 @@ var minusFunction = function()
 for (var i = 0; i < minus.length; i++) {
     minus[i].addEventListener('click', minusFunction, false);
 }
+
+
+//When correct capture is taken from camera
+var camera = document.getElementById("cam");
+var polarBear = document.getElementById("big-pb");
+var coral1 = document.getElementById("coral1");
+var coral2 = document.getElementById("coral2");
+var coral3 = document.getElementById("coral3");
+var fire = document.getElementById("fire");
+
+let isCaptured = false;
+
+var capturedCount = 0;
+
+function camClicked(){
+    camera.style.transform = "scale(0.45, 0.45)";
+
+    //Check if camera overlaps object
+            
+    var rect2 = camera.getBoundingClientRect();
+
+    if(polarBear != null){
+        var rect1 = polarBear.getBoundingClientRect();
+
+        if (!
+            (rect1.top > rect2.bottom ||
+            rect1.right < rect2.left ||
+            rect1.bottom < rect2.top ||
+            rect1.left > rect2.right))
+        {
+            isCaptured = true;
+            console.log("overlapping");
+
+            setTimeout(showTxt, 200);
+            function showTxt() {
+                document.getElementById("game-txt").innerHTML = "Captured!";
+                document.getElementById("game-txt").style.color = "green";
+            }
+
+            setTimeout(removeTxt, 2000);
+
+            function removeTxt() {
+                //remove text
+                document.getElementById("game-txt").innerHTML = "";
+            }
+
+            capturedCount += 1;
+
+            if(capturedCount <= 1){
+                for(let i = 0; i < 5; i++){
+                    score++;
+                }
+            }
+            
+
+            //setting increment input value
+            document.getElementById("popularity-meter").value = score;
+    
+            //store score in local storage
+            localStorage.setItem("currScore", score);
+            console.log("score is: " + score);
+                
+        }else{
+            isCaptured = false;
+
+            setTimeout(showTxt, 200);
+            function showTxt() {
+                document.getElementById("game-txt").innerHTML = "Not Captured :(";
+                document.getElementById("game-txt").style.color = "red";
+            }
+
+            setTimeout(removeTxt, 2000);
+
+            function removeTxt() {
+                //remove text
+                document.getElementById("game-txt").innerHTML = "";
+            }
+            
+        }
+    }
+
+    if(coral1 != null && coral2!= null && coral3 != null){
+        var rect3 = coral1.getBoundingClientRect();
+        var rect4 = coral2.getBoundingClientRect();
+        var rect5 = coral3.getBoundingClientRect();
+
+        if (!(rect3.top > rect2.bottom ||
+                rect3.right < rect2.left ||
+                rect3.bottom < rect2.top ||
+                rect3.left > rect2.right)
+    
+            ||!(rect4.top > rect2.bottom ||
+                rect4.right < rect2.left ||
+                rect4.bottom < rect2.top ||
+                rect4.left > rect2.right)
+    
+            ||!(rect5.top > rect2.bottom ||
+                rect5.right < rect2.left ||
+                rect5.bottom < rect2.top ||
+                rect5.left > rect2.right)
+        ){
+            isCaptured = true;
+            console.log("overlapping");
+
+            setTimeout(showTxt, 200);
+            function showTxt() {
+                document.getElementById("game-txt").innerHTML = "Captured!";
+            document.getElementById("game-txt").style.color = "green";
+            }
+
+            setTimeout(removeTxt, 2000);
+
+            function removeTxt() {
+                //remove text
+                document.getElementById("game-txt").innerHTML = "";
+            }
+
+            for(let i = 0; i < 5; i++){
+                score++;
+            }
+            //setting increment input value
+            document.getElementById("popularity-meter").value = score;
+    
+            //store score in local storage
+            localStorage.setItem("currScore", score);
+            console.log("score is: " + score);
+                
+        }else{
+            isCaptured = false;
+            setTimeout(showTxt, 200);
+            function showTxt() {
+                document.getElementById("game-txt").innerHTML = "Not Captured :(";
+                document.getElementById("game-txt").style.color = "red";
+            }
+
+            setTimeout(removeTxt, 2000);
+
+            function removeTxt() {
+                //remove text
+                document.getElementById("game-txt").innerHTML = "";
+            }
+        }
+
+        //console.log(rect3);
+    }
+    
+    if(fire != null){
+        var rect6 = fire.getBoundingClientRect();
+
+        if (!
+            (rect6.top > rect2.bottom ||
+            rect6.right < rect2.left ||
+            rect6.bottom < rect2.top ||
+            rect6.left > rect2.right))
+        {
+            isCaptured = true;
+            console.log("overlapping");
+
+            setTimeout(showTxt, 200);
+            function showTxt() {
+                document.getElementById("game-txt").innerHTML = "Captured!";
+            document.getElementById("game-txt").style.color = "green";
+            }
+
+            setTimeout(removeTxt, 2000);
+
+            function removeTxt() {
+                //remove text
+                document.getElementById("game-txt").innerHTML = "";
+            }
+            
+            for(let i = 0; i < 5; i++){
+                score++;
+            }
+            //setting increment input value
+            document.getElementById("popularity-meter").value = score;
+    
+            //store score in local storage
+            localStorage.setItem("currScore", score);
+            console.log("score is: " + score);
+                
+        }else{
+            isCaptured = false;
+
+            setTimeout(showTxt, 200);
+            function showTxt() {
+                document.getElementById("game-txt").innerHTML = "Not Captured :(";
+                document.getElementById("game-txt").style.color = "red";
+            }
+
+            setTimeout(removeTxt, 2000);
+
+            function removeTxt() {
+                //remove text
+                document.getElementById("game-txt").innerHTML = "";
+            }
+        }
+    }
+
+    console.log(isCaptured);
+
+    // TAKE SCREENSHOT
+
+    //create new element for screenshot
+    var imageTaken = document.createElement("newImg");
+
+    imageTaken.setAttribute('id','newImg');
+    imageTaken.setAttribute('class','output');
+
+    var currentDiv = document.getElementById("parent-cam"); 
+    currentDiv.insertBefore(imageTaken, currentDiv.cam); 
+
+    // Use the html2canvas function to take a screenshot and append it to the output div
+
+    html2canvas(document.body, {
+        x: window.scrollX + rect2.left,
+        y: window.scrollY + rect2.top,
+        width: rect2.width,
+        height: rect2.height,
+                
+    }).then(canvas => {
+        document.getElementById('newImg').appendChild(canvas);
+    });
+
+    camera.setAttribute('onmousedown','');
+
+    //remove image after 3 seconds
+    setTimeout(appeardiv, 3000);
+
+    function appeardiv() {
+        //remove image and restore camera functionality
+        imageTaken.remove();
+        camera.setAttribute('onmousedown','camClicked(); playEffect("camera-se");');
+    }
+            
+};
+
+function resetCapturedCount(){
+    capturedCount = 0;
+}
+        
 
 /////////SWITCH QUIZ QUESTIONS////////////
 //same code from next button, but removed timer to apply to quiz buttons.
@@ -126,8 +367,46 @@ var myFunction = function() {
     }
 }
 
+
 for (var i = 0; i < next.length; i++) {
     next[i].addEventListener('click', myFunction, false);
 }
 
-document.getElementById("bg-music").volume = 0.2;
+
+//Retrieving changed name from local storage
+var inputVal = localStorage.getItem("newName");
+console.log(inputVal);
+
+if (inputVal == "" || inputVal == null){
+
+    var all2 = document.querySelectorAll('p');
+
+    all2.forEach(x => x.innerHTML = x.innerHTML.replace(/Aeryn/gi, "Aeryn"));
+    console.log("name is null");
+}
+
+else{
+    var all = document.querySelectorAll('p');
+    all.forEach(x => x.innerHTML = x.innerHTML.replace(/Aeryn/gi, inputVal));
+}
+
+//Chapter Divider
+var ch1 = document.getElementById("ch1");
+var chap1 = document.getElementById("divider1");
+$(".fill-div").click(function() {
+    document.getElementById('fill').className = 'chapAni';
+    document.getElementById('divider1').className = 'divAni';
+    if (ch1.style.opacity == 0){
+        console.log("hide");
+        setTimeout(function () {
+            chap1.style.display = "none";
+        }, 800);
+    }
+});
+
+
+document.getElementById("bg-music").volume = 0.05;
+
+// $(window).on('load', function () {
+//     $('#loading').hide();
+// }) 

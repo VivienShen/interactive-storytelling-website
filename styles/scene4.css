@@ -19,6 +19,19 @@ body {
     height:100%;
 }
 
+.clock {
+    justify-content: center; 
+    width:100%; 
+    height:100%;
+    position: absolute;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;
+    object-position: 0 150%;
+    background-color: black;
+}
+
 #box1 {
     right: 20%;
     bottom: 10%;
@@ -72,16 +85,23 @@ body {
 .center-text {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
-    position: relative;
+    position: absolute;
     transform: translate(-50%, -50%);
     left:50%;
-    top:45%;
+    bottom:5%;
+    color: white;
+    
 }
 
 #headerText {
     position: absolute; 
-    width:100%; 
+    /* margin-top: -5%; */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
     height:100%;
+    z-index: 1;
 }
 
 .textbox {
@@ -204,22 +224,10 @@ h1 {
 @keyframes fadeOut {
     0% {opacity:1;}
     100% {opacity:0;}
-  }
-  
-.item:hover:before {
-    transform: scale(1.2);
-    box-shadow: 0 0 15px #d35400;
-    filter: blur(3px);
-}
-  
-.item:hover {
-    color: #ffa502;
-    box-shadow: 0 0 15px #d35400;
-    text-shadow: 0 0 15px #d35400;
 }
 
  /* button 2 */
- .btn2 {
+.btn2 {
     height: 10px;
     width: 10px;
     border-radius: 50%;
@@ -231,6 +239,7 @@ h1 {
     transform: translate(-50%, -50%);
     cursor: pointer;
     display: block;
+    z-index: 5;
 }
 
 
@@ -258,4 +267,65 @@ h1 {
     0% { transform: scale(1); }
     50% { transform: scale(4); opacity:1; }
     100% { transform: scale(8); opacity:0; }
+}
+
+.clickable {
+    color: #ffa502;
+    filter: drop-shadow(0 0 20px #f5d311);
+    cursor: pointer;
+    z-index: 1;
+}
+
+.clickable:hover {
+    color: #ffa60207;
+    filter: drop-shadow(0 0 20px #f5d31100);
+}
+
+.explained {
+    visibility: hidden;
+    bottom: 13%;
+    width: 25%;
+    height: 25%;
+    right: 0%;
+    position: fixed;
+    display: flex;
+}
+
+#loading {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+
+#loading-image {
+    z-index: 100;
+    width: 30%;
+    margin-bottom: 8%;
+}
+
+#loading-bg{
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    opacity: 0.93;
+}
+
+.loading-txt{
+    font-size: 2rem;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    font-weight: 500;
+    line-height: 1.4;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    z-index: 1;
+    top: 60%;
 }

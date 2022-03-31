@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scene5</title>
+    <script defer src="../../js/scene5.js"></script>
+    <link rel="stylesheet" href="../../styles/scene5.css">
+    <style>
+        .fullscreen{
+            width: 10%;
+            margin-top: 20%;
+            z-index: 0;
+            position: absolute;
+        }
+
+        /* IE11 syntax */
+        #pin1:-ms-fullscreen {
+            transform: translate(20%, 70%);
+        }
+
+        /* Standard syntax */
+        #pin1:fullscreen {
+            transform: translate(20%, 70%);
+        }
+    </style>
+</head>
+<body>
+    <!-- <audio autoplay loop id="bg-music">
+        <source src="../assets/audio/bgm/Mountain_-_JVNA.mp3" type="audio/mpeg" />
+    </audio> -->
+
+    <div class = "map">
+        <div id="bg1" class="image">
+            <img class="img-bg" src="../../assets/images/scene5/map.png">
+        </div> 
+        
+        <img class="amazon-icon" id="amazon" src="../../assets/images/scene5/amazon_circle.png"  style="display: none;">
+        <button class="btn1 btn" id = "btn1"  style="display: none;" onclick="window.location.href='scene5-amazon.html'; placeVisited('visited2', 'amazonVisited');">Explore the Amazon</button>
+        
+        <img class="coralReef-icon" id="coral" src="../../assets/images/scene5/coralReef_circle.png"  style="display: none;">
+        <button class="btn2 btn" id = "btn2"  style="display: none;" onclick="window.location.href='test.html'; placeVisited('visited3', 'coralVisited');">Explore the Barrier Reef</button>
+        
+        <img class="arctic-icon"  id="arctic" src="../../assets/images/scene5/arctic_circle.png"  style="display: none;">
+        <button class="btn3 btn" id = "btn3"  style="display: none;" onclick="window.location.href='scene5-arctic.html'; placeVisited('visited', 'arcticVisited');">Explore the Arctic</button>
+        
+        <div class="blink1 blinker" id="blink1"></div>
+        <img class="map-pin1 pin" id="pin1" src="../../assets/images/scene5/pin.png" onclick="toggleMapElements('arctic', 'btn3')">
+        
+        <div class="blink2 blinker" id="blink2"></div>
+        <img class="map-pin2 pin" id="pin2" src="../../assets/images/scene5/pin.png" onclick="toggleMapElements('amazon', 'btn1')"> 
+        
+        <div class="blink3 blinker" id="blink3"></div>
+        <img class="map-pin3 pin" id="pin3" src="../../assets/images/scene5/pin.png" onclick="toggleMapElements('coral', 'btn2')"> 
+
+        <button style="position: absolute; right: 97%;" onclick="reset()">reset</button>
+        
+
+    </div>
+
+    <div class="inventory">
+        <img id="inventory-bg" src="../../assets/images/scene5/inventory.png" alt="inventory box">
+        <div class="icons">
+            <img id="camera-icon" class="icon" src="../../assets/images/scene5/icon-cam.png" alt="camera item" style="display: block;">
+            <img id="map-icon" class="icon" src="../../assets/images/scene5/icon-map.png" alt="map item" style="display: block;">
+            <img id="camera-lock" class="lock" src="../../assets/images/scene5/lock.png" alt="camera item" style="display: none;">
+            <img id="map-lock" class="lock" src="../../assets/images/scene5/lock.png" alt="map item" style="display: none;">
+            <img id="teleport-icon" class="icon" src="../../assets/images/scene5/icon.png" alt="teleport button" style="display: block;" onclick="">
+        </div>
+    </div>
+
+    <img id="modal" class="modal" src="../../assets/images/scene5/modal.png" alt="scene 5 modal" style="display: none;">
+    <img id="yes-btn" class="yes-btn" src="../../assets/images/scene5/button (2).png" onclick="window.location.href='scene6-1.html'" alt="scene 5 yes btn" style="display: none;">
+    
+    <!-- <button class="fullscreen" onclick="openFullscreen();">Open Fullscreen</button> -->
+
+    <script>
+        // Using JavaScript to open the page in fullscreen mode
+        var elem = document.documentElement;
+        function openFullscreen() {
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            
+            } else if (elem.msRequestFullscreen) { /* IE11 */
+                elem.msRequestFullscreen();
+            }
+        }
+
+        function loadPopup() {
+            document.getElementById('modal').style.display='block';
+            document.getElementById('yes-btn').style.display='block';
+        }
+
+        function toggleMapElements(icon, btn) {
+            
+            var x = document.getElementById(icon);
+            var y = document.getElementById(btn);
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+            if (y.style.display === "none") {
+                y.style.display = "block";
+            } else {
+                y.style.display = "none";
+            }
+
+            console.log("opened");
+        }
+
+        </script>
+
+</body>
+</html>

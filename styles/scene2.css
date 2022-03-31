@@ -3,8 +3,8 @@ body {
 }
 
 .img-bg {
-    width:100%;
-    height:100%;
+    width: 100%;
+    height: 100%;
     margin-left: auto;
     margin-right: auto;
     display: block;
@@ -17,6 +17,7 @@ body {
     position: absolute; 
     width:100%; 
     height:100%;
+    overflow: hidden;
 }
 
 #box2 {
@@ -66,7 +67,6 @@ body {
 
 #yes_button{
     width: 25%;
-    display: none; 
     transform: translate(143%, -270%);
     position: absolute;
     animation: fadeIn linear 1s;
@@ -84,7 +84,6 @@ body {
     left: 0%;
     position: relative;
     width: 100%;
-    display: none;
 }
 
 #box3 {
@@ -133,14 +132,6 @@ body {
     animation-duration:3s;
     display: inline-block; 
     overflow: hidden;
-}
-
-#form{
-    margin-top:500px;
-    position:absolute;
-    left: 30%;
-    height: 100%;
-    width: 100%;
 }
 
 audio{
@@ -251,3 +242,297 @@ audio{
 .lock {
     max-height: 78%;
 }
+
+/*CHANGE NAME FEATURE*/
+.dullBg{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+}
+
+.nameModal{
+    position: absolute;
+    width: 80%;
+    top: 16.5%;
+    left: 10%;
+    
+}
+
+.characterIcon{
+    width: 100%;
+    position: absolute;
+    transform-origin: center;
+}
+
+.setName{
+    width: 15%;
+    position: absolute;
+    cursor: pointer;
+    top: 68%;
+    left: 42%;
+}
+
+.setName:hover{
+    top: 69%;
+}
+
+.skipBtn{
+    width: 15%;
+    position: absolute;
+    cursor: pointer;
+    top: 79%;
+    left: 42%;
+}
+
+.skipBtn:hover{
+    top: 80%;
+}
+
+#form{
+    position:absolute;
+    left: 37.7%;
+    top: 54%;
+    height: 10%;
+    width: 30%;
+    
+}
+
+#myInput{
+    width: 70%;
+    height: 35%;
+    font-size: large;
+    padding: 8px 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px solid rgb(50, 255, 245);
+    border-radius: 10px;
+    background-color: hsl(180, 77%, 88%);
+}
+
+.telescope {
+    position: absolute;
+    left: 60.8%;
+    top: 19.5%;
+    color: #ffa502;
+    filter: drop-shadow(0 0 10px #fce61f);
+    cursor: pointer;
+    width: 5%;
+}
+
+.telescope:hover {
+    color: #ffa502;
+    filter: drop-shadow(0 0 10px #e4860b00);
+    cursor: pointer;
+  }
+  
+  .tooltiptext {
+    visibility: visible;
+    width: 120px;
+    top: 36%;
+    left: 62%;
+    margin-left: -60px;
+    background-color: #607082;
+    color: #fff;
+    text-align: center;
+    padding: 5px 5px;
+    border-radius: 6px;
+    cursor: default;
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+    animation: fadeIn linear 3s;
+  }
+  
+  .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%; /* At the bottom of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #607082 transparent;
+    cursor: default;
+    animation: fadeIn linear 3s;
+  }
+  
+  .tooltiptext1 {
+    width: 90px;
+    bottom: 15%;
+    right: 7%;
+    margin-left: -60px;
+    background-color: #3f4852;
+    color: #fff;
+    text-align: center;
+    padding: 5px 5px;
+    border-radius: 6px;
+    cursor: default;
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+    animation: fadeIn linear 3s;
+  }
+  
+  .tooltiptext2 {
+    width: 80px;
+    bottom: 10%;
+    right: 13%;
+    margin-left: -60px;
+    background-color: #3f4852;
+    color: #fff;
+    text-align: center;
+    padding: 5px 5px;
+    border-radius: 6px;
+    cursor: default;
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+    animation: fadeIn linear 3s;
+  }
+  
+  .tooltiptext3 {
+    width: 90px;
+    bottom: 10%;
+    right: 3%;
+    margin-left: -60px;
+    background-color: #3f4852;
+    color: #fff;
+    text-align: center;
+    padding: 5px 5px;
+    border-radius: 6px;
+    cursor: default;
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+    animation: fadeIn linear 3s;
+  }
+
+  #loading {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+
+#loading-image {
+    z-index: 100;
+    width: 30%;
+    margin-bottom: 8%;
+}
+
+#loading-bg{
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    opacity: 0.93;
+}
+
+.loading-txt{
+    font-size: 2rem;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    font-weight: 500;
+    line-height: 1.4;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    z-index: 1;
+    top: 60%;
+}
+
+/*Chapter Divider*/
+.dividers {
+    justify-content: center;
+    position: absolute; 
+    width:100%; 
+    height:100%;
+    z-index:5;
+    top:0;
+    left:0;
+    background-color: #ffffff60;
+    overflow: hidden;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .chapter {
+    width:100%;
+    height:100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    object-fit: cover;
+    overflow: hidden;
+  }
+  
+  .chapAni {
+    width:100%;
+    height:100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    object-fit: cover;
+    overflow: hidden;
+    animation: slideOut 1s ease-in-out;
+  }
+
+  .divAni {
+    justify-content: center;
+    position: absolute; 
+    width:100%; 
+    height:100%;
+    z-index:5;
+    top:0;
+    left:0;
+    background-color: #ffffff60;
+    overflow: hidden;
+    animation: fadeOut 1s ease-in-out;
+  }
+  
+  .fill-div {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    animation: slideIn 1s ease-in-out;
+  }
+  
+  .chapStart {
+    color:rgb(46, 46, 46);
+    font-size:1em;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    position: absolute;
+    bottom: 5%;
+    width:100%;
+    animation: fadeIn 1.2s infinite alternate;
+  }
+  
+  @keyframes slideIn{
+      0%{
+        transform: translateY(100%);
+      }
+      100%{
+        transform: translateY(0%);
+      }
+  }
+  @keyframes slideOut{
+    0%{
+      transform: translateY(0%);
+      opacity: 100%;
+    }
+
+    90%{
+        opacity: 100%;
+    }
+    
+    100%{
+      transform: translateY(120%);
+      opacity: 0%;
+    }
+  }

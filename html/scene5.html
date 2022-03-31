@@ -4,57 +4,104 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <title>Scene5</title>
     <script defer src="../js/scene5.js"></script>
     <link rel="stylesheet" href="../styles/scene5.css">
-    <style>
-        .fullscreen{
-            width: 10%;
-            margin-top: 20%;
-            z-index: 0;
-            position: absolute;
-        }
-
-        /* IE11 syntax */
-        #pin1:-ms-fullscreen {
-            transform: translate(20%, 70%);
-        }
-
-        /* Standard syntax */
-        #pin1:fullscreen {
-            transform: translate(20%, 70%);
-        }
-    </style>
+    <link rel="stylesheet" href="../styles/nav.css">
+    <script src="../js/nav.js"></script>
+    <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
 </head>
 <body>
     <!-- <audio autoplay loop id="bg-music">
         <source src="../assets/audio/bgm/Mountain_-_JVNA.mp3" type="audio/mpeg" />
     </audio> -->
 
+    <!-- <div id="loading">
+        <img id="loading-bg" src="../assets/images/scene1BG.png" alt="space background" />
+        <img id="loading-image" src="../assets/images/ezgif.com-gif-maker.gif" alt="Loading..." />
+        <p class="loading-txt">Loading...</p>
+    </div> -->
+    
+    <audio id="btn-se">
+        <source src="../assets/audio/soundEffects/scene2/button.wav" type="audio/wav" />
+    </audio>
+
+    <header class="page-header">
+        <div class="hamburger-menu">
+            <input id="menu__toggle" type="checkbox" />
+            <label class="menu__btn" for="menu__toggle">
+                <span></span>
+            </label>
+        
+            <ul class="menu__box">
+                <div class="menu__div">
+                    <div class="chapter-menu">
+                        <ul class="chapter__list">
+                            <li><a class="chapter__item" id="ch-Home" href="index.html">Home</a></li>
+                            <li><a class="chapter__item" id="chapter0" href="prologue.html">Prologue</a></li>
+                            <li><a class="chapter__item" id="chapter1" href="scene1-1.html">Chapter 1</a></li>
+                            <li><a class="chapter__item" id="chapter2" href="scene3-1.html">Chapter 2</a></li>
+                            <li><a class="chapter__item" id="chapter3" href="scene5.html" style="color: #30C9E9">Chapter 3</a></li>
+                            <li><a class="chapter__item" id="chapter4" href="scene6-1.html">Chapter 4</a></li>
+                            <li><a class="chapter__item" id="chapter5" href="scene8.html">Chapter 5</a></li>
+                        </ul>
+                    </div>
+                    <br><hr><br>
+                    <div class="menu__info">
+                        <span class="iconify menu__icon" data-icon="ant-design:info-circle-filled"></span>
+                        <h1 class="about"> About Sincerely, Earth</h1>
+                        <p>
+                            Sincerely, Earth is a dynamic storytelling website that provides an educational and immersive experience about climate change. Through this experience, we hope to inspire the next generation to become more aware and motivated to make a change.
+                        </p>
+                        <div class="present" style="display: flex">
+                            <div id="teamLogo" style="display: block; width: fit-content">
+                                <p style="font-size:1.4vh; color: black; margin-top:0">Presented By</p>
+                                <img src="../assets/images/eco_logo.png" alt="EcoLife Studio Logo" style="max-width: 8vh; margin-top:-5px">
+                            </div>
+                            <div id="mktSite" style="width: fit-content">
+                                <a class="mktSiteLink" href="https://ecolifestudio5.wixsite.com/ecolife-studio" >Learn More <span class="iconify" data-icon="ci:external-link"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <br><hr><br>
+                    <div class="list">
+                        <span class="iconify menu__item" data-icon="ion:help-circle-sharp"></span>
+                        <span id="on" class="iconify menu__item" data-icon="teenyicons:sound-on-outline" onClick="soundOff()" style="display: inline"></span>
+                        <span id="off" class="iconify menu__item" data-icon="teenyicons:sound-off-solid" onClick="soundOn()" style="display: none"></span>
+                    </div>
+                </div> 
+            </ul>    
+        </div>  
+    </header>
+
     <div class = "map">
         <div id="bg1" class="image">
             <img class="img-bg" src="../assets/images/scene5/map.png">
         </div> 
         
-        <img class="amazon-icon" id="amazon" src="../assets/images/scene5/amazon_circle.png">
-        <button class="btn1 btn" id = "btn1" onclick="window.location.href='scene5-amazon.html'; placeVisited('visited2', 'amazonVisited');">Explore the Amazon</button>
+        <img class="amazon-icon" id="amazon" src="../assets/images/scene5/amazon_circle.png" onclick="window.location.href='scene5-amazon.html'; placeVisited('visited2', 'amazonVisited');" style="display: none;">
+        <p class="icon-text" id="text1">The Amazon Rainforest</p>
+        <!-- <button class="btn1 btn" id = "btn1"  style="display: none;" onclick="window.location.href='scene5-amazon.html'; placeVisited('visited2', 'amazonVisited');">Explore the Amazon</button> -->
         
-        <img class="coralReef-icon" id="coral" src="../assets/images/scene5/coralReef_circle.png">
-        <button class="btn2 btn" id = "btn2" onclick="window.location.href='test.html'; placeVisited('visited3', 'coralVisited');">Explore the Barrier Reef</button>
-        
-        <img class="arctic-icon"  id="arctic" src="../assets/images/scene5/arctic_circle.png">
-        <button class="btn3 btn" id = "btn3" onclick="window.location.href='scene5-arctic.html'; placeVisited('visited', 'arcticVisited');">Explore the Arctic</button>
-        
+        <img class="coralReef-icon" id="coral" src="../assets/images/scene5/coralReef_circle.png" onclick="window.location.href='scene5-coral.html'; placeVisited('visited3', 'coralVisited');" style="display: none;">
+        <!-- <button class="btn2 btn" id = "btn2"  style="display: none;" onclick="window.location.href='scene5-coral.html'; placeVisited('visited3', 'coralVisited');">Explore the Barrier Reef</button> -->
+        <p class="icon-text" id="text2">The Greet Barrier Reef</p>
+
+        <img class="arctic-icon"  id="arctic" src="../assets/images/scene5/arctic_circle.png" onclick="window.location.href='scene5-arctic.html'; placeVisited('visited', 'arcticVisited');"  style="display: none;">
+        <!-- <button class="btn3 btn" id = "btn3"  style="display: none;" onclick="window.location.href='scene5-arctic.html'; placeVisited('visited', 'arcticVisited');">Explore the Arctic</button> -->
+        <p class="icon-text" id="text3">The Arctic</p>
+
         <div class="blink1 blinker" id="blink1"></div>
-        <img class="map-pin1 pin" id="pin1" src="../assets/images/scene5/pin.png" onclick="toggleMapElements('arctic', 'btn3')">
+        <img class="map-pin1 pin clickable" id="pin1" src="../assets/images/scene5/pin.png" onclick="toggleMapElements('arctic', 'btn3');  playEffect('btn-se');">
         
         <div class="blink2 blinker" id="blink2"></div>
-        <img class="map-pin2 pin" id="pin2" src="../assets/images/scene5/pin.png" onclick="toggleMapElements('amazon', 'btn1')"> 
+        <img class="map-pin2 pin clickable" id="pin2" src="../assets/images/scene5/pin.png" onclick="toggleMapElements('amazon', 'btn1');  playEffect('btn-se');"> 
         
         <div class="blink3 blinker" id="blink3"></div>
-        <img class="map-pin3 pin" id="pin3" src="../assets/images/scene5/pin.png" onclick="toggleMapElements('coral', 'btn2')"> 
+        <img class="map-pin3 pin clickable" id="pin3" src="../assets/images/scene5/pin.png" onclick="toggleMapElements('coral', 'btn2');  playEffect('btn-se');"> 
 
-        <button style="position: absolute; right: 97%;" onclick="reset()">reset</button>
+        <!-- <button style="position: absolute; right: 80%; z-index: 20;" onclick="reset()">reset</button> -->
         
 
     </div>
@@ -62,37 +109,88 @@
     <div class="inventory">
         <img id="inventory-bg" src="../assets/images/scene5/inventory.png" alt="inventory box">
         <div class="icons">
-            <img id="camera-icon" class="icon" src="../assets/images/scene5/icon-cam.png" alt="camera item" style="display: block;">
-            <img id="map-icon" class="icon" src="../assets/images/scene5/icon-map.png" alt="map item" style="display: block;">
-            <img id="camera-lock" class="lock" src="../assets/images/scene5/lock.png" alt="camera item" style="display: none;">
-            <img id="map-lock" class="lock" src="../assets/images/scene5/lock.png" alt="map item" style="display: none;">
+            <img id="camera-icon" class="icon" src="../assets/images/scene5/icon-cam.png" alt="camera item" style="display: block; pointer-events: none; filter: grayscale(100%);">
+            <img id="map-icon" class="icon" src="../assets/images/scene5/icon-map.png" alt="map item" style="display: block; pointer-events: none; filter: grayscale(100%);">
             <img id="teleport-icon" class="icon" src="../assets/images/scene5/icon.png" alt="teleport button" style="display: block;" onclick="">
         </div>
     </div>
 
-    <img id="modal" class="modal" src="../assets/images/scene5/modal.png" alt="scene 5 modal" style="display: none;">
-    <img id="yes-btn" class="yes-btn" src="../assets/images/scene5/button (2).png" onclick="window.location.href='scene6-1.html'" alt="scene 5 yes btn" style="display: none;">
+    <img id="modal" class="modal img-bg" src="../assets/images/scene5/modal.png" alt="scene 5 modal" style="display: none; z-index: 20;">
+    <img id="yes-btn" class="yes-btn" src="../assets/images/scene5/button (2).png" onclick="openCh4(); playEffect('btn-se'); window.location.href='scene6-1.html'" alt="scene 5 yes btn" style="display: none; z-index: 20;">
+
+    <div class="dividers" id="divider1" style="display: block;" >
+        <a href="#" id="fill" class="fill-div">
+            <img id="ch1" class="chapter" src="../assets/images/chapter 3.png" alt="Chapter 3">
+            <p class="chapStart">Click anywhere to close</p>
+        </a>
+    </div>
     
     <!-- <button class="fullscreen" onclick="openFullscreen();">Open Fullscreen</button> -->
 
     <script>
-        // Using JavaScript to open the page in fullscreen mode
-        var elem = document.documentElement;
-        function openFullscreen() {
-            if (elem.requestFullscreen) {
-                elem.requestFullscreen();
-            
-            } else if (elem.msRequestFullscreen) { /* IE11 */
-                elem.msRequestFullscreen();
-            }
-        }
 
         function loadPopup() {
             document.getElementById('modal').style.display='block';
             document.getElementById('yes-btn').style.display='block';
         }
 
-        </script>
+        function toggleMapElements(icon, btn) {
+            
+            var x = document.getElementById(icon);
+            var y = document.getElementById(btn);
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+            if (y.style.display === "none") {
+                y.style.display = "block";
+            } else {
+                y.style.display = "none";
+            }
+
+            console.log("opened");
+        }
+
+        //Chapter Divider
+        var ch1 = document.getElementById("ch1");
+        var chap1 = document.getElementById("divider1");
+        $(".fill-div").click(function() {
+            document.getElementById('fill').className = 'chapAni';
+            document.getElementById('divider1').className = 'divAni';
+            if (ch1.style.opacity == 0){
+                console.log("hide");
+                setTimeout(function () {
+                    chap1.style.display = "none";
+                }, 800);
+            }
+        });
+
+        function openCh4() {
+            localStorage.setItem("ch4-lock", 1);
+        }
+
+        function soundOff() {
+            document.getElementById("bg-music").muted = true;  
+            document.getElementById("on").style.display = "none";
+            document.getElementById("off").style.display = "inline";
+        }
+
+        function soundOn() {
+            document.getElementById("bg-music").muted = false; 
+            document.getElementById("off").style.display = "none"; 
+            document.getElementById("on").style.display = "inline";
+        }
+
+
+        function playEffect(sound) {
+
+            var soundEffect2 = document.getElementById(sound);
+            soundEffect2.play();
+
+        }
+
+</script>
 
 </body>
 </html>

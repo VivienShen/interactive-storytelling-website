@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scene 9</title>
+    <link rel="stylesheet" href="../styles/scene9.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" href="../styles/nav.css">
+    <script src="../js/nav.js"></script>
+    <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+</head>
+<body>
+
+    <audio autoplay loop id="bg-music">
+        <source src="../assets/audio/soundEffects/scene9/Main.mp3" type="audio/mpeg" />
+    </audio>
+
+        <div id="bg" class="image-2">
+            <img class="img-bg2" src="../assets/images/scene9/background.png" alt="parallax scene background">
+        </div> 
+        
+        <!-- <div id="loading">
+            <img id="loading-bg" src="../assets/images/scene1BG.png" alt="space background" />
+            <img id="loading-image" src="../assets/images/ezgif.com-gif-maker.gif" alt="Loading..." />
+            <p class="loading-txt">Loading...</p>
+        </div> -->
+    
+        <header class="page-header">
+            <div class="hamburger-menu">
+                <input id="menu__toggle" type="checkbox" />
+                <label class="menu__btn" for="menu__toggle">
+                    <span></span>
+                </label>
+            
+                <ul class="menu__box">
+                    <div class="menu__div">
+                        <div class="chapter-menu">
+                            <ul class="chapter__list">
+                                <li><a class="chapter__item" id="ch-Home" href="index.html">Home</a></li>
+                                <li><a class="chapter__item" id="chapter0" href="prologue.html">Prologue</a></li>
+                                <li><a class="chapter__item" id="chapter1" href="scene1-1.html">Chapter 1</a></li>
+                                <li><a class="chapter__item" id="chapter2" href="scene3-1.html">Chapter 2</a></li>
+                                <li><a class="chapter__item" id="chapter3" href="scene5.html">Chapter 3</a></li>
+                                <li><a class="chapter__item" id="chapter4" href="scene6-1.html">Chapter 4</a></li>
+                                <li><a class="chapter__item" id="chapter5" href="scene8.html" style="color: #30C9E9">Chapter 5</a></li>
+                            </ul>
+                        </div>
+                        <br><hr><br>
+                        <div class="menu__info">
+                            <span class="iconify menu__icon" data-icon="ant-design:info-circle-filled"></span>
+                            <h1 class="about"> About Sincerely, Earth</h1>
+                            <p>
+                                Sincerely, Earth is a dynamic storytelling website that provides an educational and immersive experience about climate change. Through this experience, we hope to inspire the next generation to become more aware and motivated to make a change.
+                            </p>
+                            <div class="present" style="display: flex">
+                                <div id="teamLogo" style="display: block; width: fit-content">
+                                    <p style="font-size:1.4vh; color: black; margin-top:0">Presented By</p>
+                                    <img src="../assets/images/eco_logo.png" alt="EcoLife Studio Logo" style="max-width: 8vh; margin-top:-5px">
+                                </div>
+                                <div id="mktSite" style="width: fit-content">
+                                    <a class="mktSiteLink" href="https://ecolifestudio5.wixsite.com/ecolife-studio" >Learn More <span class="iconify" data-icon="ci:external-link"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <br><hr><br>
+                        <div class="list">
+                            <span class="iconify menu__item" data-icon="ion:help-circle-sharp"></span>
+                            <span id="on" class="iconify menu__item" data-icon="teenyicons:sound-on-outline" onClick="soundOff()" style="display: inline"></span>
+                            <span id="off" class="iconify menu__item" data-icon="teenyicons:sound-off-solid" onClick="soundOn()" style="display: none"></span>
+                        </div>
+                    </div> 
+                </ul>    
+            </div>  
+        </header>
+
+        <Section class="sec1" id="sec1">
+            <img class="bg1" src="../assets/images/scene9/sea/sea-bckg.png" alt="sea background">
+            <img class="image15" id="img" src="../assets/images/scene9/sea/seaweed (2)Letter.png">
+            <img class="image16" id="img" src="../assets/images/scene9/sea/seaweedLetter.png">
+            <img class="image14" id="img" src="../assets/images/scene9/sea/rockLetter.png">
+            <img class="image1" id="img" src="../assets/images/scene9/sea/fishes.png">
+            <img class="image11" id="img" src="../assets/images/scene9/sea/corals4Letter.png">
+            <img class="image12" id="img" src="../assets/images/scene9/sea/fishes-bgLetter.png">
+            <img class="image2" id="img" src="../assets/images/scene9/sea/turtl.png">
+            <svg id="path2"  viewBox="30 0 786 400">
+                <path id="motionPath2" d="M -122 -2 C -13 152 105 206 202 260 C 332 330 558 360 834 331" fill="none" stroke="#5dba4700" stroke-width="2"/>
+            </svg>
+
+            <img class="image4" id="img" src="../assets/images/scene9/sea/Asset 37Letter.png">
+            <img class="image21" id="img" src="../assets/images/scene9/sea/corals.png">
+            <img class="image6" id="img" src="../assets/images/scene9/sea/bottomLetter.png">
+            <img class="image3" id="img" src="../assets/images/scene9/sea/Asset 36Letter.png">
+            <img class="image5" id="img"src="../assets/images/scene9/sea/blackFishLetter.png">
+            <svg id="path3"  viewBox="30 0 786 400">
+                <path id="motionPath3" d="M 883 37 C 640 -34 450 80 396 148 C 257 322 75 402 -43 317" fill="none" stroke="#5dba4700" stroke-width="2"/>
+            </svg>
+
+            <img class="image8" id="img" src="../assets/images/scene9/sea/bublesLetter.png">
+            <img class="image9" id="img" src="../assets/images/scene9/sea/corals2Letter.png">
+            <img class="image10" id="img" src="../assets/images/scene9/sea/corlas1Letter.png">
+            <img class="image13" id="img" src="../assets/images/scene9/sea/redFishesLetter.png">
+            <img class="image18" id="img" src="../assets/images/scene9/sea/waveLetter.png">
+
+            <img class="image19" id="img" src="../assets/images/scene9/sea/yelloFish-topLetter.png">
+            <svg id="path1"  viewBox="30 0 786 400">
+                <path id="motionPath1" d="M 804 60 C 804 60 717 0 511 28 C 277 64 181 270 58 318" fill="none" stroke="#5dba4700" stroke-width="2"/>
+            </svg>
+
+            <img class="image20" id="img" src="../assets/images/scene9/sea/yelloFishesLetter.png"> 
+            <svg id="path4"  viewBox="30 0 786 400">
+                <path id="motionPath4" d="M 1075 181 C 957 47 791 29 600 102 C 385 195 158 253 7 259" fill="none" stroke="#5dba4700" stroke-width="2"/>
+            </svg>
+
+            <div class="text" id="text1" style="display:none;">
+                <div id="box1" class="textbox" >
+                    <p>While Aeryn's future is undetermined, you have done the best you can do to create a better life for her and others living on Earth and space. </p>
+                </div>
+            </div>
+        
+        </Section>
+
+        
+    
+        <img class="image7" id="img" src="../assets/images/scene9/divider-03.png"> 
+    
+        <Section class="sec2" id="sec2">
+            <img class="bg2" src="../assets/images/scene9/arctic/arctic-bckg.png" alt="arctic background">
+            <img class="image2-1" src="../assets/images/scene9/arctic/BirdsLetter.png">
+            <img class="image2-2" src="../assets/images/scene9/arctic/floating iceLetter.png">
+            <img class="image2-3" src="../assets/images/scene9/arctic/Ice-bigLetter.png">
+            <img class="image2-4" src="../assets/images/scene9/arctic/IcebergLetter.png">
+            <img class="image2-5" src="../assets/images/scene9/arctic/Iceberg2Letter.png">
+            <img class="image2-6" src="../assets/images/scene9/arctic/polar bearsLetter.png">
+            <img class="image2-7" src="../assets/images/scene9/arctic/polarbear-aloneLetter.png">
+            <img class="image2-8" src="../assets/images/scene9/arctic/walrusLetter.png">
+            <img class="image2-9" src="../assets/images/scene9/arctic/whaleLetter.png">
+
+            <div class="text" id="text2" style="display:none;">
+                <div id="box2" class="textbox" >
+                    <p>We hope that by 2050 a net zero can be achieved where greenhouse gasses are no longer emitted so the global temperature doesn’t increase and destroy habitats for animals and homes for people. </p>
+                </div>
+            </div>
+        </Section>
+    
+        <Section class="sec3"  id="sec3">
+            <div class="container3">
+                <img class="bg3" src="../assets/images/scene9/amazon/amazon-bckg.png" alt="amazon background"> 
+                <img class="image3-0" id="img" src="../assets/images/scene9/divider2-03.png"> 
+                <img class="image3-7" src="../assets/images/scene9/amazon/bg3Letter.png">
+                <img class="image3-17" src="../assets/images/scene9/amazon/bg_tree (2)Letter.png">
+                <img class="image3-6" src="../assets/images/scene9/amazon/bg2Letter.png">
+                <img class="image3-4" src="../assets/images/scene9/amazon/bg_treesLetter.png">
+                <img class="image3-16" src="../assets/images/scene9/amazon/vinesLetter.png"> 
+                
+                <img class="image3-5" src="../assets/images/scene9/amazon/bg1Letter.png">
+                
+                <img class="image3-2" src="../assets/images/scene9/amazon/tree_rightLetter.png">
+                <img class="image3-8" src="../assets/images/scene9/amazon/birdLetter.png">
+                <img class="image3-9" src="../assets/images/scene9/amazon/JaguarLetter.png">
+                
+                <img class="image3-3" src="../assets/images/scene9/amazon/bg_treeLetter.png">
+                <img class="image3-1" src="../assets/images/scene9/amazon/tree_leftLetter.png">
+                <img class="image3-11" src="../assets/images/scene9/amazon/leaves_secondLetter.png">
+                <img class="image3-10" src="../assets/images/scene9/amazon/leaves_frontLetter.png">
+                <img class="image3-15" src="../assets/images/scene9/amazon/slothLetter.png">
+                
+                <video class="bg4" autoplay loop>
+                    <source src="../assets/motionGraphics/stars.mp4" alt="space background" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                
+                <!-- <img class="envelope_top" src="../assets/images/scene9/letter_top-01.png">
+                <img class="contract_end" src="../assets/images/scene9/contract_lastFrame.png">
+                <img class="contract_fold1" src="../assets/images/scene9/letter_fold1-02.png">
+                <img class="contract_fold2" src="../assets/images/scene9/letter_fold2-02.png">
+                <img class="envelope_btm" src="../assets/images/scene9/letter_bottom-01.png">
+
+                <img class="envelope_closed" src="../assets/images/scene9/letter_closed-02.png">  -->
+
+                <canvas id="canvas" width="2000" height="2000" ></canvas>
+
+                <div class="end-text-container">
+                    <p class="end-text">The End</p>
+                </div>
+
+                <div class="text" id="text3" style="display:none;">
+                    <div id="box3" class="textbox" >
+                        <p>With the help of politicians, industries, scientists, and the general population, we can take care of our Earth and make sure there’s a brighter future for all. </p>
+                    </div>
+                </div>
+
+                <div class="restart-btn" id="restart" style="display:none">
+                    <button class="endBtn" onclick="window.location.href='index.html'; removeLS(); resetCapturedCount();">Restart?</button>
+                </div>
+                
+            </div>
+            
+        </Section>
+
+        <div id="nextBtn next2" class="btn2 btn next2" onclick= "endScene()" style="display: none;"></div>
+
+        <!--SCROLL DOWN INDICATOR-->
+        <div class="scroll-indicator">
+            <div class="scroll"></div>
+            <p class="scroll-text">Scroll Down</p>
+        </div>
+    
+    <div class="inventory">
+        <img id="inventory-bg" src="../assets/images/scene6/inventory-panel.png" alt="inventory box">
+        <progress id="popularity-meter" min="0" max="100" value="0"><span></span></progress>
+        <div class="icons">
+            <img id="camera-icon" class="icon" src="../assets/images/scene6/icon-cam.png" alt="camera item" style="display: block; pointer-events: none; filter: grayscale(100%);">
+            <img id="map-icon" class="icon" src="../assets/images/scene6/icon-map.png" alt="map item" style="display: block; pointer-events: none; filter: grayscale(100%);">
+            <img id="teleport-icon" class="icon" src="../assets/images/scene6/icon.png" alt="teleport button" style="display: block; pointer-events: none; filter: grayscale(100%);">
+        </div>
+    </div>
+    
+    <script src="../js/meter.js"></script>
+    <script src="../js/scene5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/MotionPathPlugin.min.js"></script>
+    <script src="https://unpkg.com/rive-js"></script>
+    
+    <script>
+
+        // $(window).on('load', function () {
+        //     $('#loading').hide();
+        // }) 
+        
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.sec1',
+                scrub: 1,
+                start: 'top top',
+                end: '+=6500',
+                // pin: true,
+                //markers: true
+            }
+        });
+        tl.to(".image18", {
+            y: "-100%",
+            scrub: 2
+        },'start')
+        .to(".image1", {
+            y: "-100%",
+            scrub: 2
+        },'start')
+        // .to(".image2", {
+        //     y: "-100%",
+        //     scrub: 2
+        // },'start')
+        .to(".image3", {
+            y: "-100%",
+            scrub: 2
+        },'start')
+        .to(".image4", {
+            y: "-100%",
+            scrub: 2
+        },'start')
+        // .to(".image5", {
+        //     y: "-100%",
+        //     scrub: 2
+        // },'start')
+        .to(".image6", {
+            y: "-100%",
+            scrub: 2
+        },'start')
+        .to(".image8", {
+            y: "-100%",
+            scrub: 2
+        },'start')
+        .to(".image9", {
+            y: "-110%",
+            scrub: 2
+        },'start')
+        .to(".image10", {
+            y: "-67%",
+            scrub: 2
+        },'start')
+        .to(".image11", {
+            y: "-110%",
+            scrub: 2
+        },'start')
+        .to(".image12", {
+            y: "-100%",
+            scrub: 2
+        },'start')
+        .to(".image13", {
+            y: "-300%",
+            scrub: 2
+        },'start')
+        .to(".image14", {
+            y: "-30%",
+            scrub: 2
+        },'start')
+        .to(".image15", {
+            y: "-100%",
+            scrub: 2
+        },'start')
+        .to(".image16", {
+            y: "-100%",
+            scrub: 2
+        },'start')
+        // .to(".image19", {
+        //     y: "-100%",
+        //     scrub: 2
+        // },'start')
+        // .to(".image20", {
+        //     y: "-100%",
+        //     scrub: 2
+        // },'start')
+        .to(".image7", {
+            y: "-50%",
+            scrub: 2
+        },'start')
+        .to(".image21", {
+            y: "-50%",
+            scrub: 2
+        },'start')
+        .to("#text1", {
+            display: "block",
+            scrub: 2
+        },'start')
+        .to(".scroll-text", {
+            opacity: 0,
+            duration: 0.03
+        },'start')
+        .to(".scroll", {
+            y: "-180%",
+            scale: 0.5,
+            duration: 0.1
+        },'start')
+        
+        const tl2 = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.sec2',
+                scrub: 1,
+                start: 'top top',
+                end: '+=4600',
+                // pin: true,
+                //markers: true
+            }
+        });
+        tl2.to(".image2-1", {
+            y: "1350%",
+            x: "-60%",
+            scrub: 1
+        },'start')
+        .to(".image2-2", {
+            x: "40%",
+            scrub: 2
+        },'start')
+        .to(".image2-3", {
+            y: "-30%",
+            x:"-10%",
+            scrub: 2
+        },'start')
+        .to(".image2-4", {
+            y: "-100%",
+            scrub: 2
+        },'start')
+        .to(".image2-5", {
+            y: "-30%",
+            scrub: 2
+        },'start')
+        .to(".image2-5", {
+            x: "20%",
+            scrub: 2
+        },'start')
+        .to(".image2-6", {
+            x: "-130%",
+            scrub: 2
+        },'start')
+        .to(".image2-7", {
+            x: "-450%",
+            scrub: 2
+        },'start')
+        .to(".image2-8", {
+            x: "250%",
+            scrub: 2
+        },'start')
+        .to(".image2-9", {
+            y: "-240%",
+            scrub: 2
+        },'start')
+        .to("#text2", {
+            display: "block",
+            scrub: 2
+        },'start')
+        
+        const tl3 = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.sec3',
+                scrub: 1,
+                start: 'top top',
+                end: '+=3000',
+                // pin: true,
+                // markers: true
+            }
+        });
+        tl3.to(".image3-1", {
+            y: "-30%",
+            x: "25%",
+            scrub: 2
+        },'start')
+        .to(".image3-2", {
+            y: "-30%",
+            x: "-30%",
+            scrub: 2
+        },'start')
+        .to(".image3-3", {
+            y: "-30%",
+            x:"20%",
+            scrub: 2
+        },'start')
+        .to(".image3-4", {
+            y: "-40%",
+            scrub: 2
+        },'start')
+        .to(".image3-5", {
+            y: "-60%",
+            scrub: 2
+        },'start')
+        .to(".image3-6", {
+            y: "-50%",
+            scrub: 2
+        },'start')
+        .to(".image3-7", {
+            y: "-40%",
+            scrub: 2
+        },'start')
+        .to(".image3-8", {
+            y: "-145%",
+            x: "130%",
+            scrub: 2
+        },'start')
+        .to(".image3-9", {
+            x: "80%",
+            y: "-25%",
+            scrub: 2
+        },'start')
+        .to(".image3-10", {
+            y: "-20%",
+            scrub: 2
+        },'start')
+        .to(".image3-11", {
+            y: "-65%",
+            scrub: 2
+        },'start')
+        .to(".image3-15", {
+            y: "-170.5%",
+            x: "-100%",
+            scrub: 2
+        },'start')
+        .to(".image3-16", {
+            y: "-30%",
+            scrub: 2
+        },'start')
+        .to(".image3-17", {
+            y: "-55%",
+            scrub: 2
+        },'start')
+        .to("#text3", {
+            display: "block",
+            scrub: 2
+        },'start')
+
+        const tl4 = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.sec1',
+                scrub: 2,
+                start: 'top top',
+                end: '+=2500',
+                // markers: true
+            }
+        }, 'start');
+
+        tl4.to(".image19", {
+            motionPath: {
+                path: "#motionPath1",
+                align: "#motionPath1",
+                alignOrigin: [0.5, 0.2],
+                autoRotate: -200,
+            },
+            duration: 40
+            
+        }, 'start')
+        .to(".image2", {
+            motionPath: {
+                path: "#motionPath2",
+                align: "#motionPath2",
+                alignOrigin: [0.5, 0.2],
+                autoRotate: -40,
+            },
+            duration: 50
+            
+        }, '-=35')
+        .to(".image5", {
+            motionPath: {
+                path: "#motionPath3",
+                align: "#motionPath3",
+                alignOrigin: [0.5, 0.2],
+                autoRotate: -160,
+            },
+            duration: 50
+            
+        }, '-=35')
+        .to(".image20", {
+            motionPath: {
+                path: "#motionPath4",
+                align: "#motionPath4",
+                alignOrigin: [0.5, 0.2],
+                autoRotate: -180,
+            },
+            duration: 50
+            
+        }, '-=35')
+
+        var next = document.getElementById("nextBtn next2");
+        
+        function endScene() {
+            gsap.timeline()
+                .to(".bg4", {
+                    y: "-100%",
+                    scrub: 1,
+                    duration: 2
+                })
+                .to(".end-text-container", {
+                    display: "block",
+                    duration: 0.5
+                    
+                }, '+=5')
+                .to(".restart-btn", {
+                    display: "block",
+                    duration: 1
+                    
+                }, '+=2')
+                .to(".scroll", {
+                    opacity: 0,
+                    duration: 2
+                },'-=7')
+
+            next.style.display = "none";
+
+            var $window = $(window);
+
+             //ENDING ANIMATION
+
+            setTimeout(startAnim, 2000);
+
+            function startAnim() {
+                const r = new rive.Rive({
+                    src: '../assets/envEnding.riv',
+                    canvas: document.getElementById('canvas'),
+                    autoplay: true,
+                    stateMachines: 'State Machine 1',
+                    fit: rive.Fit.cover,
+                    onLoad: (_) => {
+                        const inputs = r.stateMachineInputs('State Machine 1')
+                        const trigger = inputs.find(i => i.name === 'Trigger 1')
+                
+                            trigger.fire();
+                        
+                    }
+                });
+            }
+
+        }
+
+        var $window = $(window);
+
+        var body = document.querySelector("body");
+
+        $(window).on('scroll', function() {
+            $topOffset = $(this).scrollTop();
+        
+            console.log($topOffset);
+            console.log(body.scrollHeight);
+
+            if($topOffset > body.scrollHeight * 0.85){
+                next.style.display = "block";
+            }else{
+                next.style.display = "none";
+            }
+        
+        });
+
+            //Retrieving changed name from local storage
+            var inputVal = localStorage.getItem("newName");
+            console.log(inputVal);
+
+            if (inputVal == "" || inputVal == null){
+
+                var all2 = document.querySelectorAll('p');
+
+                all2.forEach(x => x.innerHTML = x.innerHTML.replace(/Aeryn/gi, "Aeryn"));
+                console.log("name is null");
+            }
+
+            else{
+                var all = document.querySelectorAll('p');
+                all.forEach(x => x.innerHTML = x.innerHTML.replace(/Aeryn/gi, inputVal));
+            }
+        
+    function showEnding() {
+        lastScene.style.display = "inline";
+        secondLst.style.display = "none";
+    }
+
+    function soundOff() {
+        document.getElementById("bg-music").muted = true;  
+        document.getElementById("on").style.display = "none";
+        document.getElementById("off").style.display = "inline";
+    }
+
+    function soundOn() {
+        document.getElementById("bg-music").muted = false; 
+        document.getElementById("off").style.display = "none"; 
+        document.getElementById("on").style.display = "inline";
+    }
+
+    function removeLS(){
+        window.localStorage.clear();
+        window.sessionStorage.clear();
+    }
+
+    </Script>
+</body>
+</html>

@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
+    <title>Scene5 - Arctic</title>
+    <link rel="stylesheet" href="../../styles/scene5.css">
+
+    <style>
+        body{
+            height: 6600px;
+        }
+        #bg1{
+            position: fixed;
+        }
+        .image3{
+            top: 100%;
+            opacity: 1;
+            z-index: 1;
+        }
+        .image4, .image5{
+            top: 100%;
+            opacity: 1;
+        }
+
+        .image6{
+            opacity: 1;
+            max-width: 10%;
+            max-height: 10%;
+            top: 100%;
+            right: 10%;
+            z-index: 3;
+        }
+
+        .image5{
+            left: 30%;
+        }
+
+        .image7{
+            opacity: 0;
+            width: 4.9%;
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            object-fit: cover;
+            top: 35%;
+            left: 71%;
+            z-index: 3;
+        }
+        .image8{
+            width: 4.9%;
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            object-fit: cover;
+            top: 100%;
+            left: 77.6%;
+            z-index: 2;
+            
+        }
+        .image3-3{
+            z-index: 3;
+            top: 100%;
+        }
+
+        .image5, .image6{
+            z-index: 4;
+        }
+
+        .factBox {
+            font-size: 1.05rem;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0); 
+            font-weight: 500;
+            line-height: 1.4;
+            box-shadow: rgba(0, 0, 0, 0) 0px 3px 8px;
+            color: #000;
+            border-radius: 50px;
+            background-color: rgba(255, 255, 255, 0.897);
+            padding: 10px;
+            position: fixed;
+            width:fit-content;
+            max-width: 500px;
+            height:fit-content;
+            z-index: 1;
+        }
+
+        .factBox:hover{
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            background-color: rgba(255, 255, 255, 0.925);
+            border-radius: 20px;
+            padding: 20px;
+        }
+
+        .fact {
+            margin-bottom: 15px;
+            background-color:rgb(255, 255, 255);
+            top: 45%;
+            left: 60%;
+            z-index: 10;
+            position:fixed;
+        }
+
+        #fact1{
+            top: 110%;
+            left: 55%;
+        }
+
+        #fact2{
+            top: 110%;
+            left: 65%;
+        }
+
+        #fact3{
+            top: 110%;
+            left: 15%;
+        }
+
+        
+        .btn-text {
+            max-width: 0;
+            display: inline-block;
+            -webkit-transition: color .25s 1.5s, max-width 2s;
+            transition: color .25s 1.5s, max-width 2s;
+            -webkit-transition: color .25s 1.5s, max-height 2s;
+            transition: color .25s 1.5s, max-height 2s;
+            vertical-align: top;
+            white-space: nowrap;
+            overflow: hidden;
+            color: rgb(2, 2, 2);
+        }
+
+        button:hover .btn-text {
+            width:fit-content;
+            max-width: 500px;
+            height:fit-content;
+            white-space: normal;
+            color: rgb(0, 0, 0);
+        }
+
+        button .info-icon{
+            width: 40px;
+            padding-left: 6px;
+            padding-top: 6px;
+        }
+        
+        button:hover .info-icon {
+            display: none;
+        }
+        
+        .camera-capture{
+            position: fixed;
+            top: 50%;
+            left: 10%;
+            left: var(--mouse-x);
+            top: var(--mouse-y);
+            transform-origin: center;
+            transform: scale(0.5, 0.5)
+            
+        }
+
+        .cam_container {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: fixed;
+            /* background-color: chartreuse; */
+        }
+
+        .scroll-indicator{
+            position: absolute;
+            top: 40%;
+            left: 45%;
+        }
+
+        .scroll {
+            width: 45px; 
+            height: 80px;
+            left: 33%;
+            border: 3.8px solid rgba(10, 100, 128, 0.904); 
+            border-radius: 50px; 
+            position: relative;
+        }
+        .scroll:before {
+            content: ""; 
+            position: absolute;
+            width: 15px; 
+            height: 15px;
+            background: rgba(19, 152, 175, 0.904); 
+            margin: auto;
+            left: 0; 
+            right: 0;
+            top: 30px; 
+            border-radius: 50%;
+            animation: animate 1s linear infinite; 
+        }
+        @keyframes animate {
+            0% {
+                opacity: 1; top: 5px;
+            }
+            100% {
+                opacity: 0; top: 65px;
+                transform: scale(0.8);
+            }
+        }
+
+        .scroll-text{
+            font-size: 1.8rem;
+            font-weight: 700;
+            font-family: SpectralSC-SemiBold;
+            color: rgba(10, 100, 128, 0.904); 
+        }
+        .gameText{
+            position: fixed;
+            top: 5%;
+            left: 25%;
+            font-size: 2rem;
+        }
+
+        .output{
+            position: fixed;
+            transform: scale(1.2, 1.2);
+            transform: rotate(-10deg);
+            top: 25%;
+            left: 35%;
+            animation-name: example;
+            animation-duration: 2s;
+            animation-delay: 1s;
+            animation-fill-mode: forwards;
+        
+        }
+
+        @keyframes example {
+            from {top: 25%; }
+            to {top: 105%; }
+        }
+
+        .arctic-counter{
+            position: fixed;
+            top: 5%;
+            left: 2%;
+            border-radius: 50px;
+            box-shadow: 6px 7px #b9b9b97e;
+        }
+
+    </style>
+</head>
+<body>
+
+    <audio autoplay loop id="bg-music">
+        <source src="../assets/audio/bgm/Mountain_-_JVNA.mp3" type="audio/mpeg" />
+    </audio>
+
+    <div id="bg1" class="image">
+        <img class="img-bg" src="../../assets/images/scene5/arctic/arcticBG.png" alt="arctic background gradient">
+    </div> 
+
+    <div class="container" >
+        <div class="container_img" id="container_img">
+            <div class="img" id="photo" >
+                <img class="image2" src="../../assets/images/scene5/arctic/mountainBG-01.png">
+                <img class="image1" src="../../assets/images/scene5/arctic/clouds.png">
+                <img class="image4" src="../../assets/images/scene5/arctic/water-01.png">
+                <img class="image3" src="../../assets/images/scene5/arctic/mountains-01.png">
+                <img class="image3-3" src="../../assets/images/scene5/arctic/iceberg-01.png">      
+                <img class="image5" src="../../assets/images/scene5/arctic/smallPB-01.png">
+                <img class="image6" id="big-pb" onclick="openFact('fact1');" src="../../assets/images/scene5/arctic/BigPB-02.png">
+        
+                <!-- <img class="image5" src="../assets/images/scene5/arctic/scroll1.png">
+                <img class="image6" src="../assets/images/scene5/arctic/scroll2.png">
+                <img class="image7" src="../assets/images/scene5/arctic/scroll3.png"> -->
+            </div>
+            <img class="image8" src="../../assets/images/scene5/arctic/iceberg2.png">
+            <img class="image7" src="../../assets/images/scene5/arctic/fallingIce.png">
+
+            <!--SCROLL DOWN INDICATOR-->
+            <div class="scroll-indicator" >
+                <div class="scroll"></div>
+                <p class="scroll-text">Scroll Down</p>
+            </div>
+
+            
+        </div>  
+
+        <div class="cam_container" id="parent-cam">
+            <img class="camera-capture" style="display: none;" id="cam" onclick="" onmousedown="camClicked()" onmouseup="camReleased()" src="../../assets/images/scene5/cam-capture.png">
+        </div>
+
+
+        <iframe class="arctic-counter" title='Tons of melted ice' src='https://www.theworldcounts.com/embed/challenges/22?background_color=white&color=black&font_family=%22Helvetica+Neue%22%2C+Arial%2C+sans-serif&font_size=14' style='border: none' height='100' width='300'></iframe> 
+
+        <div class="inventory">
+            <img id="inventory-bg" src="../../assets/images/scene7/inventory-panel.png" alt="inventory box">
+            <progress id="popularity-meter" min="0" max="100" value="0"><span></span></progress>
+            <div class="icons">
+                <img id="camera-icon" class="icon" src="../../assets/images/scene5/icon-cam.png" alt="camera item" style="display: block;" onclick="">
+                <img id="map-icon" class="icon" src="../../assets/images/scene5/icon-map.png" alt="map item" style="display: block;" onclick="window.location.href='scene5.html'">
+                <img id="teleport-icon" class="icon" src="../../assets/images/scene5/icon.png" alt="teleport button" style="display: block;">
+            </div>
+        </div>
+
+    </div>
+
+    <button id="fact1" class="factBox clickable">
+            <span class="btn-icon"> 
+                <img class="info-icon" src="../../assets/images/information.png" alt="info btn icon">
+            </span>
+            <span class="btn-text">Polar bears are well adapted to survive in one of the harshest environments on our planet, the Arctic. 
+                This is because of their thick fur and skin that helps them keep warm. The Arctic is warming twice as fast as it’s supposed to, causing the ice that polar bears 
+                live on to melt away. The loss of sea ice also makes it harder for the polar bear to find food.
+                <a href="https://www.wwf.org.uk/learn/wildlife/polar-bears" target="_blank">   
+                    Read more</a></span>
+    </button> 
+
+    <button id="fact2" class="factBox clickable">
+        <span class="btn-icon"> 
+            <img class="info-icon" src="../../assets/images/information.png" alt="info btn icon">
+        </span>
+        <span class="btn-text">The water in icebergs is colder and less salty than sea water, so when icebergs melt, 
+            the difference in density between iceberg water and sea water causes the sea level to slightly rise.
+            <a href="https://education.seattlepi.com/effect-global-warming-icebergs-4877.html" target="_blank">   
+                Read more</a></span>
+    </button> 
+
+    <button id="fact3" class="factBox clickable">
+        <span class="btn-icon">
+            <img class="info-icon" src="../../assets/images/information.png" alt="info btn icon">
+        </span>
+        <span class="btn-text">Around four million people live in the Arctic, amongst them are indigenous people called the Inuits. 
+            Inuit people have been noticing the change in the Arctic from global warming, and because their culture is adapted to the Arctic’s cold climate, it makes it 
+            harder for Inuit people to continue their traditions
+            <a href="https://www.natgeokids.com/uk/discover/geography/general-geography/ten-facts-about-the-arctic/" target="_blank">   
+                Read more</a></span>
+    </button> 
+
+    <div class="text" id="text3" style="opacity:0">
+        <div id="box3" class="speechbox" >
+            <p><b>Robin:</b> We are now in the Arctic, home to about 4 million people.
+            </p>
+        </div>
+    </div>
+
+    <p class="gameText" id="game-txt">Game Status</p>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script src="../js/scene5.js"></script>
+    <script>
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.container_img',
+                scrub: 1,
+                start: 'top top',
+                end: '+=10000',
+                pin: true,
+                // markers: true
+            }
+        });
+
+        tl.to(".image1", 2,{
+            y: "-100%",
+            pin: true,
+            duration: 2
+        },'start')
+        .to(".image2", 4, {
+            y: "-100%",
+            pin: true
+        },'start')
+        .to(".image3", 8, {
+            y: "-100%",
+            pin: true
+        } ,'start')
+        .to(".image3-3", 8.3, {
+            y: "-100%",
+            pin: true
+        } ,'start')
+        .to(".image8",{
+            y: "-239%",
+            pin: true,
+            duration: 8
+        }, '-=7.5')
+        .to(".image4", 10, {
+            y: "-100%",
+            pin: true
+        },'start')
+        .to(".image5", 11, {
+            y: "-95%",
+            pin: true
+        },'start')
+        .to(".image6", 11, {
+            y: "-240%",
+            pin: true
+        },'start')
+        .to("#fact1", 11, {
+            top: "60%",
+            pin: true
+        },'start')
+        .to("#fact2", 11, {
+            top: "20%",
+            pin: true
+        },'start')
+        .to("#fact3", 11, {
+            top: "27%",
+            pin: true
+        },'start')
+        .to(".scroll-indicator", {
+            top: "10%",
+            scale: 0.5
+        },'start')
+        
+        .to("#text3",{
+            opacity: 1,
+            duration: 2
+        })
+        .to(".image5", {
+            x: "-45%",
+            pin: true,
+            duration: 50
+        }, 'polarBear')
+        .to(".image6", {
+            x: "-95%",
+            pin: true,
+            duration: 50
+        }, 'polarBear')
+        .to(".image7",  {
+            opacity: 1,
+            pin: true,
+            duration: 2
+        }, "-=35")
+        .to(".image7", {
+            x: "-10%",
+            y: "90%",
+            rotation: 70,
+            pin: true,
+            duration: 10
+        },"-=34" )
+        .to(".image8",{
+            rotation: -90,
+            transformOrigin: "50% 90%",
+            pin: true,
+            duration: 10
+        }, "-=32")
+        .to("#text3",{
+            opacity: 0,
+            duration: 2
+        },"-=38")
+
+        function openFact(fact) {
+            if(document.getElementById(fact).style.display=='block'){
+                document.getElementById(fact).style.display='none';
+            }else{
+                document.getElementById(fact).style.display='block';
+            }
+        }
+
+        document.getElementById("bg-music").volume = 0.05;
+
+        //Retrieving changed name from local storage
+        var inputVal = localStorage.getItem("newName");
+        console.log(inputVal);
+
+        var all = document.querySelectorAll('.speechbox');
+
+        all.forEach(x => x.textContent = x.textContent.replace(/Aeryn/gi, inputVal));
+
+
+        //CAMERA FUNTIONALITY
+        let root = document.documentElement;
+
+        root.addEventListener("mousemove", e => {
+            root.style.setProperty('--mouse-x', e.clientX - 573 + "px");
+            root.style.setProperty('--mouse-y', e.clientY - 310 + "px");
+        });
+
+        var camera = document.getElementById("cam");
+
+        function openCam() {
+            if(camera.style.display=='block'){
+                camera.style.display='none';
+            }else{
+                camera.style.display='block';
+            }
+        }
+
+
+        function camReleased(){
+            camera.style.transform= "scale(0.5, 0.5)";
+            
+        }
+
+        var $window = $(window);
+        var cam = document.getElementById("camera-icon");
+
+        $(window).on('scroll', function() {
+            $topOffset = $(this).scrollTop();
+        
+            console.log($topOffset);
+
+            //Make Camera Glow At end of scroll
+            if($topOffset > 9500){
+                cam.id = "icon-glow";
+                cam.setAttribute('onclick','openCam()');
+            }else{
+                cam.id = "camera-icon";
+                cam.setAttribute('onclick','');
+            }
+        
+        });
+        
+        //OPEN FACTS
+        function toggleFactBoxes(fact) {
+            
+            var x = document.getElementById(fact);
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+
+            if(fact == "fact1"){
+                document.getElementById("fact2").style.display = "none";
+                document.getElementById("fact3").style.display = "none";
+                console.log("fact1 clicked");
+            }
+            else if(fact == "fact2"){
+                document.getElementById("fact1").style.display = "none";
+                document.getElementById("fact3").style.display = "none";
+            }
+            else{
+                document.getElementById("fact1").style.display = "none";
+                document.getElementById("fact2").style.display = "none";
+            }
+
+            console.log("fact opened");
+        }
+    </script>
+
+    <script src="../../js/meter.js"></script>
+</body>
+</html>

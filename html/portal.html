@@ -20,14 +20,55 @@
         position:absolute;
         top: 0;
         left: 0;
-        width: 100%;
         height: 100%;
+        width:100%;
+        height:100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #box3{
+        color: rgb(255, 255, 255);
+        background-color: rgba(39, 34, 61, 0.9);
+        border: 2px solid rgb(255, 255, 255);
+        left: 31.5%;
+        bottom: 8%;
+    }
+
+    .speechbox {
+        font-size: 1.3rem;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        border-radius: 15px;
+        width:fit-content;
+        max-width: 700px;
+        text-align: center;
+        height:fit-content;
+        padding: 5px 15px 5px 15px;
+        display: block;
+        position: absolute;
+        animation: fadeIn linear 1s;
+    }
+
+    @keyframes fadeIn {
+        0% {opacity:0;}
+        100% {opacity:1;}
     }
 </style>
 
 <body>
 
     <canvas></canvas>
+
+    <div class="text">
+        <div id="box3" class="speechbox">
+            <p>Travelling through time from 2100 to the year 2022...
+            </p>
+        </div>
+    </div>
+
+    <audio autoplay loop id="zoom-se">
+        <source src="../assets/audio/soundEffects/scene2//portal.wav" type="audio/wav" />
+    </audio>
 
 
     <script type="module">
@@ -50,15 +91,15 @@
 
         //array of points
         var points = [
-            [68.5, 185.5],
+            [46, 163],
             [1, 262.5],
-            [270.9, 281.9],
-            [345.5, 212.8],
-            [178, 155.7],
-            [240.3, 72.3],
+            [194, 322],
+            [370, 201],
+            [325, 109],
+            [207, 60],
             [153.4, 0.6],
-            [52.6, 53.3],
-            [68.5, 185.5]
+            [52.6, 53.33],
+            [46, 163]
         ];
 
         //converting array of points into vertices
@@ -75,9 +116,9 @@
         var geometry = new THREE.TubeGeometry( path, 300, 10, 32, true);
 
         //create texture loader
-        var texture = new THREE.TextureLoader().load('../assets/images/travel.png');
+        var texture = new THREE.TextureLoader().load('/assets/images/portalText.png');
         texture.wrapS = THREE.RepeatWrapping;
-        texture.repeat.set( 1, 1);
+        texture.repeat.set( 15, 1);
         
 
         for( var i =0, j=geometry.faces.length;i<j; i++){
@@ -94,16 +135,16 @@
         scene.add(tube);
 
         //light for tunnel
-        var light = new THREE.PointLight(0xffffff, 1, 100);
+        var light = new THREE.PointLight(0xffffff, 1.3, 300);
         scene.add(light);
 
         var percentage = 0;
 
         function render(){
-            percentage += 0.001;
+            percentage += 0.0007;
 
             var p1 = path.getPointAt(percentage%1);
-            var p2 = path.getPointAt((percentage + 0.03)%1);
+            var p2 = path.getPointAt((percentage + 0.02)%1);
 
             // Update the third point of the curve in X and Y axis
             // path.points[2].x = -mouse.position.x * 0.1;
@@ -125,9 +166,9 @@
 
         requestAnimationFrame(render);
 
-        // var timer = setTimeout(function() {
-        //     window.location='scene3-1.html'
-        // }, 3000);
+        var timer = setTimeout(function() {
+            window.location='scene3-1.html'
+        }, 4500);
 
 
     </script>
