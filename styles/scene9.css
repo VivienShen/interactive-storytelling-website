@@ -700,7 +700,7 @@ progress:after {
 .end-text-container{
     transform: rotate(-10deg);
     display: none;
-    top: 82%;
+    top: 81%;
     left: 41%;
     position: absolute;
 }
@@ -879,7 +879,7 @@ progress:after {
 }
 
 #canvas{
-    margin-top: -103%;
+    margin-top: -90%;
     width: 100%;
     position:
     absolute;

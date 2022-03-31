@@ -250,9 +250,18 @@
             var inputVal = localStorage.getItem("newName");
             console.log(inputVal);
 
-            var all = document.querySelectorAll('.speechbox');
+            if (inputVal == "" || inputVal == null){
 
-            all.forEach(x => x.textContent = x.textContent.replace(/Aeryn/gi, inputVal));
+                var all2 = document.querySelectorAll('p');
+
+                all2.forEach(x => x.innerHTML = x.innerHTML.replace(/Aeryn/gi, "Aeryn"));
+                console.log("name is null");
+            }
+
+            else{
+                var all = document.querySelectorAll('p');
+                all.forEach(x => x.innerHTML = x.innerHTML.replace(/Aeryn/gi, inputVal));
+            }
 
             function loadHenry() {
                 var x = document.getElementById("Henry");

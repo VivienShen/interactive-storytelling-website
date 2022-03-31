@@ -215,11 +215,12 @@
                 document.getElementById('nextBtn').style.display= "block";
             }
 
-            //Retrieving changed name from local storage
+           //Retrieving changed name from local storage
             var inputVal = localStorage.getItem("newName");
             console.log(inputVal);
 
-            if (inputVal == ""){
+            if (inputVal == "" || inputVal == null){
+
                 var all2 = document.querySelectorAll('p');
 
                 all2.forEach(x => x.innerHTML = x.innerHTML.replace(/Aeryn/gi, "Aeryn"));
@@ -229,7 +230,7 @@
             else{
                 var all = document.querySelectorAll('p');
                 all.forEach(x => x.innerHTML = x.innerHTML.replace(/Aeryn/gi, inputVal));
-            } 
+            }
             
             function loadHenry() {
                 var x = document.getElementById("Henry");

@@ -296,7 +296,8 @@
             var inputVal = localStorage.getItem("newName");
             console.log(inputVal);
 
-            if (inputVal == ""){
+            if (inputVal == "" || inputVal == null){
+
                 var all2 = document.querySelectorAll('p');
 
                 all2.forEach(x => x.innerHTML = x.innerHTML.replace(/Aeryn/gi, "Aeryn"));

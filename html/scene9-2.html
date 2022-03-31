@@ -157,7 +157,10 @@
                 <img class="image3-10" src="../assets/images/scene9/amazon/leaves_frontLetter.png">
                 <img class="image3-15" src="../assets/images/scene9/amazon/slothLetter.png">
                 
-                <img class="bg4" src="../assets/images/scene1BG.png" alt="space background"> 
+                <video class="bg4" autoplay loop>
+                    <source src="../assets/motionGraphics/stars.mp4" alt="space background" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
                 
                 <!-- <img class="envelope_top" src="../assets/images/scene9/letter_top-01.png">
                 <img class="contract_end" src="../assets/images/scene9/contract_lastFrame.png">
@@ -179,8 +182,8 @@
                     </div>
                 </div>
 
-                <div class="restart-btn" style="display:none">
-                    <button class="endBtn" onclick="window.location.href='intro.html'; removeLS();">Restart?</button>
+                <div class="restart-btn" id="restart" style="display:none">
+                    <button class="endBtn" onclick="window.location.href='intro.html'; removeLS(); resetCapturedCount();">Restart?</button>
                 </div>
                 
             </div>
@@ -206,6 +209,7 @@
     </div>
     
     <script src="../js/meter.js"></script>
+    <script src="../js/scene5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/MotionPathPlugin.min.js"></script>
@@ -519,7 +523,7 @@
                     display: "block",
                     duration: 0.5
                     
-                }, '+=3')
+                }, '+=5')
                 .to(".restart-btn", {
                     display: "block",
                     duration: 1
@@ -540,7 +544,7 @@
 
             function startAnim() {
                 const r = new rive.Rive({
-                    src: '../assets/envEnd.riv',
+                    src: '../assets/envEnding.riv',
                     canvas: document.getElementById('canvas'),
                     autoplay: true,
                     stateMachines: 'State Machine 1',
@@ -575,21 +579,22 @@
         
         });
 
-    //Retrieving changed name from local storage
-    var inputVal = localStorage.getItem("newName");
-    console.log(inputVal);
+            //Retrieving changed name from local storage
+            var inputVal = localStorage.getItem("newName");
+            console.log(inputVal);
 
-    if (inputVal == ""){
-        var all2 = document.querySelectorAll('p');
+            if (inputVal == "" || inputVal == null){
 
-        all2.forEach(x => x.innerHTML = x.innerHTML.replace(/Aeryn/gi, "Aeryn"));
-        console.log("name is null");
-    }
+                var all2 = document.querySelectorAll('p');
 
-    else{
-        var all = document.querySelectorAll('p');
-        all.forEach(x => x.innerHTML = x.innerHTML.replace(/Aeryn/gi, inputVal));
-    }
+                all2.forEach(x => x.innerHTML = x.innerHTML.replace(/Aeryn/gi, "Aeryn"));
+                console.log("name is null");
+            }
+
+            else{
+                var all = document.querySelectorAll('p');
+                all.forEach(x => x.innerHTML = x.innerHTML.replace(/Aeryn/gi, inputVal));
+            }
         
     function showEnding() {
         lastScene.style.display = "inline";
@@ -610,6 +615,7 @@
 
     function removeLS(){
         window.localStorage.clear();
+        window.sessionStorage.clear();
     }
 
     </Script>

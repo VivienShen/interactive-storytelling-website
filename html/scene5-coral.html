@@ -23,7 +23,7 @@
     </div> -->
 
     <audio autoplay loop id="bg-music">
-        <source src="../assets/audio/bgm//mountain.mp3" type="audio/mpeg" />
+        <source src="../assets/audio/bgm/" type="audio/mpeg" />
     </audio>
 
     <audio autoplay loop id="forest-se">
@@ -366,19 +366,20 @@
 
         //Retrieving changed name from local storage
         var inputVal = localStorage.getItem("newName");
-        console.log(inputVal);
+            console.log(inputVal);
 
-        if (inputVal == ""){
-            var all2 = document.querySelectorAll('p');
+            if (inputVal == "" || inputVal == null){
 
-            all2.forEach(x => x.innerHTML = x.innerHTML.replace(/Aeryn/gi, "Aeryn"));
-            console.log("name is null");
-        }
+                var all2 = document.querySelectorAll('p');
 
-        else{
-            var all = document.querySelectorAll('p');
-            all.forEach(x => x.innerHTML = x.innerHTML.replace(/Aeryn/gi, inputVal));
-        }
+                all2.forEach(x => x.innerHTML = x.innerHTML.replace(/Aeryn/gi, "Aeryn"));
+                console.log("name is null");
+            }
+
+            else{
+                var all = document.querySelectorAll('p');
+                all.forEach(x => x.innerHTML = x.innerHTML.replace(/Aeryn/gi, inputVal));
+            }
 
         //CAMERA FUNTIONALITY
         let root = document.documentElement;

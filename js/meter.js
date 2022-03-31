@@ -95,6 +95,8 @@ var fire = document.getElementById("fire");
 
 let isCaptured = false;
 
+var capturedCount = 0;
+
 function camClicked(){
     camera.style.transform = "scale(0.45, 0.45)";
 
@@ -117,7 +119,7 @@ function camClicked(){
             setTimeout(showTxt, 200);
             function showTxt() {
                 document.getElementById("game-txt").innerHTML = "Captured!";
-            document.getElementById("game-txt").style.color = "green";
+                document.getElementById("game-txt").style.color = "green";
             }
 
             setTimeout(removeTxt, 2000);
@@ -127,9 +129,14 @@ function camClicked(){
                 document.getElementById("game-txt").innerHTML = "";
             }
 
-            for(let i = 0; i < 5; i++){
-                score++;
+            capturedCount += 1;
+
+            if(capturedCount < 1){
+                for(let i = 0; i < 5; i++){
+                    score++;
+                }
             }
+
             //setting increment input value
             document.getElementById("popularity-meter").value = score;
     
@@ -310,6 +317,10 @@ function camClicked(){
     }
             
 };
+
+function resetCapturedCount(){
+    capturedCount = 0;
+}
         
 
 /////////SWITCH QUIZ QUESTIONS////////////
@@ -364,7 +375,8 @@ for (var i = 0; i < next.length; i++) {
 var inputVal = localStorage.getItem("newName");
 console.log(inputVal);
 
-if (inputVal == ""){
+if (inputVal == "" || inputVal == null){
+
     var all2 = document.querySelectorAll('p');
 
     all2.forEach(x => x.innerHTML = x.innerHTML.replace(/Aeryn/gi, "Aeryn"));
