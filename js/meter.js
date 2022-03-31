@@ -131,11 +131,12 @@ function camClicked(){
 
             capturedCount += 1;
 
-            if(capturedCount < 1){
+            if(capturedCount <= 1){
                 for(let i = 0; i < 5; i++){
                     score++;
                 }
             }
+            
 
             //setting increment input value
             document.getElementById("popularity-meter").value = score;
@@ -159,9 +160,7 @@ function camClicked(){
                 //remove text
                 document.getElementById("game-txt").innerHTML = "";
             }
-            for(let i = 0; i < 5; i++){
-                score++;
-            }
+            
         }
     }
 
