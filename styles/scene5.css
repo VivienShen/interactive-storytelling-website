@@ -377,8 +377,8 @@ body::-webkit-scrollbar {
 
 #exp{
     color: rgb(255, 255, 255);
-    background-color: rgba(129, 129, 129, 0.76);
-    left: 72%;
+    background-color: rgba(70, 70, 70, 0.801);
+    right: 2%;
     bottom: 16%;
 }
 
@@ -399,18 +399,17 @@ body::-webkit-scrollbar {
 }
 
 .explanation {
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     border-radius: 10px;
     width:fit-content;
+    line-height: 25px;
     max-width: 400px;
     height:fit-content;
     padding: 10px 10px 10px 20px; 
     display: block;
     position: fixed;
     animation: fadeIn linear 1s;
-    color: rgb(255, 255, 255);
-    background-color: rgba(105, 105, 105, 0.61);
 }
 
 @keyframes fadeIn {
@@ -508,9 +507,9 @@ body::-webkit-scrollbar {
 }
 
 .icon:hover{
-    transform: translateY(5px);
-    cursor: pointer;
-}
+    /* transform: translateY(5px);
+    cursor: pointer;*/
+} 
 
 #map-icon {
     max-height: 78%;
@@ -536,6 +535,7 @@ body::-webkit-scrollbar {
     /* color: #b45b07;
     filter: drop-shadow(0 0 8px #e4860b);
     cursor: pointer; */
+    filter: grayscale(100%);
 }
 
 #teleport-icon:hover{
@@ -607,6 +607,20 @@ progress:after {
 }
 
 #icon-glow2:hover {
+    filter: drop-shadow(0 0 30px #faf9f4);
+    cursor: pointer;
+    transform: translateY(5px);
+}
+
+#icon-glow3 {
+    max-height: 75%;
+    padding-top: 1%;
+    color: #b45b07;
+    filter: drop-shadow(0 0 8px #e4860b);
+    cursor: pointer; 
+}
+
+#icon-glow3:hover {
     filter: drop-shadow(0 0 30px #faf9f4);
     cursor: pointer;
     transform: translateY(5px);

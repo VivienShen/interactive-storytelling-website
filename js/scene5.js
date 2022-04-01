@@ -14,8 +14,9 @@ let blink3 = document.getElementById("blink3");
 var visited4 = sessionStorage.getItem("arcticVisited");
 var visited5 = sessionStorage.getItem("amazonVisited");
 var visited6 = sessionStorage.getItem("coralVisited");
-console.log(visited4, visited5, visited6);
 
+console.log(visited, visited2, visited3);
+console.log(visited4, visited5, visited6);
 
 function placeVisited(place, name){
     if(place == "visited" && name == "arcticVisited"){
@@ -70,7 +71,7 @@ if(visited6 == "true"){
 
 
 if(visited4 == "true" && visited5 == "true" && visited6 == "true"){
-    teleport.id = 'icon-glow';
+    teleport.id = 'icon-glow3';
     console.log("all placed visited")
     teleport.setAttribute( "onClick", "loadPopup(); playEffect('btn-se');" );
 }
@@ -79,14 +80,15 @@ if(visited4 == "true" && visited5 == "true" && visited6 == "true"){
  //Chapter Divider
 var chap1 = document.getElementById("divider1");
 
-if(!(visited4 == "false" && visited5 == "false" && visited6 == "false")){  
-    chap1.style.display = "none"; 
-
-    //console.log("place visited");
+if((visited == "false" && visited2 == "false" && visited3 == "false")){  
+    chap1.style.display = "block"; 
+    console.log("no place visited");
     
 }
-else{
 
+if ((visited4 == "true" || visited5 == "true" || visited6 == "true")){
+    chap1.style.display = "none"; 
+    console.log("at least 1 place visited visited");
 }
 
 

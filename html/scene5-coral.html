@@ -129,7 +129,7 @@
                 stronger storms will destroy their beach habitats. Warming oceans also change ocean currents which 
                 introduces the sea turtles to new predators and harms the coral reef that they need to survive.
                 <a href="https://climate.nasa.gov/news/2879/climate-change-puts-pressure-on-sea-turtles/#:~:text=Now%2C%20climate%20change%20is%20exposing,of%20them%20need%20to%20survive." target="_blank">   
-                    Read more</a>
+                    <br>Climate Change Puts Pressure on Sea Turtles</a>
             </span>
         </button> 
 
@@ -141,7 +141,7 @@
                 on fishes to feed on them for them to continue reproducing and remove some diseases. Increased ocean temperatures from climate change 
                 will affect the behavior of coral reef fishes.
                 <a href="https://eatlas.org.au/content/relationship-between-corals-and-fishes-great-barrier-reef#:~:text=There%20are%20strong%20mutual%20dependencies,may%20be%20mitigated%20by%20fishes" target="_blank">
-                    Read more
+                    <br> Relationship between corals and fishes on the Great Barrier Reef
                 </a>
             </span>
         </button> 
@@ -154,7 +154,7 @@
                 to controlling carbon dioxide levels in the ocean. However, increased greenhouse gasses from human activity results in 
                 ocean acidification which destroys the corals.
                 <a href="https://blogpatagonia.australis.com/10-fun-facts-about-coral-reefs/" target="_blank">
-                    Read more
+                    <br>10 fun facts about coral reefs
                 </a>
             </span>
         </button> 
@@ -188,7 +188,7 @@
         <progress id="popularity-meter" min="0" max="100" value="0"><span></span></progress>
         <div class="icons">
             <img id="camera-icon" class="icon" src="../assets/images/scene5/icon-cam.png" alt="camera item" style="display: block;" onclick="">
-            <img id="map-icon" class="icon" src="../assets/images/scene5/icon-map.png" alt="map item" style="display: block;" onclick="window.location.href='scene5.html'">
+            <img id="map-icon" class="icon" src="../assets/images/scene5/icon-map.png" alt="map item" style="display: block;" onclick="">
             <img id="teleport-icon" class="icon" src="../assets/images/scene5/icon.png" alt="teleport button" style="display: block; pointer-events: none; filter: grayscale(100%);">
         </div>
     </div>
@@ -406,7 +406,6 @@
                 root.style.setProperty('--mouse-x', - 285 + "px"); 
             }
 
-
         });
 
         var camera = document.getElementById("cam");
@@ -418,7 +417,12 @@
                 camera.style.display='block';
             }
 
-            exp.style.display = "none";
+            setTimeout(removeExp, 5000);
+
+            function removeExp() {
+                //remove explanation for cam
+                exp.style.display = "none";
+            }
         }
 
 
@@ -430,7 +434,6 @@
         var $window = $(window);
         var cam = document.getElementById("camera-icon");
         var exp = document.getElementById("cam-explanation");
-        var map = document.getElementById("map-icon");
         var body = document.querySelector("body");
 
         $(window).on('scroll', function() {
@@ -443,13 +446,11 @@
                 cam.id = "icon-glow";
                 cam.setAttribute('onclick','openCam()');
                 exp.style.display = "block";
-                map.id = "icon-glow2";
+    
             }else{
                 cam.id = "camera-icon";
                 cam.setAttribute('onclick','');
                 exp.style.display = "none";
-                // map.id = "map-icon";
-                map.id = "icon-glow2";
             }
         
         });

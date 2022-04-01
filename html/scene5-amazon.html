@@ -241,10 +241,6 @@
             to {top: 105%; }
         }
 
-        #exp{
-            left: 75.5%;
-        }
-
 
     </style>
 </head>
@@ -346,7 +342,7 @@
                 20% of the world's oxygen. Because of human disturbance in the Amazon ecosystem, the forest is now releasing more than 1.1 billion tons
                 of carbon dioxide, which means the forest is releasing more greenhouse gasses than removing.
                 <a href="https://www.livescience.com/amazon-rainforest-accelerate-climate-change.html" target="_blank">   
-                    Read more</a></span>
+                    <br>The Amazon rainforest is officially creating more greenhouse gasses than it is absorbing</a></span>
         </button> 
 
         <button id="fact2" class="factBox clickable">
@@ -357,7 +353,8 @@
                 pink river dolphins, sloths and more. It contains 1/10 known species on Earth, like 40,000 plant species and 370 types of reptiles. Because 
                 of the increased temperatures and reduced rainfalls, it may reduce habitats for these species during the dry warm months.
                 <a href="https://www.worldwildlife.org/stories/what-animals-live-in-the-amazon-and-8-other-amazon-facts#:~:text=The%20Amazon%20is%20one%20of,than%20370%20types%20of%20reptiles." target="_blank">   
-                    Read more</a></span>
+                    <br> What animals live in the Amazon? And 8 other Amazon facts
+                </a></span>
         </button> 
 
         <button id="fact3" class="factBox clickable">
@@ -368,7 +365,7 @@
                 burn trees after cutting them down or, less commonly, when they want to clear a large part of the forest.
                 <a href="https://www.vox.com/down-to-earth/2021/8/27/22639885/amazon-rainforest-fires-climate-change-2021
                 " target="_blank">   
-                Read more</a></span>
+                    <br> Fires in the Amazon are out of control. Again.</a></span>
         </button> 
 
         <div class="cam_container" id="parent-cam">
@@ -389,7 +386,7 @@
             <progress id="popularity-meter" min="0" max="100" value="0"><span></span></progress>
             <div class="icons">
                 <img id="camera-icon" class="icon" src="../assets/images/scene5/icon-cam.png" alt="camera item" style="display: block;" onclick="">
-                <img id="map-icon" class="icon" src="../assets/images/scene5/icon-map.png" alt="map item" style="display: block;" onclick="window.location.href='scene5.html'">
+                <img id="map-icon" class="icon" src="../assets/images/scene5/icon-map.png" alt="map item" style="display: block;" onclick="">
                 <img id="teleport-icon" class="icon" src="../assets/images/scene5/icon.png" alt="teleport button" style="display: block; pointer-events: none; filter: grayscale(100%);">
             </div>
         </div>
@@ -561,7 +558,12 @@
                 camera.style.display='block';
             }
 
-            exp.style.display = "block";
+            setTimeout(removeExp, 5000);
+
+            function removeExp() {
+                //remove explanation for cam
+                exp.style.display = "none";
+            }
         }
 
 
@@ -572,7 +574,6 @@
 
         var cam = document.getElementById("camera-icon");
         var exp = document.getElementById("cam-explanation");
-        var map = document.getElementById("map-icon");
         var body = document.querySelector("body");
 
         var $window = $(window);
@@ -587,12 +588,12 @@
                 cam.id = "icon-glow";
                 cam.setAttribute('onclick','openCam()');
                 exp.style.display = "block";
-                map.id = "icon-glow2";
+                ;
             }else{
                 cam.id = "camera-icon";
                 cam.setAttribute('onclick','');
                 exp.style.display = "none";
-                map.id = "map-icon";
+        
             }
         
         });

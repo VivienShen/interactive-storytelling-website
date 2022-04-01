@@ -19,27 +19,42 @@ body {
     height: 100%;
 }
 
-.speechbox1 {
+.textbox {
     font-size: 1.3rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    border-radius: 400px;
+    border-radius: 5px;
+    padding: 0 15px 0 15px;
     width: fit-content;
-    max-width: 600px;
     height: fit-content;
-    padding: 30px 30px 30px 40px;
+    max-width: 650px;
     display: block;
+    /* position: fixed; */
+    left: 50%;
+    bottom: 20px;
+    transform: translate(-50%, -20%);
+    margin: 0 auto;
     position: absolute;
-    margin-left: 15%;
-    margin-top: 36%;
     animation: fadeIn linear 2s;
+    text-align: center;
+
     color: rgb(255, 255, 255);
-    background-color: rgba(54, 43, 104, 0.9);
-    border: 2px solid black;
+    background-color: #28589D;
+    border: 2px solid rgb(255, 255, 255);
 }
 
 .text {
     height: 100%;
     width: 100%;
+}
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .sceneNav {

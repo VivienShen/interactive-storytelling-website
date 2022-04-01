@@ -150,7 +150,7 @@ progress:after {
     display: block;
     position: relative;
     animation: fadeIn linear 1s;
-    z-index: 1;
+    z-index: 2;
 }
 
 #inventory-bg {
@@ -172,9 +172,6 @@ progress:after {
     justify-content: space-around;
 }
 
-.icon:hover{
-    transform: translateY(5px);
-}
 
 #map-icon {
     max-height: 78%;
@@ -549,24 +546,23 @@ button:hover .info-icon {
 
 #exp{
     color: rgb(255, 255, 255);
-    background-color: rgba(129, 129, 129, 0.76);
-    left: 73.8%;
+    background-color: rgba(70, 70, 70, 0.801);
+    right: 2%;
     bottom: 16%;
 }
 
 .explanation {
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     border-radius: 10px;
     width:fit-content;
+    line-height: 25px;
     max-width: 400px;
     height:fit-content;
     padding: 10px 10px 10px 20px; 
     display: block;
     position: fixed;
     animation: fadeIn linear 1s;
-    color: rgb(255, 255, 255);
-    background-color: rgba(105, 105, 105, 0.61);
 }
 
 @media (min-height: 900px) {

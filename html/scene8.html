@@ -116,6 +116,11 @@
                     <p><b>Aeryn:</b> Yes! I’m so glad she won a majority in parliament.</p>
                 </div>
             </div>
+
+            <audio id="phone-se">
+                <source src="../assets/audio/soundEffects/scene6/phone-ring.wav" type="audio/mpeg" />
+            </audio>
+
         </div>
 
         <div id="s8-6" class="scene" style="display: none;">
@@ -212,6 +217,13 @@
                     if (prevIndex >= 0) {
                         var preId = IdStore[prevIndex];
                         document.getElementById(preId).style.display = "none";
+                    }
+
+                    if(currentIndex == 4){
+                        document.getElementById("phone-se").play();
+                    }
+                    else if(currentIndex == 5){
+                        document.getElementById("phone-se").pause();
                     }
 
                     //next button appearing after 3 second
@@ -320,6 +332,8 @@
                 document.getElementById("off").style.display = "none"; 
                 document.getElementById("on").style.display = "inline";
             }
+
+            document.getElementById("phone-se").volume = 0.05;
         </script>
     </body>
 </html>

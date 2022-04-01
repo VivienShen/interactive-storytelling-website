@@ -95,12 +95,12 @@ body {
   left: 87%;
   top: 8%;
   filter: invert(27%) sepia(91%) saturate(7460%) hue-rotate(357deg)
-    brightness(95%) contrast(120%);
+  brightness(95%) contrast(120%);
+  
 }
 
 .back-button:hover {
-  color: #ffa502;
-  filter: drop-shadow(0 0 30px #f5d311);
+  filter: grayscale(100%);
   cursor: pointer;
 }
 

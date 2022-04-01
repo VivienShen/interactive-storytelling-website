@@ -92,10 +92,15 @@ var coral1 = document.getElementById("coral1");
 var coral2 = document.getElementById("coral2");
 var coral3 = document.getElementById("coral3");
 var fire = document.getElementById("fire");
+var map = document.getElementById("map-icon");
 
 let isCaptured = false;
 
 var capturedCount = 0;
+console.log(capturedCount);
+sessionStorage.setItem("captured", capturedCount);
+
+var capturedCount2 = sessionStorage.getItem("captured");
 
 function camClicked(){
     camera.style.transform = "scale(0.45, 0.45)";
@@ -116,6 +121,9 @@ function camClicked(){
             isCaptured = true;
             console.log("overlapping");
 
+            map.setAttribute('onclick', "window.location.href='scene5.html'");
+            map.id = "icon-glow2";
+
             setTimeout(showTxt, 200);
             function showTxt() {
                 document.getElementById("game-txt").innerHTML = "Captured!";
@@ -129,9 +137,11 @@ function camClicked(){
                 document.getElementById("game-txt").innerHTML = "";
             }
 
-            capturedCount += 1;
+            //check if image has already been successfully taken
+            capturedCount2 ++;
+            console.log(capturedCount2);
 
-            if(capturedCount < 1){
+            if(capturedCount2 <= 1){
                 for(let i = 0; i < 5; i++){
                     score++;
                 }
@@ -185,6 +195,9 @@ function camClicked(){
             isCaptured = true;
             console.log("overlapping");
 
+            map.setAttribute('onclick', "window.location.href='scene5.html'");
+            map.id = "icon-glow2";
+
             setTimeout(showTxt, 200);
             function showTxt() {
                 document.getElementById("game-txt").innerHTML = "Captured!";
@@ -198,9 +211,16 @@ function camClicked(){
                 document.getElementById("game-txt").innerHTML = "";
             }
 
-            for(let i = 0; i < 5; i++){
-                score++;
+            //check if image has already been successfully taken
+            capturedCount2 ++;
+            console.log(capturedCount2);
+            
+            if(capturedCount2 <= 1){
+                for(let i = 0; i < 5; i++){
+                    score++;
+                }
             }
+
             //setting increment input value
             document.getElementById("popularity-meter").value = score;
     
@@ -239,6 +259,9 @@ function camClicked(){
             isCaptured = true;
             console.log("overlapping");
 
+            map.setAttribute('onclick', "window.location.href='scene5.html'");
+            map.id = "icon-glow2";
+
             setTimeout(showTxt, 200);
             function showTxt() {
                 document.getElementById("game-txt").innerHTML = "Captured!";
@@ -251,10 +274,17 @@ function camClicked(){
                 //remove text
                 document.getElementById("game-txt").innerHTML = "";
             }
-            
-            for(let i = 0; i < 5; i++){
-                score++;
+
+            //check if image has already been successfully taken
+            capturedCount2 ++;
+            console.log(capturedCount2);
+
+            if(capturedCount2 <= 1){
+                for(let i = 0; i < 5; i++){
+                    score++;
+                }
             }
+
             //setting increment input value
             document.getElementById("popularity-meter").value = score;
     

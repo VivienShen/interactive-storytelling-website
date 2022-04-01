@@ -123,7 +123,7 @@ body {
   }
   
   #popup3 {
-    top: 65%;
+    top: 70%;
   }
   
   .popup-travel {
@@ -141,11 +141,10 @@ body {
   }
   
   .yes-button {
-    max-width: 20%;
-    max-height: 20%;
+    max-width: 18%;
     margin: 0;
     position: absolute;
-    top: 60%;
+    top: 70%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
@@ -262,7 +261,7 @@ body {
   }
   
   #teleport-icon {
-    max-height: 75%;
+    max-height: 71%;
     padding-top: 1%;
     z-index: 1;
     color: #b45b07;
@@ -279,6 +278,7 @@ body {
   #teleport-icon:hover {
     filter: drop-shadow(0 0 30px #faf9f4);
     cursor: pointer;
+    padding-top: 2%;
   }
   
   @keyframes fadeIn {
