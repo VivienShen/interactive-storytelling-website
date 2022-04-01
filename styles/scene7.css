@@ -87,7 +87,7 @@ body {
   }
   
   #box1 {
-    bottom: 30%;
+    bottom: 20%;
     left: 15%;
     max-width: 500px;
   }
@@ -99,7 +99,7 @@ body {
   
   #box3 {
     bottom: 20%;
-    right: 12%;
+    left: 12%;
     max-width: 680px;
   }
   
@@ -204,7 +204,7 @@ body {
     height: 4.5%;
     position: fixed;
     right: 3%;
-    bottom: 80px;
+    bottom: 9%;
   }
   
   progress:after {
