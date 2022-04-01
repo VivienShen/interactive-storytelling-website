@@ -101,9 +101,9 @@ body {
     position: absolute;
     max-width: 13%;
     max-height: 13%;
-    transform: rotate(50deg);
-    left: 25%;
-    bottom: 8%;
+    transform: rotate(33deg);
+    left: 26.8%;
+    bottom: 3.8%;
   }
   
   #answer {
@@ -144,7 +144,7 @@ body {
     max-width: 18%;
     margin: 0;
     position: absolute;
-    top: 70%;
+    top: 61%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
@@ -222,6 +222,32 @@ body {
   
   progress:after {
     content: attr(value) "%";
+  }
+
+  .notif > p {
+    font-size: 1.8vh;
+    color: black;
+    text-shadow:  1px 1px 2px rgb(255, 255, 255);
+    padding: 5px;
+    text-align: center;
+    font-weight: bold;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .notif {
+    bottom: 15%;
+    right: 9%;
+    /* background-color: #ffffff79; */
+    /* border: 1px solid #faf9f4 ; */
+    width: fit-content;
+    position: absolute;
+    animation: slideIn 0.5s ease-Out;
+    z-index: 2;
+  }
+
+  .notifAni {
+    animation: fadeOut 1s ease-Out;
   }
   
   /******** INVENTORY ********/

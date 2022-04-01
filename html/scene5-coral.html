@@ -26,7 +26,7 @@
         <source src="../assets/audio/bgm/" type="audio/mpeg" />
     </audio>
 
-    <audio autoplay loop id="forest-se">
+    <audio autoplay loop id="water-se">
         <source src="../assets/audio/soundEffects/scene5/underwater.mp3" type="audio/mpeg" />
     </audio>
 
@@ -193,6 +193,9 @@
     <iframe class="reef-counter" title='Rise in sea levels (cm)' src='https://www.theworldcounts.com/embed/challenges/68?background_color=white&color=black&font_family=%22Helvetica+Neue%22%2C+Arial%2C+sans-serif&font_size=14' style='border: none' height='100' width='300'></iframe>
     
     <div class="inventory">
+        <div id="pointNotif" class="notif" style="display: none;">
+            <p>+5 points</p>
+        </div>
         <img id="inventory-bg" src="../assets/images/scene7/inventory-panel.png" alt="inventory box">
         <progress id="popularity-meter" min="0" max="100" value="0"><span></span></progress>
         <div class="icons">
@@ -499,12 +502,16 @@
 
         function soundOff() {
             document.getElementById("bg-music").muted = true;  
+            document.getElementById("water-se").muted = true;  
+            document.getElementById("camera-se").muted = true; 
             document.getElementById("on").style.display = "none";
             document.getElementById("off").style.display = "inline";
         }
 
         function soundOn() {
             document.getElementById("bg-music").muted = false; 
+            document.getElementById("water-se").muted = false;  
+            document.getElementById("camera-se").muted = false;  
             document.getElementById("off").style.display = "none"; 
             document.getElementById("on").style.display = "inline";
         }

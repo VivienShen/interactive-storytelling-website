@@ -246,13 +246,15 @@
         document.getElementById("zoomBtn-se").volume = 0.3;
 
         function soundOff() {
-            document.getElementById("bg-music").muted = true;  
+            document.getElementById("bg-music").muted = true; 
+            document.getElementById("zoomBtn-se").muted = true;  
             document.getElementById("on").style.display = "none";
             document.getElementById("off").style.display = "inline";
         }
 
         function soundOn() {
             document.getElementById("bg-music").muted = false; 
+            document.getElementById("zoomBtn-se").muted = false;
             document.getElementById("off").style.display = "none"; 
             document.getElementById("on").style.display = "inline";
         }

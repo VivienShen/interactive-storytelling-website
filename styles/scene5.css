@@ -560,8 +560,34 @@ progress {
 }
 
 progress:after {
-    content: attr(value)'%';
+    content: attr(value) '%';
 }
+
+.notif > p {
+    font-size: 1.8vh;
+    color: black;
+    text-shadow:  1px 1px 2px rgb(255, 255, 255);
+    padding: 5px;
+    text-align: center;
+    font-weight: bold;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .notif {
+    bottom: 15%;
+    right: 9%;
+    /* background-color: #ffffff79; */
+    /* border: 1px solid #faf9f4 ; */
+    width: fit-content;
+    position: fixed;
+    animation: slideIn 0.5s ease-Out;
+    z-index: 20;
+  }
+
+  .notifAni {
+    animation: fadeOut 1s ease-Out;
+  }
 
 .modal{
     width: 100%;

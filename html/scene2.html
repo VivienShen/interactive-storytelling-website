@@ -496,12 +496,14 @@
 
             function soundOff() {
                 document.getElementById("bg-music").muted = true;  
+                document.getElementById("btn-se").muted = true;  
                 document.getElementById("on").style.display = "none";
                 document.getElementById("off").style.display = "inline";
             }
 
             function soundOn() {
                 document.getElementById("bg-music").muted = false; 
+                document.getElementById("btn-se").muted = false; 
                 document.getElementById("off").style.display = "none"; 
                 document.getElementById("on").style.display = "inline";
             }

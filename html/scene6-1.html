@@ -78,7 +78,7 @@
     <!--Frame 1-->
     <div id="s6-1" class="scene" style="display: block;">
         <div id="bg1" class="image">
-            <img class="img-bg" src="../assets/images/scene6/room.png" alt="in the living room">
+            <img class="img-bg" src="../assets/images/scene3/room empty with items.png" alt="in the living room">
         </div> 
         <img id="rPhone" onclick="pauseEffect('phone-se')" class="clickable btn" src="../assets/images/scene6/phone ring.png" alt="ringing phone">
     </div>
@@ -166,12 +166,14 @@
 
         function soundOff() {
             document.getElementById("bg-music").muted = true;  
+            document.getElementById("phone-se").muted = true; 
             document.getElementById("on").style.display = "none";
             document.getElementById("off").style.display = "inline";
         }
 
         function soundOn() {
             document.getElementById("bg-music").muted = false; 
+            document.getElementById("phone-se").muted = false; 
             document.getElementById("off").style.display = "none"; 
             document.getElementById("on").style.display = "inline";
         }

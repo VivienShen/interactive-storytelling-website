@@ -86,7 +86,7 @@
 
         <div id="s8-2" class="scene image" style="display: none;">
             <video class="img-bg" autoplay >
-                <source src="../assets/motionGraphics//polls_1.mp4" alt="poll results" type="video/mp4">
+                <source src="../assets/motionGraphics/election_result.mp4" alt="poll results" type="video/mp4">
                 Your browser does not support the video tag.  
             </video>
         </div>
@@ -332,12 +332,14 @@
 
             function soundOff() {
                 document.getElementById("bg-music").muted = true;  
+                document.getElementById("phone-se").muted = true;
                 document.getElementById("on").style.display = "none";
                 document.getElementById("off").style.display = "inline";
             }
 
             function soundOn() {
                 document.getElementById("bg-music").muted = false; 
+                document.getElementById("phone-se").muted = false;
                 document.getElementById("off").style.display = "none"; 
                 document.getElementById("on").style.display = "inline";
             }

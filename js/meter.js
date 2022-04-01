@@ -36,6 +36,19 @@ var plusFunction = function()
         score++;
     }
 
+    document.getElementById("pointNotif").style.display = "block";
+    setTimeout(removeTxt, 2000);
+
+    function removeTxt() {
+        //remove text
+        /* var not1 = document.getElementsById("pointNotif");
+        document.getElementById("pointNotif").className = 'notifAni';
+        if (not1.style.opacity == 0){
+            document.getElementById("pointNotif").style.display = "none";
+        } */
+        document.getElementById("pointNotif").style.display = "none";
+    }
+
     //setting increment input value
     document.getElementById("popularity-meter").value = score;
 
@@ -146,7 +159,18 @@ function camClicked(){
                     score++;
                 }
             }
-            
+            document.getElementById("pointNotif").style.display = "block";
+            setTimeout(removeTxt, 2000);
+
+            function removeTxt() {
+                //remove text
+                /* var not1 = document.getElementsById("pointNotif");
+                document.getElementById("pointNotif").className = 'notifAni';
+                if (not1.style.opacity == 0){
+                    document.getElementById("pointNotif").style.display = "none";
+                } */
+                document.getElementById("pointNotif").style.display = "none";
+            }
 
             //setting increment input value
             document.getElementById("popularity-meter").value = score;
@@ -223,6 +247,18 @@ function camClicked(){
                 }
             }
 
+            document.getElementById("pointNotif").style.display = "block";
+            setTimeout(removeTxt, 2000);
+
+            function removeTxt() {
+                //remove text
+                /* var not1 = document.getElementsById("pointNotif");
+                document.getElementById("pointNotif").className = 'notifAni';
+                if (not1.style.opacity == 0){
+                    document.getElementById("pointNotif").style.display = "none";
+                } */
+                document.getElementById("pointNotif").style.display = "none";
+            }
             //setting increment input value
             document.getElementById("popularity-meter").value = score;
     
@@ -276,7 +312,7 @@ function camClicked(){
                 //remove text
                 document.getElementById("game-txt").innerHTML = "";
             }
-
+            
             //check if image has already been successfully taken
             capturedCount2 ++;
             console.log(capturedCount2);
@@ -287,6 +323,18 @@ function camClicked(){
                 }
             }
 
+            document.getElementById("pointNotif").style.display = "block";
+            setTimeout(removeTxt, 2000);
+
+            function removeTxt() {
+                //remove text
+                /* var not1 = document.getElementsById("pointNotif");
+                document.getElementById("pointNotif").className = 'notifAni';
+                if (not1.style.opacity == 0){
+                    document.getElementById("pointNotif").style.display = "none";
+                } */
+                document.getElementById("pointNotif").style.display = "none";
+            }
             //setting increment input value
             document.getElementById("popularity-meter").value = score;
     
