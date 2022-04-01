@@ -138,6 +138,7 @@ progress {
     position: fixed;
     right: 3%;
     bottom: 9.3%;
+    top: 86.5%;
 }
 
 progress:after {
