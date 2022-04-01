@@ -146,6 +146,7 @@ function camClicked(){
                     score++;
                 }
             }
+            
 
             //setting increment input value
             document.getElementById("popularity-meter").value = score;
@@ -169,6 +170,7 @@ function camClicked(){
                 //remove text
                 document.getElementById("game-txt").innerHTML = "";
             }
+            
         }
     }
 
