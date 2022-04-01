@@ -317,7 +317,7 @@
 
             }
             
-            document.getElementById("bg-music").volume = 0.05;
+
 
             /*------Changing div with next and prev button------*/
 
@@ -340,6 +340,7 @@
             var next = document.getElementById("nextBtn");
             var next2 = document.getElementById("nextBtn2");
             var next3 = document.getElementById("nextBtn3");
+
 
             next.addEventListener("click", function(i) {
 
@@ -366,12 +367,13 @@
                     function appeardiv() {
                         //not appear for the last cut
                         
-                        if (currentIndex < IdStore.length-2) {
+                        if (currentIndex < IdStore.length-1) {
                             
-                            if(currentIndex == 1){
+                            if(currentIndex == 1 || currentIndex == 13){
                                 next.style.display = "none";
                                 console.log("remove next btn");
                             }
+
                             else{
                                 next.style.display = "block";
                             }
@@ -389,42 +391,7 @@
                     var divId2 = IdStore[currentIndex];
                     document.getElementById(divId2).style.display = "block";
                 } 
-            
-            });
-
-            //control next nav by keyboard
-            document.addEventListener('keydown', function(event) {               
-
-                if ((event.keyCode == 39) && (currentIndex < IdStore.length-1)) {
-                    console.log('next'); 
-                    currentIndex += 1;
-                    console.log(currentIndex);
-                    var divId = IdStore[currentIndex];
-
-                    console.log(divId, currentIndex);
-                    document.getElementById(divId).style.display = "block";
-                    var prevIndex = currentIndex - 1;
-                    console.log(prevIndex);
-                    if (prevIndex >= 0) {
-                        var preId = IdStore[prevIndex];
-                        document.getElementById(preId).style.display = "none";
-                    }
-
-                } else if ((event.keyCode == 37) && (currentIndex >= 1)) { //show or hide the div when prev button is clicked
-                    var divId = IdStore[currentIndex];
-                    console.log(divId, currentIndex);
-                    document.getElementById(divId).style.display = "none";
-                    currentIndex -= 1;
-                    console.log(currentIndex);
-                    var divId2 = IdStore[currentIndex];
-                    document.getElementById(divId2).style.display = "block";
-                } 
-            });
-
-            //make button appear after specific time
-            window.onload = function () {
-                setTimeout(appeardiv, 500);
-            }
+            }); 
 
             next2.addEventListener("click", function(i) {
                 if (currentIndex < IdStore.length-1) {
@@ -497,6 +464,10 @@
                 } 
             });
 
+            //make button appear after specific time
+            window.onload = function () {
+                setTimeout(appeardiv, 500);
+            }
 
             function appeardiv() {
                 document.getElementById('nextBtn').style.display= "block";
@@ -510,6 +481,7 @@
                 document.getElementById('time').style.visibility='hidden';
             }       
 
+            document.getElementById("bg-music").volume = 0.05;
 
             function openCh2() {
                 localStorage.setItem("ch2-lock", 1);
