@@ -137,10 +137,10 @@
             <img class="img-bg" src="../assets/images/scene6/quiz.png" alt="Q&A segment">
         </div>
         <div class="quiz">
-            <p class="quizBox question">Q3: What are the indigenous people of the Arctic called?</p>
-            <button id="nextBtn7" class="quizBox btn plus-btn" type="button">Inuits</button><br>
-            <button id="nextBtn8" class="quizBox btn minus-btn disabled" type="button">Métis</button><br>
-            <button id="nextBtn9" class="quizBox btn minus-btn disabled" type="button">First Nations</button> 
+            <p class="quizBox question">What is one reason the loss of Arctic ice is bad for the polar bears?</p>
+            <button id="nextBtn7" class="quizBox btn plus-btn" type="button">Hard to find food</button><br>
+            <button id="nextBtn8" class="quizBox btn minus-btn disabled" type="button">Hard to find water</button><br>
+            <button id="nextBtn9" class="quizBox btn minus-btn disabled" type="button">Hard to breathe</button> 
         </div> 
     </div>
 
@@ -167,6 +167,9 @@
     </div>
 
     <div class="inventory">
+        <div id="pointNotif" class="notif" style="display: none;">
+            <p>+5 points</p>
+        </div>
         <img id="inventory-bg" src="../assets/images/scene6/inventory-panel.png" alt="inventory box">
         <progress id="popularity-meter" min="0" max="100" value="0"><span></span></progress>
         <div class="icons">
@@ -175,6 +178,7 @@
             <img id="teleport-icon2" class="icon" src="../assets/images/scene6/icon.png" alt="teleport button" style="display: block; pointer-events: none; filter: grayscale(100%);">
         </div>
     </div>
+
     
     <script src="../js/meter.js"></script>
     <script>
@@ -189,6 +193,8 @@
             document.getElementById("off").style.display = "none"; 
             document.getElementById("on").style.display = "inline";
         }
+
+
     </script>
 </body>
 </html>
