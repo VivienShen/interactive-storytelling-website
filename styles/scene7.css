@@ -204,7 +204,8 @@ body {
     height: 4.5%;
     position: fixed;
     right: 3%;
-    bottom: 9%;
+    bottom: 9.3%;
+    top: 86%;
   }
   
   progress:after {
