@@ -100,7 +100,7 @@ for (var i = 0; i < minus.length; i++) {
 
 //When correct capture is taken from camera
 var camera = document.getElementById("cam");
-var polarBear = document.getElementById("big-pb");
+var polarBear = document.getElementById("small-pb");
 var coral1 = document.getElementById("coral1");
 var coral2 = document.getElementById("coral2");
 var coral3 = document.getElementById("coral3");

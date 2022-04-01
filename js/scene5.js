@@ -10,6 +10,10 @@ let blink = document.getElementById("blink1");
 let blink2 = document.getElementById("blink2");
 let blink3 = document.getElementById("blink3");
 
+let pin1 = document.getElementById("pin1");
+let pin2 = document.getElementById("pin2");
+let pin3 = document.getElementById("pin3");
+
 
 var visited4 = sessionStorage.getItem("arcticVisited");
 var visited5 = sessionStorage.getItem("amazonVisited");
@@ -39,17 +43,25 @@ var teleport = document.getElementById('teleport-icon');
 
 if(visited4 == "true"){
     console.log("visited arctic");
-    blink.style.background = "#0cdb39bd";
+    blink.style.background = "#0f45dbdc";
+    blink.style.animation = "none";
+    pin1.className = "map-pin1 pin";
+
+    blink.setAttribute("animation", "");
 }
 
 if(visited5 == "true"){
     console.log("visited amazon");
-    blink2.style.background = "#0cdb39bd";
+    blink2.style.background = "#0f45dbdc";
+    blink2.style.animation = "none";
+    pin2.className = "map-pin2 pin";
 }
 
 if(visited6 == "true"){
     console.log("visited coral");
-    blink3.style.background = "#0cdb39bd";
+    blink3.style.background = "#0f45dbdc";
+    blink3.style.animation = "none";
+    pin3.className = "map-pin3 pin";
 }
 
 

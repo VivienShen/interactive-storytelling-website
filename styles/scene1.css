@@ -32,6 +32,12 @@ body {
     overflow: hidden;
 }
 
+.stars {
+  justify-content: center;
+  position: absolute;
+  overflow: hidden;
+}
+
 .telescope {
   justify-content: center;
   position: relative;

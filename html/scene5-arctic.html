@@ -49,7 +49,10 @@
         }
 
         .image5{
-            left: 30%;
+            left: 68%;
+            max-width: 15%;
+            max-height: 15%;
+            object-fit:contain !important;
         }
 
         .image7{
@@ -79,10 +82,6 @@
         .image3-3{
             z-index: 3;
             top: 100%;
-        }
-
-        .image5, .image6{
-            z-index: 4;
         }
 
         .factBox {
@@ -351,8 +350,8 @@
                 <img class="image4" src="../assets/images/scene5/arctic/water-01.png">
                 <img class="image3" src="../assets/images/scene5/arctic/mountains-01.png">
                 <img class="image3-3" src="../assets/images/scene5/arctic/iceberg-01.png">      
-                <img class="image5" src="../assets/images/scene5/arctic/smallPB-01.png">
-                <img class="image6" id="big-pb" src="../assets/images/scene5/arctic/BigPB-01.png">
+                <img class="image5" id="small-pb"src="../assets/images/scene5/arctic/smallPB-01.png">
+                <img class="image6" src="../assets/images/scene5/arctic/BigPB-01.png">
         
                 <!-- <img class="image5" src="../assets/images/scene5/arctic/scroll1.png">
                 <img class="image6" src="../assets/images/scene5/arctic/scroll2.png">
@@ -483,7 +482,7 @@
             pin: true
         },'start')
         .to(".image5", 11, {
-            y: "-95%",
+            y: "-170%",
             pin: true
         },'start')
         .to(".image6", 11, {
@@ -517,14 +516,14 @@
             duration: 2
         })
         .to(".image5", {
-            x: "-45%",
+            x: "-255%",
             pin: true,
-            duration: 50
+            duration: 30
         }, 'polarBear')
         .to(".image6", {
             x: "-95%",
             pin: true,
-            duration: 50
+            duration: 40
         }, 'polarBear')
         .to(".image7",  {
             opacity: 1,
