@@ -36,23 +36,6 @@ function placeVisited(place, name){
 
 var teleport = document.getElementById('teleport-icon');
 
-function reset(){
-    visited = false;
-    visited2 = false;
-    visited3 = false;
-    
-    sessionStorage.setItem("arcticVisited", visited);
-    sessionStorage.setItem("amazonVisited", visited2);
-    sessionStorage.setItem("coralVisited", visited3);
-    // console.log(visited);
-
-    blink.style.background = "#db130cbd";
-    blink2.style.background = "#db130cbd";
-    blink3.style.background = "#db130cbd";
-
-    teleport.id = 'teleport-icon';
-    teleport.setAttribute( "onClick", "" );
-}
 
 if(visited4 == "true"){
     console.log("visited arctic");

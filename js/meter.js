@@ -121,7 +121,7 @@ function camClicked(){
             isCaptured = true;
             console.log("overlapping");
 
-            map.setAttribute('onclick', "window.location.href='scene5.html'");
+            map.setAttribute('onclick', "window.location.href='scene5.html'; placeVisited('visited', 'arcticVisited');");
             map.id = "icon-glow2";
 
             setTimeout(showTxt, 200);
@@ -197,7 +197,7 @@ function camClicked(){
             isCaptured = true;
             console.log("overlapping");
 
-            map.setAttribute('onclick', "window.location.href='scene5.html'");
+            map.setAttribute('onclick', "window.location.href='scene5.html'; placeVisited('visited3', 'coralVisited');");
             map.id = "icon-glow2";
 
             setTimeout(showTxt, 200);
@@ -261,7 +261,7 @@ function camClicked(){
             isCaptured = true;
             console.log("overlapping");
 
-            map.setAttribute('onclick', "window.location.href='scene5.html'");
+            map.setAttribute('onclick', "window.location.href='scene5.html'; placeVisited('visited2', 'amazonVisited');");
             map.id = "icon-glow2";
 
             setTimeout(showTxt, 200);

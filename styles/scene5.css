@@ -349,9 +349,6 @@ body::-webkit-scrollbar {
     opacity: 0;
 }
 
-.image6{
-    cursor: pointer;
-}
 
 #box1, #box3, #box4, #box5 {
     left: 3%;
