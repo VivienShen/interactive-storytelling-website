@@ -86,10 +86,10 @@
         </header>
 
         <div id="s2-1" class="scene image" style="display: block;">
-            <video class="img-bg" autoplay>
-                <source src="../assets/motionGraphics/eyesOpen_1.mp4" alt="A spaceship in the space" type="video/mp4">
+            <video class="img-bg"  id="stars" >
+                <source src="../assets/motionGraphics/eyes4.mp4" alt="stars in space bg" type="video/mp4">
                 Your browser does not support the video tag.  
-            </video>
+            </video> 
         </div>
 
 
@@ -117,12 +117,15 @@
         
         <div id="s2-4" class="scene" style="display: none;">
             <div>
-                <img class="image" src="../assets/images/scene3/room empty with items.png" alt="Inside a room">
-                <img class="flyer1" onclick="loadHenry(); playEffect('pickup-se')" src="../assets/images/scene3/flyer 1.png" alt="flyer 1" title="See Campaign Flier">
-                <img class="flyer2" onclick="loadEvelyn(); playEffect('pickup-se')" src="../assets/images/scene3/flyer 2.png" alt="flyer 2" title="See Campaign Flier">
-                <img class="tv" src="../assets/images/scene3/tv1.png" onclick="window.location.href='scene3-2.html';" alt="tv" title="Watch T.V">
-                <img class="poster1" id="Evelyn" onclick="myFunction2()" src="../assets/images/scene3/poster1.png" alt="poster1">
-                <img class="poster2" id="Henry" onclick="myFunction2()" src="../assets/images/scene3/poster2.png" alt="poster2">
+                <div id="bg1" class="image">
+                    <img class="img-bg" src="../assets/images/scene3/room empty with items.png" alt="Inside a room">
+                
+                    <img class="flyer1" onclick="loadHenry(); playEffect('pickup-se')" src="../assets/images/scene3/flyer 1.png" alt="flyer 1" title="See Campaign Flier">
+                    <img class="flyer2" onclick="loadEvelyn(); playEffect('pickup-se')" src="../assets/images/scene3/flyer 2.png" alt="flyer 2" title="See Campaign Flier">
+                    <img class="tv" src="../assets/images/scene3/tv1.png" onclick="window.location.href='scene3-2.html';" alt="tv" title="Watch T.V">
+                    <img class="poster1" id="Evelyn" onclick="myFunction2()" src="../assets/images/scene3/poster1.png" alt="poster1">
+                    <img class="poster2" id="Henry" onclick="myFunction2()" src="../assets/images/scene3/poster2.png" alt="poster2">
+                </div>
             </div>
             
             <!-- <div class="text" >
@@ -159,6 +162,9 @@
                     setTimeout(function () {
                         chap1.style.display = "none";
                     }, 800);
+
+                    document.getElementById("stars").play();
+                    
                     
                 }
             });

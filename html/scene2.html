@@ -252,6 +252,7 @@
             </div >
 
             <div class="image">
+                <img id="dull-bg" src="../assets/images/scene2/dull background.png" style="display:none" alt="dull transparent overlay">
                 <img src="../assets/images/scene2/modal.png" id = "modal" alt="modal popup" style="display:none">
                 <img src="../assets/images/scene2/yes.png" id="yes_button" onclick="openCh2(); window.location.href='portal.html'; playEffect();" alt="yes button" style="display:none" />
             </div>
@@ -476,6 +477,7 @@
 
             function loadPopup() {
                 document.getElementById('yes_button').style.display='block';
+                document.getElementById('dull-bg').style.display='block';
                 document.getElementById('modal').style.display='block';
                 document.getElementById('inventory').style.visibility='hidden';
                 document.getElementById('lock').style.visibility='hidden';

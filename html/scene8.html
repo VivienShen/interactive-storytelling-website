@@ -148,7 +148,9 @@
         <div id="s8-7" class="scene" style="display: none;">
             <div id="bg1" class="image">
                 <img class="img-bg" src="../assets/images/scene8/5.png" alt="parliament teleport selection">
+                <img id="dull-bg" class="img-bg" src="../assets/images/scene2/dull background.png" style="display:none" alt="dull transparent overlay">
             </div>
+            
             <img class="popup-travel" id="popup1" src="../assets/images/scene8/modal.png" alt="would you like to travel">
             <img class="yes-button" id="popup2" onclick="window.location.href='scene9.html'" src="../assets/images/scene8/yes.png" alt="yes button" style="display:none">
             <div class="inventory">
@@ -310,6 +312,7 @@
             function loadPopup() {
                 document.getElementById('popup1').style.display='block';
                 document.getElementById('popup2').style.display='block';
+                document.getElementById('dull-bg').style.display='block';
             }
 
             document.getElementById("bg-music").volume = 0.05;

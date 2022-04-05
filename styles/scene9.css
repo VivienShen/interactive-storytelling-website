@@ -120,21 +120,6 @@ body {
     transform: scale(0.98);
 }
 
-progress {
-    text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    line-height: 2.4;
-    width: 16%;
-    height: 4.5%;
-    position: fixed;
-    right: 3%;
-    bottom: 80px;
-}
-
-progress:after {
-    content: attr(value)'%';
-}
-
 
 /******** INVENTORY ********/
 .inventory {
@@ -190,20 +175,19 @@ progress:after {
 
 /******** button 2 ********/
 .btn2 {
-    height: 10px;
-    width: 10px;
+    height: 35px;
+    width: 35px;
     border-radius: 50%;
-    background-color: #000000;
-    outline-color: #ffffff;
+    background-color: #ffffff;
+    outline-color: #000000;
     position: fixed;
-    top: 500px;
-    left: 51%;
+    top: 60%;
+    left: 21%;
     transform: translate(-50%, -50%);
     cursor: pointer;
-    display: block;
-    z-index: 1;
-}
+    animation: fadeIn 1s;
 
+}
 
 .btn2:before,
 .btn2:after {
@@ -213,22 +197,23 @@ progress:after {
     right: 0; 
     bottom: 0; 
     left: 0;
-    border: 0.5px solid #ffffff;
+    border: 2.6px solid #ffffff;
     border-radius: 50%;
 }
 
 .btn2:before {
     animation: ripple2 3s linear infinite;
+    
 }
 
 .btn2:after {
-    animation: ripple2 3s linear 1s infinite;
+    animation: ripple2 3s linear 1.5s infinite;
 }
 
 @keyframes ripple2{
     0% { transform: scale(1); }
-    50% { transform: scale(4); opacity:1; }
-    100% { transform: scale(8); opacity:0; }
+    50% { transform: scale(1.8); opacity:1; }
+    100% { transform: scale(2.5); opacity:0; }
 }
 
 /******** PARALLAX SCENE ********/
