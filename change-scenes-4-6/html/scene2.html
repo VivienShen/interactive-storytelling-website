@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="uft-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Scene2</title>
+        <link rel="stylesheet" href="../styles/scene2.css">
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <link rel="stylesheet" href="../styles/nav.css">
+        <script src="../js/nav.js"></script>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+    </head>
+
+    <body>
+        <!-- <div id="loading">
+            <img id="loading-bg" src="../assets/images/scene1BG.png" alt="space background" />
+            <img id="loading-image" src="../assets/images/ezgif.com-gif-maker.gif" alt="Loading..." />
+            <p class="loading-txt">Loading...</p>
+        </div> -->
+
+        <audio autoplay loop id="bg-music">
+            <source src="../assets/audio/bgm/Future_Glider_-_Brian_Bolger.mp3" type="audio/mpeg">
+        </audio>
+
+        <audio id="btn-se">
+            <source src="../assets/audio/soundEffects/scene2/button.wav" type="audio/wav" />
+        </audio>
+
+        <header class="page-header">
+            <div class="hamburger-menu">
+                <input id="menu__toggle" type="checkbox" />
+                <label class="menu__btn" for="menu__toggle">
+                    <span></span>
+                </label>
+            
+                <ul class="menu__box">
+                    <div class="menu__div">
+                        <div class="chapter-menu">
+                            <ul class="chapter__list">
+                                <li><a class="chapter__item" id="ch-Home" href="../index.html">Home</a></li>
+                                <li><a class="chapter__item" id="chapter0" href="prologue.html">Prologue</a></li>
+                                <li><a class="chapter__item" id="chapter1" href="scene1-1.html" style="color: #30C9E9">Chapter 1</a></li>
+                                <li><a class="chapter__item" id="chapter2" href="scene3-1.html">Chapter 2</a></li>
+                                <li><a class="chapter__item" id="chapter3" href="scene5.html">Chapter 3</a></li>
+                                <li><a class="chapter__item" id="chapter4" href="scene6-1.html">Chapter 4</a></li>
+                                <li><a class="chapter__item" id="chapter5" href="scene8.html">Chapter 5</a></li>
+                            </ul>
+                        </div>
+                        <br><hr><br>
+                        <div class="menu__info">
+                            <span class="iconify menu__icon" data-icon="ant-design:info-circle-filled"></span>
+                            <h1 class="about"> About Sincerely, Earth</h1>
+                            <p>
+                                Sincerely, Earth is a dynamic storytelling website that provides an educational and immersive experience about climate change. Through this experience, we hope to inspire the next generation to become more aware and motivated to make a change.
+                            </p>
+                            <div class="present" style="display: flex">
+                                <div id="teamLogo" style="display: block; width: fit-content">
+                                    <p style="font-size:1.4vh; color: black; margin-top:0">Presented By</p>
+                                    <img src="../assets/images/eco_logo.png" alt="EcoLife Studio Logo" style="max-width: 8vh; margin-top:-5px">
+                                </div>
+                                <div id="mktSite" style="width: fit-content">
+                                    <a class="mktSiteLink" href="https://ecolifestudio5.wixsite.com/ecolife-studio" >Learn More <span class="iconify" data-icon="ci:external-link"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <br><hr><br>
+                        <div class="list">
+                            <span class="iconify menu__item" data-icon="ion:help-circle-sharp"></span>
+                            <span id="on" class="iconify menu__item" data-icon="teenyicons:sound-on-outline" onClick="soundOff()" style="display: inline"></span>
+                            <span id="off" class="iconify menu__item" data-icon="teenyicons:sound-off-solid" onClick="soundOn()" style="display: none"></span>
+                        </div>
+                    </div> 
+                </ul>    
+            </div>  
+        </header>
+
+        <div id="s2-3" class="scene" style="display: block;">
+            <div id="bg3" class="image">
+                <img class="img-bg" src="../assets/images/scene2/scene2-3.png" alt="Girl holding a monocular while talking with robot">
+            </div>
+            <div class="text" >
+                <div id="box2" class="speechbox" >
+                    <p>It’s so scary looking back at what remains of Earth, I wish I could see Earth back when things weren’t so bad. You know I’ve trained all my life to return to Earth, I know my purpose isn’t to live in this spaceship forever or to move to Mars but to save our actual home on Earth.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="s2-4" class="scene" style="display: none;">
+            <div id="bg4" class="image">
+                <img class="img-bg" src="../assets/images/scene2/go.png" alt="robot presenting a pop-up box with the option to name your character">
+            </div>
+
+            <div class="image">
+                <img class="nameModal" src="../assets/images/scene2/name modal.png"  alt="">
+                <img class="characterIcon" src="../assets/images/scene2/girl name.png"  alt="">
+                <img id="nextBtn2" class="skipBtn" onclick="playEffect();" src="../assets/images/scene2/skip.png" alt="">
+                <img id="nextBtn3" class="setName" src="../assets/images/scene2/set name.png" onclick="playEffect(); getInputValue();" alt="">
+            </div>
+            
+
+            <div id="form">
+                <input id="myInput" type="text" name="fname" placeholder="Enter Name here..">
+            </div>
+    
+        </div>
+
+        <div id="s2-5" class="scene" style="display: none;">
+            <div id="bg3" class="image">
+                <img class="img-bg" src="../assets/images/scene2/scene2-4.png" alt="Girl holding a monocular while talking with robot">
+            </div>
+            <div class="text" >
+                <div id="box4" class="speechbox" >
+                    <p><b>Robot:</b> Well Aeryn you won’t have to wait much longer, I came here to let you know that you were one of the people selected to go back to Earth.</p>
+                </div>
+                <!-- <audio controls autoplay>
+                    <source src="sound/robot.wav" type="audio/mpeg">
+                </audio> -->
+            </div>
+        </div>
+
+        <div id="s2-6" class="scene" style="display: none;">
+            <div id="bg3" class="image">
+                <img class="img-bg" src="../assets/images/scene2/smile.png" alt="Excited girl with a big smile talking to a robot">
+            </div>
+            <div class="text" >
+                <div id="box2" class="speechbox" >
+                    <p><b>Aeryn:</b> No way! This is great news. When can I go?</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="s2-7" class="scene" style="display: none;">
+            <div id="bg3" class="image">
+                <img class="img-bg" src="../assets/images/scene2/scene2-4.png" alt="Robot talking">
+            </div>
+            <div class="text" >
+                <div id="box4" class="speechbox" >
+                    <p><b>Robot:</b> I have been recently updated with the technology to open a portal to send people back in time whenever they like.</p>
+                </div>
+                <!-- <audio controls autoplay>
+                    <source src="sound/robot.wav" type="audio/mpeg">
+                </audio> -->
+            </div>
+        </div>
+        <div id="s2-8" class="scene" style="display: none;">
+            <div id="bg3" class="image">
+                <img class="img-bg" src="../assets/images/scene2/scene2-4.png" alt="Robot talking">
+            </div>
+            <div class="text" >
+                <div id="box4" class="speechbox" >
+                    <p><b>Robot:</b> You are going back to a parallel dimension, which means it is not exactly the same Earth as your ancestors.</p>
+                </div>
+                <!-- <audio controls autoplay>
+                    <source src="sound/robot.wav" type="audio/mpeg">
+                </audio> -->
+            </div>
+        </div>
+        <div id="s2-9" class="scene" style="display: none;">
+            <div id="bg3" class="image">
+                <img class="img-bg" src="../assets/images/scene2/scene2-4.png" alt="Robot talking">
+            </div>
+            <div class="text" >
+                <div id="box4" class="speechbox" >
+                    <p><b>Robot:</b> In this new dimension you will be sent back to 2022 on Earth, they are headed for the same events and fate of a catastrophic global crisis, even if the people and countries aren’t exactly the same as those of this dimension.</p>
+                </div>
+                <!-- <audio controls autoplay>
+                    <source src="sound/robot.wav" type="audio/mpeg">
+                </audio> -->
+            </div>
+        </div>
+        <div id="s2-10" class="scene" style="display: none;">
+            <div id="bg3" class="image">
+                <img class="img-bg" src="../assets/images/scene2/thinking.png" alt="Girl in deep though while talking to a robot">
+            </div>
+            <div class="text" >
+                <div id="box2" class="speechbox" >
+                    <p><b>Aeryn:</b> So everything I learned in the history books won’t apply to this new Earth? Will countries even look at the same in this new dimension? Why can’t we just go back in time in our dimension?</p>
+                </div>
+            </div>
+        </div>
+        <div id="s2-11" class="scene" style="display: none;">
+            <div id="bg3" class="image">
+                <img class="img-bg" src="../assets/images/scene2/thinking.png" alt="Girl in deep though while talking to a robot">
+            </div>
+            <div class="text" >
+                <div id="box3" class="speechbox" >
+                    <p><b>Robot:</b> Changing the fate of your timeline will cause the grandfather paradox effect and is impossible to do. Don’t worry, this new dimension looks exactly the same, but due to people going back in time to this alternate universe, it has resulted in some changed politicians and people, but we are yet to change the fate of the climate crisis. </p>
+                </div>
+                <!-- <audio controls autoplay>
+                    <source src="sound/robot.wav" type="audio/mpeg">
+                </audio> -->
+            </div>
+        </div>
+        <div id="s2-12" class="scene" style="display: none;">
+            <div id="bg3" class="image">
+                <img class="img-bg" src="../assets/images/scene2/thinking.png" alt="Girl in deep though while talking to a robot">
+            </div>
+            <div class="text" >
+                <div id="box3" class="speechbox" >
+                    <p><b>Robot:</b> But I must warn you, you might look like a different version of yourself, and once you go, you won’t be able to come back.</p>
+                </div>
+                <!-- <audio controls autoplay>
+                    <source src="sound/robot.wav" type="audio/mpeg">
+                </audio> -->
+            </div>
+        </div>
+        <div id="s2-13" class="scene" style="display: none;">
+            <div id="bg3" class="image">
+                <img class="img-bg" src="../assets/images/scene2/thinking.png" alt="Girl in deep though while talking to a robot">
+            </div>
+            <div class="text" >
+                <div id="box2" class="speechbox" >
+                    <p><b>Aeryn:</b> So when will the rest of the people from this spaceship be able to come back to Earth in this parallel dimension, and how will they know it’s okay to go back?</p>
+                </div>
+            </div>
+        </div>
+        <div id="s2-14" class="scene" style="display: none;">
+            <div id="bg3" class="image">
+                <img class="img-bg" src="../assets/images/scene2/thinking.png" alt="Girl in deep though while talking to a robot">
+            </div>
+            <div class="text" >
+                <div id="box3" class="speechbox" >
+                    <p><b>Robot:</b> We have technology to monitor Earth’s progress, if you and the others selected are able to serve your mission and save Earth from its fate, then we will send most people from here to that dimension, but if not, then our backup plan is to settle on Mars.</p>
+                </div>
+                <!-- <audio controls autoplay>
+                    <source src="sound/robot.wav" type="audio/mpeg">
+                </audio> -->
+            </div>
+        </div>
+        <div id="s2-15" class="scene" style="display: none;">
+            <div id="bg3" class="image">
+                <img class="img-bg" src="../assets/images/scene2/thinking.png" alt="Girl in deep though while talking to a robot">
+            </div>
+            <div class="text" >
+                <div id="box3" class="speechbox" >
+                    <p><b>Robot:</b> For now I will give you this teleportation device, use it wisely since people in 2022 aren’t used to this sort of technology. Are you ready to go?</p>
+                </div>
+                <!-- <audio controls autoplay>
+                    <source src="sound/robot.wav" type="audio/mpeg">
+                </audio> -->
+            </div>
+        </div>
+        <div id="s2-16" class="scene" style="display: none;">
+            <div id="bg4" class="image">
+                <img class="img-bg" src="../assets/images/scene2/go.png" alt="robot presenting a pop-up box with the words: Are you ready to go? And a button yes as a response">
+                <span id="inventory" class="tooltiptext1">Inventory</span>
+                <!-- <span id="lock" class="tooltiptext2">Locked</span>
+                <span id="time" class="tooltiptext3">Time Travel</span> -->
+
+            </div >
+
+            <div class="image">
+                <img id="dull-bg" src="../assets/images/scene2/dull background.png" style="display:none" alt="dull transparent overlay">
+                <img src="../assets/images/scene2/modal.png" id = "modal" alt="modal popup" style="display:none">
+                <img src="../assets/images/scene2/yes.png" id="yes_button" onclick="openCh2(); window.location.href='portal.html'; playEffect();" alt="yes button" style="display:none" />
+            </div>
+
+            <div class="inventory">
+                <img id="inventory-bg" src="../assets/images/scene2/inventory.png" alt="inventory box">
+                <div class="icons">
+                    <img id="camera-lock" class="lock" src="../assets/images/scene2/lock.png" alt="locked item" style="display: block;" title="Locked">
+                    <img id="map-lock" class="lock" src="../assets/images/scene2/lock.png" alt="locked item" style="display: block;" title="Locked">
+                    <img id="app-icon" class="icon" src="../assets/images/scene2/icon.png" alt="teleport item" style="display: block;" onclick="loadPopup(); playEffect();" title="Teleport">
+                </div>
+            </div>
+        </div>
+
+
+        <div id="nextBtn" class="btn2" style="display: none;" ></div> 
+        
+        <!-- <div id="box2" class="speechBubble" style="display: none">
+            <p>It's so scary looking back at what remains of earth, I wish I could see Earth back when things weren't so bad.</p>
+        </div> -->
+
+        <script>
+
+            var soundEffect = document.getElementById("btn-se");
+
+            function playEffect() {
+
+                soundEffect.play();
+
+            }
+
+            // $(window).on('load', function () {
+            //     $('#loading').hide();
+            // }) 
+
+             //setting character name
+            var inputVal2 = sessionStorage.getItem("newName");
+            console.log(inputVal2);
+
+            function getInputValue(){
+                var inputVal = document.getElementById("myInput").value;
+                        
+                if (inputVal == ""){
+                    var all2 = document.querySelectorAll('p');
+
+                    all2.forEach(x => x.innerHTML = x.innerHTML.replace(/Aeryn/gi, "Aeryn"));
+                    console.log("name is null");
+                }
+
+                if (inputVal == null){
+                    var all2 = document.querySelectorAll('p');
+
+                    all2.forEach(x => x.innerHTML = x.innerHTML.replace(/Aeryn/gi, "Aeryn"));
+                    console.log("name is null");
+                }
+
+                else{
+                    var all = document.querySelectorAll('p');
+                    all.forEach(x => x.innerHTML = x.innerHTML.replace(/Aeryn/gi, inputVal));
+                }
+                
+                localStorage.setItem("newName", inputVal);
+                console.log(inputVal);
+
+            }
+            
+
+
+            /*------Changing div with next and prev button------*/
+
+            //store the divs of the specified className into an array
+            var IdStore = new Array();
+            function storeSceneId(){
+                var className = document.getElementsByClassName('scene');
+                var classNameCount = className.length;
+                
+                for(var j = 0; j < classNameCount; j++){
+                    IdStore.push(className[j].id);
+                }
+                console.log(IdStore);
+            }
+            storeSceneId();
+            
+            //show or hide the div when next button is clicked
+            var currentIndex = 0;
+            
+            var next = document.getElementById("nextBtn");
+            var next2 = document.getElementById("nextBtn2");
+            var next3 = document.getElementById("nextBtn3");
+
+
+            next.addEventListener("click", function(i) {
+
+                //hide next button when clicked each time
+                next.style.display= "none";
+
+                if (currentIndex < IdStore.length-1) {
+                    console.log('next'); 
+                    currentIndex += 1;
+                    console.log(currentIndex);
+                    var divId = IdStore[currentIndex];
+
+                    console.log(divId, currentIndex);
+                    document.getElementById(divId).style.display = "block";
+                    var prevIndex = currentIndex - 1;
+                    console.log(prevIndex);
+                    if (prevIndex >= 0) {
+                        var preId = IdStore[prevIndex];
+                        document.getElementById(preId).style.display = "none";
+                    }
+
+                    //next button appearing after 3 second
+                    setTimeout(appeardiv, 500);
+                    function appeardiv() {
+                        //not appear for the last cut
+                        
+                        if (currentIndex < IdStore.length-1) {
+                            
+                            if(currentIndex == 1 || currentIndex == 13){
+                                next.style.display = "none";
+                                console.log("remove next btn");
+                            }
+
+                            else{
+                                next.style.display = "block";
+                            }
+
+                        }
+                        
+                    }
+
+                } else if ((i.keyCode == 37) && (currentIndex >= 1)) { //show or hide the div when prev button is clicked
+                    var divId = IdStore[currentIndex];
+                    console.log(divId, currentIndex);
+                    document.getElementById(divId).style.display = "none";
+                    currentIndex -= 1;
+                    console.log(currentIndex);
+                    var divId2 = IdStore[currentIndex];
+                    document.getElementById(divId2).style.display = "block";
+                } 
+            }); 
+
+            next2.addEventListener("click", function(i) {
+                if (currentIndex < IdStore.length-1) {
+                    console.log('next'); 
+                    currentIndex += 1;
+                    console.log(currentIndex);
+                    var divId = IdStore[currentIndex];
+
+                    console.log(divId, currentIndex);
+                    document.getElementById(divId).style.display = "block";
+                    var prevIndex = currentIndex - 1;
+                    console.log(prevIndex);
+                    if (prevIndex >= 0) {
+                        var preId = IdStore[prevIndex];
+                        document.getElementById(preId).style.display = "none";
+                    }
+
+                    next.style.display = "block";
+
+                }
+            });
+
+            next3.addEventListener("click", function(i) {
+                if (currentIndex < IdStore.length-1) {
+                    console.log('next'); 
+                    currentIndex += 1;
+                    console.log(currentIndex);
+                    var divId = IdStore[currentIndex];
+
+                    console.log(divId, currentIndex);
+                    document.getElementById(divId).style.display = "block";
+                    var prevIndex = currentIndex - 1;
+                    console.log(prevIndex);
+                    if (prevIndex >= 0) {
+                        var preId = IdStore[prevIndex];
+                        document.getElementById(preId).style.display = "none";
+                    }
+
+                    next.style.display = "block";
+
+                }
+            });
+
+            //control next nav by keyboard
+            document.addEventListener('keydown', function(event) {               
+
+                if ((event.keyCode == 39) && (currentIndex < IdStore.length-1)) {
+                    console.log('next'); 
+                    currentIndex += 1;
+                    console.log(currentIndex);
+                    var divId = IdStore[currentIndex];
+
+                    console.log(divId, currentIndex);
+                    document.getElementById(divId).style.display = "block";
+                    var prevIndex = currentIndex - 1;
+                    console.log(prevIndex);
+                    if (prevIndex >= 0) {
+                        var preId = IdStore[prevIndex];
+                        document.getElementById(preId).style.display = "none";
+                    }
+
+                } else if ((event.keyCode == 37) && (currentIndex >= 1)) { //show or hide the div when prev button is clicked
+                    var divId = IdStore[currentIndex];
+                    console.log(divId, currentIndex);
+                    document.getElementById(divId).style.display = "none";
+                    currentIndex -= 1;
+                    console.log(currentIndex);
+                    var divId2 = IdStore[currentIndex];
+                    document.getElementById(divId2).style.display = "block";
+                } 
+            });
+
+            //make button appear after specific time
+            window.onload = function () {
+                setTimeout(appeardiv, 500);
+            }
+
+            function appeardiv() {
+                document.getElementById('nextBtn').style.display= "block";
+            }
+
+            function loadPopup() {
+                document.getElementById('yes_button').style.display='block';
+                document.getElementById('dull-bg').style.display='block';
+                document.getElementById('modal').style.display='block';
+                document.getElementById('inventory').style.visibility='hidden';
+                document.getElementById('lock').style.visibility='hidden';
+                document.getElementById('time').style.visibility='hidden';
+            }       
+
+            document.getElementById("bg-music").volume = 0.05;
+
+            function openCh2() {
+                localStorage.setItem("ch2-lock", 1);
+            }
+
+            function soundOff() {
+                document.getElementById("bg-music").muted = true;  
+                document.getElementById("btn-se").muted = true;  
+                document.getElementById("on").style.display = "none";
+                document.getElementById("off").style.display = "inline";
+            }
+
+            function soundOn() {
+                document.getElementById("bg-music").muted = false; 
+                document.getElementById("btn-se").muted = false; 
+                document.getElementById("off").style.display = "none"; 
+                document.getElementById("on").style.display = "inline";
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html> 
+<html lang="en">
+	<head>
+		<meta charset="uft-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Scene1-1</title>
+        <link rel="stylesheet" href="../styles/scene2.css">
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <link rel="stylesheet" href="../styles/nav.css">
+        <script src="../js/nav.js"></script>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+    </head>
+
+    <body>
+
+        <!-- <div id="loading">
+            <img id="loading-bg" src="../assets/images/scene1BG.png" alt="space background" />
+            <img id="loading-image" src="../assets/images/ezgif.com-gif-maker.gif" alt="Loading..." />
+            <p class="loading-txt">Loading...</p>
+        </div> -->
+
+        <audio autoplay loop id="bg-music">
+            <source src="../assets/audio/bgm/Future_Glider_-_Brian_Bolger.mp3" type="audio/mpeg">
+        </audio>
+
+        <header class="page-header">
+            <div class="hamburger-menu">
+                <input id="menu__toggle" type="checkbox" />
+                <label class="menu__btn" for="menu__toggle">
+                    <span></span>
+                </label>
+            
+                <ul class="menu__box">
+                    <div class="menu__div">
+                        <div class="chapter-menu">
+                            <ul class="chapter__list">
+                                <li><a class="chapter__item" id="ch-Home" href="../index.html">Home</a></li>
+                                <li><a class="chapter__item" id="chapter0" href="prologue.html">Prologue</a></li>
+                                <li><a class="chapter__item" id="chapter1" href="scene1-1.html" style="color: #30C9E9">Chapter 1</a></li>
+                                <li><a class="chapter__item" id="chapter2" href="scene3-1.html">Chapter 2</a></li>
+                                <li><a class="chapter__item" id="chapter3" href="scene5.html">Chapter 3</a></li>
+                                <li><a class="chapter__item" id="chapter4" href="scene6-1.html">Chapter 4</a></li>
+                                <li><a class="chapter__item" id="chapter5" href="scene8.html">Chapter 5</a></li>
+                            </ul>
+                        </div>
+                        <br><hr><br>
+                        <div class="menu__info">
+                            <span class="iconify menu__icon" data-icon="ant-design:info-circle-filled"></span>
+                            <h1 class="about"> About Sincerely, Earth</h1>
+                            <p>
+                                Sincerely, Earth is a dynamic storytelling website that provides an educational and immersive experience about climate change. Through this experience, we hope to inspire the next generation to become more aware and motivated to make a change.
+                            </p>
+                            <div class="present" style="display: flex">
+                                <div id="teamLogo" style="display: block; width: fit-content">
+                                    <p style="font-size:1.4vh; color: black; margin-top:0">Presented By</p>
+                                    <img src="../assets/images/eco_logo.png" alt="EcoLife Studio Logo" style="max-width: 8vh; margin-top:-5px">
+                                </div>
+                                <div id="mktSite" style="width: fit-content">
+                                    <a class="mktSiteLink" href="https://ecolifestudio5.wixsite.com/ecolife-studio" >Learn More <span class="iconify" data-icon="ci:external-link"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <br><hr><br>
+                        <div class="list">
+                            <span class="iconify menu__item" data-icon="ion:help-circle-sharp"></span>
+                            <span id="on" class="iconify menu__item" data-icon="teenyicons:sound-on-outline" onClick="soundOff()" style="display: inline"></span>
+                            <span id="off" class="iconify menu__item" data-icon="teenyicons:sound-off-solid" onClick="soundOn()" style="display: none"></span>
+                        </div>
+                    </div> 
+                </ul>    
+            </div>  
+        </header>
+
+        <div id="s2-1" class="scene" style="display: block;">
+            <div class="image">
+                <video class="img-bg" autoplay loop>
+                    <source src="../assets/motionGraphics/stars 2.mp4" alt="A spaceship in the space" type="video/mp4">
+                    Your browser does not support the video tag. 
+                </video>
+            </div>
+            
+            <div class="text">
+                <div id="box1" class="textbox" >
+                    <p>In the year 2100, home to more than 200 people, is a spaceship called Ecolife.</p>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div id="s2-2" class="scene" style="display: none;">
+            <div id="bg2" class="image">
+                <img class="img-bg" src="../assets/images/scene2/telescope lookout.png" alt="Girl holding a monocular while talking with robot">
+                <img class="telescope" src="../assets/images/scene2/telescope.png" onclick="window.location.href='scene1-2.html'" alt="Telescope" title="Telescope">
+                <span class="tooltiptext">Click on items that are glowing</span>
+            </div>
+        </div>
+
+        <div id="nextBtn" class="btn2" style="display: none;" ></div>
+
+        <div class="dividers" id="divider1" style="display: block;" >
+            <a href="#" id="fill" class="fill-div">
+                <img id="ch1" class="chapter" src="../assets/images/chapter 1.png" alt="Chapter 1">
+                <p class="chapStart">Click anywhere to close</p>
+            </a>
+        </div>
+
+
+        <script>
+            // $(window).on('load', function () {
+            //     $('#loading').hide();
+            // }) 
+
+            //Chapter Divider
+            var ch1 = document.getElementById("ch1");
+            var chap1 = document.getElementById("divider1");
+            $(".fill-div").click(function() {
+                document.getElementById('fill').className = 'chapAni';
+                document.getElementById('divider1').className = 'divAni';
+                if (ch1.style.opacity == 0){
+                    console.log("hide");
+                    setTimeout(function () {
+                        chap1.style.display = "none";
+                    }, 800);
+                }
+            });
+
+            /*------Changing div with next and prev button------*/
+
+            //store the divs of the specified className into an array
+            var IdStore = new Array();
+            function storeSceneId(){
+                var className = document.getElementsByClassName('scene');
+                var classNameCount = className.length;
+                
+                for(var j = 0; j < classNameCount; j++){
+                    IdStore.push(className[j].id);
+                }
+                console.log(IdStore);
+            }
+            storeSceneId();
+            
+            //show or hide the div when next button is clicked
+            var currentIndex = 0;
+            
+            var next = document.getElementById("nextBtn");
+            next.addEventListener("click", function(i) {
+
+                //hide next button when clicked each time
+                document.getElementById('nextBtn').style.display= "none";
+
+                if (currentIndex < IdStore.length-1) {
+                    console.log('next'); 
+                    currentIndex += 1;
+                    console.log(currentIndex);
+                    var divId = IdStore[currentIndex];
+
+                    console.log(divId, currentIndex);
+                    document.getElementById(divId).style.display = "block";
+                    var prevIndex = currentIndex - 1;
+                    console.log(prevIndex);
+                    if (prevIndex >= 0) {
+                        var preId = IdStore[prevIndex];
+                        document.getElementById(preId).style.display = "none";
+                    }
+
+                    //next button appearing after 3 second
+                    setTimeout(appeardiv, 500);
+                    function appeardiv() {
+                        //not appear for the last cut
+                        if (currentIndex < IdStore.length-1) {
+                            document.getElementById('nextBtn').style.display= "block";
+                        }
+                        
+                    }
+
+                } 
+            }); 
+
+            //control next nav by keyboard
+            document.addEventListener('keydown', function(event) {               
+
+                if ((event.keyCode == 39) && (currentIndex < IdStore.length-1)) {
+                    console.log('next'); 
+                    currentIndex += 1;
+                    console.log(currentIndex);
+                    var divId = IdStore[currentIndex];
+
+                    console.log(divId, currentIndex);
+                    document.getElementById(divId).style.display = "block";
+                    var prevIndex = currentIndex - 1;
+                    console.log(prevIndex);
+                    if (prevIndex >= 0) {
+                        var preId = IdStore[prevIndex];
+                        document.getElementById(preId).style.display = "none";
+                    }
+
+                } else if ((event.keyCode == 37) && (currentIndex >= 1)) { //show or hide the div when prev button is clicked
+                    var divId = IdStore[currentIndex];
+                    console.log(divId, currentIndex);
+                    document.getElementById(divId).style.display = "none";
+                    currentIndex -= 1;
+                    console.log(currentIndex);
+                    var divId2 = IdStore[currentIndex];
+                    document.getElementById(divId2).style.display = "block";
+                } 
+            });
+
+            //make button appear after specific time
+            window.onload = function () {
+                setTimeout(appeardiv, 500);
+            }
+
+            function appeardiv() {
+                document.getElementById('nextBtn').style.display= "block";
+            }
+
+            function loadHenry() {
+                    var x = document.getElementById("Henry");
+                if (x.style.visibility === "visible") {
+                    x.style.visibility = "hidden";
+                } else {
+                    x.style.visibility = "visible";
+                }
+                    document.getElementById('Evelyn').style.visibility='hidden';
+                }
+
+                function loadEvelyn() {
+                    var x = document.getElementById("Evelyn");
+                    if (x.style.visibility === "visible") {
+                    x.style.visibility = "hidden";
+                } else {
+                    x.style.visibility = "visible";
+                }
+                    document.getElementById('Henry').style.visibility='hidden';
+            }
+
+            document.getElementById("bg-music").volume = 0.05;
+
+            //Retrieving changed name from local storage
+            var inputVal = localStorage.getItem("newName");
+            console.log(inputVal);
+
+            var all = document.querySelectorAll('.speechbox');
+
+            all.forEach(x => x.textContent = x.textContent.replace(/Aeryn/gi, inputVal));
+
+            function soundOff() {
+                document.getElementById("bg-music").muted = true;  
+                document.getElementById("on").style.display = "none";
+                document.getElementById("off").style.display = "inline";
+            }
+
+            function soundOn() {
+                document.getElementById("bg-music").muted = false; 
+                document.getElementById("off").style.display = "none"; 
+                document.getElementById("on").style.display = "inline";
+            }
+        </script>
+    </body>
+</html>
