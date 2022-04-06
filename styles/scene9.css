@@ -685,23 +685,22 @@ body {
 .end-text-container{
     transform: rotate(-10deg);
     display: none;
-    top: 81%;
-    left: 41%;
+    top: 80.2%;
+    left: 40.2%;
     position: absolute;
 }
 
-@font-face { font-family: roboto-regular; 
-    src: url('../assets/fonts/SpectralSC-SemiBold.ttf');
+@font-face { font-family: brushScript; 
+    src: url('../assets/fonts/BrushScriptOpti-Regular.otf');
 } 
 
 .end-text {
     white-space: nowrap;
     overflow: hidden;    
-    font-size: 4.2rem;
-    font-weight: 500;
-    font-family: SpectralSC-SemiBold;
+    font-size: 5rem;
+    font-family: brushScript;
     color: rgba(11, 17, 44, 0.842);
-    animation: animated-text 3s steps(30,end) 1s 1 normal both;
+    animation: animated-text 2.5s steps(30,end) 1s 1 normal both;
     position: absolute;
     
 }
