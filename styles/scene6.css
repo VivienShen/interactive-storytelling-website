@@ -369,7 +369,7 @@ progress:after {
   outline-color: #000000;
   position: fixed;
   top: 60%;
-  margin-left: 30%;
+  margin-left: 35%;
   cursor: pointer;
   animation: fadeIn 1s;
   z-index: 2;

@@ -303,7 +303,7 @@ progress:after {
 
 #nextBtn5 {
   top: 50%;
-  left: 30%;
+  left: 50%;
 }
 
 /* button 2 */
@@ -315,7 +315,7 @@ progress:after {
   outline-color: #000000;
   position: fixed;
   top: 50%;
-  left: 40%;
+  left: 50%;
   transform: translate(-50%, -50%);
   cursor: pointer;
   animation: fadeIn 1s;
