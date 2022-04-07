@@ -453,6 +453,7 @@
             $topOffset = $(this).scrollTop();
         
             console.log($topOffset);
+            console.log(window.innerHeight);
 
             //Make Camera Glow At end of scroll
             if($topOffset > body.scrollHeight * 0.85){
@@ -460,7 +461,18 @@
                 cam.setAttribute('onclick','openCam()');
                 exp.style.display = "block";
     
-            }else{
+            }
+            //FOR LARGER SCREENS
+            else if(window.innerHeight > 915){
+                if($topOffset > body.scrollHeight * 0.85){
+                    cam.id = "icon-glow";
+                    cam.setAttribute('onclick','openCam()');
+                    exp.style.display = "block";
+                }
+
+                console.log("larger screen");
+            }
+            else{
                 cam.id = "camera-icon";
                 cam.setAttribute('onclick','');
                 exp.style.display = "none";
