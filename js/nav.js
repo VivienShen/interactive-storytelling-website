@@ -1,6 +1,10 @@
 $(document).ready(function () {
     lock();
+    console.log("active");
+    audioStatus();
 });
+
+
 function lock() {
     var pointerEv = "none";
     var txtColor = "lightGrey";
@@ -47,5 +51,52 @@ function lock() {
         document.getElementById("chapter5").style.color = txtColor;
         localStorage.setItem("ch5-pointerEv", pointerEv);
         localStorage.setItem("ch5-color", txtColor);
+    }
+}
+
+
+function audioStatus() {
+    if (localStorage.getItem("sound") == false) {
+        console.log("sound is off");
+        document.getElementById("on").style.display = "none";
+        document.getElementById("off").style.display = "inline";
+        soundOff();
+        /* document.getElementById("bg-music").muted = true;
+        document.getElementById("zoomBtn-se").muted = true;
+        document.getElementById("zoom-se").muted = true;
+        document.getElementById("city-se").muted = true; 
+        document.getElementById("pickup-se").muted = true;  
+        document.getElementById("wind-se").muted = true;  
+        document.getElementById("camera-se").muted = true;
+        document.getElementById("water-se").muted = true;
+        document.getElementById("forest-se").muted = true;
+        document.getElementById("phone-se").muted = true;
+        document.getElementById("add-se").muted = true; 
+        document.getElementById("btn-se").muted = true; 
+        document.getElementById("lab-se").muted = true;
+        document.getElementById("crowd-music").muted = true;
+        document.getElementById("chant-music").muted = true;  */
+        
+    } else if (localStorage.getItem("sound") == true) {
+        console.log("sound is on");
+        document.getElementById("off").style.display = "none"; 
+        document.getElementById("on").style.display = "inline";
+        soundOn();
+        /* document.getElementById("bg-music").muted = false;
+        document.getElementById("zoomBtn-se").muted = false;
+        document.getElementById("zoom-se").muted = false;
+        document.getElementById("city-se").muted = false; 
+        document.getElementById("pickup-se").muted = false;  
+        document.getElementById("wind-se").muted = false;  
+        document.getElementById("camera-se").muted = false;
+        document.getElementById("water-se").muted = false;
+        document.getElementById("forest-se").muted = false;
+        document.getElementById("phone-se").muted = false;
+        document.getElementById("add-se").muted = false; 
+        document.getElementById("btn-se").muted = false; 
+        document.getElementById("lab-se").muted = false;
+        document.getElementById("crowd-music").muted = false;
+        document.getElementById("chant-music").muted = false;
+         */
     }
 }

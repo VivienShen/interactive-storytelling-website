@@ -57,7 +57,7 @@
                             </p>
                             <div class="present" style="display: flex">
                                 <div id="teamLogo" style="display: block; width: fit-content">
-                                    <p style="font-size:1.4vh; color: black; margin-top:0">Presented By</p>
+                                    <p class="present">Presented By</p>
                                     <img src="../assets/images/eco_logo.png" alt="EcoLife Studio Logo" style="max-width: 8vh; margin-top:-5px">
                                 </div>
                                 <div id="mktSite" style="width: fit-content">
@@ -614,12 +614,14 @@
         document.getElementById("bg-music").muted = true;  
         document.getElementById("on").style.display = "none";
         document.getElementById("off").style.display = "inline";
+        localStorage.setItem("sound", "muted");
     }
 
     function soundOn() {
         document.getElementById("bg-music").muted = false; 
         document.getElementById("off").style.display = "none"; 
         document.getElementById("on").style.display = "inline";
+        localStorage.setItem("sound", "unmuted");
     }
 
     function removeLS(){

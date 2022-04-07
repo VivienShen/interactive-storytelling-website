@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="../js/nav.js"></script>
+
 </head>
 
 <style>
@@ -67,7 +69,7 @@
     </div>
 
     <audio autoplay loop id="zoom-se">
-        <source src="../assets/audio/soundEffects/scene2//portal.wav" type="audio/wav" />
+        <source src="../assets/audio/soundEffects/scene2/portal.wav" type="audio/wav" />
     </audio>
 
 
@@ -170,6 +172,7 @@
             window.location='scene3-1.html'
         }, 4500);
 
+        document.getElementById("zoom-se").volume = 0.05;
 
     </script>
 </body>

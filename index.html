@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Scene 1</title>
-    <link rel="stylesheet" href="../styles/scene1.css">
-    <link rel="stylesheet" href="../styles/intro.css">
-    <link rel="stylesheet" href="../styles/nav.css">
-    <script src="../js/nav.js"></script>
+    <link rel="stylesheet" href="styles/scene1.css">
+    <link rel="stylesheet" href="styles/intro.css">
+    <link rel="stylesheet" href="styles/nav.css">
     <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+    <script src="js/nav.js"></script>
 
     <style>
         
@@ -32,7 +32,7 @@
     </div> -->
 
     <audio loop id="bg-music">
-        <source src="../assets/audio/bgm/Earth_Appears_-_Brian_Bolger.mp3" type="audio/mpeg" />
+        <source src="assets/audio/bgm/Earth_Appears_-_Brian_Bolger.mp3" type="audio/mpeg" />
     </audio>
 
     <!-- <div id="bg1" class="image">
@@ -41,11 +41,11 @@
     </div> -->
 
     <video class="stars" autoplay loop>
-        <source src="../assets/motionGraphics/stars.mp4" type="video/mp4">
+        <source src="assets/motionGraphics/stars.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
-    <img class="logo" id="logo" src="../assets/images/scene1/earthLetter.png" alt="logo of the Earth">
+    <img class="logo" id="logo" src="assets/images/scene1/earthLetter.png" alt="logo of the Earth">
         
     <!-- <div class="mouse_scroll">
 		<div>
@@ -85,8 +85,8 @@
                         </p>
                         <div class="present" style="display: flex">
                             <div id="teamLogo" style="display: block; width: fit-content">
-                                <p style="font-size:1.4vh; color: black; margin-top:0">Presented By</p>
-                                <img src="../assets/images/eco_logo.png" alt="EcoLife Studio Logo" style="max-width: 8vh; margin-top:-5px">
+                                <p class="present">Presented By</p>
+                                <img src="assets/images/eco_logo.png" alt="EcoLife Studio Logo" style="max-width: 8vh; margin-top:-5px">
                             </div>
                             <div id="mktSite" style="width: fit-content">
                                 <a class="mktSiteLink" href="https://ecolifestudio5.wixsite.com/ecolife-studio" >Learn More <span class="iconify" data-icon="ci:external-link"></span></a>
@@ -235,14 +235,17 @@
             document.getElementById("bg-music").muted = true;  
             document.getElementById("on").style.display = "none";
             document.getElementById("off").style.display = "inline";
+            localStorage.setItem("sound", false);
+            console.log("muted");
         }
 
         function soundOn() {
             document.getElementById("bg-music").muted = false; 
             document.getElementById("off").style.display = "none"; 
             document.getElementById("on").style.display = "inline";
+            localStorage.setItem("sound", true);
+            console.log("unmuted");
         }
-
 
     </script>
 </body>
