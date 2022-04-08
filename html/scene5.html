@@ -160,6 +160,27 @@
                 y.style.display = "none";
             }
 
+            if(icon == "arctic"){
+                document.getElementById('btn2').style.display='none';
+                document.getElementById('btn1').style.display='none';
+                document.getElementById('coral').style.display='none';
+                document.getElementById('amazon').style.display='none';
+            }
+
+            else if(icon == "amazon"){
+                document.getElementById('btn2').style.display='none';
+                document.getElementById('btn3').style.display='none';
+                document.getElementById('coral').style.display='none';
+                document.getElementById('arctic').style.display='none';
+            }
+
+            else if(icon == "coral"){
+                document.getElementById('btn3').style.display='none';
+                document.getElementById('btn1').style.display='none';
+                document.getElementById('arctic').style.display='none';
+                document.getElementById('amazon').style.display='none';
+            }
+
             console.log("opened");
         }
 

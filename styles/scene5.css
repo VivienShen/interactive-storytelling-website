@@ -271,6 +271,7 @@ body::-webkit-scrollbar {
 
 .btn3:hover + .arctic-icon{
     transform: scale(2,2);
+    display: none;
 }
 
 .btn::before {
@@ -621,6 +622,7 @@ progress {
     position: relative;
     bottom: -62vh;
     width: 17%;
+    animation: fadeIn linear 1s;
 }
 
 .yes-btn:hover {

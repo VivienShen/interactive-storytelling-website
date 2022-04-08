@@ -89,18 +89,20 @@ body {
 }
 
 .yes-button {
-  width: 20%;
-  left: 40%;
-  top: 50%;
-  position: absolute;
   animation: fadeIn linear 1s;
   padding: 0;
   cursor: pointer;
+  max-width: 18%;
   margin: 0;
+  position: absolute;
+  top: 62%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .yes-button:hover {
-  margin-top: 10px;
+  top: 63%;
 }
 
 .back-button {

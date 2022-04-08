@@ -37,6 +37,7 @@ body {
   width: 20%;
   padding-top: 25.5%;
   margin-bottom: auto;
+  animation: fadeIn linear 1s;
 }
 
 .yes-button:hover {
