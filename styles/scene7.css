@@ -20,7 +20,7 @@ body {
 }
 
 .textbox {
-  font-size: 1.3rem;
+  font-size: 1.3em;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   border-radius: 5px;
   padding: 0 15px 0 15px;
@@ -36,7 +36,7 @@ body {
 }
 
 .speechbox {
-  font-size: 1.3rem;
+  font-size: 1.3em;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   border-radius: 400px;
   width: fit-content;
@@ -55,7 +55,7 @@ body {
   top: 10%;
   left: 1%;
   max-width: 700px;
-  font-size: 1.3rem;
+  font-size: 1.3em;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   width: fit-content;
   height: fit-content;
@@ -72,7 +72,7 @@ body {
   bottom: 3%;
   left: 1%;
   max-width: 400px;
-  font-size: 1.3rem;
+  font-size: 1.3em;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   width: fit-content;
   max-width: 600px;
@@ -117,7 +117,7 @@ body {
   top: 10%;
   left: 1%;
   max-width: 680px;
-  font-size: 1.3rem;
+  font-size: 1.3em;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   width: fit-content;
   height: fit-content;
@@ -156,7 +156,7 @@ body {
 }
 
 .quizBox {
-  font-size: 1.3rem;
+  font-size: 2.3vh;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-align: center;
   border: 1px solid #fff;
@@ -203,17 +203,43 @@ body {
 progress {
   text-align: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  line-height: 2.4;
+  line-height: 2.1;
   width: 16%;
-  height: 4.5%;
+  height: 4vh;
   position: fixed;
   right: 3%;
-  bottom: 9.3%;
-  top: 86%;
+  top: 87%;
+}
+
+@media (max-height: 765px) {
+  progress {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 1.8;
+    width: 16%;
+    height: 4vh;
+    position: fixed;
+    right: 3%;
+    top: 86.5%;
+  }
+}
+
+@media (max-height: 665px) {
+  progress {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 1.5;
+    width: 16%;
+    height: 4vh;
+    position: fixed;
+    right: 3%;
+    top: 86.5%;
+  }
 }
 
 progress:after {
   content: attr(value) "%";
+  font-size: 2vh;
 }
 
 .notif > p {
@@ -224,22 +250,59 @@ progress:after {
   text-align: center;
   font-weight: bold;
   margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .notif {
   bottom: 15%;
-  right: 9%;
-  /* background-color: #ffffff79; */
-  /* border: 1px solid #faf9f4 ; */
+  right: 8%;
+  background-color: #ffffff;
+  border-radius: 6px;
   width: fit-content;
   position: absolute;
-  animation: slideIn 0.5s ease-Out;
+  animation: pop 2s ease-Out;
   z-index: 3;
 }
 
-.notifAni {
-  animation: fadeOut 1s ease-Out;
+.gNotif {
+  bottom: 15%;
+  right: 2%;
+  background-color: #ffffff;
+  border-radius: 6px;
+  width: fit-content;
+  position: absolute;
+  animation: pop 3s ease-Out;
+  z-index: 3;
+}
+
+.gNotif > p {
+  font-size: 1.8vh;
+  color: black;
+  text-shadow: 1px 1px 2px rgb(255, 255, 255);
+  padding: 5px;
+  text-align: center;
+  font-weight: bold;
+  margin: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+@keyframes pop {
+  0% {
+    transform: translateY(100%);
+    opacity: 100%;
+  }
+
+  20% {
+    transform: translateY(0%);
+  }
+
+  50% {
+    opacity: 100%;
+  }
+
+  100% {
+    opacity: 0%;
+  }
 }
 
 /******** INVENTORY ********/

@@ -24,29 +24,34 @@ var plusFunction = function()
         score = localStorage.getItem("currScore");
     }
 
-    if(score == 50){
+    /* if(score = 50){
         document.querySelector(".plus-btn").setAttribute("disabled", "disabled")
     }else{
         document.querySelector(".plus-btn").removeAttribute("disabled");
         document.querySelector(".plus-btn").classList.remove("disabled");
-    }
+    } */
     
     //point increment by 5
     for(let i = 0; i < 5; i++){
         score++;
     }
 
-    document.getElementById("pointNotif").style.display = "block";
-    setTimeout(removeTxt, 2000);
+    
 
-    function removeTxt() {
-        //remove text
-        /* var not1 = document.getElementsById("pointNotif");
-        document.getElementById("pointNotif").className = 'notifAni';
-        if (not1.style.opacity == 0){
+    //show popup when score reached 50%
+    if (score == 50) {
+        document.getElementById("goalNotif").style.display = "block";
+        setTimeout(removeTxt, 2900);
+        function removeTxt() {
+            document.getElementById("goalNotif").style.display = "none";
+        }
+    } else {
+        //show +5 point pop up and fadeout after 2s
+        document.getElementById("pointNotif").style.display = "block";
+        setTimeout(removeTxt, 1900);
+        function removeTxt() {
             document.getElementById("pointNotif").style.display = "none";
-        } */
-        document.getElementById("pointNotif").style.display = "none";
+        }
     }
 
     //setting increment input value
@@ -161,14 +166,8 @@ function camClicked(){
 
                 document.getElementById("pointNotif").style.display = "block";
                 setTimeout(removeTxt, 2000);
-    
+
                 function removeTxt() {
-                    //remove text
-                    /* var not1 = document.getElementsById("pointNotif");
-                    document.getElementById("pointNotif").className = 'notifAni';
-                    if (not1.style.opacity == 0){
-                        document.getElementById("pointNotif").style.display = "none";
-                    } */
                     document.getElementById("pointNotif").style.display = "none";
                 }
             }
@@ -251,12 +250,6 @@ function camClicked(){
                 setTimeout(removeTxt, 2000);
 
                 function removeTxt() {
-                    //remove text
-                    /* var not1 = document.getElementsById("pointNotif");
-                    document.getElementById("pointNotif").className = 'notifAni';
-                    if (not1.style.opacity == 0){
-                        document.getElementById("pointNotif").style.display = "none";
-                    } */
                     document.getElementById("pointNotif").style.display = "none";
                 }
             }
@@ -326,14 +319,8 @@ function camClicked(){
 
                 document.getElementById("pointNotif").style.display = "block";
                 setTimeout(removeTxt, 2000);
-    
+
                 function removeTxt() {
-                    //remove text
-                    /* var not1 = document.getElementsById("pointNotif");
-                    document.getElementById("pointNotif").className = 'notifAni';
-                    if (not1.style.opacity == 0){
-                        document.getElementById("pointNotif").style.display = "none";
-                    } */
                     document.getElementById("pointNotif").style.display = "none";
                 }
             }

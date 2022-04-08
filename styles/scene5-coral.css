@@ -150,18 +150,44 @@ body{
 progress {
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    line-height: 2.4;
+    line-height: 2.1;
     width: 16%;
-    height: 4.5%;
+    height: 4vh;
     position: fixed;
     right: 3%;
-    bottom: 9.3%;
-    top: 86.5%;
-}
-
-progress:after {
-    content: attr(value) '%';
-}
+    top: 87%;
+  }
+  
+  @media (max-height: 765px) {
+    progress {
+      text-align: center;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      line-height: 1.8;
+      width: 16%;
+      height: 4vh;
+      position: fixed;
+      right: 3%;
+      top: 87%;
+    }
+  }
+  
+  @media (max-height: 665px) {
+    progress {
+      text-align: center;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      line-height: 1.5;
+      width: 16%;
+      height: 4vh;
+      position: fixed;
+      right: 3%;
+      top: 87%;
+    }
+  }
+  
+  progress:after {
+    content: attr(value) "%";
+    font-size: 2vh;
+  }
 
 .notif > p {
     font-size: 1.8vh;
@@ -175,19 +201,16 @@ progress:after {
 }
 
 .notif {
-    bottom: 25%;
+    bottom: 15%;
     right: 9%;
-    /* background-color: #ffffff79; */
-    /* border: 1px solid #faf9f4 ; */
+    background-color: #ffffff;
+    border-radius: 6px;
     width: fit-content;
     position: fixed;
-    animation: slideIn 0.5s ease-Out;
+    animation: pop 2s ease-Out;
     z-index: 20;
 }
 
-.notifAni {
-    animation: fadeOut 1s ease-Out;
-}
 
 .inventory {
     width: 100%;
@@ -587,6 +610,25 @@ button:hover .info-icon {
 @keyframes slideDown {
     from {top: 25%; }
     to {top: 110%; }
+}
+
+@keyframes pop {
+    0% {
+      transform: translateY(100%);
+      opacity: 100%;
+    }
+  
+    20% {
+      transform: translateY(0%);
+    }
+  
+    50% {
+      opacity: 100%;
+    }
+  
+    100% {
+      opacity: 0%;
+    }
 }
 
 #exp{
