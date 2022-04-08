@@ -42,7 +42,7 @@ body{
     left: 0%;
 }
 
-.image7, .image8, .image9{
+.image7, .image8, .image9, .image7-2{
     top:100%;
     position: absolute;
     width: 100%;
@@ -54,7 +54,7 @@ body{
     top: -1%;
     position: absolute;
     width: 90%;
-    left: 0%;
+    left: 6%;
 }
 
 .image14, .image15, .image16, .image17{

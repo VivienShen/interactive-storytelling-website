@@ -93,6 +93,7 @@
         <img class="image5" src="../assets/images/scene5/coral/hills.png" alt="image of hills">
         <img class="image6" src="../assets/images/scene5/coral/water-bg.png" alt="image of water">
         <img class="image7" src="../assets/images/scene5/coral/boat-02.png" alt="image of boat">
+        <img class="image7-2" src="../assets/images/scene5/coral/humans1.png" alt="image of characters">
         <img class="image8" src="../assets/images/scene5/coral/water2.png" alt="image of water">
         <img class="image9" src="../assets/images/scene5/coral/water3.png" alt="image of water">
 
@@ -254,6 +255,10 @@
             y: "-100%",
             scrub: 1
         },'start')
+        .to(".image7-2", 13,{
+            y: "-105%",
+            scrub: 1
+        },'start')
         .to(".image8", 14,{
             y: "-100%",
             scrub: 1
@@ -296,7 +301,7 @@
         });
 
         tl2.to(".image11", {
-            y: "290%", 
+            y: "380%", 
             scrub: 2,
             duration: 10
         }, 'start')
@@ -462,6 +467,7 @@
                 exp.style.display = "block";
     
             }
+
             //FOR LARGER SCREENS
             else if(window.innerHeight > 915){
                 if($topOffset > body.scrollHeight * 0.85){

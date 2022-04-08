@@ -81,18 +81,25 @@
             <img class="img-bg" src="../assets/images/scene5/map.png" alt="image of a world map">
         </div> 
         
-        <img class="amazon-icon" id="amazon" src="../assets/images/scene5/amazon_circle.png" onclick="window.location.href='scene5-amazon.html';" style="display: none;" alt="amazon icon">
-        <p class="icon-text" id="text1">The Amazon Rainforest</p>
-        <!-- <button class="btn1 btn" id = "btn1"  style="display: none;" onclick="window.location.href='scene5-amazon.html'; placeVisited('visited2', 'amazonVisited');">Explore the Amazon</button> -->
+        <div class="arctic-container"> 
+            <img class="arctic-icon"  id="arctic" src="../assets/images/scene5/arctic_circle.png "  style="display: none;" alt="arctic icon">
+            <button class="btn3 btn" id = "btn3"  style="display: none;" onclick="window.location.href='scene5-arctic.html'; ">Explore the Arctic</button>
+            <!-- <p class="icon-text" id="text3">The Arctic</p> -->
+        </div>
+
+        <div class="amazon-container"> 
+            <img class="amazon-icon" id="amazon" src="../assets/images/scene5/amazon_circle.png" style="display: none;" alt="amazon icon">
+            <!-- <p class="icon-text" id="text1">The Amazon Rainforest</p> -->
+            <button class="btn1 btn" id = "btn1"  style="display: none;" onclick="window.location.href='scene5-amazon.html'; ">Explore the Amazon</button>
+        </div>
+
+        <div class="coral-container"> 
+            <img class="coralReef-icon" id="coral" src="../assets/images/scene5/coralReef_circle.png" style="display: none;" alt="coral reef icon">
+            <button class="btn2 btn" id = "btn2"  style="display: none;" onclick="window.location.href='scene5-coral.html'; ">Explore the Barrier Reef</button>
+            <!-- <p class="icon-text" id="text2">The Greet Barrier Reef</p> -->
+        </div>    
         
-        <img class="coralReef-icon" id="coral" src="../assets/images/scene5/coralReef_circle.png" onclick="window.location.href='scene5-coral.html'; " style="display: none;" alt="coral reef icon">
-        <!-- <button class="btn2 btn" id = "btn2"  style="display: none;" onclick="window.location.href='scene5-coral.html'; placeVisited('visited3', 'coralVisited');">Explore the Barrier Reef</button> -->
-        <p class="icon-text" id="text2">The Greet Barrier Reef</p>
-
-        <img class="arctic-icon"  id="arctic" src="../assets/images/scene5/arctic_circle.png" onclick="window.location.href='scene5-arctic.html'; "  style="display: none;" alt="arctic icon">
-        <!-- <button class="btn3 btn" id = "btn3"  style="display: none;" onclick="window.location.href='scene5-arctic.html'; placeVisited('visited', 'arcticVisited');">Explore the Arctic</button> -->
-        <p class="icon-text" id="text3">The Arctic</p>
-
+        
         <div class="blink1 blinker" id="blink1"></div>
         <img class="map-pin1 pin clickable" id="pin1" src="../assets/images/scene5/pin.png" onclick="toggleMapElements('arctic', 'btn3');  playEffect('btn-se');" title="Waypoint" alt="arctic waypoint button">
         
