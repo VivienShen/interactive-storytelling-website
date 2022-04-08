@@ -36,7 +36,8 @@ var plusFunction = function()
             document.getElementById("s7-18").style.display = "block";
             document.getElementById("skip").style.display = "none";
         }
-     */}
+    }
+     */
     
 
     //show popup when score reached 50%
@@ -68,6 +69,7 @@ var plusFunction = function()
     localStorage.setItem("currScore", score);
     console.log("score is: " + score);
 }
+
 for (var i = 0; i < plus.length; i++) {
     plus[i].addEventListener('click', plusFunction, false);
 }
