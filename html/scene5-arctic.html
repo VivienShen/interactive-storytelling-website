@@ -343,7 +343,7 @@
                     </div>
                     <br><hr><br>
                     <div class="list">
-                        <span class="iconify menu__item" data-icon="ion:help-circle-sharp"></span>
+                        <span class="iconify menu__item" onClick="help()" data-icon="ion:help-circle-sharp"></span>
                         <span id="on" class="iconify menu__item" data-icon="teenyicons:sound-on-outline" onClick="soundOff()" style="display: inline"></span>
                         <span id="off" class="iconify menu__item" data-icon="teenyicons:sound-off-solid" onClick="soundOn()" style="display: none"></span>
                     </div>
@@ -352,6 +352,11 @@
         </div>  
     </header>
 
+    <div id="instruction" style="display: none">
+        <span class="iconify menu__item closeHelp" data-icon="bi:x-lg" onClick="closeHelp()"></span>
+        <img src="../assets/images/instruction.png" alt="instructions">
+    </div>
+    
     <div id="bg1" class="image">
         <img class="img-bg" src="../assets/images/scene5/arctic/arcticBG.png" alt="arctic background gradient">
     </div> 
@@ -717,6 +722,12 @@
             var soundEffect2 = document.getElementById(sound);
             soundEffect2.play();
 
+        }
+        function help() {
+            document.getElementById("instruction").style.display = "block";
+        }
+        function closeHelp() {
+            document.getElementById("instruction").style.display = "none";
         }
     </script>
 

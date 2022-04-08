@@ -65,7 +65,7 @@
                         </div>
                         <br><hr><br>
                         <div class="list">
-                            <span class="iconify menu__item" data-icon="ion:help-circle-sharp"></span>
+                            <span class="iconify menu__item" onClick="help()" data-icon="ion:help-circle-sharp"></span>
                             <span id="on" class="iconify menu__item" data-icon="teenyicons:sound-on-outline" onClick="soundOff()" style="display: inline"></span>
                             <span id="off" class="iconify menu__item" data-icon="teenyicons:sound-off-solid" onClick="soundOn()" style="display: none"></span>
                         </div>
@@ -73,6 +73,11 @@
                 </ul>    
             </div>  
         </header>
+
+        <div id="instruction" style="display: none">
+            <span class="iconify menu__item closeHelp" data-icon="bi:x-lg" onClick="closeHelp()"></span>
+            <img src="../assets/images/instruction.png" alt="instructions">
+        </div>
 
         <Section class="sec1" id="sec1">
             <img class="bg1" src="../assets/images/scene9/sea/sea-bckg.png" alt="sea background">
@@ -610,32 +615,38 @@
                 all.forEach(x => x.innerHTML = x.innerHTML.replace(/Aeryn/gi, inputVal));
             }
         
-    function showEnding() {
-        lastScene.style.display = "inline";
-        secondLst.style.display = "none";
-    }
+        function showEnding() {
+            lastScene.style.display = "inline";
+            secondLst.style.display = "none";
+        }
 
-    function soundOff() {
-        document.getElementById("bg-music").muted = true;  
-        document.getElementById("on").style.display = "none";
-        document.getElementById("off").style.display = "inline";
-        localStorage.setItem("sound", "muted");
-    }
+        function soundOff() {
+            document.getElementById("bg-music").muted = true;  
+            document.getElementById("on").style.display = "none";
+            document.getElementById("off").style.display = "inline";
+            localStorage.setItem("sound", "muted");
+        }
 
-    function soundOn() {
-        document.getElementById("bg-music").muted = false; 
-        document.getElementById("off").style.display = "none"; 
-        document.getElementById("on").style.display = "inline";
-        localStorage.setItem("sound", "unmuted");
-    }
+        function soundOn() {
+            document.getElementById("bg-music").muted = false; 
+            document.getElementById("off").style.display = "none"; 
+            document.getElementById("on").style.display = "inline";
+            localStorage.setItem("sound", "unmuted");
+        }
 
-    function removeLS(){
-        window.localStorage.clear();
-        window.sessionStorage.clear();
-    }
+        function removeLS(){
+            window.localStorage.clear();
+            window.sessionStorage.clear();
+        }
 
-    document.getElementById("bg-music").volume = 0.03;
+        document.getElementById("bg-music").volume = 0.03;
 
+        function help() {
+            document.getElementById("instruction").style.display = "block";
+        }
+        function closeHelp() {
+            document.getElementById("instruction").style.display = "none";
+        }
     </Script>
 </body>
 </html>

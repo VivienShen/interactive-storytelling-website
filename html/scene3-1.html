@@ -76,7 +76,7 @@
                         </div>
                         <br><hr><br>
                         <div class="list">
-                            <span class="iconify menu__item" data-icon="ion:help-circle-sharp"></span>
+                            <span class="iconify menu__item" onClick="help()" data-icon="ion:help-circle-sharp"></span>
                             <span id="on" class="iconify menu__item" data-icon="teenyicons:sound-on-outline" onClick="soundOff()" style="display: inline"></span>
                             <span id="off" class="iconify menu__item" data-icon="teenyicons:sound-off-solid" onClick="soundOn()" style="display: none"></span>
                         </div>
@@ -85,6 +85,11 @@
             </div>  
         </header>
 
+        <div id="instruction" style="display: none">
+            <span class="iconify menu__item closeHelp" data-icon="bi:x-lg" onClick="closeHelp()"></span>
+            <img src="../assets/images/instruction.png" alt="instructions">
+        </div>
+        
         <div id="s2-1" class="scene image" style="display: block;">
             <video class="img-bg"  id="stars" >
                 <source src="../assets/motionGraphics/eyes4.mp4" alt="stars in space bg" type="video/mp4">
@@ -333,6 +338,13 @@
                 var soundEffect2 = document.getElementById(sound);
                 soundEffect2.play();
 
+            }
+
+            function help() {
+                document.getElementById("instruction").style.display = "block";
+            }
+            function closeHelp() {
+                document.getElementById("instruction").style.display = "none";
             }
         </script>
     </body>

@@ -101,11 +101,3 @@ function audioStatus() {
     }
 }
 
-function help() {
-    var x = document.getElementById("instruction");
-    if (x.style.visibility === "visible") {
-        x.style.visibility = "hidden";
-    } else {
-        x.style.visibility = "visible";
-    }
-}

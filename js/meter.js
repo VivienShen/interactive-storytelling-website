@@ -29,6 +29,14 @@ var plusFunction = function()
         score++;
     }
 
+    /* if ((localStorage.getItem("currScore") >= 50) && (window.location.href == scene.html)) {
+        document.getElementById("skip").style.display = "block";
+        document.getElementById("skip").onclick = function() {
+            document.getElementById(divId).style.display = "none";
+            document.getElementById("s7-18").style.display = "block";
+            document.getElementById("skip").style.display = "none";
+        }
+     */}
     
 
     //show popup when score reached 50%
