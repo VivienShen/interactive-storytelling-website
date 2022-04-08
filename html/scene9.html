@@ -326,6 +326,35 @@
             document.getElementById("on").style.display = "inline";
             localStorage.setItem("sound", "unmuted");
         }
+
+        //control next nav by keyboard
+        document.addEventListener('keydown', function(event) {               
+
+            if ((event.keyCode == 39) && (currentIndex < IdStore.length-1)) {
+                console.log('next'); 
+                currentIndex += 1;
+                console.log(currentIndex);
+                var divId = IdStore[currentIndex];
+
+                console.log(divId, currentIndex);
+                document.getElementById(divId).style.display = "block";
+                var prevIndex = currentIndex - 1;
+                console.log(prevIndex);
+                if (prevIndex >= 0) {
+                    var preId = IdStore[prevIndex];
+                    document.getElementById(preId).style.display = "none";
+                }
+
+            } else if ((event.keyCode == 37) && (currentIndex >= 1)) { //show or hide the div when prev button is clicked
+                var divId = IdStore[currentIndex];
+                console.log(divId, currentIndex);
+                document.getElementById(divId).style.display = "none";
+                currentIndex -= 1;
+                console.log(currentIndex);
+                var divId2 = IdStore[currentIndex];
+                document.getElementById(divId2).style.display = "block";
+            } 
+        });
     </script>
 </body>
 </html>
