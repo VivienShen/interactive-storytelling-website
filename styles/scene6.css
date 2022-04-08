@@ -240,17 +240,43 @@ body {
 progress {
   text-align: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  line-height: 2.4;
+  line-height: 2.1;
   width: 16%;
-  height: 4.5%;
+  height: 4vh;
   position: fixed;
   right: 3%;
-  bottom: 9.3%;
-  top: 86%;
+  top: 87%;
+}
+
+@media (max-height: 765px) {
+  progress {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 1.8;
+    width: 16%;
+    height: 4vh;
+    position: fixed;
+    right: 3%;
+    top: 87%;
+  }
+}
+
+@media (max-height: 665px) {
+  progress {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 1.5;
+    width: 16%;
+    height: 4vh;
+    position: fixed;
+    right: 3%;
+    top: 87%;
+  }
 }
 
 progress:after {
   content: attr(value) "%";
+  font-size: 2vh;
 }
 
 .notif > p {
@@ -261,23 +287,20 @@ progress:after {
   text-align: center;
   font-weight: bold;
   margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .notif {
   bottom: 15%;
   right: 9%;
-  /* background-color: #ffffff79; */
-  /* border: 1px solid #faf9f4 ; */
+  background-color: #ffffff;
+  border-radius: 6px;
   width: fit-content;
   position: absolute;
-  animation: slideIn 0.5s ease-Out;
+  animation: pop 2s ease-Out;
   z-index: 2;
 }
 
-.notifAni {
-  animation: fadeOut 1s ease-Out;
-}
 
 /******** INVENTORY ********/
 .inventory {
@@ -535,6 +558,25 @@ progress:after {
 
   100% {
     transform: translateY(120%);
+    opacity: 0%;
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: translateY(100%);
+    opacity: 100%;
+  }
+
+  20% {
+    transform: translateY(0%);
+  }
+
+  50% {
+    opacity: 100%;
+  }
+
+  100% {
     opacity: 0%;
   }
 }
