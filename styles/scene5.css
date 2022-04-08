@@ -28,44 +28,57 @@ body::-webkit-scrollbar {
 }
 
 .amazon-icon{
-    position: absolute;
-    top: 47%;
-    left: 18%;
-    width: 11%;
-    cursor: pointer;
+    position: relative;
+    left: 6%;
+    align-content: center;
+    width: 42%;
     transition: transform .2s;
-    filter: grayscale(0.5);
 }
 
 .coralReef-icon{
-    position: absolute;
-    top: 43%;
-    left: 62%;
-    width: 12%;
-    cursor: pointer;
+    position: relative;
+    left: 7%;
+    align-content: center;
+    width: 46%;
     transition: transform .2s;
-    filter: grayscale(0.5);
+}
+
+.arctic-container{
+    position: absolute;
+    align-content: center;
+    align-items: center;
+    left: 30%;
+    top: -4%;
+    width: 30%;
+
+}
+
+.amazon-container{
+    position: absolute;
+    align-content: center;
+    align-items: center;
+    left: 18%;
+    top: 37%;
+    width: 30%;
+
+}
+
+.coral-container{
+    position: absolute;
+    align-content: center;
+    align-items: center;
+    left: 58%;
+    top: 40%;
+    width: 30%;
+
 }
 
 .arctic-icon{
-    position: absolute;
-    top: -3%;
-    left: 31%;
-    width: 15%;
-    cursor: pointer;
+    position: relative;
+    left: -10%;
+    align-content: center;
+    width: 60%;
     transition: transform .2s;
-    filter: grayscale(0.5);
-}
-
-.arctic-icon:hover{
-    transform-origin: center;
-    transform: scale(1.5);
-    filter: grayscale(0); 
-}
-
-.arctic-icon:hover + #text3{
-    display: block;
-    animation: animationFade 0.7s;
 }
 
 .icon-text{
@@ -93,28 +106,6 @@ body::-webkit-scrollbar {
     left:  20vw;
 }
 
-.amazon-icon:hover{
-    transform-origin: center;
-    transform: scale(1.5);
-    filter: grayscale(0);
-    
-}
-
-.amazon-icon:hover + #text1{
-    display: block;
-    animation: animationFade 0.7s;
-}
-
-.coralReef-icon:hover{
-    transform-origin: center;
-    transform: scale(1.5); 
-    filter: grayscale(0);
-}
-
-.coralReef-icon:hover + #text2{
-    display: block;
-    animation: animationFade 0.7s;
-}
 
 @keyframes animationFade {
     0% {
@@ -257,25 +248,29 @@ body::-webkit-scrollbar {
     transition: all 0.3s ease-in-out 0s;
     cursor: pointer;
     outline: none;
-    position: absolute;
+    position: relative;
     padding: 10px 20px;
     margin: 0;
     z-index: 1;
 }
 
 .btn1{
-    top: 70%;
-    left: 13.5%
+    margin-top: 0%;
+    left: 0%;
 }
 
 .btn2{
-    top: 70.5%;
-    left: 77%;
+    margin-top: 0%;
+    left: 0%;
 }
 
 .btn3{
-    top: 28%;
-    left: 31.5%;
+    margin-top: 0%;
+    left: 0%;
+}
+
+.btn3:hover + .arctic-icon{
+    transform: scale(2,2);
 }
 
 .btn::before {
@@ -295,7 +290,7 @@ body::-webkit-scrollbar {
 
 .btn:hover, .btn:focus {
     color: #313133;
-    margin-top: -2px;
+    margin-top: 1%;
 }
 
 .btn:hover::before, .btn:focus::before {
@@ -540,10 +535,10 @@ body::-webkit-scrollbar {
     transform: translateY(0px);
 }
 
-#teleport-icon:hover{
+/* #teleport-icon:hover{
     color: #b45b0700;
     filter: drop-shadow(0 0 8px #e4860b00);
-}
+} */
 
 .lock {
     max-height: 78%;
