@@ -144,8 +144,12 @@ function camClicked(){
 
             setTimeout(showTxt, 200);
             function showTxt() {
-                document.getElementById("game-txt").innerHTML = "Captured!";
+                document.getElementById("game-txt").innerHTML = "Captured ✓";
                 document.getElementById("game-txt").style.color = "green";
+
+                document.getElementById("game-txt").style.backgroundColor = "white";
+                document.getElementById("game-txt").style.padding = "1% 1.5%";
+                document.getElementById("game-txt").style.borderRadius = "50px";
             }
 
             setTimeout(removeTxt, 2000);
@@ -153,6 +157,9 @@ function camClicked(){
             function removeTxt() {
                 //remove text
                 document.getElementById("game-txt").innerHTML = "";
+                document.getElementById("game-txt").style.backgroundColor = "";
+                document.getElementById("game-txt").style.padding = "";
+                document.getElementById("game-txt").style.borderRadius = "";
             }
 
             //check if image has already been successfully taken
@@ -184,8 +191,11 @@ function camClicked(){
 
             setTimeout(showTxt, 200);
             function showTxt() {
-                document.getElementById("game-txt").innerHTML = "Not Captured :(";
+                document.getElementById("game-txt").innerHTML = "Not Captured ✗";
                 document.getElementById("game-txt").style.color = "red";
+                document.getElementById("game-txt").style.backgroundColor = "white";
+                document.getElementById("game-txt").style.padding = "1% 1.5%";
+                document.getElementById("game-txt").style.borderRadius = "50px";
             }
 
             setTimeout(removeTxt, 2000);
@@ -193,6 +203,9 @@ function camClicked(){
             function removeTxt() {
                 //remove text
                 document.getElementById("game-txt").innerHTML = "";
+                document.getElementById("game-txt").style.backgroundColor = "";
+                document.getElementById("game-txt").style.padding = "";
+                document.getElementById("game-txt").style.borderRadius = "";
             }
             
         }
@@ -200,7 +213,6 @@ function camClicked(){
 
     if(coral1 != null && coral2!= null && coral3 != null){
         var rect3 = coral1.getBoundingClientRect();
-        var rect4 = coral2.getBoundingClientRect();
         var rect5 = coral3.getBoundingClientRect();
 
         if (!(rect3.top > (rect2.bottom * 0.7) ||
@@ -221,8 +233,11 @@ function camClicked(){
 
             setTimeout(showTxt, 200);
             function showTxt() {
-                document.getElementById("game-txt").innerHTML = "Captured!";
-            document.getElementById("game-txt").style.color = "green";
+                document.getElementById("game-txt").innerHTML = "Captured ✓";
+                document.getElementById("game-txt").style.color = "green";
+                document.getElementById("game-txt").style.backgroundColor = "white";
+                document.getElementById("game-txt").style.padding = "1% 1.5%";
+                document.getElementById("game-txt").style.borderRadius = "50px";
             }
 
             setTimeout(removeTxt, 2000);
@@ -230,6 +245,9 @@ function camClicked(){
             function removeTxt() {
                 //remove text
                 document.getElementById("game-txt").innerHTML = "";
+                document.getElementById("game-txt").style.backgroundColor = "";
+                document.getElementById("game-txt").style.padding = "";
+                document.getElementById("game-txt").style.borderRadius = "";
             }
 
             //check if image has already been successfully taken
@@ -260,8 +278,11 @@ function camClicked(){
             isCaptured = false;
             setTimeout(showTxt, 200);
             function showTxt() {
-                document.getElementById("game-txt").innerHTML = "Not Captured :(";
+                document.getElementById("game-txt").innerHTML = "Not Captured ✗";
                 document.getElementById("game-txt").style.color = "red";
+                document.getElementById("game-txt").style.backgroundColor = "white";
+                document.getElementById("game-txt").style.padding = "1% 1.5%";
+                document.getElementById("game-txt").style.borderRadius = "50px";
             }
 
             setTimeout(removeTxt, 2000);
@@ -269,6 +290,9 @@ function camClicked(){
             function removeTxt() {
                 //remove text
                 document.getElementById("game-txt").innerHTML = "";
+                document.getElementById("game-txt").style.backgroundColor = "";
+                document.getElementById("game-txt").style.padding = "";
+                document.getElementById("game-txt").style.borderRadius = "";
             }
         }
 
@@ -292,8 +316,11 @@ function camClicked(){
 
             setTimeout(showTxt, 200);
             function showTxt() {
-                document.getElementById("game-txt").innerHTML = "Captured!";
-            document.getElementById("game-txt").style.color = "green";
+                document.getElementById("game-txt").innerHTML = "Captured ✓";
+                document.getElementById("game-txt").style.color = "green";
+                document.getElementById("game-txt").style.backgroundColor = "white";
+                document.getElementById("game-txt").style.padding = "1% 1.5%";
+                document.getElementById("game-txt").style.borderRadius = "50px";
             }
 
             setTimeout(removeTxt, 2000);
@@ -301,6 +328,9 @@ function camClicked(){
             function removeTxt() {
                 //remove text
                 document.getElementById("game-txt").innerHTML = "";
+                document.getElementById("game-txt").style.backgroundColor = "";
+                document.getElementById("game-txt").style.padding = "";
+                document.getElementById("game-txt").style.borderRadius = "";
             }
             
             //check if image has already been successfully taken
@@ -332,8 +362,11 @@ function camClicked(){
 
             setTimeout(showTxt, 200);
             function showTxt() {
-                document.getElementById("game-txt").innerHTML = "Not Captured :(";
+                document.getElementById("game-txt").innerHTML = "Not Captured ✗";
                 document.getElementById("game-txt").style.color = "red";
+                document.getElementById("game-txt").style.backgroundColor = "white";
+                document.getElementById("game-txt").style.padding = "1% 1.5%";
+                document.getElementById("game-txt").style.borderRadius = "50px";
             }
 
             setTimeout(removeTxt, 2000);
@@ -341,6 +374,9 @@ function camClicked(){
             function removeTxt() {
                 //remove text
                 document.getElementById("game-txt").innerHTML = "";
+                document.getElementById("game-txt").style.backgroundColor = "";
+                document.getElementById("game-txt").style.padding = "";
+                document.getElementById("game-txt").style.borderRadius = "";
             }
         }
     }
