@@ -520,6 +520,8 @@
         }, '-=35')
 
         var next = document.getElementById("nextBtn next2");
+
+        var endBtnClicked = false;
         
         function endScene() {
             gsap.timeline()
@@ -543,6 +545,7 @@
                     duration: 2
                 },'-=7')
 
+            endBtnClicked = true;
             next.style.display = "none";
 
             var $window = $(window);
@@ -584,6 +587,10 @@
                 next.style.display = "block";
             }else{
                 next.style.display = "none";
+            }
+            if(endBtnClicked == true){
+                next.style.display = "none";
+                console.log("end btn clicked");
             }
         
         });
