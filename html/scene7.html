@@ -10,6 +10,7 @@
     <script src="../js/nav.js"></script>
     <script src="../js/jquery-3.6.0.min.js"></script>
     <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+
 </head>
 <body>
 
@@ -163,21 +164,21 @@
             <img class="img-bg" src="../assets/images/scene7/hands up.png" alt="Q&A segment">
         </div>
         <div class="quiz">
-            <p class="quizBox question">Q1: Green energy technology like solar, wind and hydro is more expensive and unreliable than fossil fuels.</p>
-            <button id="nextBtn10" class="quizBox btn minus-btn disabled " type="button">True</button><br>
-            <button id="nextBtn11" class="quizBox btn plus-btn" type="button">False</button> 
+            <p id="q1" class="quizBox question"><b>Q1: </b></p>
+            <button id="an1" class="quizBox btn" type="button"></button><br>
+            <button id="an2" class="quizBox btn" type="button"></button> 
         </div>
     </div>
     <div id="s7-8a" class="scene" style="display: none;">
-        <div id="bg1" class="image">
+        <div id="bg7" class="image">
             <img class="img-bg" src="../assets/images/scene7/hands up.png" alt="Robin's explanation to the correct answer">
         </div> 
         <div class="quiz">
-            <p class="quizBox question">Q1: Green energy technology like solar, wind and hydro is more expensive and unreliable than fossil fuels.</p>
-            <button class="quizBox" type="button" disabled>X True</button><br>
-            <button class="quizBox" type="button" disabled>✓ False</button> 
-            <div class="question quizBox" >
-                <p><b>Explanation:</b> False, because clean energy technology saves you more money over time than using fossil fuels, and they are more reliable due to the advancements in technology.</p>
+            <p id="q1r" class="quizBox question"><b>Q1: </b></p>
+            <button id="an1r" class="quizBox" type="button" disabled></button><br>
+            <button id="an2r" class="quizBox" type="button" disabled></button> 
+            <div class="question quizBox">
+                <p id="exp1"><b>Explanation: </b></p>
             </div>
         </div>
         <div id="nextBtn5" class="btn2 btn"></div>
@@ -187,21 +188,21 @@
             <img class="img-bg" src="../assets/images/scene7/hands up.png" alt="Q&A segment">
         </div>
         <div class="quiz">
-            <p class="quizBox question">Q2: Climate change is a natural process and not because of humans.</p>
-            <button id="nextBtn12" class="quizBox btn minus-btn disabled" type="button">True</button><br>
-            <button id="nextBtn13" class="quizBox btn plus-btn" type="button">False</button>
-        </div>  
+            <p id="q2" class="quizBox question"><b>Q2: </b></p>
+            <button id="an1_2" class="quizBox btn" type="button"></button><br>
+            <button id="an2_2" class="quizBox btn" type="button"></button> 
+        </div>
     </div>
     <div id="s7-9a" class="scene" style="display: none;">
-        <div id="bg1" class="image">
+        <div id="bg7" class="image">
             <img class="img-bg" src="../assets/images/scene7/hands up.png" alt="Robin's explanation to the correct answer">
         </div> 
         <div class="quiz">
-            <p class="quizBox question">Q2: Climate change is a natural process and not because of humans.</p>
-            <button class="quizBox" type="button" disabled>X True</button><br>
-            <button class="quizBox" type="button" disabled>✓ False</button> 
-            <div class="question quizBox" >
-                <p><b>Explanation:</b> False, because while the earth’s temperature changes over time from natural causes, it is only a small amount compared to what we’ve seen in the last hundred years, with humans releasing 100 times more carbon dioxide than any natural causes like volcanoes.</p>
+            <p id="q2r" class="quizBox question"><b>Q2: </b></p>
+            <button id="an1r_2" class="quizBox" type="button" disabled></button><br>
+            <button id="an2r_2" class="quizBox" type="button" disabled></button> 
+            <div class="question quizBox">
+                <p id="exp2"><b>Explanation: </b></p>
             </div>
         </div>
         <div id="nextBtn5" class="btn2 btn"></div>
@@ -211,100 +212,205 @@
             <img class="img-bg" src="../assets/images/scene7/hands up.png" alt="Q&A segment">
         </div>
         <div class="quiz">
-            <p class="quizBox question">Q3: The world will end because of climate change in the next couple of decades.</p>
-            <button id="nextBtn7" class="quizBox btn minus-btn disabled" type="button">True</button><br>
-            <button id="nextBtn8" class="quizBox btn plus-btn" type="button">False</button> 
-        </div> 
+            <p id="q3" class="quizBox question"><b>Q3: </b></p>
+            <button id="an1_3" class="quizBox btn" type="button"></button><br>
+            <button id="an2_3" class="quizBox btn" type="button"></button> 
+        </div>
     </div>
     <div id="s7-10a" class="scene" style="display: none;">
-        <div id="bg1" class="image">
+        <div id="bg7" class="image">
             <img class="img-bg" src="../assets/images/scene7/hands up.png" alt="Robin's explanation to the correct answer">
         </div> 
-        <div class="quiz disabled">
-            <p class="quizBox question">Q3: The world will end because of climate change in the next couple of decades.</p>
-            <button class="quizBox" type="button" disabled>X True</button><br>
-            <button class="quizBox" type="button" disabled>✓ False</button> 
-            <div class="question quizBox" >
-                <p><b>Explanation:</b> False because the world will not end due to climate change in the next couple of decades, but the longer we don’t take action, the more consequences there will be and it will be harder to fix. With some cities going underwater, natural disasters, extinction of more wildlife and more.</p>
+        <div class="quiz">
+            <p id="q3r" class="quizBox question"><b>Q3: </b></p>
+            <button id="an1r_3" class="quizBox" type="button" disabled></button><br>
+            <button id="an2r_3" class="quizBox" type="button" disabled></button> 
+            <div class="question quizBox">
+                <p id="exp3"><b>Explanation: </b></p>
             </div>
         </div>
         <div id="nextBtn5" class="btn2 btn"></div>
     </div>
+    
     <div id="s7-11" class="scene" style="display: none;">
         <div id="bg7" class="image">
             <img class="img-bg" src="../assets/images/scene7/hands up.png" alt="Q&A segment">
         </div>
         <div class="quiz">
-            <p class="quizBox question">Q4: Farms are causing some greenhouse gases.</p>
-            <button id="nextBtn7" class="quizBox btn plus-btn" type="button">True</button><br>
-            <button id="nextBtn8" class="quizBox btn minus-btn disabled" type="button">False</button> 
-        </div> 
+            <p id="q4" class="quizBox question"><b>Q4: </b></p>
+            <button id="an1_4" class="quizBox btn" type="button"></button><br>
+            <button id="an2_4" class="quizBox btn" type="button"></button> 
+        </div>
     </div>
     <div id="s7-11a" class="scene" style="display: none;">
-        <div id="bg1" class="image">
-            <img class="img-bg" src="../assets/images/scene7/hands up.png" alt="Robin's explanation to the correct answer">
-        </div> 
-        <div class="quiz disabled">
-            <p class="quizBox question">Q4: Farms are causing some greenhouse gases.</p>
-            <button class="quizBox" type="button" disabled>✓ True</button><br>
-            <button class="quizBox" type="button" disabled>X False</button> 
-            <div class="question quizBox" >
-                <p><b>Explanation:</b> True because methane is a greenhouse gas released from some animals, mostly cows, and is 80 times more stronger than carbon dioxide. Farmers need to provide animals with more nutritious food, and scientists need to create better food for cows to release less methane.</p>
-            </div>
-        </div>
-        <div id="nextBtn5" class="btn2 btn"></div>
-    </div>
-    <div id="s7-12" class="scene" style="display: none;">
         <div id="bg7" class="image">
-            <img class="img-bg" src="../assets/images/scene7/hands up.png" alt="Q&A segment">
-        </div>
-        <div class="quiz">
-            <p class="quizBox question">Q5: The ocean can absorb carbon dioxide.</p>
-            <button id="nextBtn7" class="quizBox btn plus-btn" type="button">True</button><br>
-            <button id="nextBtn8" class="quizBox btn minus-btn disabled" type="button">False</button> 
-        </div> 
-    </div>
-    <div id="s7-12a" class="scene" style="display: none;">
-        <div id="bg1" class="image">
             <img class="img-bg" src="../assets/images/scene7/hands up.png" alt="Robin's explanation to the correct answer">
         </div> 
-        <div class="quiz disabled">
-            <p class="quizBox question">Q5: The ocean can absorb carbon dioxide.</p>
-            <button class="quizBox" type="button" disabled>✓ True</button><br>
-            <button class="quizBox" type="button" disabled>X False</button> 
-            <div class="question quizBox" >
-                <p><b>Explanation:</b> True because the ocean is absorbing massive amounts of carbon dioxide from the air, but that means it becomes more acidic which is destroying parts of the ocean.</p>
-            </div>
-        </div>
-        <div id="nextBtn5" class="btn2 btn"></div>
-    </div>
-    <div id="s7-13" class="scene" style="display: none;">
-        <div id="bg7" class="image">
-            <img class="img-bg" src="../assets/images/scene7/hands up.png" alt="Q&A segment">
-        </div>
         <div class="quiz">
-            <p class="quizBox question">Q6: Climate change doesn’t exist because winter is still so cold and there is snow.</p>
-            <button id="nextBtn7" class="quizBox btn minus-btn disabled" type="button">True</button><br>
-            <button id="nextBtn8" class="quizBox btn plus-btn" type="button">False</button> 
-        </div> 
-    </div>
-    <div id="s7-13a" class="scene" style="display: none;">
-        <div id="bg1" class="image">
-            <img class="img-bg" src="../assets/images/scene7/hands up.png" alt="Robin's explanation to the correct answer">
-        </div> 
-        <div class="quiz disabled">
-            <p class="quizBox question">Q6: Climate change doesn’t exist because winter is still so cold and there is snow.</p>
-            <button class="quizBox" type="button" disabled>X True</button><br>
-            <button class="quizBox" type="button" disabled>✓ False</button> 
-            <div class="question quizBox" >
-                <p><b>Explanation:</b> False because while you might still feel cold and not much of a difference, scientists see the weather over a longer period of time like several decades, and even 1 degree increase in the Earth’s temperature can be severely damaging.</p>
+            <p id="q4r" class="quizBox question"><b>Q4: </b></p>
+            <button id="an1r_4" class="quizBox" type="button" disabled></button><br>
+            <button id="an2r_4" class="quizBox" type="button" disabled></button> 
+            <div class="question quizBox">
+                <p id="exp4"><b>Explanation: </b></p>
             </div>
         </div>
         <div id="nextBtn5" class="btn2 btn"></div>
     </div>
 
-    <!--End of scene7-->
+    <div id="s7-12" class="scene" style="display: none;">
+        <div id="bg7" class="image">
+            <img class="img-bg" src="../assets/images/scene7/hands up.png" alt="Q&A segment">
+        </div>
+        <div class="quiz">
+            <p id="q5" class="quizBox question"><b>Q5: </b></p>
+            <button id="an1_5" class="quizBox btn" type="button"></button><br>
+            <button id="an2_5" class="quizBox btn" type="button"></button> 
+        </div>
+    </div>
+    <div id="s7-12a" class="scene" style="display: none;">
+        <div id="bg7" class="image">
+            <img class="img-bg" src="../assets/images/scene7/hands up.png" alt="Robin's explanation to the correct answer">
+        </div> 
+        <div class="quiz">
+            <p id="q5r" class="quizBox question"><b>Q5: </b></p>
+            <button id="an1r_5" class="quizBox" type="button" disabled></button><br>
+            <button id="an2r_5" class="quizBox" type="button" disabled></button> 
+            <div class="question quizBox">
+                <p id="exp5"><b>Explanation: </b></p>
+            </div>
+        </div>
+        <div id="nextBtn5" class="btn2 btn"></div>
+    </div>
+
+    <div id="s7-13" class="scene" style="display: none;">
+        <div id="bg7" class="image">
+            <img class="img-bg" src="../assets/images/scene7/hands up.png" alt="Q&A segment">
+        </div>
+        <div class="quiz">
+            <p id="q6" class="quizBox question"><b>Q6: </b></p>
+            <button id="an1_6" class="quizBox btn" type="button"></button><br>
+            <button id="an2_6" class="quizBox btn" type="button"></button> 
+        </div>
+    </div>
+    <div id="s7-13a" class="scene" style="display: none;">
+        <div id="bg7" class="image">
+            <img class="img-bg" src="../assets/images/scene7/hands up.png" alt="Robin's explanation to the correct answer">
+        </div> 
+        <div class="quiz">
+            <p id="q6r" class="quizBox question"><b>Q6: </b></p>
+            <button id="an1r_6" class="quizBox" type="button" disabled></button><br>
+            <button id="an2r_6" class="quizBox" type="button" disabled></button> 
+            <div class="question quizBox">
+                <p id="exp6"><b>Explanation: </b></p>
+            </div>
+        </div>
+        <div id="nextBtn5" class="btn2 btn"></div>
+    </div>
+
     <div id="s7-14" class="scene" style="display: none;">
+        <div id="bg7" class="image">
+            <img class="img-bg" src="../assets/images/scene7/hands up.png" alt="Q&A segment">
+        </div>
+        <div class="quiz">
+            <p id="q7" class="quizBox question"><b>Q7: </b></p>
+            <button id="an1_7" class="quizBox btn" type="button"></button><br>
+            <button id="an2_7" class="quizBox btn" type="button"></button> 
+        </div>
+    </div>
+    <div id="s7-14a" class="scene" style="display: none;">
+        <div id="bg7" class="image">
+            <img class="img-bg" src="../assets/images/scene7/hands up.png" alt="Robin's explanation to the correct answer">
+        </div> 
+        <div class="quiz">
+            <p id="q7r" class="quizBox question"><b>Q7: </b></p>
+            <button id="an1r_7" class="quizBox" type="button" disabled></button><br>
+            <button id="an2r_7" class="quizBox" type="button" disabled></button> 
+            <div class="question quizBox">
+                <p id="exp7"><b>Explanation: </b></p>
+            </div>
+        </div>
+        <div id="nextBtn5" class="btn2 btn"></div>
+    </div>
+
+    <div id="s7-15" class="scene" style="display: none;">
+        <div id="bg7" class="image">
+            <img class="img-bg" src="../assets/images/scene7/hands up.png" alt="Q&A segment">
+        </div>
+        <div class="quiz">
+            <p id="q8" class="quizBox question"><b>Q8: </b></p>
+            <button id="an1_8" class="quizBox btn" type="button"></button><br>
+            <button id="an2_8" class="quizBox btn" type="button"></button> 
+        </div>
+    </div>
+    <div id="s7-15a" class="scene" style="display: none;">
+        <div id="bg7" class="image">
+            <img class="img-bg" src="../assets/images/scene7/hands up.png" alt="Robin's explanation to the correct answer">
+        </div> 
+        <div class="quiz">
+            <p id="q8r" class="quizBox question"><b>Q8: </b></p>
+            <button id="an1r_8" class="quizBox" type="button" disabled></button><br>
+            <button id="an2r_8" class="quizBox" type="button" disabled></button> 
+            <div class="question quizBox">
+                <p id="exp8"><b>Explanation: </b></p>
+            </div>
+        </div>
+        <div id="nextBtn5" class="btn2 btn"></div>
+    </div>
+
+    <div id="s7-16" class="scene" style="display: none;">
+        <div id="bg7" class="image">
+            <img class="img-bg" src="../assets/images/scene7/hands up.png" alt="Q&A segment">
+        </div>
+        <div class="quiz">
+            <p id="q9" class="quizBox question"><b>Q9: </b></p>
+            <button id="an1_9" class="quizBox btn" type="button"></button><br>
+            <button id="an2_9" class="quizBox btn" type="button"></button> 
+        </div>
+    </div>
+    <div id="s7-16a" class="scene" style="display: none;">
+        <div id="bg9" class="image">
+            <img class="img-bg" src="../assets/images/scene7/hands up.png" alt="Robin's explanation to the correct answer">
+        </div> 
+        <div class="quiz">
+            <p id="q9r" class="quizBox question"><b>Q9: </b></p>
+            <button id="an1r_9" class="quizBox" type="button" disabled></button><br>
+            <button id="an2r_9" class="quizBox" type="button" disabled></button> 
+            <div class="question quizBox">
+                <p id="exp9"><b>Explanation: </b></p>
+            </div>
+        </div>
+        <div id="nextBtn5" class="btn2 btn"></div>
+    </div>
+
+    <div id="s7-17" class="scene" style="display: none;">
+        <div id="bg7" class="image">
+            <img class="img-bg" src="../assets/images/scene7/hands up.png" alt="Q&A segment">
+        </div>
+        <div class="quiz">
+            <p id="q10" class="quizBox question"><b>Q10: </b></p>
+            <button id="an1_10" class="quizBox btn" type="button"></button><br>
+            <button id="an2_10" class="quizBox btn" type="button"></button> 
+        </div>
+    </div>
+    <div id="s7-17a" class="scene" style="display: none;">
+        <div id="bg7" class="image">
+            <img class="img-bg" src="../assets/images/scene7/hands up.png" alt="Robin's explanation to the correct answer">
+        </div> 
+        <div class="quiz">
+            <p id="q10r" class="quizBox question"><b>Q10: </b></p>
+            <button id="an1r_10" class="quizBox" type="button" disabled></button><br>
+            <button id="an2r_10" class="quizBox" type="button" disabled></button> 
+            <div class="question quizBox">
+                <p id="exp10"><b>Explanation: </b></p>
+            </div>
+        </div>
+        <div id="nextBtn5" class="btn2 btn"></div>
+    </div>
+    
+
+
+    <!--End of scene7-->
+    <div id="s7-18" class="scene" style="display: none;">
         <div id="bg7" class="image">
             <img class="img-bg" src="../assets/images/scene7/speaking to each other.png" alt="Robin speaking to girl">
         </div> 
@@ -330,8 +436,12 @@
         </div>
     </div>
 
+    <button id="skip" style="display: none; z-index: 20; position: fixed; right: 3%; bottom: 20%">End quiz ></button>
+
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="../js/quiz.js"></script>
     <script src="../js/meter.js"></script>
+    
 
     <script>
         function openCh5() {
