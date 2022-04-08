@@ -547,10 +547,10 @@ body {
 }
 
 .contract-container {
-  position: relative;
+  position: absolute;
   background-color: rgba(0, 0, 0, 0.685);
   width: 100%;
-  height: 837px;
+  height: 100%;
 }
 
 .contract {
