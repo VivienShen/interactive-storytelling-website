@@ -6,9 +6,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
         <title>Scene3-1</title>
-        <link rel="stylesheet" href="../styles/scene3.css">
         <link rel="stylesheet" href="../styles/nav.css">
+        <link rel="stylesheet" href="../styles/scene3.css">
         <script src="../js/nav.js"></script>
+        <script src="../js/jquery-3.6.0.min.js"></script>
         <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
     </head>
 
@@ -47,7 +48,7 @@
                     <div class="menu__div">
                         <div class="chapter-menu">
                             <ul class="chapter__list">
-                                <li><a class="chapter__item" id="ch-Home" href="index.html">Home</a></li>
+                                <li><a class="chapter__item" id="ch-Home" href="../index.html">Home</a></li>
                                 <li><a class="chapter__item" id="chapter0" href="prologue.html">Prologue</a></li>
                                 <li><a class="chapter__item" id="chapter1" href="scene1-1.html">Chapter 1</a></li>
                                 <li><a class="chapter__item" id="chapter2" href="scene3-1.html" style="color: #30C9E9">Chapter 2</a></li>
@@ -65,11 +66,11 @@
                             </p>
                             <div class="present" style="display: flex">
                                 <div id="teamLogo" style="display: block; width: fit-content">
-                                    <p style="font-size:1.4vh; color: black; margin-top:0">Presented By</p>
+                                    <p class="present">Presented By</p>
                                     <img src="../assets/images/eco_logo.png" alt="EcoLife Studio Logo" style="max-width: 8vh; margin-top:-5px">
                                 </div>
                                 <div id="mktSite" style="width: fit-content">
-                                    <a class="mktSiteLink" href="https://ecolifestudio5.wixsite.com/ecolife-studio" >Learn More <span class="iconify" data-icon="ci:external-link"></span></a>
+                                    <a class="mktSiteLink" href="https://ecolifestudio5.wixsite.com/ecolife-studio" target="_blank">Learn More <span class="iconify" data-icon="ci:external-link"></span></a>
                                 </div>
                             </div>
                         </div>
@@ -85,16 +86,16 @@
         </header>
 
         <div id="s2-1" class="scene image" style="display: block;">
-            <video class="img-bg" autoplay>
-                <source src="../assets/motionGraphics/eyesOpen_1.mp4" alt="A spaceship in the space" type="video/mp4">
+            <video class="img-bg"  id="stars" >
+                <source src="../assets/motionGraphics/eyes4.mp4" alt="stars in space bg" type="video/mp4">
                 Your browser does not support the video tag.  
-            </video>
+            </video> 
         </div>
 
 
         <div id="s2-2" class="scene" style="display: none;">
             <div id="bg1" class="image">
-                <img class="img-bg" src="../assets/images/scene3/scene3-1.png" alt="Aeryn standing by the window">
+                <img class="img-bg" src="../assets/images/scene3/scene3-1.png" alt="Girl standing by the window">
             </div>
             <div class="text">
                 <div id="box2" class="speechbox1" >
@@ -105,7 +106,7 @@
 
         <div id="s2-3" class="scene" style="display: none;">
             <div id="bg1" class="image">
-                <img class="img-bg" src="../assets/images/scene3/scene3-1.png" alt="Aeryn standing by the window">
+                <img class="img-bg" src="../assets/images/scene3/scene3-1.png" alt="Girl standing by the window">
             </div>
             <div class="text">
                 <div id="box2" class="speechbox1" >
@@ -115,14 +116,17 @@
         </div>
         
         <div id="s2-4" class="scene" style="display: none;">
-            <div>
-                <img class="image" src="../assets/images/scene3/scene3-2.png" alt="Inside a room">
-                <img class="flyer1" onclick="loadHenry(); playEffect('pickup-se')" src="../assets/images/scene3/flyer 1.png" alt="flyer 1" title="See Campaign Flier">
-                <img class="flyer2" onclick="loadEvelyn(); playEffect('pickup-se')" src="../assets/images/scene3/flyer 2.png" alt="flyer 2" title="See Campaign Flier">
-                <img class="tv" src="../assets/images/scene3/tv1.png" onclick="window.location.href='scene3-2.html';" alt="tv" title="Watch T.V">
-                <img class="poster1" id="Evelyn" onclick="myFunction2()" src="../assets/images/scene3/poster1.png" alt="poster1">
-                <img class="poster2" id="Henry" onclick="myFunction2()" src="../assets/images/scene3/poster2.png" alt="poster2">
-            </div>
+            
+                <div id="bg1" class="image">
+                    <img class="img-bg" src="../assets/images/scene3/room empty with items.png" alt="Inside girl's room">
+                
+                    <img class="flyer1" onclick="loadHenry(); playEffect('pickup-se')" src="../assets/images/scene3/flyer 1.png" alt="Campaign flyer 1" title="See Campaign Flier">
+                    <img class="flyer2" onclick="loadEvelyn(); playEffect('pickup-se')" src="../assets/images/scene3/flyer 2.png" alt="Campaign flyer 2" title="See Campaign Flier">
+                    <img class="tv" src="../assets/images/scene3/tv1.png" onclick="window.location.href='scene3-2.html';" alt="tv" title="Watch T.V">
+                    <img class="poster1" id="Evelyn" onclick="myFunction2()" src="../assets/images/scene3/poster1.png" alt="poster of Evelyn Antoine">
+                    <img class="poster2" id="Henry" onclick="myFunction2()" src="../assets/images/scene3/poster2.png" alt="poster of Henry Adams">
+                </div>
+            
             
             <!-- <div class="text" >
                 <div id="box2" class="speechbox1" >
@@ -158,6 +162,9 @@
                     setTimeout(function () {
                         chap1.style.display = "none";
                     }, 800);
+
+                    document.getElementById("stars").play();
+                    
                     
                 }
             });
@@ -304,14 +311,20 @@
 
             function soundOff() {
                 document.getElementById("bg-music").muted = true;  
+                document.getElementById("city-se").muted = true;  
+                document.getElementById("pickup-se").muted = true;  
                 document.getElementById("on").style.display = "none";
                 document.getElementById("off").style.display = "inline";
+                localStorage.setItem("sound", false);
             }
 
             function soundOn() {
-                document.getElementById("bg-music").muted = false; 
+                document.getElementById("bg-music").muted = false;
+                document.getElementById("city-se").muted = false; 
+                document.getElementById("pickup-se").muted = false;  
                 document.getElementById("off").style.display = "none"; 
                 document.getElementById("on").style.display = "inline";
+                localStorage.setItem("sound", true);
             }
 
 

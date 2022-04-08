@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="../styles/scene8.css">
         <link rel="stylesheet" href="../styles/nav.css">
         <script src="../js/nav.js"></script>
+        <script src="../js/jquery-3.6.0.min.js"></script>
         <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
     </head>
 
@@ -35,7 +36,7 @@
                     <div class="menu__div">
                         <div class="chapter-menu">
                             <ul class="chapter__list">
-                                <li><a class="chapter__item" id="ch-Home" href="index.html">Home</a></li>
+                                <li><a class="chapter__item" id="ch-Home" href="../index.html">Home</a></li>
                                 <li><a class="chapter__item" id="chapter0" href="prologue.html">Prologue</a></li>
                                 <li><a class="chapter__item" id="chapter1" href="scene1-1.html">Chapter 1</a></li>
                                 <li><a class="chapter__item" id="chapter2" href="scene3-1.html">Chapter 2</a></li>
@@ -53,11 +54,11 @@
                             </p>
                             <div class="present" style="display: flex">
                                 <div id="teamLogo" style="display: block; width: fit-content">
-                                    <p style="font-size:1.4vh; color: black; margin-top:0">Presented By</p>
+                                    <p class="present">Presented By</p>
                                     <img src="../assets/images/eco_logo.png" alt="EcoLife Studio Logo" style="max-width: 8vh; margin-top:-5px">
                                 </div>
                                 <div id="mktSite" style="width: fit-content">
-                                    <a class="mktSiteLink" href="https://ecolifestudio5.wixsite.com/ecolife-studio" >Learn More <span class="iconify" data-icon="ci:external-link"></span></a>
+                                    <a class="mktSiteLink" href="https://ecolifestudio5.wixsite.com/ecolife-studio" target="_blank">Learn More <span class="iconify" data-icon="ci:external-link"></span></a>
                                 </div>
                             </div>
                         </div>
@@ -75,10 +76,10 @@
 
         <div id="s8-1" class="scene" style="display: block;">
             <div id="bg1" class="image">
-                <img class="img-bg" src="../assets/images/scene8/1.png" alt="Aeryn sitting on a couch, watching TV">
+                <img class="img-bg" src="../assets/images/scene8/1.png" alt="Girl sitting on a couch, watching TV">
             </div>
             <div class="text">
-                <div id="box2" class="speechbox" >
+                <div id="box1" class="speechbox" >
                     <p><b>Aeryn:</b> Today’s the day of the election, lets see who ends up winning on T.V with the most seats in parliament.</p>
                 </div>
             </div>
@@ -108,7 +109,7 @@
                 <img class="img-bg" src="../assets/images/scene8/3.png" alt="Evelyn giving speech on TV">
             </div>
             <div class="text">
-                <div id="box2" class="speechbox-henry" >
+                <div id="box3" class="speechbox-henry" >
                     <p><b>Evelyn:</b> I couldn’t have done this without our volunteers, sponsors, and most importantly Scientist Robin and Aeryn. 
                         They inspired Canadians to realize how important it is to fight this climate crisis together, and I hope I can take the reins to create that change for our country.
                     </p>
@@ -118,21 +119,26 @@
 
         <div id="s8-5" class="scene" style="display: none;">
             <div id="bg1" class="image">
-                <img class="img-bg" src="../assets/images/scene8/4-1.png" alt="Aeryn cheering on the couch, her phone rings">
+                <img class="img-bg" src="../assets/images/scene8/4-1.png" alt="Girl cheering on the couch, her phone rings">
             </div>
             <div class="text">
-                <div id="box2" class="speechbox-Aeryn" >
+                <div id="box4" class="speechbox">
                     <p><b>Aeryn:</b> Yes! I’m so glad she won a majority in parliament.</p>
                 </div>
             </div>
+
+            <audio id="phone-se">
+                <source src="../assets/audio/soundEffects/scene6/phone-ring.wav" type="audio/mpeg" />
+            </audio>
+
         </div>
 
         <div id="s8-6" class="scene" style="display: none;">
             <div id="bg1" class="image">
-                <img class="img-bg" src="../assets/images/scene8/5.png" alt="Aeryn pick up the phone">
+                <img class="img-bg" src="../assets/images/scene8/5.png" alt="Girl pick up the phone">
             </div>
             <div class="text">
-                <div id="box2" class="speechbox1" >
+                <div id="box5" class="speechbox1" >
                     <p><b>Robin:</b> Aeryn we did it! I also got a call from Evelyn Antoine’s office, she wants to meet us as soon as possible to discuss something. 
                         Meet us in the parliament as soon as you can.</p>
                 </div>
@@ -141,18 +147,20 @@
 
         <div id="s8-7" class="scene" style="display: none;">
             <div id="bg1" class="image">
-                <img class="img-bg" src="../assets/images/scene8/5.png" alt="parliament teleport selection">
+                <img class="img-bg" src="../assets/images/scene8/5.png" alt="girl talk on the phone">
+                <img id="dull-bg" class="img-bg" src="../assets/images/scene2/dull background.png" style="display:none" alt="dull transparent overlay">
             </div>
-            <img class="popup-travel" id="popup1" src="../assets/images/scene8/modal.png" alt="would you like to travel">
+            
+            <img class="popup-travel" id="popup1" src="../assets/images/scene8/modal.png" alt="a pop-up window says would you like to travel?">
             <img class="yes-button" id="popup2" onclick="window.location.href='scene9.html'" src="../assets/images/scene8/yes.png" alt="yes button" style="display:none">
-            <!-- <div class="inventory">
+            <div class="inventory">
                 <img id="inventory-bg" src="../assets/images/scene8/inventory-2.png" alt="inventory box">
                 <div class="icons">
-                    <img id="camera-icon" class="icon" src="../assets/images/scene8/icon-cam.png" alt="camera item" style="display: block;pointer-events: none; filter: grayscale(100%);">
-                    <img id="map-icon" class="icon" src="../assets/images/scene8/icon-map.png" alt="map item" style="display: block;pointer-events: none; filter: grayscale(100%);">
-                    <img id="app-icon" class="icon" src="../assets/images/scene8/icon.png" alt="app item" style="display: block;" onclick="loadPopup()">
+                    <img id="camera-icon" class="icon" src="../assets/images/scene8/icon-cam.png" alt="camera disabled" title="Disabled" style="display: block;pointer-events: none; filter: grayscale(100%);">
+                    <img id="map-icon" class="icon" src="../assets/images/scene8/icon-map.png" alt="map disabled" title="Disabled" style="display: block;pointer-events: none; filter: grayscale(100%);">
+                    <img id="app-icon" class="icon" src="../assets/images/scene8/icon.png" alt="teleport button enabled" style="display: block;" onclick="loadPopup()" title="Teleport">
                 </div>
-            </div> -->
+            </div>
         </div>
 
         <div id="nextBtn" class="btn2"  style="display: none;"></div> 
@@ -205,7 +213,7 @@
             var next = document.getElementById("nextBtn");
             next.addEventListener("click", function(i) {
 
-                //hide next button when clicked each time
+                //hide next button when clicked each time 
                 document.getElementById('nextBtn').style.display= "none";
 
                 if (currentIndex < IdStore.length-1) {
@@ -221,6 +229,13 @@
                     if (prevIndex >= 0) {
                         var preId = IdStore[prevIndex];
                         document.getElementById(preId).style.display = "none";
+                    }
+
+                    if(currentIndex == 4){
+                        document.getElementById("phone-se").play();
+                    }
+                    else if(currentIndex == 5){
+                        document.getElementById("phone-se").pause();
                     }
 
                     //next button appearing after 3 second
@@ -297,6 +312,7 @@
             function loadPopup() {
                 document.getElementById('popup1').style.display='block';
                 document.getElementById('popup2').style.display='block';
+                document.getElementById('dull-bg').style.display='block';
             }
 
             document.getElementById("bg-music").volume = 0.05;
@@ -320,15 +336,21 @@
 
             function soundOff() {
                 document.getElementById("bg-music").muted = true;  
+                document.getElementById("phone-se").muted = true;
                 document.getElementById("on").style.display = "none";
                 document.getElementById("off").style.display = "inline";
+                localStorage.setItem("sound", "muted");
             }
 
             function soundOn() {
                 document.getElementById("bg-music").muted = false; 
+                document.getElementById("phone-se").muted = false;
                 document.getElementById("off").style.display = "none"; 
                 document.getElementById("on").style.display = "inline";
+                localStorage.setItem("sound", "unmuted");
             }
+
+            document.getElementById("phone-se").volume = 0.05;
         </script>
     </body>
 </html>

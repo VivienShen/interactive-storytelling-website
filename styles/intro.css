@@ -13,7 +13,7 @@
     width: fit-content;
     height: fit-content;
     min-width: 140px;
-    top: 300%;
+    top: 150%;
     left: 50%;
     margin-left: -75px;
     margin-top: 15px;
@@ -46,9 +46,11 @@
     cursor: default;
     height: fit-content;
     width: fit-content;
-    top: 90%;
-    left: 41%;
-    margin-left: -530px;
+    display: block;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 13.5%;
     background-color: rgba(27, 122, 146, 0.274);
     border: 1px solid #ffffff;
     color: rgb(255, 255, 255);
@@ -59,9 +61,6 @@
     font-size: 1rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 
-  /* Position the tooltip text - see examples below! */
-    position: absolute;
-    z-index: 1;
 }
 
 #loading {

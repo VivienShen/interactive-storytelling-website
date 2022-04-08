@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../styles/scene5.css">
     <link rel="stylesheet" href="../styles/nav.css">
     <script src="../js/nav.js"></script>
+    <script src="../js/jquery-3.6.0.min.js"></script>
     <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
 </head>
 <body>
@@ -38,7 +39,7 @@
                 <div class="menu__div">
                     <div class="chapter-menu">
                         <ul class="chapter__list">
-                            <li><a class="chapter__item" id="ch-Home" href="index.html">Home</a></li>
+                            <li><a class="chapter__item" id="ch-Home" href="../index.html">Home</a></li>
                             <li><a class="chapter__item" id="chapter0" href="prologue.html">Prologue</a></li>
                             <li><a class="chapter__item" id="chapter1" href="scene1-1.html">Chapter 1</a></li>
                             <li><a class="chapter__item" id="chapter2" href="scene3-1.html">Chapter 2</a></li>
@@ -56,11 +57,11 @@
                         </p>
                         <div class="present" style="display: flex">
                             <div id="teamLogo" style="display: block; width: fit-content">
-                                <p style="font-size:1.4vh; color: black; margin-top:0">Presented By</p>
+                                <p class="present">Presented By</p>
                                 <img src="../assets/images/eco_logo.png" alt="EcoLife Studio Logo" style="max-width: 8vh; margin-top:-5px">
                             </div>
                             <div id="mktSite" style="width: fit-content">
-                                <a class="mktSiteLink" href="https://ecolifestudio5.wixsite.com/ecolife-studio" >Learn More <span class="iconify" data-icon="ci:external-link"></span></a>
+                                <a class="mktSiteLink" href="https://ecolifestudio5.wixsite.com/ecolife-studio" target="_blank">Learn More <span class="iconify" data-icon="ci:external-link"></span></a>
                             </div>
                         </div>
                     </div>
@@ -77,37 +78,45 @@
 
     <div class = "map">
         <div id="bg1" class="image">
-            <img class="img-bg" src="../assets/images/scene5/map.png">
+            <img class="img-bg" src="../assets/images/scene5/map.png" alt="image of a world map">
         </div> 
         
-        <img class="amazon-icon" id="amazon" src="../assets/images/scene5/amazon_circle.png" onclick="window.location.href='scene5-amazon.html'; placeVisited('visited2', 'amazonVisited');" style="display: none;">
-        <p class="icon-text" id="text1">The Amazon Rainforest</p>
-        <!-- <button class="btn1 btn" id = "btn1"  style="display: none;" onclick="window.location.href='scene5-amazon.html'; placeVisited('visited2', 'amazonVisited');">Explore the Amazon</button> -->
+        <div class="arctic-container"> 
+            <img class="arctic-icon"  id="arctic" src="../assets/images/scene5/arctic_circle.png "  style="display: none;" alt="arctic icon">
+            <button class="btn3 btn" id = "btn3"  style="display: none;" onclick="window.location.href='scene5-arctic.html'; ">Explore the Arctic</button>
+            <!-- <p class="icon-text" id="text3">The Arctic</p> -->
+        </div>
+
+        <div class="amazon-container"> 
+            <img class="amazon-icon" id="amazon" src="../assets/images/scene5/amazon_circle.png" style="display: none;" alt="amazon icon">
+            <!-- <p class="icon-text" id="text1">The Amazon Rainforest</p> -->
+            <button class="btn1 btn" id = "btn1"  style="display: none;" onclick="window.location.href='scene5-amazon.html'; ">Explore the Amazon</button>
+        </div>
+
+        <div class="coral-container"> 
+            <img class="coralReef-icon" id="coral" src="../assets/images/scene5/coralReef_circle.png" style="display: none;" alt="coral reef icon">
+            <button class="btn2 btn" id = "btn2"  style="display: none;" onclick="window.location.href='scene5-coral.html'; ">Explore the Barrier Reef</button>
+            <!-- <p class="icon-text" id="text2">The Greet Barrier Reef</p> -->
+        </div>    
         
-        <img class="coralReef-icon" id="coral" src="../assets/images/scene5/coralReef_circle.png" onclick="window.location.href='scene5-coral.html'; placeVisited('visited3', 'coralVisited');" style="display: none;">
-        <!-- <button class="btn2 btn" id = "btn2"  style="display: none;" onclick="window.location.href='scene5-coral.html'; placeVisited('visited3', 'coralVisited');">Explore the Barrier Reef</button> -->
-        <p class="icon-text" id="text2">The Greet Barrier Reef</p>
-
-        <img class="arctic-icon"  id="arctic" src="../assets/images/scene5/arctic_circle.png" onclick="window.location.href='scene5-arctic.html'; placeVisited('visited', 'arcticVisited');"  style="display: none;">
-        <!-- <button class="btn3 btn" id = "btn3"  style="display: none;" onclick="window.location.href='scene5-arctic.html'; placeVisited('visited', 'arcticVisited');">Explore the Arctic</button> -->
-        <p class="icon-text" id="text3">The Arctic</p>
-
+        
         <div class="blink1 blinker" id="blink1"></div>
-        <img class="map-pin1 pin clickable" id="pin1" src="../assets/images/scene5/pin.png" onclick="toggleMapElements('arctic', 'btn3');  playEffect('btn-se');">
+        <img class="map-pin1 pin clickable" id="pin1" src="../assets/images/scene5/pin.png" onclick="toggleMapElements('arctic', 'btn3');  playEffect('btn-se');" title="Waypoint" alt="arctic waypoint button">
         
         <div class="blink2 blinker" id="blink2"></div>
-        <img class="map-pin2 pin clickable" id="pin2" src="../assets/images/scene5/pin.png" onclick="toggleMapElements('amazon', 'btn1');  playEffect('btn-se');"> 
+        <img class="map-pin2 pin clickable" id="pin2" src="../assets/images/scene5/pin.png" onclick="toggleMapElements('amazon', 'btn1');  playEffect('btn-se');" title="Waypoint" alt="amazon waypoint button"> 
         
         <div class="blink3 blinker" id="blink3"></div>
-        <img class="map-pin3 pin clickable" id="pin3" src="../assets/images/scene5/pin.png" onclick="toggleMapElements('coral', 'btn2');  playEffect('btn-se');"> 
+        <img class="map-pin3 pin clickable" id="pin3" src="../assets/images/scene5/pin.png" onclick="toggleMapElements('coral', 'btn2');  playEffect('btn-se');" title="Waypoint" alt="coral waypoint button"> 
 
-        <!-- <button style="position: absolute; right: 80%; z-index: 20;" onclick="reset()">reset</button> -->
+        <!-- <button style="position: absolute; right: 0%; z-index: 20;" onclick="reset()">reset</button> -->
         
 
     </div>
 
     <div class="inventory">
-        <img id="inventory-bg" src="../assets/images/scene5/inventory.png" alt="inventory box">
+        <img id="inventory-bg" src="../assets/images/scene7/inventory-panel.png" alt="inventory box">
+        <progress id="popularity-meter" min="0" max="100" value="0"><span></span></progress>
         <div class="icons">
             <img id="camera-icon" class="icon" src="../assets/images/scene5/icon-cam.png" alt="camera item" style="display: block; pointer-events: none; filter: grayscale(100%);">
             <img id="map-icon" class="icon" src="../assets/images/scene5/icon-map.png" alt="map item" style="display: block; pointer-events: none; filter: grayscale(100%);">
@@ -115,8 +124,8 @@
         </div>
     </div>
 
-    <img id="modal" class="modal img-bg" src="../assets/images/scene5/modal.png" alt="scene 5 modal" style="display: none; z-index: 20;">
-    <img id="yes-btn" class="yes-btn" src="../assets/images/scene5/button (2).png" onclick="openCh4(); playEffect('btn-se'); window.location.href='scene6-1.html'" alt="scene 5 yes btn" style="display: none; z-index: 20;">
+    <img id="modal" class="modal img-bg" src="../assets/images/scene5/modal.png" alt="a modal says would you like to go back to your place?" style="display: none; z-index: 20;">
+    <img id="yes-btn" class="yes-btn" src="../assets/images/scene5/button (2).png" onclick="openCh4(); playEffect('btn-se'); window.location.href='scene6-1.html'" alt="yes btn" style="display: none; z-index: 20;">
 
     <div class="dividers" id="divider1" style="display: block;" >
         <a href="#" id="fill" class="fill-div">
@@ -126,7 +135,9 @@
     </div>
     
     <!-- <button class="fullscreen" onclick="openFullscreen();">Open Fullscreen</button> -->
-
+    
+    <script src="../js/meter.js"></script>
+    <script src="../js/scene5.js"></script>
     <script>
 
         function loadPopup() {
@@ -147,6 +158,27 @@
                 y.style.display = "block";
             } else {
                 y.style.display = "none";
+            }
+
+            if(icon == "arctic"){
+                document.getElementById('btn2').style.display='none';
+                document.getElementById('btn1').style.display='none';
+                document.getElementById('coral').style.display='none';
+                document.getElementById('amazon').style.display='none';
+            }
+
+            else if(icon == "amazon"){
+                document.getElementById('btn2').style.display='none';
+                document.getElementById('btn3').style.display='none';
+                document.getElementById('coral').style.display='none';
+                document.getElementById('arctic').style.display='none';
+            }
+
+            else if(icon == "coral"){
+                document.getElementById('btn3').style.display='none';
+                document.getElementById('btn1').style.display='none';
+                document.getElementById('arctic').style.display='none';
+                document.getElementById('amazon').style.display='none';
             }
 
             console.log("opened");
@@ -172,14 +204,18 @@
 
         function soundOff() {
             document.getElementById("bg-music").muted = true;  
+            document.getElementById("btn-se").muted = true; 
             document.getElementById("on").style.display = "none";
             document.getElementById("off").style.display = "inline";
+            localStorage.setItem("sound", false);
         }
 
         function soundOn() {
             document.getElementById("bg-music").muted = false; 
+            document.getElementById("btn-se").muted = false; 
             document.getElementById("off").style.display = "none"; 
             document.getElementById("on").style.display = "inline";
+            localStorage.setItem("sound", true);
         }
 
 

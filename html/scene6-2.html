@@ -9,6 +9,7 @@
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <link rel="stylesheet" href="../styles/nav.css">
     <script src="../js/nav.js"></script>
+    <script src="../js/jquery-3.6.0.min.js"></script>
     <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
 </head>
 <body>
@@ -34,7 +35,7 @@
                 <div class="menu__div">
                     <div class="chapter-menu">
                         <ul class="chapter__list">
-                            <li><a class="chapter__item" id="ch-Home" href="index.html">Home</a></li>
+                            <li><a class="chapter__item" id="ch-Home" href="../index.html">Home</a></li>
                             <li><a class="chapter__item" id="chapter0" href="prologue.html">Prologue</a></li>
                             <li><a class="chapter__item" id="chapter1" href="scene1-1.html">Chapter 1</a></li>
                             <li><a class="chapter__item" id="chapter2" href="scene3-1.html">Chapter 2</a></li>
@@ -52,11 +53,11 @@
                         </p>
                         <div class="present" style="display: flex">
                             <div id="teamLogo" style="display: block; width: fit-content">
-                                <p style="font-size:1.4vh; color: black; margin-top:0">Presented By</p>
+                                <p class="present">Presented By</p>
                                 <img src="../assets/images/eco_logo.png" alt="EcoLife Studio Logo" style="max-width: 8vh; margin-top:-5px">
                             </div>
                             <div id="mktSite" style="width: fit-content">
-                                <a class="mktSiteLink" href="https://ecolifestudio5.wixsite.com/ecolife-studio" >Learn More <span class="iconify" data-icon="ci:external-link"></span></a>
+                                <a class="mktSiteLink" href="https://ecolifestudio5.wixsite.com/ecolife-studio" target="_blank">Learn More <span class="iconify" data-icon="ci:external-link"></span></a>
                             </div>
                         </div>
                     </div>
@@ -150,7 +151,7 @@
         </div>
         <div class="text">
             <div id="box1" class="speechbox" >
-                <p><b>Chelsea:</b> Well thank you Aeryn and Robin so much for your time, I think we can all say you both really opened our eyes to the issues our earth is currently facing. </p>
+                <p><b>Chelsea:</b> Well thank you Aeryn and Robin so much for your time, I think we can all say you both really opened our eyes to the issues our Earth is currently facing. </p>
             </div>
         </div>
         <div id="nextBtn" class="btn2 btn"></div>
@@ -178,7 +179,6 @@
             <img id="teleport-icon2" class="icon" src="../assets/images/scene6/icon.png" alt="teleport button" style="display: block; pointer-events: none; filter: grayscale(100%);">
         </div>
     </div>
-
     
     <script src="../js/meter.js"></script>
     <script>
@@ -186,12 +186,14 @@
             document.getElementById("bg-music").muted = true;  
             document.getElementById("on").style.display = "none";
             document.getElementById("off").style.display = "inline";
+            localStorage.setItem("sound", "muted");
         }
 
         function soundOn() {
             document.getElementById("bg-music").muted = false; 
             document.getElementById("off").style.display = "none"; 
             document.getElementById("on").style.display = "inline";
+            localStorage.setItem("sound", "unmuted");
         }
 
 

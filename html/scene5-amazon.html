@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../styles/scene5.css">
     <link rel="stylesheet" href="../styles/nav.css">
     <script src="../js/nav.js"></script>
+    <script src="../js/jquery-3.6.0.min.js"></script>
     <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
 
     <style>
@@ -180,6 +181,7 @@
             font-weight: 700;
             font-family: SpectralSC-SemiBold;
             color: rgba(94, 47, 9, 0.932);
+            cursor:default;
         }
 
         .camera-capture{
@@ -241,10 +243,6 @@
             to {top: 105%; }
         }
 
-        #exp{
-            left: 75.5%;
-        }
-
 
     </style>
 </head>
@@ -278,7 +276,7 @@
                 <div class="menu__div">
                     <div class="chapter-menu">
                         <ul class="chapter__list">
-                            <li><a class="chapter__item" id="ch-Home" href="index.html">Home</a></li>
+                            <li><a class="chapter__item" id="ch-Home" href="../index.html">Home</a></li>
                             <li><a class="chapter__item" id="chapter0" href="prologue.html">Prologue</a></li>
                             <li><a class="chapter__item" id="chapter1" href="scene1-1.html">Chapter 1</a></li>
                             <li><a class="chapter__item" id="chapter2" href="scene3-1.html">Chapter 2</a></li>
@@ -296,11 +294,11 @@
                         </p>
                         <div class="present" style="display: flex">
                             <div id="teamLogo" style="display: block; width: fit-content">
-                                <p style="font-size:1.4vh; color: black; margin-top:0">Presented By</p>
+                                <p class="present">Presented By</p>
                                 <img src="../assets/images/eco_logo.png" alt="EcoLife Studio Logo" style="max-width: 8vh; margin-top:-5px">
                             </div>
                             <div id="mktSite" style="width: fit-content">
-                                <a class="mktSiteLink" href="https://ecolifestudio5.wixsite.com/ecolife-studio" >Learn More <span class="iconify" data-icon="ci:external-link"></span></a>
+                                <a class="mktSiteLink" href="https://ecolifestudio5.wixsite.com/ecolife-studio" target="_blank">Learn More <span class="iconify" data-icon="ci:external-link"></span></a>
                             </div>
                         </div>
                     </div>
@@ -316,23 +314,23 @@
     </header>
 
     <div id="bg1" class="image">
-        <img class="img-bg" src="../assets/images/scene5/amazon/amazon_bg.png" alt="in the laboratory">
+        <img class="img-bg" src="../assets/images/scene5/amazon/amazon_bg.png" alt="sky of the amazon forest">
     </div> 
 
     <div class="container" >
         <div class="container_img">
             <div class="img" onclick=" clickToClose()">
-                <img class="image1" src="../assets/images/scene5/amazon/wind.png">
-                <img class="image2" src="../assets/images/scene5/amazon/mountains-01.png">
-                <img class="image2-1" src="../assets/images/scene5/amazon/smoke.png">
-                <img class="image2-2" id ="fire" src="../assets/images/scene5/amazon/fire2.png">
-                <img class="image2-3" src="../assets/images/scene5/amazon/bushes-01.png">
-                <img class="image7" src="../assets/images/scene5/amazon/backLeft-01.png">
-                <img class="image8" src="../assets/images/scene5/amazon/backRight-01.png">
-                <img class="image5" src="../assets/images/scene5/amazon/middelLeft-01.png">
-                <img class="image6" src="../assets/images/scene5/amazon/middleRight-01.png">
-                <img class="image3" src="../assets/images/scene5/amazon/frontLeft-01.png">
-                <img class="image4" src="../assets/images/scene5/amazon/frontRight-01.png">
+                <img class="image1" src="../assets/images/scene5/amazon/wind.png" alt="amazon wind image">
+                <img class="image2" src="../assets/images/scene5/amazon/mountains-01.png" alt="amazon mountain image">
+                <img class="image2-1" src="../assets/images/scene5/amazon/smoke.png" alt="amazon smoke image">
+                <img class="image2-2" id ="fire" src="../assets/images/scene5/amazon/fire2.png" alt="amazon fire image">
+                <img class="image2-3" src="../assets/images/scene5/amazon/bushes-01.png" alt="amazon bushes image">
+                <img class="image7" src="../assets/images/scene5/amazon/backLeft-01.png" alt="amazon trees image at the back left of the screen">
+                <img class="image8" src="../assets/images/scene5/amazon/backRight-01.png" alt="amazon trees image at the back right of the screen">
+                <img class="image5" src="../assets/images/scene5/amazon/middelLeft-01.png" alt="amazon trees image at the middle left of the screen">
+                <img class="image6" src="../assets/images/scene5/amazon/middleRight-01.png" alt="amazon trees image at the middle right of the screen">
+                <img class="image3" src="../assets/images/scene5/amazon/frontLeft-01.png" alt="amazon trees image at the front left of the screen">
+                <img class="image4" src="../assets/images/scene5/amazon/frontRight-01.png" alt="amazon trees image at the front right of the screen">
                 <!-- <img class="image3" src="../assets/images/scene5/amazon/trees.png">
                 <img class="image4" src="../assets/images/scene5/amazon/trees2.png">
                 <img class="image5" src="../assets/images/scene5/amazon/trees3.png"> -->
@@ -355,7 +353,7 @@
                 20% of the world's oxygen. Because of human disturbance in the Amazon ecosystem, the forest is now releasing more than 1.1 billion tons
                 of carbon dioxide, which means the forest is releasing more greenhouse gasses than removing.
                 <a href="https://www.livescience.com/amazon-rainforest-accelerate-climate-change.html" target="_blank">   
-                    Read more</a></span>
+                    <br>The Amazon rainforest is officially creating more greenhouse gasses than it is absorbing</a></span>
         </button> 
 
         <button id="fact2" class="factBox clickable">
@@ -366,7 +364,8 @@
                 pink river dolphins, sloths and more. It contains 1/10 known species on Earth, like 40,000 plant species and 370 types of reptiles. Because 
                 of the increased temperatures and reduced rainfalls, it may reduce habitats for these species during the dry warm months.
                 <a href="https://www.worldwildlife.org/stories/what-animals-live-in-the-amazon-and-8-other-amazon-facts#:~:text=The%20Amazon%20is%20one%20of,than%20370%20types%20of%20reptiles." target="_blank">   
-                    Read more</a></span>
+                    <br> What animals live in the Amazon? And 8 other Amazon facts
+                </a></span>
         </button> 
 
         <button id="fact3" class="factBox clickable">
@@ -377,11 +376,11 @@
                 burn trees after cutting them down or, less commonly, when they want to clear a large part of the forest.
                 <a href="https://www.vox.com/down-to-earth/2021/8/27/22639885/amazon-rainforest-fires-climate-change-2021
                 " target="_blank">   
-                Read more</a></span>
+                    <br> Fires in the Amazon are out of control. Again.</a></span>
         </button> 
 
         <div class="cam_container" id="parent-cam">
-            <img class="camera-capture" style="display: none;" id="cam" onclick="" onmousedown="camClicked()" onmouseup="camReleased()" src="../assets/images/scene5/cam-capture.png">
+            <img class="camera-capture" style="display: none;" id="cam" onclick="" onmousedown="camClicked()" onmouseup="camReleased()" src="../assets/images/scene5/cam-capture.png" alt="camera capture frame">
         </div>
 
         <div id="cam-explanation" style="display:none;">
@@ -400,8 +399,8 @@
             <img id="inventory-bg" src="../assets/images/scene7/inventory-panel.png" alt="inventory box">
             <progress id="popularity-meter" min="0" max="100" value="0"><span></span></progress>
             <div class="icons">
-                <img id="camera-icon" class="icon" src="../assets/images/scene5/icon-cam.png" alt="camera item" style="display: block;" onclick="">
-                <img id="map-icon" class="icon" src="../assets/images/scene5/icon-map.png" alt="map item" style="display: block;" onclick="window.location.href='scene5.html'">
+                <img id="camera-icon" class="icon" src="../assets/images/scene5/icon-cam.png" alt="camera" style="display: block;" onclick="">
+                <img id="map-icon" class="icon" src="../assets/images/scene5/icon-map.png" alt="map" style="display: block;" onclick="">
                 <img id="teleport-icon" class="icon" src="../assets/images/scene5/icon.png" alt="teleport button" style="display: block; pointer-events: none; filter: grayscale(100%);">
             </div>
         </div>
@@ -414,7 +413,7 @@
 
     <div class="text">
         <div id="box4" class="speechbox" style="opacity:0; display: none;">
-            <p><b>Robin:</b> The Amazon Rainforest, it’s supposed to be the earth's carbon sink but recently it is emitting more carbon than absorbing. Walk with me. 
+            <p><b>Robin:</b> The Amazon Rainforest, it’s supposed to be the Earth's carbon sink but recently it is emitting more carbon than absorbing. Walk with me. 
             </p>
         </div>
     </div>
@@ -573,7 +572,12 @@
                 camera.style.display='block';
             }
 
-            exp.style.display = "block";
+            setTimeout(removeExp, 5000);
+
+            function removeExp() {
+                //remove explanation for cam
+                exp.style.display = "none";
+            }
         }
 
 
@@ -584,7 +588,6 @@
 
         var cam = document.getElementById("camera-icon");
         var exp = document.getElementById("cam-explanation");
-        var map = document.getElementById("map-icon");
         var body = document.querySelector("body");
 
         var $window = $(window);
@@ -599,12 +602,12 @@
                 cam.id = "icon-glow";
                 cam.setAttribute('onclick','openCam()');
                 exp.style.display = "block";
-                map.id = "icon-glow2";
+                ;
             }else{
                 cam.id = "camera-icon";
                 cam.setAttribute('onclick','');
                 exp.style.display = "none";
-                map.id = "map-icon";
+        
             }
         
         });
@@ -644,16 +647,23 @@
 
 
         function soundOff() {
-            document.getElementById("bg-music").muted = true;  
+            document.getElementById("bg-music").muted = true; 
+            document.getElementById("forest-se").muted = true;  
+            document.getElementById("camera-se").muted = true;  
             document.getElementById("on").style.display = "none";
             document.getElementById("off").style.display = "inline";
+            localStorage.setItem("sound", false);
         }
 
         function soundOn() {
-            document.getElementById("bg-music").muted = false; 
+            document.getElementById("bg-music").muted = false;
+            document.getElementById("forest-se").muted = false;  
+            document.getElementById("camera-se").muted = false;  
             document.getElementById("off").style.display = "none"; 
             document.getElementById("on").style.display = "inline";
+            localStorage.setItem("sound", true);
         }
+
 
         function playEffect(sound) {
 

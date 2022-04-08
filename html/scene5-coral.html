@@ -8,9 +8,11 @@
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
     <title>Scene5 - Great Barrier Reef</title>
-    <link rel="stylesheet" href="../styles/scene5-coral.css">
     <link rel="stylesheet" href="../styles/nav.css">
+    <link rel="stylesheet" href="../styles/scene5-coral.css">
+    
     <script src="../js/nav.js"></script>
+    <script src="../js/jquery-3.6.0.min.js"></script>
     <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
 
 </head>
@@ -26,7 +28,7 @@
         <source src="../assets/audio/bgm/" type="audio/mpeg" />
     </audio>
 
-    <audio autoplay loop id="forest-se">
+    <audio autoplay loop id="water-se">
         <source src="../assets/audio/soundEffects/scene5/underwater.mp3" type="audio/mpeg" />
     </audio>
 
@@ -45,7 +47,7 @@
                 <div class="menu__div">
                     <div class="chapter-menu">
                         <ul class="chapter__list">
-                            <li><a class="chapter__item" id="ch-Home" href="index.html">Home</a></li>
+                            <li><a class="chapter__item" id="ch-Home" href="../index.html">Home</a></li>
                             <li><a class="chapter__item" id="chapter0" href="prologue.html">Prologue</a></li>
                             <li><a class="chapter__item" id="chapter1" href="scene1-1.html">Chapter 1</a></li>
                             <li><a class="chapter__item" id="chapter2" href="scene3-1.html">Chapter 2</a></li>
@@ -63,11 +65,11 @@
                         </p>
                         <div class="present" style="display: flex">
                             <div id="teamLogo" style="display: block; width: fit-content">
-                                <p style="font-size:1.4vh; color: black; margin-top:0">Presented By</p>
+                                <p class="present">Presented By</p>
                                 <img src="../assets/images/eco_logo.png" alt="EcoLife Studio Logo" style="max-width: 8vh; margin-top:-5px">
                             </div>
                             <div id="mktSite" style="width: fit-content">
-                                <a class="mktSiteLink" href="https://ecolifestudio5.wixsite.com/ecolife-studio" >Learn More <span class="iconify" data-icon="ci:external-link"></span></a>
+                                <a class="mktSiteLink" href="https://ecolifestudio5.wixsite.com/ecolife-studio" target="_blank">Learn More <span class="iconify" data-icon="ci:external-link"></span></a>
                             </div>
                         </div>
                     </div>
@@ -84,16 +86,16 @@
 
     <Section class="sec1">
         <img class="bg1" src="../assets/images/scene5/coral/coral-bg.jpg" alt="sea background">
-
-        <img class="image1" src="../assets/images/scene5/coral/clouds-back.png">
-        <img class="image2" src="../assets/images/scene5/coral/clouds-front.png">
-        <img class="image3" src="../assets/images/scene5/coral/clouds-3.png">
-        <img class="image4" src="../assets/images/scene5/coral/clouds-4.png">
-        <img class="image5" src="../assets/images/scene5/coral/hills.png">
-        <img class="image6" src="../assets/images/scene5/coral/water-bg.png">
-        <img class="image7" src="../assets/images/scene5/coral/boat-02.png">
-        <img class="image8" src="../assets/images/scene5/coral/water2.png">
-        <img class="image9" src="../assets/images/scene5/coral/water3.png">
+        <img class="image1" src="../assets/images/scene5/coral/clouds-back.png" alt="image of clouds">
+        <img class="image2" src="../assets/images/scene5/coral/clouds-front.png" alt="image of clouds">
+        <img class="image3" src="../assets/images/scene5/coral/clouds-3.png" alt="image of clouds">
+        <img class="image4" src="../assets/images/scene5/coral/clouds-4.png" alt="image of clouds">
+        <img class="image5" src="../assets/images/scene5/coral/hills.png" alt="image of hills">
+        <img class="image6" src="../assets/images/scene5/coral/water-bg.png" alt="image of water">
+        <img class="image7" src="../assets/images/scene5/coral/boat-02.png" alt="image of boat">
+        <img class="image7-2" src="../assets/images/scene5/coral/humans1.png" alt="image of characters">
+        <img class="image8" src="../assets/images/scene5/coral/water2.png" alt="image of water">
+        <img class="image9" src="../assets/images/scene5/coral/water3.png" alt="image of water">
 
         <!--SCROLL DOWN INDICATOR-->
         <div class="scroll-indicator">
@@ -114,21 +116,21 @@
     </Section>
 
     <Section class="sec2" onclick="clickToClose()">
-        <img class="bg2" src="../assets/images/scene5/coral/waterFront.jpg" alt="arctic background">
+        <img class="img-bg" src="../assets/images/scene5/coral/waterFront.jpg" alt="arctic background">
 
-        <img class="image14" src="../assets/images/scene5/coral/fish-back.png">
-        <img class="image15" src="../assets/images/scene5/coral/fish-mid.png">
-        <img class="image16" src="../assets/images/scene5/coral/fish-front.png">
-        <img class="image17" src="../assets/images/scene5/coral/bubbles.png"> 
+        <img class="image14" src="../assets/images/scene5/coral/fish-back.png" alt="image of fish">
+        <img class="image15" src="../assets/images/scene5/coral/fish-mid.png" alt="image of fish">
+        <img class="image16" src="../assets/images/scene5/coral/fish-front.png" alt="image of fish">
+        <img class="image17" src="../assets/images/scene5/coral/bubbles.png" alt="image of bubbles"> 
 
-        <img class="image-coral" id="coral1" src="../assets/images/scene5/coral/coral2-1.png">
-        <img class="image-coral2" id="coral2" src="../assets/images/scene5/coral/coral2-2.png">
-        <img class="image-coral3" id="coral3" src="../assets/images/scene5/coral/coral2-3.png">
+        <img class="image-coral" id="coral1" src="../assets/images/scene5/coral/coral2-1.png" alt="image of corals">
+        <img class="image-coral2" id="coral2" src="../assets/images/scene5/coral/coral2-2.png" alt="image of corals">
+        <img class="image-coral3" id="coral3" src="../assets/images/scene5/coral/coral2-3.png" alt="image of corals">
         
         <svg id="path"  viewBox="-25 170 786 400">
             <path id="motionPath" d="M -112 108 C 61 260 165 339 166 339 C 166 339 400 550 650 500 " fill="none" stroke="#5dba4700" stroke-width="2"/>
         </svg>
-        <img class="image13 " src="../assets/images/scene5/coral/turtle.png">
+        <img class="image13 " src="../assets/images/scene5/coral/turtle.png" alt="image of turtle">
 
         <button id="fact1" class="factBox clickable">
             <span class="btn-icon"> 
@@ -138,7 +140,7 @@
                 stronger storms will destroy their beach habitats. Warming oceans also change ocean currents which 
                 introduces the sea turtles to new predators and harms the coral reef that they need to survive.
                 <a href="https://climate.nasa.gov/news/2879/climate-change-puts-pressure-on-sea-turtles/#:~:text=Now%2C%20climate%20change%20is%20exposing,of%20them%20need%20to%20survive." target="_blank">   
-                    Read more</a>
+                    <br>Climate Change Puts Pressure on Sea Turtles</a>
             </span>
         </button> 
 
@@ -150,7 +152,7 @@
                 on fishes to feed on them for them to continue reproducing and remove some diseases. Increased ocean temperatures from climate change 
                 will affect the behavior of coral reef fishes.
                 <a href="https://eatlas.org.au/content/relationship-between-corals-and-fishes-great-barrier-reef#:~:text=There%20are%20strong%20mutual%20dependencies,may%20be%20mitigated%20by%20fishes" target="_blank">
-                    Read more
+                    <br> Relationship between corals and fishes on the Great Barrier Reef
                 </a>
             </span>
         </button> 
@@ -163,24 +165,24 @@
                 to controlling carbon dioxide levels in the ocean. However, increased greenhouse gasses from human activity results in 
                 ocean acidification which destroys the corals.
                 <a href="https://blogpatagonia.australis.com/10-fun-facts-about-coral-reefs/" target="_blank">
-                    Read more
+                    <br>10 fun facts about coral reefs
                 </a>
             </span>
         </button> 
 
-        <img class="image18" src="../assets/images/scene5/coral/fish.png">
+        <img class="image18" src="../assets/images/scene5/coral/fish.png" alt="image of fish">
 
         <svg id="path2"  viewBox="5 180 786 400">
             <path id="motionPath2" d="M 938 66 C 700 250 600 350 550 400 C 450 500 200 600 150 550" fill="none" stroke="#5dba4700" stroke-width="2"/>
         </svg>
-        <img class="image19 " src="../assets/images/scene5/coral/fish2.png">
+        <img class="image19 " src="../assets/images/scene5/coral/fish2.png" alt="image of fish">
 
-        <img class="image11" src="../assets/images/scene5/coral/humans.png">
+        <img class="image11" src="../assets/images/scene5/coral/humans.png" alt="image of humans">
         
     </Section>
 
     <div class="cam_container" id="parent-cam">
-        <img class="camera-capture" style="display: none;" id="cam" onclick="" onmousedown="camClicked()" onmouseup="camReleased()" src="../assets/images/scene5/cam-capture.png">
+        <img class="camera-capture" style="display: none;" id="cam" onclick="" onmousedown="camClicked()" onmouseup="camReleased()" src="../assets/images/scene5/cam-capture.png" alt="camera capture frame">
     </div>
 
     <div id="cam-explanation" style="display:none;">
@@ -200,7 +202,7 @@
         <progress id="popularity-meter" min="0" max="100" value="0"><span></span></progress>
         <div class="icons">
             <img id="camera-icon" class="icon" src="../assets/images/scene5/icon-cam.png" alt="camera item" style="display: block;" onclick="">
-            <img id="map-icon" class="icon" src="../assets/images/scene5/icon-map.png" alt="map item" style="display: block;" onclick="window.location.href='scene5.html'">
+            <img id="map-icon" class="icon" src="../assets/images/scene5/icon-map.png" alt="map item" style="display: block;" onclick="">
             <img id="teleport-icon" class="icon" src="../assets/images/scene5/icon.png" alt="teleport button" style="display: block; pointer-events: none; filter: grayscale(100%);">
         </div>
     </div>
@@ -253,6 +255,10 @@
             y: "-100%",
             scrub: 1
         },'start')
+        .to(".image7-2", 13,{
+            y: "-105%",
+            scrub: 1
+        },'start')
         .to(".image8", 14,{
             y: "-100%",
             scrub: 1
@@ -295,7 +301,7 @@
         });
 
         tl2.to(".image11", {
-            y: "290%", 
+            y: "380%", 
             scrub: 2,
             duration: 10
         }, 'start')
@@ -418,7 +424,6 @@
                 root.style.setProperty('--mouse-x', - 285 + "px"); 
             }
 
-
         });
 
         var camera = document.getElementById("cam");
@@ -430,7 +435,12 @@
                 camera.style.display='block';
             }
 
-            exp.style.display = "none";
+            setTimeout(removeExp, 5000);
+
+            function removeExp() {
+                //remove explanation for cam
+                exp.style.display = "none";
+            }
         }
 
 
@@ -442,25 +452,36 @@
         var $window = $(window);
         var cam = document.getElementById("camera-icon");
         var exp = document.getElementById("cam-explanation");
-        var map = document.getElementById("map-icon");
         var body = document.querySelector("body");
 
         $(window).on('scroll', function() {
             $topOffset = $(this).scrollTop();
         
             console.log($topOffset);
+            console.log(window.innerHeight);
 
             //Make Camera Glow At end of scroll
             if($topOffset > body.scrollHeight * 0.85){
                 cam.id = "icon-glow";
                 cam.setAttribute('onclick','openCam()');
                 exp.style.display = "block";
-                map.id = "icon-glow2";
-            }else{
+    
+            }
+
+            //FOR LARGER SCREENS
+            else if(window.innerHeight > 915){
+                if($topOffset > body.scrollHeight * 0.83){
+                    cam.id = "icon-glow";
+                    cam.setAttribute('onclick','openCam()');
+                    exp.style.display = "block";
+                }
+
+                console.log("larger screen");
+            }
+            else{
                 cam.id = "camera-icon";
                 cam.setAttribute('onclick','');
                 exp.style.display = "none";
-                map.id = "map-icon";
             }
         
         });
@@ -500,14 +521,20 @@
 
         function soundOff() {
             document.getElementById("bg-music").muted = true;  
+            document.getElementById("water-se").muted = true;  
+            document.getElementById("camera-se").muted = true; 
             document.getElementById("on").style.display = "none";
             document.getElementById("off").style.display = "inline";
+            localStorage.setItem("sound", false);
         }
 
         function soundOn() {
             document.getElementById("bg-music").muted = false; 
+            document.getElementById("water-se").muted = false;  
+            document.getElementById("camera-se").muted = false;  
             document.getElementById("off").style.display = "none"; 
             document.getElementById("on").style.display = "inline";
+            localStorage.setItem("sound", true);
         }
 
         function playEffect(sound) {

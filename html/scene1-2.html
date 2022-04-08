@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../styles/scene1.css">
     <link rel="stylesheet" href="../styles/nav.css">
     <script src="../js/nav.js"></script>
+    <script src="../js/jquery-3.6.0.min.js"></script>
     <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
 
     <style>
@@ -49,7 +50,7 @@
                 <div class="menu__div">
                     <div class="chapter-menu">
                         <ul class="chapter__list">
-                            <li><a class="chapter__item" id="ch-Home" href="index.html">Home</a></li>
+                            <li><a class="chapter__item" id="ch-Home" href="../index.html">Home</a></li>
                             <li><a class="chapter__item" id="chapter0" href="prologue.html">Prologue</a></li>
                             <li><a class="chapter__item" id="chapter1" href="scene1-1.html" style="color: #30C9E9">Chapter 1</a></li>
                             <li><a class="chapter__item" id="chapter2" href="scene3-1.html">Chapter 2</a></li>
@@ -67,11 +68,11 @@
                         </p>
                         <div class="present" style="display: flex">
                             <div id="teamLogo" style="display: block; width: fit-content">
-                                <p style="font-size:1.4vh; color: black; margin-top:0">Presented By</p>
+                                <p class="present">Presented By</p>
                                 <img src="../assets/images/eco_logo.png" alt="EcoLife Studio Logo" style="max-width: 8vh; margin-top:-5px">
                             </div>
                             <div id="mktSite" style="width: fit-content">
-                                <a class="mktSiteLink" href="https://ecolifestudio5.wixsite.com/ecolife-studio" >Learn More <span class="iconify" data-icon="ci:external-link"></span></a>
+                                <a class="mktSiteLink" href="https://ecolifestudio5.wixsite.com/ecolife-studio" target="_blank">Learn More <span class="iconify" data-icon="ci:external-link"></span></a>
                             </div>
                         </div>
                     </div>
@@ -88,25 +89,32 @@
 
     <div class="main-page">
         <div id="bg1" class="image">
-            <img class="img-bg" src="../assets/images/scene1BG.png" alt="in the laboratory">
-        </div>  
+            <!-- <img class="img-bg" src="../assets/images/scene1BG.png" alt="in the laboratory"> -->
+
+            <video class="stars" autoplay loop scale="1.15">
+                <source src="../assets/motionGraphics/stars.mp4" alt="stars in space bg" type="video/mp4">
+                Your browser does not support the video tag.  
+            </video> 
+        </div>
 
         <div class="image" id="bg-cover"></div>
 
         <div id="telescope-imgs" class="image">
             <!-- <img class="img-b" id="target1" src="../assets/images/scene1/earth.png"  scale="1.15" > -->
-            <video class="img-b" id="target2" autoplay loop scale="1.15">
+            <!-- <video class="img-b" id="target2" autoplay loop scale="1.15">
                 <source src="../assets/motionGraphics/smoke_1.mp4" alt="A spaceship in the space" type="video/mp4">
                 Your browser does not support the video tag.  
-            </video>
-            <img class="img-b" id="target3" src="../assets/images/scene1/zoom2.png"  scale="1.15" >
-            <video class="img-b" id="target1" autoplay loop scale="1.15">
-                <source src="../assets/motionGraphics/earthSpin.mp4" alt="A spaceship in the space" type="video/mp4">
+            </video> -->
+            <img class="img-b" id="target1" src="../assets/images/scene1/earth.png"  scale="1.15" alt="A dying Earth">
+            <img class="img-b" id="target2" src="../assets/images/scene1/zoom1.png"  scale="1.15" alt="Factories emit smoke to the sky">
+            <img class="img-b" id="target3" src="../assets/images/scene1/zoom2.png"  scale="1.15" alt="Mom and her baby both wearing a mask">
+            <!-- <video class="img-b" id="target1" autoplay loop scale="1.15">
+                <source src="../assets/motionGraphics/earthSpin.mov" alt="spinning Earth" type="video/mp4">
                 Your browser does not support the video tag.  
-            </video>
+            </video> -->
         </div>
 
-        <img class="image" src="../assets/images/scene1/telescope.png">
+        <img class="image" src="../assets/images/scene1/telescope.png" alt="telescope background image">
         <span id="tooltip" class="tooltiptext">Click to zoom in</span>
                 
         <div class="text">
@@ -130,7 +138,7 @@
 
 
         <button class="zoomBtn" id = "zoom" onclick="zoomIn(); playEffect();">
-            <img class="zoomBtn-img" id = "zoomImg" src="../assets/images/scene1/zoomBtn.png" title="zoom in button">
+            <img class="zoomBtn-img" id = "zoomImg" src="../assets/images/scene1/zoomBtn.png" title="Zoom In" alt="Zoom button">
         </button>
 
         <div class="btn2" id="nextBtn" onclick="window.location.href='scene2.html'" style="display: none"></div> 
@@ -244,15 +252,19 @@
         document.getElementById("zoomBtn-se").volume = 0.3;
 
         function soundOff() {
-            document.getElementById("bg-music").muted = true;  
+            document.getElementById("bg-music").muted = true; 
+            document.getElementById("zoomBtn-se").muted = true;  
             document.getElementById("on").style.display = "none";
             document.getElementById("off").style.display = "inline";
+            localStorage.setItem("sound", false);
         }
 
         function soundOn() {
             document.getElementById("bg-music").muted = false; 
+            document.getElementById("zoomBtn-se").muted = false;
             document.getElementById("off").style.display = "none"; 
             document.getElementById("on").style.display = "inline";
+            localStorage.setItem("sound", true);
         }
 
     </script>

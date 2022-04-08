@@ -15,14 +15,17 @@ header.page-header {
 }
 #menu__toggle:checked + .menu__btn > span {
     transform: rotate(45deg);
+    background-color: grey;
 }
 #menu__toggle:checked + .menu__btn > span::before {
     top: 0;
     transform: rotate(0deg);
+    background-color:grey;
 }
 #menu__toggle:checked + .menu__btn > span::after {
     top: 0;
     transform: rotate(90deg);
+    background-color: grey;
 }
 #menu__toggle:checked ~ .menu__box {
     left: 0 !important;
@@ -31,8 +34,8 @@ header.page-header {
     position: fixed;
     top: 40px;
     left: 30px;
-    width: 32px;
-    height: 32px;
+    width: 4vh;
+    height: 4vh;
     cursor: pointer;
     z-index: 1;
 }
@@ -43,16 +46,17 @@ header.page-header {
     position: absolute;
     width: 100%;
     height: 3px;
-    background-color: #777777;
+    background-color: white;
+    /* box-shadow: 3px 3px 3px #c7c7c7; */
     transition-duration: .25s;
 }
 .menu__btn > span::before {
     content: '';
-    top: -10px;
+    top: -1.2vh;
 }
 .menu__btn > span::after {
     content: '';
-    top: 10px;
+    top: 1.2vh;
 }
 
 .menu__box {
@@ -63,9 +67,9 @@ header.page-header {
     width: 35vh;
     height: 100%;
     margin: 0;
-    padding: 80px 0;
+    padding: 10vh 0;
     list-style: none;
-    background-color: #ECEFF1;
+    background-color: #ffffff;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
     transition-duration: .25s;
 }
@@ -78,7 +82,7 @@ header.page-header {
 
 .menu__item {
     display: inline;
-    color: #333;
+    color: black;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-size: 5vh;
     font-weight: 600;
@@ -87,7 +91,7 @@ header.page-header {
     margin-right: 3vw;
 }
 .menu__item:hover {
-    color: #ffffff;
+    color: darkgray;
 }
 .list {  
     display: block;
@@ -105,7 +109,7 @@ header.page-header {
     padding: 15px;
     list-style: none;
     position:relative;
-    background-color: white;
+    background-color: rgb(228, 251, 255);
     box-shadow: 0px 2px 6px rgba(0, 0, 0, .4);
     border-radius: 5px;
 }
@@ -120,15 +124,16 @@ h1.about {
     font-size: 2.2vh;
     display: inline;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #333;
+    color: black;
     padding:0;
     margin-top: -1px;
 }
 
 .menu__info > p {
     font-size: 1.8vh;
-    color: #333;
+    color: black;
     margin-top: 8px;
+    
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -150,14 +155,14 @@ ul.chapter__list{
 a.chapter__item {
   display: block;
   text-decoration: none;
-  color: #222222;
+  color: black;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   transition: .3s color;
   margin-bottom: 4%;
 }
 
 a.chapter__item:hover {
-    color: #ffffff;
+    color: darkgrey;
 }
 
 .mktSiteLink {
@@ -165,9 +170,20 @@ a.chapter__item:hover {
     right: 10%;
     padding-top: 15px;
     text-decoration: none;
-    font-size: 2.3vh;
+    font-size: 2.2vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.present {
+    font-size:1.4vh; 
+    color: black; 
+    margin-top:0;
 }
 
 .teamLogo {
     padding-top:0;
+}
+
+hr {
+    opacity: 0.6;
 }

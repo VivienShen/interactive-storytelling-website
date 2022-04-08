@@ -9,6 +9,7 @@
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
         <link rel="stylesheet" href="../styles/nav.css">
         <script src="../js/nav.js"></script>
+        <script src="../js/jquery-3.6.0.min.js"></script>
         <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
     </head>
 
@@ -35,7 +36,7 @@
                     <div class="menu__div">
                         <div class="chapter-menu">
                             <ul class="chapter__list">
-                                <li><a class="chapter__item" id="ch-Home" href="index.html">Home</a></li>
+                                <li><a class="chapter__item" id="ch-Home" href="../index.html">Home</a></li>
                                 <li><a class="chapter__item" id="chapter0" href="prologue.html">Prologue</a></li>
                                 <li><a class="chapter__item" id="chapter1" href="scene1-1.html" style="color: #30C9E9">Chapter 1</a></li>
                                 <li><a class="chapter__item" id="chapter2" href="scene3-1.html">Chapter 2</a></li>
@@ -53,11 +54,11 @@
                             </p>
                             <div class="present" style="display: flex">
                                 <div id="teamLogo" style="display: block; width: fit-content">
-                                    <p style="font-size:1.4vh; color: black; margin-top:0">Presented By</p>
+                                    <p class="present">Presented By</p>
                                     <img src="../assets/images/eco_logo.png" alt="EcoLife Studio Logo" style="max-width: 8vh; margin-top:-5px">
                                 </div>
                                 <div id="mktSite" style="width: fit-content">
-                                    <a class="mktSiteLink" href="https://ecolifestudio5.wixsite.com/ecolife-studio" >Learn More <span class="iconify" data-icon="ci:external-link"></span></a>
+                                    <a class="mktSiteLink" href="https://ecolifestudio5.wixsite.com/ecolife-studio" target="_blank">Learn More <span class="iconify" data-icon="ci:external-link"></span></a>
                                 </div>
                             </div>
                         </div>
@@ -90,8 +91,8 @@
         
         <div id="s2-2" class="scene" style="display: none;">
             <div id="bg2" class="image">
-                <img class="img-bg" src="../assets/images/scene2/telescope lookout.png" alt="Girl holding a monocular while talking with robot">
-                <img class="telescope" src="../assets/images/scene2/telescope.png" onclick="window.location.href='scene1-2.html'" alt="telescope" title="telescope">
+                <img class="img-bg" src="../assets/images/scene2/telescope lookout.png" alt="Girl holding a monocular">
+                <img class="telescope" src="../assets/images/scene2/telescope.png" onclick="window.location.href='scene1-2.html'" alt="monocular telescope" title="Telescope">
                 <span class="tooltiptext">Click on items that are glowing</span>
             </div>
         </div>
@@ -143,7 +144,7 @@
             //show or hide the div when next button is clicked
             var currentIndex = 0;
             
-            /* var next = document.getElementById("nextBtn");
+            var next = document.getElementById("nextBtn");
             next.addEventListener("click", function(i) {
 
                 //hide next button when clicked each time
@@ -175,7 +176,7 @@
                     }
 
                 } 
-            }); */
+            }); 
 
             //control next nav by keyboard
             document.addEventListener('keydown', function(event) {               
@@ -249,12 +250,14 @@
                 document.getElementById("bg-music").muted = true;  
                 document.getElementById("on").style.display = "none";
                 document.getElementById("off").style.display = "inline";
+                localStorage.setItem("sound", false);
             }
 
             function soundOn() {
                 document.getElementById("bg-music").muted = false; 
                 document.getElementById("off").style.display = "none"; 
                 document.getElementById("on").style.display = "inline";
+                localStorage.setItem("sound", true);
             }
         </script>
     </body>

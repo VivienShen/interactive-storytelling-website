@@ -28,44 +28,57 @@ body::-webkit-scrollbar {
 }
 
 .amazon-icon{
-    position: absolute;
-    top: 47%;
-    left: 18%;
-    width: 11%;
-    cursor: pointer;
+    position: relative;
+    left: 6%;
+    align-content: center;
+    width: 42%;
     transition: transform .2s;
-    filter: grayscale(0.5);
 }
 
 .coralReef-icon{
-    position: absolute;
-    top: 43%;
-    left: 62%;
-    width: 12%;
-    cursor: pointer;
+    position: relative;
+    left: 7%;
+    align-content: center;
+    width: 46%;
     transition: transform .2s;
-    filter: grayscale(0.5);
+}
+
+.arctic-container{
+    position: absolute;
+    align-content: center;
+    align-items: center;
+    left: 30%;
+    top: -4%;
+    width: 30%;
+
+}
+
+.amazon-container{
+    position: absolute;
+    align-content: center;
+    align-items: center;
+    left: 18%;
+    top: 37%;
+    width: 30%;
+
+}
+
+.coral-container{
+    position: absolute;
+    align-content: center;
+    align-items: center;
+    left: 58%;
+    top: 40%;
+    width: 30%;
+
 }
 
 .arctic-icon{
-    position: absolute;
-    top: -3%;
-    left: 31%;
-    width: 15%;
-    cursor: pointer;
+    position: relative;
+    left: -10%;
+    align-content: center;
+    width: 60%;
     transition: transform .2s;
-    filter: grayscale(0.5);
-}
-
-.arctic-icon:hover{
-    transform-origin: center;
-    transform: scale(1.5);
-    filter: grayscale(0); 
-}
-
-.arctic-icon:hover + #text3{
-    display: block;
-    animation: animationFade 0.7s;
 }
 
 .icon-text{
@@ -93,28 +106,6 @@ body::-webkit-scrollbar {
     left:  20vw;
 }
 
-.amazon-icon:hover{
-    transform-origin: center;
-    transform: scale(1.5);
-    filter: grayscale(0);
-    
-}
-
-.amazon-icon:hover + #text1{
-    display: block;
-    animation: animationFade 0.7s;
-}
-
-.coralReef-icon:hover{
-    transform-origin: center;
-    transform: scale(1.5); 
-    filter: grayscale(0);
-}
-
-.coralReef-icon:hover + #text2{
-    display: block;
-    animation: animationFade 0.7s;
-}
 
 @keyframes animationFade {
     0% {
@@ -167,6 +158,7 @@ body::-webkit-scrollbar {
     position: absolute; 
     display: block;
 }
+
 
 .blink1{
     top: 19.3%;
@@ -256,25 +248,30 @@ body::-webkit-scrollbar {
     transition: all 0.3s ease-in-out 0s;
     cursor: pointer;
     outline: none;
-    position: absolute;
+    position: relative;
     padding: 10px 20px;
     margin: 0;
     z-index: 1;
 }
 
 .btn1{
-    top: 70%;
-    left: 13.5%
+    margin-top: 0%;
+    left: 0%;
 }
 
 .btn2{
-    top: 70.5%;
-    left: 77%;
+    margin-top: 0%;
+    left: 0%;
 }
 
 .btn3{
-    top: 28%;
-    left: 31.5%;
+    margin-top: 0%;
+    left: 0%;
+}
+
+.btn3:hover + .arctic-icon{
+    transform: scale(2,2);
+    display: none;
 }
 
 .btn::before {
@@ -294,7 +291,7 @@ body::-webkit-scrollbar {
 
 .btn:hover, .btn:focus {
     color: #313133;
-    margin-top: -2px;
+    margin-top: 1%;
 }
 
 .btn:hover::before, .btn:focus::before {
@@ -349,9 +346,6 @@ body::-webkit-scrollbar {
     opacity: 0;
 }
 
-.image6{
-    cursor: pointer;
-}
 
 #box1, #box3, #box4, #box5 {
     left: 3%;
@@ -377,8 +371,8 @@ body::-webkit-scrollbar {
 
 #exp{
     color: rgb(255, 255, 255);
-    background-color: rgba(129, 129, 129, 0.76);
-    left: 72%;
+    background-color: rgba(70, 70, 70, 0.801);
+    right: 2%;
     bottom: 16%;
 }
 
@@ -399,18 +393,17 @@ body::-webkit-scrollbar {
 }
 
 .explanation {
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     border-radius: 10px;
     width:fit-content;
+    line-height: 25px;
     max-width: 400px;
     height:fit-content;
     padding: 10px 10px 10px 20px; 
     display: block;
     position: fixed;
     animation: fadeIn linear 1s;
-    color: rgb(255, 255, 255);
-    background-color: rgba(105, 105, 105, 0.61);
 }
 
 @keyframes fadeIn {
@@ -508,9 +501,9 @@ body::-webkit-scrollbar {
 }
 
 .icon:hover{
-    transform: translateY(5px);
-    cursor: pointer;
-}
+    /* transform: translateY(5px);
+    cursor: pointer;*/
+} 
 
 #map-icon {
     max-height: 78%;
@@ -536,16 +529,17 @@ body::-webkit-scrollbar {
     /* color: #b45b07;
     filter: drop-shadow(0 0 8px #e4860b);
     cursor: pointer; */
+    filter: grayscale(100%);
 }
 
 #teleport-icon:hover{
     transform: translateY(0px);
 }
 
-#teleport-icon:hover{
+/* #teleport-icon:hover{
     color: #b45b0700;
     filter: drop-shadow(0 0 8px #e4860b00);
-}
+} */
 
 .lock {
     max-height: 78%;
@@ -554,17 +548,44 @@ body::-webkit-scrollbar {
 progress {
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    line-height: 2.4;
+    line-height: 2.1;
     width: 16%;
-    height: 4.5%;
+    height: 4vh;
     position: fixed;
     right: 3%;
-    bottom: 80px;
-}
-
-progress:after {
-    content: attr(value) '%';
-}
+    top: 87%;
+  }
+  
+  @media (max-height: 765px) {
+    progress {
+      text-align: center;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      line-height: 1.8;
+      width: 16%;
+      height: 4vh;
+      position: fixed;
+      right: 3%;
+      top: 87%;
+    }
+  }
+  
+  @media (max-height: 665px) {
+    progress {
+      text-align: center;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      line-height: 1.5;
+      width: 16%;
+      height: 4vh;
+      position: fixed;
+      right: 3%;
+      top: 87%;
+    }
+  }
+  
+  progress:after {
+    content: attr(value) "%";
+    font-size: 2vh;
+  }
 
 .notif > p {
     font-size: 1.8vh;
@@ -578,19 +599,16 @@ progress:after {
   }
   
   .notif {
-    bottom: 15%;
+    bottom: 14%;
     right: 9%;
-    /* background-color: #ffffff79; */
-    /* border: 1px solid #faf9f4 ; */
+    background-color: #ffffff;
+    border-radius: 6px;
     width: fit-content;
     position: fixed;
-    animation: slideIn 0.5s ease-Out;
+    animation: pop 2s ease-Out;
     z-index: 20;
   }
 
-  .notifAni {
-    animation: fadeOut 1s ease-Out;
-  }
 
 .modal{
     width: 100%;
@@ -604,6 +622,7 @@ progress:after {
     position: relative;
     bottom: -62vh;
     width: 17%;
+    animation: fadeIn linear 1s;
 }
 
 .yes-btn:hover {
@@ -633,6 +652,20 @@ progress:after {
 }
 
 #icon-glow2:hover {
+    filter: drop-shadow(0 0 30px #faf9f4);
+    cursor: pointer;
+    transform: translateY(5px);
+}
+
+#icon-glow3 {
+    max-height: 75%;
+    padding-top: 1%;
+    color: #b45b07;
+    filter: drop-shadow(0 0 8px #e4860b);
+    cursor: pointer; 
+}
+
+#icon-glow3:hover {
     filter: drop-shadow(0 0 30px #faf9f4);
     cursor: pointer;
     transform: translateY(5px);
@@ -804,6 +837,25 @@ progress:after {
     
     100%{
       transform: translateY(120%);
+      opacity: 0%;
+    }
+  }
+
+  @keyframes pop {
+    0% {
+      transform: translateY(100%);
+      opacity: 100%;
+    }
+  
+    20% {
+      transform: translateY(0%);
+    }
+  
+    50% {
+      opacity: 100%;
+    }
+  
+    100% {
       opacity: 0%;
     }
   }

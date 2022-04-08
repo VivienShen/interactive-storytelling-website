@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../styles/scene5.css">
     <link rel="stylesheet" href="../styles/nav.css">
     <script src="../js/nav.js"></script>
+    <script src="../js/jquery-3.6.0.min.js"></script>
     <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
 
     <style>
@@ -49,7 +50,10 @@
         }
 
         .image5{
-            left: 30%;
+            left: 68%;
+            max-width: 15%;
+            max-height: 15%;
+            object-fit:contain !important;
         }
 
         .image7{
@@ -79,10 +83,6 @@
         .image3-3{
             z-index: 3;
             top: 100%;
-        }
-
-        .image5, .image6{
-            z-index: 4;
         }
 
         .factBox {
@@ -229,6 +229,7 @@
             font-weight: 700;
             font-family: SpectralSC-SemiBold;
             color: rgba(10, 100, 128, 0.904); 
+            cursor:default;
         }
 
         .gameText{
@@ -268,6 +269,18 @@
             border-radius: 50px;
             box-shadow: 6px 7px #b9b9b97e;
         }
+        
+        .menu__btn > span,
+        .menu__btn > span::before,
+        .menu__btn > span::after {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background-color: black;
+            /* box-shadow: 3px 3px 3px #c7c7c7; */
+            transition-duration: .25s;
+        }
 
     </style>
 </head>
@@ -301,7 +314,7 @@
                 <div class="menu__div">
                     <div class="chapter-menu">
                         <ul class="chapter__list">
-                            <li><a class="chapter__item" id="ch-Home" href="index.html">Home</a></li>
+                            <li><a class="chapter__item" id="ch-Home" href="../index.html">Home</a></li>
                             <li><a class="chapter__item" id="chapter0" href="prologue.html">Prologue</a></li>
                             <li><a class="chapter__item" id="chapter1" href="scene1-1.html">Chapter 1</a></li>
                             <li><a class="chapter__item" id="chapter2" href="scene3-1.html">Chapter 2</a></li>
@@ -319,11 +332,11 @@
                         </p>
                         <div class="present" style="display: flex">
                             <div id="teamLogo" style="display: block; width: fit-content">
-                                <p style="font-size:1.4vh; color: black; margin-top:0">Presented By</p>
+                                <p class="present">Presented By</p>
                                 <img src="../assets/images/eco_logo.png" alt="EcoLife Studio Logo" style="max-width: 8vh; margin-top:-5px">
                             </div>
                             <div id="mktSite" style="width: fit-content">
-                                <a class="mktSiteLink" href="https://ecolifestudio5.wixsite.com/ecolife-studio" >Learn More <span class="iconify" data-icon="ci:external-link"></span></a>
+                                <a class="mktSiteLink" href="https://ecolifestudio5.wixsite.com/ecolife-studio" target="_blank">Learn More <span class="iconify" data-icon="ci:external-link"></span></a>
                             </div>
                         </div>
                     </div>
@@ -345,13 +358,13 @@
     <div class="container" >
         <div class="container_img" id="container_img">
             <div class="img" onclick=" clickToClose()">
-                <img class="image2" src="../assets/images/scene5/arctic/mountainBG-01.png">
-                <img class="image1" src="../assets/images/scene5/arctic/clouds.png">
-                <img class="image4" src="../assets/images/scene5/arctic/water-01.png">
-                <img class="image3" src="../assets/images/scene5/arctic/mountains-01.png">
-                <img class="image3-3" src="../assets/images/scene5/arctic/iceberg-01.png">      
-                <img class="image5" src="../assets/images/scene5/arctic/smallPB-01.png">
-                <img class="image6" id="big-pb" src="../assets/images/scene5/arctic/BigPB-01.png">
+                <img class="image2" src="../assets/images/scene5/arctic/mountainBG-01.png" alt="image of arctic mountain">
+                <img class="image1" src="../assets/images/scene5/arctic/clouds.png" alt="image of clouds">
+                <img class="image4" src="../assets/images/scene5/arctic/water-01.png" alt="image of water">
+                <img class="image3" src="../assets/images/scene5/arctic/mountains-01.png" alt="image of mountains">
+                <img class="image3-3" src="../assets/images/scene5/arctic/iceberg-01.png" alt="image of iceberg">      
+                <img class="image5" id="small-pb"src="../assets/images/scene5/arctic/smallPB-01.png" alt="image of a small polar bear">
+                <img class="image6" src="../assets/images/scene5/arctic/BigPB-01.png" alt="image of a big polar bear">
         
                 <!-- <img class="image5" src="../assets/images/scene5/arctic/scroll1.png">
                 <img class="image6" src="../assets/images/scene5/arctic/scroll2.png">
@@ -359,8 +372,8 @@
                 
             </div>
             
-            <img class="image8" src="../assets/images/scene5/arctic/iceberg2.png">
-            <img class="image7" src="../assets/images/scene5/arctic/fallingIce.png">
+            <img class="image8" src="../assets/images/scene5/arctic/iceberg2.png" alt="image of iceberg">
+            <img class="image7" src="../assets/images/scene5/arctic/fallingIce.png" alt="image of falling ice">
 
             <!--SCROLL DOWN INDICATOR-->
             <div class="scroll-indicator" >
@@ -371,7 +384,7 @@
         </div>  
 
         <div class="cam_container" id="parent-cam">
-            <img class="camera-capture" style="display: none;" id="cam" onclick="" onmousedown="camClicked(); playEffect('camera-se');" onmouseup="camReleased()" src="../assets/images/scene5/cam-capture.png">
+            <img class="camera-capture" style="display: none;" id="cam" onclick="" onmousedown="camClicked(); playEffect('camera-se');" onmouseup="camReleased()" src="../assets/images/scene5/cam-capture.png" alt="camera capture frame">
         </div>
 
         <div id="cam-explanation" style="display:none;">
@@ -392,7 +405,7 @@
             <progress id="popularity-meter" min="0" max="100" value="0"><span></span></progress>
             <div class="icons">
                 <img id="camera-icon" class="icon" src="../assets/images/scene5/icon-cam.png" alt="camera item" style="display: block;" onclick="">
-                <img id="map-icon" class="icon" src="../assets/images/scene5/icon-map.png" alt="map item" style="display: block;" onclick="window.location.href='scene5.html'">
+                <img id="map-icon" class="icon" src="../assets/images/scene5/icon-map.png" alt="map item" style="display: block;" onclick="">
                 <img id="teleport-icon" class="icon" src="../assets/images/scene5/icon.png" alt="teleport button" style="display: block; pointer-events: none; filter: grayscale(100%);">
             </div>
         </div>
@@ -407,7 +420,7 @@
             This is because of their thick fur and skin that helps them keep warm. The Arctic is warming twice as fast as it’s supposed to, causing the ice that polar bears 
             live on to melt away. The loss of sea ice also makes it harder for the polar bear to find food.
             <a href="https://www.wwf.org.uk/learn/wildlife/polar-bears" target="_blank">   
-                Read more</a></span>
+                <br> 10 FACTS ABOUT POLAR BEARS!</a></span>
     </button> 
 
     <button id="fact2" class="factBox clickable">
@@ -417,7 +430,7 @@
         <span class="btn-text">The water in icebergs is colder and less salty than sea water, so when icebergs melt, 
             the difference in density between iceberg water and sea water causes the sea level to slightly rise.
             <a href="https://education.seattlepi.com/effect-global-warming-icebergs-4877.html" target="_blank">   
-                Read more</a></span>
+                <br>  Why Archimedes Won't Help</a></span>
     </button> 
 
     <button id="fact3" class="factBox clickable">
@@ -428,7 +441,7 @@
             Inuit people have been noticing the change in the Arctic from global warming, and because their culture is adapted to the Arctic’s cold climate, it makes it 
             harder for Inuit people to continue their traditions
             <a href="https://www.natgeokids.com/uk/discover/geography/general-geography/ten-facts-about-the-arctic/" target="_blank">   
-                Read more</a></span>
+                <br> 10 FACTS ABOUT THE ARCTIC!</a></span>
     </button> 
 
     <div class="text">
@@ -482,7 +495,7 @@
             pin: true
         },'start')
         .to(".image5", 11, {
-            y: "-95%",
+            y: "-170%",
             pin: true
         },'start')
         .to(".image6", 11, {
@@ -516,14 +529,14 @@
             duration: 2
         })
         .to(".image5", {
-            x: "-45%",
+            x: "-255%",
             pin: true,
-            duration: 50
+            duration: 30
         }, 'polarBear')
         .to(".image6", {
             x: "-95%",
             pin: true,
-            duration: 50
+            duration: 40
         }, 'polarBear')
         .to(".image7",  {
             opacity: 1,
@@ -606,7 +619,13 @@
                 camera.style.display='block';
             }
 
-            exp.style.display = "none";
+            setTimeout(removeExp, 5000);
+
+            function removeExp() {
+                //remove explanation for cam
+                exp.style.display = "none";
+            }
+            
         }
 
 
@@ -618,10 +637,8 @@
         var $window = $(window);
         var cam = document.getElementById("camera-icon");
         var exp = document.getElementById("cam-explanation");
-        var map = document.getElementById("map-icon");
         var body = document.querySelector("body");
         
-
 
         $(window).on('scroll', function() {
             $topOffset = $(this).scrollTop();
@@ -633,12 +650,12 @@
                 cam.id = "icon-glow";
                 cam.setAttribute('onclick','openCam()');
                 exp.style.display = "block";
-                map.id = "icon-glow2";
+                
             }else{
                 cam.id = "camera-icon";
                 cam.setAttribute('onclick','');
                 exp.style.display = "none";
-                map.id = "map-icon";
+        
             }
         
         });
@@ -677,15 +694,21 @@
         } */
 
         function soundOff() {
-            document.getElementById("bg-music").muted = true;  
+            document.getElementById("bg-music").muted = true; 
+            document.getElementById("wind-se").muted = true;  
+            document.getElementById("camera-se").muted = true;  
             document.getElementById("on").style.display = "none";
             document.getElementById("off").style.display = "inline";
+            localStorage.setItem("sound", false);
         }
 
         function soundOn() {
             document.getElementById("bg-music").muted = false; 
+            document.getElementById("wind-se").muted = false;  
+            document.getElementById("camera-se").muted = false;  
             document.getElementById("off").style.display = "none"; 
             document.getElementById("on").style.display = "inline";
+            localStorage.setItem("sound", true);
         }
 
         function playEffect(sound) {

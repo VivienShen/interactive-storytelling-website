@@ -24,29 +24,27 @@ var plusFunction = function()
         score = localStorage.getItem("currScore");
     }
 
-    if(score == 50){
-        document.querySelector(".plus-btn").setAttribute("disabled", "disabled")
-    }else{
-        document.querySelector(".plus-btn").removeAttribute("disabled");
-        document.querySelector(".plus-btn").classList.remove("disabled");
-    }
-    
     //point increment by 5
     for(let i = 0; i < 5; i++){
         score++;
     }
 
-    document.getElementById("pointNotif").style.display = "block";
-    setTimeout(removeTxt, 2000);
+    
 
-    function removeTxt() {
-        //remove text
-        /* var not1 = document.getElementsById("pointNotif");
-        document.getElementById("pointNotif").className = 'notifAni';
-        if (not1.style.opacity == 0){
+    //show popup when score reached 50%
+    if (score == 50) {
+        document.getElementById("goalNotif").style.display = "block";
+        setTimeout(removeTxt, 2900);
+        function removeTxt() {
+            document.getElementById("goalNotif").style.display = "none";
+        }
+    } else {
+        //show +5 point pop up and fadeout after 2s
+        document.getElementById("pointNotif").style.display = "block";
+        setTimeout(removeTxt, 1900);
+        function removeTxt() {
             document.getElementById("pointNotif").style.display = "none";
-        } */
-        document.getElementById("pointNotif").style.display = "none";
+        }
     }
 
     //setting increment input value
@@ -100,15 +98,20 @@ for (var i = 0; i < minus.length; i++) {
 
 //When correct capture is taken from camera
 var camera = document.getElementById("cam");
-var polarBear = document.getElementById("big-pb");
+var polarBear = document.getElementById("small-pb");
 var coral1 = document.getElementById("coral1");
 var coral2 = document.getElementById("coral2");
 var coral3 = document.getElementById("coral3");
 var fire = document.getElementById("fire");
+var map = document.getElementById("map-icon");
 
 let isCaptured = false;
 
 var capturedCount = 0;
+console.log(capturedCount);
+sessionStorage.setItem("captured", capturedCount);
+
+var capturedCount2 = sessionStorage.getItem("captured");
 
 function camClicked(){
     camera.style.transform = "scale(0.45, 0.45)";
@@ -121,13 +124,16 @@ function camClicked(){
         var rect1 = polarBear.getBoundingClientRect();
 
         if (!
-            (rect1.top > rect2.bottom ||
-            rect1.right < rect2.left ||
+            (rect1.top > (rect2.bottom * 0.90) ||
+            rect1.right < (rect2.left * 1.3) ||
             rect1.bottom < rect2.top ||
-            rect1.left > rect2.right))
+            rect1.left > (rect2.right * 0.7)))
         {
             isCaptured = true;
             console.log("overlapping");
+
+            map.setAttribute('onclick', "window.location.href='scene5.html'; placeVisited('visited', 'arcticVisited');");
+            map.id = "icon-glow2";
 
             setTimeout(showTxt, 200);
             function showTxt() {
@@ -142,24 +148,21 @@ function camClicked(){
                 document.getElementById("game-txt").innerHTML = "";
             }
 
-            capturedCount += 1;
+            //check if image has already been successfully taken
+            capturedCount2 ++;
+            console.log(capturedCount2);
 
-            if(capturedCount <= 1){
+            if(capturedCount2 <= 1){
                 for(let i = 0; i < 5; i++){
                     score++;
                 }
-            }
-            document.getElementById("pointNotif").style.display = "block";
-            setTimeout(removeTxt, 2000);
 
-            function removeTxt() {
-                //remove text
-                /* var not1 = document.getElementsById("pointNotif");
-                document.getElementById("pointNotif").className = 'notifAni';
-                if (not1.style.opacity == 0){
+                document.getElementById("pointNotif").style.display = "block";
+                setTimeout(removeTxt, 2000);
+
+                function removeTxt() {
                     document.getElementById("pointNotif").style.display = "none";
-                } */
-                document.getElementById("pointNotif").style.display = "none";
+                }
             }
 
             //setting increment input value
@@ -193,23 +196,21 @@ function camClicked(){
         var rect4 = coral2.getBoundingClientRect();
         var rect5 = coral3.getBoundingClientRect();
 
-        if (!(rect3.top > rect2.bottom ||
-                rect3.right < rect2.left ||
+        if (!(rect3.top > (rect2.bottom * 0.7) ||
+                rect3.right < (rect2.left  * 1.7) ||
                 rect3.bottom < rect2.top ||
                 rect3.left > rect2.right)
     
-            ||!(rect4.top > rect2.bottom ||
-                rect4.right < rect2.left ||
-                rect4.bottom < rect2.top ||
-                rect4.left > rect2.right)
-    
-            ||!(rect5.top > rect2.bottom ||
+            ||!(rect5.top > (rect2.bottom * 0.67) ||
                 rect5.right < rect2.left ||
                 rect5.bottom < rect2.top ||
-                rect5.left > rect2.right)
+                rect5.left > (rect2.right * 0.83))
         ){
             isCaptured = true;
             console.log("overlapping");
+
+            map.setAttribute('onclick', "window.location.href='scene5.html'; placeVisited('visited3', 'coralVisited');");
+            map.id = "icon-glow2";
 
             setTimeout(showTxt, 200);
             function showTxt() {
@@ -224,22 +225,23 @@ function camClicked(){
                 document.getElementById("game-txt").innerHTML = "";
             }
 
-            for(let i = 0; i < 5; i++){
-                score++;
-            }
+            //check if image has already been successfully taken
+            capturedCount2 ++;
+            console.log(capturedCount2);
+            
+            if(capturedCount2 <= 1){
+                for(let i = 0; i < 5; i++){
+                    score++;
+                }
 
-            document.getElementById("pointNotif").style.display = "block";
-            setTimeout(removeTxt, 2000);
+                document.getElementById("pointNotif").style.display = "block";
+                setTimeout(removeTxt, 2000);
 
-            function removeTxt() {
-                //remove text
-                /* var not1 = document.getElementsById("pointNotif");
-                document.getElementById("pointNotif").className = 'notifAni';
-                if (not1.style.opacity == 0){
+                function removeTxt() {
                     document.getElementById("pointNotif").style.display = "none";
-                } */
-                document.getElementById("pointNotif").style.display = "none";
+                }
             }
+            
             //setting increment input value
             document.getElementById("popularity-meter").value = score;
     
@@ -270,13 +272,16 @@ function camClicked(){
         var rect6 = fire.getBoundingClientRect();
 
         if (!
-            (rect6.top > rect2.bottom ||
-            rect6.right < rect2.left ||
-            rect6.bottom < rect2.top ||
-            rect6.left > rect2.right))
+            (rect6.top > (rect2.bottom * 0.65) ||
+            rect6.right < (rect2.left * 1.5) ||
+            rect6.bottom < (rect2.top * 1.6) ||
+            rect6.left > (rect2.right * 0.7)))
         {
             isCaptured = true;
             console.log("overlapping");
+
+            map.setAttribute('onclick', "window.location.href='scene5.html'; placeVisited('visited2', 'amazonVisited');");
+            map.id = "icon-glow2";
 
             setTimeout(showTxt, 200);
             function showTxt() {
@@ -291,22 +296,23 @@ function camClicked(){
                 document.getElementById("game-txt").innerHTML = "";
             }
             
-            for(let i = 0; i < 5; i++){
-                score++;
-            }
+            //check if image has already been successfully taken
+            capturedCount2 ++;
+            console.log(capturedCount2);
 
-            document.getElementById("pointNotif").style.display = "block";
-            setTimeout(removeTxt, 2000);
+            if(capturedCount2 <= 1){
+                for(let i = 0; i < 5; i++){
+                    score++;
+                }
 
-            function removeTxt() {
-                //remove text
-                /* var not1 = document.getElementsById("pointNotif");
-                document.getElementById("pointNotif").className = 'notifAni';
-                if (not1.style.opacity == 0){
+                document.getElementById("pointNotif").style.display = "block";
+                setTimeout(removeTxt, 2000);
+
+                function removeTxt() {
                     document.getElementById("pointNotif").style.display = "none";
-                } */
-                document.getElementById("pointNotif").style.display = "none";
+                }
             }
+
             //setting increment input value
             document.getElementById("popularity-meter").value = score;
     
@@ -405,6 +411,15 @@ var myFunction = function() {
         console.log("currentIndex is: " + currentIndex);
         var divId = IdStore[currentIndex];
     
+        if (localStorage.getItem("currScore") >= 50) {
+            document.getElementById("skip").style.display = "block";
+            document.getElementById("skip").onclick = function() {
+                document.getElementById(divId).style.display = "none";
+                document.getElementById("s7-18").style.display = "block";
+                document.getElementById("skip").style.display = "none";
+            }
+            
+        }
         console.log("divId and currentIndex: " + divId, currentIndex);
         document.getElementById(divId).style.display = "block";
         var prevIndex = currentIndex - 1;
@@ -415,6 +430,8 @@ var myFunction = function() {
         }
         
     }
+
+    
 }
 
 

@@ -9,6 +9,7 @@
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
         <link rel="stylesheet" href="../styles/nav.css">
         <script src="../js/nav.js"></script>
+        <script src="../js/jquery-3.6.0.min.js"></script>
         <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
     </head>
 
@@ -38,7 +39,7 @@
                     <div class="menu__div">
                         <div class="chapter-menu">
                             <ul class="chapter__list">
-                                <li><a class="chapter__item" id="ch-Home" href="index.html">Home</a></li>
+                                <li><a class="chapter__item" id="ch-Home" href="../index.html">Home</a></li>
                                 <li><a class="chapter__item" id="chapter0" href="prologue.html">Prologue</a></li>
                                 <li><a class="chapter__item" id="chapter1" href="scene1-1.html" style="color: #30C9E9">Chapter 1</a></li>
                                 <li><a class="chapter__item" id="chapter2" href="scene3-1.html">Chapter 2</a></li>
@@ -56,11 +57,11 @@
                             </p>
                             <div class="present" style="display: flex">
                                 <div id="teamLogo" style="display: block; width: fit-content">
-                                    <p style="font-size:1.4vh; color: black; margin-top:0">Presented By</p>
+                                    <p class="present">Presented By</p>
                                     <img src="../assets/images/eco_logo.png" alt="EcoLife Studio Logo" style="max-width: 8vh; margin-top:-5px">
                                 </div>
                                 <div id="mktSite" style="width: fit-content">
-                                    <a class="mktSiteLink" href="https://ecolifestudio5.wixsite.com/ecolife-studio" >Learn More <span class="iconify" data-icon="ci:external-link"></span></a>
+                                    <a class="mktSiteLink" href="https://ecolifestudio5.wixsite.com/ecolife-studio" target="_blank">Learn More <span class="iconify" data-icon="ci:external-link"></span></a>
                                 </div>
                             </div>
                         </div>
@@ -77,7 +78,8 @@
 
         <div id="s2-3" class="scene" style="display: block;">
             <div id="bg3" class="image">
-                <img class="img-bg" src="../assets/images/scene2/scene2-3.png" alt="Girl holding a monocular while talking with robot">
+                <img class="img-bg" src="../assets/images/scene2/telescope lookout.png" alt="Girl holding a monocular">
+                <img class="telescope2" src="../assets/images/scene2/telescope.png" onclick="window.location.href='scene1-2.html'" alt="monocular telescope" title="Telescope">
             </div>
             <div class="text" >
                 <div id="box2" class="speechbox" >
@@ -92,10 +94,10 @@
             </div>
 
             <div class="image">
-                <img class="nameModal" src="../assets/images/scene2/name modal.png"  alt="">
-                <img class="characterIcon" src="../assets/images/scene2/girl name.png"  alt="">
-                <img id="nextBtn2" class="skipBtn" onclick="playEffect();" src="../assets/images/scene2/skip.png" alt="">
-                <img id="nextBtn3" class="setName" src="../assets/images/scene2/set name.png" onclick="playEffect(); getInputValue();" alt="">
+                <img class="nameModal" src="../assets/images/scene2/name modal.png"  alt="a modal to input your name">
+                <img class="characterIcon" src="../assets/images/scene2/girl name.png"  alt="a profile photo of the girl">
+                <img id="nextBtn2" class="skipBtn" onclick="playEffect();" src="../assets/images/scene2/skip.png" alt="skip button">
+                <img id="nextBtn3" class="setName" src="../assets/images/scene2/set name.png" onclick="playEffect(); getInputValue();" alt="set name button">
             </div>
             
 
@@ -107,7 +109,7 @@
 
         <div id="s2-5" class="scene" style="display: none;">
             <div id="bg3" class="image">
-                <img class="img-bg" src="../assets/images/scene2/scene2-4.png" alt="Girl holding a monocular while talking with robot">
+                <img class="img-bg" src="../assets/images/scene2/scene2-4.png" alt="Robot talking to the girl">
             </div>
             <div class="text" >
                 <div id="box4" class="speechbox" >
@@ -245,12 +247,13 @@
             <div id="bg4" class="image">
                 <img class="img-bg" src="../assets/images/scene2/go.png" alt="robot presenting a pop-up box with the words: Are you ready to go? And a button yes as a response">
                 <span id="inventory" class="tooltiptext1">Inventory</span>
-                <span id="lock" class="tooltiptext2">Locked</span>
-                <span id="time" class="tooltiptext3">Time Travel</span>
+                <!-- <span id="lock" class="tooltiptext2">Locked</span>
+                <span id="time" class="tooltiptext3">Time Travel</span> -->
 
             </div >
 
             <div class="image">
+                <img id="dull-bg" src="../assets/images/scene2/dull background.png" style="display:none" alt="dull transparent overlay">
                 <img src="../assets/images/scene2/modal.png" id = "modal" alt="modal popup" style="display:none">
                 <img src="../assets/images/scene2/yes.png" id="yes_button" onclick="openCh2(); window.location.href='portal.html'; playEffect();" alt="yes button" style="display:none" />
             </div>
@@ -258,27 +261,16 @@
             <div class="inventory">
                 <img id="inventory-bg" src="../assets/images/scene2/inventory.png" alt="inventory box">
                 <div class="icons">
-                    <img id="camera-lock" class="lock" src="../assets/images/scene2/lock.png" alt="locked item" style="display: block;">
-                    <img id="map-lock" class="lock" src="../assets/images/scene2/lock.png" alt="locked item" style="display: block;">
-                    <img id="app-icon" class="icon" src="../assets/images/scene2/icon.png" alt="teleport item" style="display: block;" onclick="loadPopup(); playEffect();">
+                    <img id="camera-lock" class="lock" src="../assets/images/scene2/lock.png" alt="locked item" style="display: block;" title="Locked">
+                    <img id="map-lock" class="lock" src="../assets/images/scene2/lock.png" alt="locked item" style="display: block;" title="Locked">
+                    <img id="app-icon" class="icon" src="../assets/images/scene2/icon.png" alt="teleport button" style="display: block;" onclick="loadPopup(); playEffect();" title="Teleport">
                 </div>
             </div>
         </div>
-        <div id="s2-17" class="scene" style="display: none;">
-            <div id="bg5" class="image">
-                <img src="../assets/images/scene2/travel.png" alt="robot presenting a pop-up box with the option to name your character">
-            </div>
 
-            <!-- <audio controls autoplay>
-                <source src="sound/portal.mp3" type="audio/mpeg">
-            </audio> -->
-        </div>
 
         <div id="nextBtn" class="btn2" style="display: none;" ></div> 
-        
-        <!-- <div id="box2" class="speechBubble" style="display: none">
-            <p>It's so scary looking back at what remains of earth, I wish I could see Earth back when things weren't so bad.</p>
-        </div> -->
+    
 
         <script>
 
@@ -375,12 +367,13 @@
                     function appeardiv() {
                         //not appear for the last cut
                         
-                        if (currentIndex < IdStore.length-2) {
+                        if (currentIndex < IdStore.length-1) {
                             
-                            if(currentIndex == 1){
+                            if(currentIndex == 1 || currentIndex == 13){
                                 next.style.display = "none";
                                 console.log("remove next btn");
                             }
+
                             else{
                                 next.style.display = "block";
                             }
@@ -482,6 +475,7 @@
 
             function loadPopup() {
                 document.getElementById('yes_button').style.display='block';
+                document.getElementById('dull-bg').style.display='block';
                 document.getElementById('modal').style.display='block';
                 document.getElementById('inventory').style.visibility='hidden';
                 document.getElementById('lock').style.visibility='hidden';
@@ -496,15 +490,23 @@
 
             function soundOff() {
                 document.getElementById("bg-music").muted = true;  
+                document.getElementById("btn-se").muted = true;  
                 document.getElementById("on").style.display = "none";
                 document.getElementById("off").style.display = "inline";
+                localStorage.setItem("sound", false);
             }
 
             function soundOn() {
                 document.getElementById("bg-music").muted = false; 
+                document.getElementById("btn-se").muted = false; 
                 document.getElementById("off").style.display = "none"; 
                 document.getElementById("on").style.display = "inline";
+                localStorage.setItem("sound", true);
             }
+
+            $(document).ready(function () {
+                audioStatus();
+            });
         </script>
     </body>
 </html>
