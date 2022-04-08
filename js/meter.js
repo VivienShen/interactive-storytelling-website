@@ -447,15 +447,7 @@ var myFunction = function() {
         console.log("currentIndex is: " + currentIndex);
         var divId = IdStore[currentIndex];
     
-        if (localStorage.getItem("currScore") >= 50) {
-            document.getElementById("skip").style.display = "block";
-            document.getElementById("skip").onclick = function() {
-                document.getElementById(divId).style.display = "none";
-                document.getElementById("s7-18").style.display = "block";
-                document.getElementById("skip").style.display = "none";
-            }
-            
-        }
+        
         console.log("divId and currentIndex: " + divId, currentIndex);
         document.getElementById(divId).style.display = "block";
         var prevIndex = currentIndex - 1;
