@@ -131,10 +131,10 @@ function camClicked(){
         var rect1 = polarBear.getBoundingClientRect();
 
         if (!
-            (rect1.top > rect2.bottom ||
-            rect1.right < rect2.left ||
+            (rect1.top > (rect2.bottom * 0.90) ||
+            rect1.right < (rect2.left * 1.3) ||
             rect1.bottom < rect2.top ||
-            rect1.left > rect2.right))
+            rect1.left > (rect2.right * 0.7)))
         {
             isCaptured = true;
             console.log("overlapping");
@@ -203,20 +203,15 @@ function camClicked(){
         var rect4 = coral2.getBoundingClientRect();
         var rect5 = coral3.getBoundingClientRect();
 
-        if (!(rect3.top > rect2.bottom ||
-                rect3.right < rect2.left ||
+        if (!(rect3.top > (rect2.bottom * 0.7) ||
+                rect3.right < (rect2.left  * 1.7) ||
                 rect3.bottom < rect2.top ||
                 rect3.left > rect2.right)
     
-            ||!(rect4.top > rect2.bottom ||
-                rect4.right < rect2.left ||
-                rect4.bottom < rect2.top ||
-                rect4.left > rect2.right)
-    
-            ||!(rect5.top > rect2.bottom ||
+            ||!(rect5.top > (rect2.bottom * 0.67) ||
                 rect5.right < rect2.left ||
                 rect5.bottom < rect2.top ||
-                rect5.left > rect2.right)
+                rect5.left > (rect2.right * 0.83))
         ){
             isCaptured = true;
             console.log("overlapping");
@@ -284,10 +279,10 @@ function camClicked(){
         var rect6 = fire.getBoundingClientRect();
 
         if (!
-            (rect6.top > rect2.bottom ||
-            rect6.right < rect2.left ||
-            rect6.bottom < rect2.top ||
-            rect6.left > rect2.right))
+            (rect6.top > (rect2.bottom * 0.65) ||
+            rect6.right < (rect2.left * 1.5) ||
+            rect6.bottom < (rect2.top * 1.6) ||
+            rect6.left > (rect2.right * 0.7)))
         {
             isCaptured = true;
             console.log("overlapping");
